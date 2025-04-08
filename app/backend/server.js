@@ -4,7 +4,7 @@ const app=express()
 const Pool=require('./Pool/pool')
 app.use(express.json());
 const controller=require('')
-app.use('/api/',(req,res,next)=>{
+app.use('api',(req,res,next)=>{
     console.log('🐯🐯🐯🐯🐯🐯🐯🐯🐯🐯🐯🐯🐯🐯🐯🐯🐯🐯')
     res.send('all Ok')
 })
