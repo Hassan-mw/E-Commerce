@@ -4,10 +4,6 @@ constructor(message,statusCode){
     this.statusCode=statusCode;
     this.status=`${statusCode}`.startsWith(4) ? 'fail':'error'
     
-}
+}}
 
-
-}
-
-
-module.exports=new AppError
+module.exports= AppError
