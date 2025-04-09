@@ -27,13 +27,10 @@ Pool.connect({
 
 
 // ! GLobal Error Middleware
-// app.all('*',(req,res,next)=>{
-//     res.status(404).json({
-//         status:'fail',
-//         message:"Can't find this page"
-//     })
-//     // next(new AppError(`Can't find ${req.originalUrl} on this`,404))
-//     })
+app.all('*',(req, res, next)=>{
+    next(new AppError("Can't find this page", 404));
+  });
+  
   
 app.use((err,req,res,next)=>{
 

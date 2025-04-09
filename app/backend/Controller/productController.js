@@ -4,35 +4,35 @@ const multer=require('multer');
 const  AppError=require('./../ErrorHandler/appError') 
 
 
-const uploadPath=path.join(__dirname,"../../../public")
+// const uploadPath=path.join(__dirname,"../../../public")
 
-const multerStorage=multer.diskStorage({
-  destination:(req,file,cb)=>{
-    cb(null,uploadPath)
-  },
-  filename:(req,file,cb)=>{
-    const ext=file.mimetype.split('/')[1];
-    cb(null,`userr_${Date.now()}.${ext}`)
-  }
-})
+// const multerStorage=multer.diskStorage({
+//   destination:(req,file,cb)=>{
+//     cb(null,uploadPath)
+//   },
+//   filename:(req,file,cb)=>{
+//     const ext=file.mimetype.split('/')[1];
+//     cb(null,`userr_${Date.now()}.${ext}`)
+//   }
+// })
 
-const multerFilter=(req,file,cb)=>{
-  if(file.mimetype.startsWith('image')){
-    cb(null,true)
-  }
-  else{
-    cb(new AppError("Not an iage ! please upload an image"),false)
-  }
-}
-
-
-const upload=multer({
-  storage:multerStorage,
-  fileFilter:multerFilter
-})
+// const multerFilter=(req,file,cb)=>{
+//   if(file.mimetype.startsWith('image')){
+//     cb(null,true)
+//   }
+//   else{
+//     cb(new AppError("Not an iage ! please upload an image"),false)
+//   }
+// }
 
 
-exports.uploadProductPicture=upload.single('image')
+// const upload=multer({
+//   storage:multerStorage,
+  // fileFilter:multerFilter
+// })
+
+
+// exports.uploadProductPicture=upload.single('image')
 
 
 exports.getAllProducts = async (req,res,next) => {
@@ -50,6 +50,7 @@ exports.getAllProducts = async (req,res,next) => {
       });
     }
   };
+console.log('╰(*°▽°*)╯^_^^_^')
   
 exports.createproduct=async(req,res,next)=>{
     try{
