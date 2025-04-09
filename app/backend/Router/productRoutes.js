@@ -6,7 +6,7 @@ const controller=require('./../Controller/productController')
 
 router.route('/')
 .get(controller.getAllProducts)
-.post(controller.createproduct)
+.post(controller.uploadProductPicture,controller.createproduct)
 
 
 
