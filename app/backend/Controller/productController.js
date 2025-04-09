@@ -26,6 +26,13 @@ const multerFilter=(req,file,cb)=>{
 }
 
 
+const upload=multer({
+  storage:multerStorage,
+  fileFilter:multerFilter
+})
+
+
+exports.uploadProductPicture=upload.single('image')
 
 
 exports.getAllProducts = async (req,res,next) => {
@@ -46,6 +53,8 @@ exports.getAllProducts = async (req,res,next) => {
   
 exports.createproduct=async(req,res,next)=>{
     try{
+  const {rows}=await pool.query('INSERT INTO products()')
+
 
    }catch(err){
   console.err(err)
