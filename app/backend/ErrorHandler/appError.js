@@ -8,3 +8,6 @@ constructor(message,statusCode){
 
 
 }
+
+
+module.exports=new AppError
