@@ -2,7 +2,7 @@
 const express=require('express');
 const app=express()
 const Pool=require('./Pool/pool')
-// app.use(express.json());
+app.use(express.json());
 const productRoutes=require('./Router/productRoutes')
 const  AppError=require('./ErrorHandler/appError') 
 
@@ -26,16 +26,6 @@ Pool.connect({
 
 
 
-// ! GLobal Error Middleware
-app.all('*',(req, res, next)=>{
-    next(new AppError("Can't find this page", 404));
-  });
-  
-  
-app.use((err,req,res,next)=>{
-
-    res.status(500).send("some thing was broken!")
-})
 
 
 app.listen(process.env.PORT || 5000 ,()=>{
