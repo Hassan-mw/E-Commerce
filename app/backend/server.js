@@ -5,12 +5,9 @@ const Pool=require('./Pool/pool')
 // app.use(express.json());
 const productRoutes=require('./Router/productRoutes')
 
-app.get('/test', (req, res) => {
-    res.send('✅ Test route working!');
-  });
-  
 
-console.log('🤓🤓🤓🤓🤓🤓🤓🤓')
+
+
 app.use('/api/products',productRoutes);
 
   
