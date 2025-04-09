@@ -25,7 +25,20 @@ Pool.connect({
 
 
 
+// ! GLobal Error Middleware
+app.all('*',(req,res,next)=>{
+res.status(404).json({
+    status:'fail',
+    message:'Page not found'
+})
+next("Hello")
+})
 
+app.use((err,req,res,next)=>{
+
+
+    res.status(500).send("some thing was broken!")
+})
 
 
 app.listen(process.env.PORT || 5000 ,()=>{
