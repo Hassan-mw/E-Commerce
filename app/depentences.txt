@@ -3,3 +3,5 @@ npm i express
 npm i dotenv   //for acess to envoriment
 npm i path  
 npm i multer
+npm i migrate
+npm i node-pg-migrate
