@@ -2,7 +2,8 @@ const pool=require('../Pool/pool');
 const path=require('path');
 const multer=require('multer');
 const  AppError=require('./../ErrorHandler/appError') 
-
+const express=require('express')
+const app=express()
 
 // const uploadPath=path.join(__dirname,"../../../public")
 
@@ -66,3 +67,17 @@ exports.createproduct=async(req,res,next)=>{
   })
  }
 }
+
+
+// ! GLobal Error Middleware
+app.all('*',(req, res, next)=>{
+  res.status(500).send("some thing was broken!")
+
+  // next(new AppError("Can't find this page", 404));
+});
+
+
+app.use((err,req,res,next)=>{
+
+  res.status(500).send("some thing was broken!")
+})
