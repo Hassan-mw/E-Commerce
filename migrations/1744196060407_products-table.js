@@ -20,7 +20,7 @@ exports.up = (pgm) => {
     rating DECIMAL(3, 2),
     rating_count INT DEFAULT 0,
     brand VARCHAR(100),
-    category_id INT,
+    category INT,
     stock INT DEFAULT 0,
     size VARCHAR(100),
     color VARCHAR(100),
@@ -30,9 +30,7 @@ exports.up = (pgm) => {
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     is_active BOOLEAN DEFAULT TRUE
 );
-
-      
-        ` )
+` )
 };
 
 /**
