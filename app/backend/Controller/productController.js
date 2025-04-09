@@ -1,4 +1,30 @@
-const pool=require('../Pool/pool')
+const pool=require('../Pool/pool');
+const path=require('path');
+const multer=require('multer');
+
+const uploadPath=path.join(__dirname,"../../../public")
+
+const multerStorage=multer.diskStorage({
+  destination:(req,file,cb)=>{
+    cb(null,uploadPath)
+  },
+  filename:(req,file,cb)=>{
+    const ext=file.mimetype.split('/')[1];
+    cb(null,`userr_${Date.now()}.${ext}`)
+  }
+})
+
+const multerFilter=(req,file,cb)=>{
+  if(file.mimetype.startsWith('image')){
+    cb(null,true)
+  }
+  else{
+    cb(,false)
+  }
+}
+
+
+
 
 exports.getAllProducts = async (req,res,next) => {
     try {
@@ -16,8 +42,7 @@ exports.getAllProducts = async (req,res,next) => {
     }
   };
   
-
-  exports.createproduct=async(req,res,next)=>{
+exports.createproduct=async(req,res,next)=>{
     try{
 
    }catch(err){
@@ -28,4 +53,4 @@ exports.getAllProducts = async (req,res,next) => {
     message:"Someting wentwrong"
   })
  }
-  }
+}
