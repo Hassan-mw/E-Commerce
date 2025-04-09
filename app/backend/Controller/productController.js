@@ -18,9 +18,9 @@ exports.getAllProducts = async (req,res,next) => {
   
 
   exports.createproduct=async(req,res,next)=>{
- try{
+    try{
 
- }catch(err){
+   }catch(err){
   console.err(err)
   res.status(500)
   .json({
