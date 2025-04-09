@@ -12,6 +12,22 @@ const  AppError=require('./ErrorHandler/appError')
 app.use('/api/products',productRoutes);
 
   
+
+// ! GLobal Error Middleware
+// Global error handler for undefined routes (Page Not Found)
+app.use((req, res, next) => {
+    res.status(404).json({
+      status: 'fail',
+      message: `Can't find ${req.originalUrl} on this server`
+    });
+  });
+  
+  
+  app.use((err,req,res,next)=>{
+  
+    res.status(500).send("some thing was broken!")
+  })
+  
 Pool.connect({
     host:"localhost",
     port:5432,
