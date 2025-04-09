@@ -1,6 +1,8 @@
 const pool=require('../Pool/pool');
 const path=require('path');
 const multer=require('multer');
+const  AppError=require('./../ErrorHandler/appError') 
+
 
 const uploadPath=path.join(__dirname,"../../../public")
 
@@ -19,7 +21,7 @@ const multerFilter=(req,file,cb)=>{
     cb(null,true)
   }
   else{
-    cb(,false)
+    cb(new AppError("Not an iage ! please upload an image"),false)
   }
 }
 

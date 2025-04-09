@@ -4,6 +4,7 @@ const app=express()
 const Pool=require('./Pool/pool')
 // app.use(express.json());
 const productRoutes=require('./Router/productRoutes')
+const  AppError=require('./ErrorHandler/appError') 
 
 
 
@@ -27,13 +28,9 @@ Pool.connect({
 
 // ! GLobal Error Middleware
 app.all('*',(req,res,next)=>{
-res.status(404).json({
-    status:'fail',
-    message:'Page not found'
-})
-next("Hello")
-})
-
+    next(new AppError(`Can't fins ${req.originalUrl} on this`,404))
+    })
+  
 app.use((err,req,res,next)=>{
 
 
