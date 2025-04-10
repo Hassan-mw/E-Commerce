@@ -59,7 +59,7 @@ exports.getAllProducts = async (req,res,next) => {
     let filename = null;
     let filePath = null;
     try {
-      // 4. VALIDATE FIRST - before any file processing
+
       const requiredFields = ['name', 'price', 'rating', 'color', 'size', 'brand'];
       const missingFields = requiredFields.filter(field => !req.body[field]);
       
@@ -75,7 +75,7 @@ exports.getAllProducts = async (req,res,next) => {
       // 6. Only NOW process the file (since validation passed)
       const ext = req.file.mimetype.split('/')[1];
        filename = `product_${Date.now()}.${ext}`;
-      console.log(filename,'🤒🤒😈😈🥳🥳🥳')
+      console.log(req.file,'🤒🤒😈😈🥳🥳🥳')
        filePath = path.join(__dirname, '../../../public', `product_${Date.now()}.${ext}`);
   
       // 7. Write file to disk manually
@@ -115,7 +115,8 @@ exports.getAllProducts = async (req,res,next) => {
       });
   
     } catch (err) {
-      // 9. Clean up file if anything fails after it was written
+      // 9. Clean up file if any
+      // thing fails after it was written
       if (filename && filePath) {
         try {
           await fs.unlink(filePath);
