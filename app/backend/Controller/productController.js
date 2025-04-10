@@ -123,4 +123,21 @@ exports.getAllProducts = async (req,res,next) => {
 
 exports.deleteProduct=async(req,res,next)=>{
 
+try{
+  const {id}=req.params
+  console.log(id,'☜(ﾟヮﾟ☜)')
+  const {rows}=await pool.query("DELETE FROM products WHERE id=$1 RETURNING *",[id])
+
+ res.status(200).json({
+  status:"success",
+  message:"Product was deleted ",
+  data:rows
+ })
+
+}catch(err){
+  res.status(500).json({
+    status:'fail',
+    message:err.message
+  })
+}
 }
