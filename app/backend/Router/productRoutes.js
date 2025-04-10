@@ -9,8 +9,8 @@ router.route('/')
 
 
 
-router.route('/:name')
-.get(controller.deleteProduct)
+router.route('/:id')
+.delete(controller.deleteProduct)
 
 
 
