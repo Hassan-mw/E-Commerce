@@ -13,15 +13,6 @@ const uploadPath=path.join(__dirname,"../../../public")
 
 
 const multerStorage = multer.memoryStorage();
-// const multerStorage=multer.diskStorage({
-//   destination:(req,file,cb)=>{
-//     cb(null,uploadPath)
-//   },
-//   filename:(req,file,cb)=>{
-//     const ext=file.mimetype.split('/')[1];
-//     cb(null,`users_${Date.now()}.${ext}`)
-//   }
-// })
 
 const multerFilter=(req,file,cb)=>{
   if(file.mimetype.startsWith('image')){
@@ -73,11 +64,10 @@ exports.getAllProducts = async (req,res,next) => {
       }
   
       // 6. Only NOW process the file (since validation passed)
-      const ext = req.file.mimetype.split('/')[1];
-       filename = `product_${Date.now()}.${ext}`;
-      console.log(req.file,'🤒🤒😈😈🥳🥳🥳')
-       filePath = path.join(__dirname, '../../../public', `product_${Date.now()}.${ext}`);
-  
+      const ext = req.file.mimetype.split('/')[1];     //jpeg or png
+       filename = `product_${Date.now()}.${ext}`;   
+       filePath = path.join(__dirname, '../../../public', `product_${Date.now()}.${ext}`); //C:\Users\A.M.W\Desktop\e-commers\e-commers\public\product_1744267348373.jpeg 
+
       // 7. Write file to disk manually
       await fs.writeFile(filePath, req.file.buffer);
   
@@ -127,98 +117,10 @@ exports.getAllProducts = async (req,res,next) => {
       next(err);
     }
   };
-  // exports.createproduct = async (req, res, next) => {
-  //   try {
-  //     const {
-  //       name,
-  //       description,
-  //       price,
-  //       rating,
-  //       rating_count,
-  //       brand,
-  //       category,
-  //       stock,
-  //       size,
-  //       color,
-  //       weight,
-  //       dimensions,
-  //     } = req.body;
-  
-  //     // Check if all required fields are provided
-  //     if (!name || !rating || !price || !color || !size || !brand) {
-  //       return next(new AppError('All fields must be provided', 400));
-  //     }
-  
-  //     // Prepare data
-  //     const created_at = new Date();
-  //     const updated_at = new Date();
-  //     const is_active = true;
-  //     const image_url = req.file // Ensure the image URL is correct
-  
-     
-   
-  //     // SQL query to insert product into the database
-  //     const query = `
-  //       INSERT INTO products (
-  //         name, description, price, image_url, rating, rating_count, brand, 
-  //         category, stock, size, color, weight, dimensions, created_at, updated_at, is_active
-  //       )
-  //       VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16) 
-  //       RETURNING *;
-  //     `;
-  
-  //     // Insert product data
-  //     const x = await pool.query(query, [
-  //       name,
-  //       description,
-  //       price,
-  //       image_url,
-  //       rating,
-  //       rating_count,
-  //       brand,
-  //       category,
-  //       stock,
-  //       size,
-  //       color,
-  //       weight,
-  //       dimensions,
-  //       created_at,
-  //       updated_at,
-  //       is_active,
-  //     ]);
-  
-  //     // Log the query result for debugging
-
-  //     if (req.file) {
-  //       fs.unlink(req.file.path, (err) => {
-  //         if (err) console.error('Error deleting file:', err);
-  //       });
-  //     }
-  //     ret
-  //     // Return success response with the inserted product data
-  //     res.status(201).json({
-  //       status: 'success',
-  //       data: x.rows[0], // Send the inserted row
-  //     });
-  //   } catch (err) {
-  //     // Log the error to the console
-  //     console.error('Error during database insertion:', err);
-  //     if (req.file) {
-  //       fs.unlink(req.file.path, (err) => {
-  //         if (err) console.error('Error deleting file:', err);
-  //       });
-  //     }
-  
-  //     // Return an error response
-  //     res.status(500).json({
-  //       status: 'error',
-  //       message: "Can't create product",
-  //       error: err.message, // Send the actual error message
-  //     });
-  //   }
-  // };
-  
+ 
 
 
 
+exports.deleteProduct=async(req,res,next)=>{
 
+}

@@ -9,4 +9,10 @@ router.route('/')
 
 
 
+router.route('/:name')
+.get(controller.deleteProduct)
+
+
+
+
 module.exports=router
