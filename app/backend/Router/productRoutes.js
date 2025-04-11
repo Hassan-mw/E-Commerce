@@ -10,6 +10,7 @@ router.route('/')
 
 
 router.route('/:id')
+.get(controller.getProductByName)
 .delete(controller.deleteProduct)
 
 
