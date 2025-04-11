@@ -75,28 +75,29 @@ exports.getAllProducts = async (req,res,next) => {
       const query = `
         INSERT INTO products (
           name, description, price, image_url, rating, rating_count, brand, 
-          category, stock, size, color, weight, dimensions, created_at, updated_at, is_active
-        ) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16) 
+          category, stock, size, color, weight, dimensions, created_at, updated_at, is_active,url
+        ) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16,$17) 
         RETURNING *;
       `;
   
       const result = await pool.query(query, [
-        req.body.name,
+        req.body.name,//1
         req.body.description || null,
         req.body.price,
-        filename, // Store only filename (not full path)
-        req.body.rating,
+        filename, 
+        req.body.rating,//5
         req.body.rating_count || 0,
         req.body.brand,
         req.body.category || null,
         req.body.stock || 0,
-        req.body.size,
+        req.body.size,//10
         req.body.color,
         req.body.weight || null,
         req.body.dimensions || null,
         new Date(),
-        new Date(),
-        true
+        new Date(),//15
+        true,
+        req.body.url//17
       ]);
   
       res.status(201).json({
@@ -133,9 +134,8 @@ exports.getProductByName=async(req,res,next)=>{
 exports.deleteProduct=async(req,res,next)=>{
 
 try{
-  const {id}=req.params
-  console.log(id,'☜(ﾟヮﾟ☜)')
-  const {rows}=await pool.query("DELETE FROM products WHERE id=$1 RETURNING *",[id])
+  const {name}=req.params
+  const {rows}=await pool.query("DELETE FROM products WHERE name=$1 RETURNING *",[name])
 
  res.status(200).json({
   status:"success",

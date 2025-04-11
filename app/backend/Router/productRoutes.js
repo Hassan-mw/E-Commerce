@@ -9,7 +9,7 @@ router.route('/')
 
 
 
-router.route('/:id')
+router.route('/:name')
 .get(controller.getProductByName)
 .delete(controller.deleteProduct)
 
