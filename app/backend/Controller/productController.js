@@ -121,11 +121,22 @@ exports.getAllProducts = async (req,res,next) => {
  
 exports.getProductByName=async(req,res,next)=>{
   try{
-  
-
+    const {name}=req.params
+   console.log(name,'☜(ﾟヮﾟ☜)☜(ﾟヮﾟ☜)😫😣😴😮🤗')
+  const {rows} =await pool.query(`SELECT * FROM products WHERE name=$1`,[name])
+  console.log(rows,'😈👿👾🧐👽👻👿')
+  res.status(200)
+  .json({
+    status:'success',
+    data:rows
+  })
 
   }catch(err){
-
+  res.status(500)
+  .json({
+    status:"fial",
+    message:err.message
+  })
 
   }
 }
