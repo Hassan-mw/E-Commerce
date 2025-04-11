@@ -118,7 +118,16 @@ exports.getAllProducts = async (req,res,next) => {
     }
   };
  
+exports.getProductByName=async(req,res,next)=>{
+  try{
+  
 
+
+  }catch(err){
+
+
+  }
+}
 
 
 exports.deleteProduct=async(req,res,next)=>{
