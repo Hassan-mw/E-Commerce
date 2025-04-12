@@ -34,6 +34,7 @@ exports.getAllProducts = async (req,res,next) => {
     try {
      const {rows}=await pool.query("SELECT * FROM products")
       res.status(200).json({
+        length:rows.length,
         status: 'success',
         data: rows, // you can put your products array here
       });
