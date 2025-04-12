@@ -107,8 +107,12 @@ exports.getAllProducts = async (req,res,next) => {
       });
   
     } catch (err) {
-      // 9. Clean up file if any
-      // thing fails after it was written
+      console.log(err)
+      res.status(500).json({
+        status:'fail',
+        message:err.message,
+        details:err.details,
+      })
       if (filename && filePath) {
         try {
           await fs.unlink(filePath);
