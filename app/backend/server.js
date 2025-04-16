@@ -8,10 +8,10 @@ const  AppError=require('./ErrorHandler/appError')
 app.use(express.json());
 
 
-app.use((req,res,next)=>{
-    console.log(req.body)
-    next()
-})
+// app.use((req,res,next)=>{
+//     console.log(req.body)
+//     next()
+// })
 
 
 app.use('/api/products',productRoutes);
