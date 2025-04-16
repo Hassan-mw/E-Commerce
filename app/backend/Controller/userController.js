@@ -19,10 +19,10 @@ try{
 
 exports.signUp=async(req,res,next)=>{
 try{
-    console.log(req.body.name)
-const {name,email,phone}=req.body
-const {photo}=req.file
-console.log(name,email,phone)
+    
+const x=req.body;
+// const {photo}=req.file;
+console.log(x)
 const {rows}=await pool.query(`INSERT INTO users (name,phone,email,photo) VALUES ($1,$2,$3) RETURNING *`,[name,phone,email,photo])
 console.log(rows,'😔😔😓😓😒😒🤤🤤😝😝😜😜')
 
