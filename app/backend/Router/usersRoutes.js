@@ -4,7 +4,7 @@ const userController=require('./../Controller/userController')
 
 router.route('/')
 // .get(userController.getAllUsers)
-.post(userController.signUp)
+.post(userController.uploadUserPicture,userController.signUp)
 
 
 module.exports=router
