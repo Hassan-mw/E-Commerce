@@ -3,6 +3,7 @@ const express=require('express');
 const app=express()
 const Pool=require('./Pool/pool')
 const productRoutes=require('./Router/productRoutes')
+const usersRoutes=require('./Router/usersRoutes')
 const  AppError=require('./ErrorHandler/appError') 
 app.use(express.json());
 
@@ -14,6 +15,7 @@ app.use((req,res,next)=>{
 
 
 app.use('/api/products',productRoutes);
+app.use('/api/users',usersRoutes);
 
   
 
