@@ -9,7 +9,7 @@ app.use(express.urlencoded({ extended: true }));
 
 
 
-const uploadPath=path.join(__dirname,"../../../public")
+// const uploadPath=path.join(__dirname,"../../../public")
 
 
 const multerStorage = multer.memoryStorage();
