@@ -9,7 +9,7 @@ app.use(express.urlencoded({ extended: true }));
 
 
 
-// const uploadPath=path.join(__dirname,"../../../public")
+const uploadPath=path.join(__dirname,"../../../public")
 
 
 const multerStorage = multer.memoryStorage();
@@ -51,7 +51,7 @@ exports.getAllProducts = async (req,res,next) => {
     let filename = null;
     let filePath = null;
     try {
-
+       console.log(req.file,'🚚🛴🚲🚲🚈🚈🚅🚊🚅🚉🚉🚉🚊✈🛰',req.body)
       const requiredFields = ['name', 'price', 'rating', 'color', 'size', 'brand'];
       const missingFields = requiredFields.filter(field => !req.body[field]);
       
