@@ -1,17 +1,17 @@
 const express=require('express')
 const router=express.Router();
-const controller=require('./../Controller/productController')
+const productController=require('./../Controller/productController')
 
 
 router.route('/')
-.get(controller.getAllProducts)
-.post(controller.uploadProductPicture,controller.createproduct)
+.get(productController.getAllProducts)
+.post(productController.uploadProductPicture,productController.createproduct)
 
 
 
 router.route('/:name')
-.get(controller.getProductByName)
-.delete(controller.deleteProduct)
+.get(productController.getProductByName)
+.delete(productController.deleteProduct)
 
 
 
