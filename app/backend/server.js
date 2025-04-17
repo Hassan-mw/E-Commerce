@@ -5,6 +5,7 @@ const Pool=require('./Pool/pool')
 const productRoutes=require('./Router/productRoutes')
 const usersRoutes=require('./Router/usersRoutes')
 const reviewRoutes=require('./Router/reviewRoutes')
+const favouriteRoutes=require('./Router/favouriteRoutes')
 const  AppError=require('./ErrorHandler/appError') 
 app.use(express.json());
 
