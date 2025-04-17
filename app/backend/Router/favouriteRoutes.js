@@ -3,10 +3,11 @@ const router=express.Router();
 const favouriteController=require('./../Controller/favouriteController')
 
 router.route('/')
-.post(favouriteController.createFavourite)
+.get(favouriteController.getAllFavouriteProduct)
+.post(favouriteController.createFavouriteProduct)
 
 router.route('/:id')
-.post(favouriteController.deleteFavourite)
+.post(favouriteController.deleteFavouriteProduct)
 
 
 module.exports=router
