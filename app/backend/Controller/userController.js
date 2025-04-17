@@ -11,9 +11,24 @@ const path = require('path');
 
 exports.getAllUsers=async()=>{
 try{
-
+const {rows}=await pool.query(`SELECT * FROM users`)
+console.log(rows)
+if(!rows){
+  res.status(500).json({
+    status:'fail',
+    message:'Somwthing went wrong'
+  })
+}
+res.status(200).json({
+  status:'success',
+  length:rows.length,
+  data:rows
+})
 }catch(err){
-    
+    res.status(500).json({
+      status:'fail',
+      message:err.message
+    })
 }
 }
 
