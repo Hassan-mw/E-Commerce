@@ -1,4 +1,4 @@
-require('dotenv').config();
+// require('dotenv').config();
 const express=require('express');
 const app=express()
 const Pool=require('./Pool/pool')
@@ -9,7 +9,7 @@ app.use(express.json());
 
 
 
-
+// console.log(process.env.PORT,'☜(ﾟヮﾟ☜)☜(ﾟヮﾟ☜)')
 
 app.use('/api/products',productRoutes);
 app.use('/api/users',usersRoutes);
