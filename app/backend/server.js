@@ -44,15 +44,15 @@ console.log(`server was runing on port ${process.env.PORT}`)
 
 // ! GLobal Error Middleware
 // Global error handler for undefined routes (Page Not Found)
-// app.use((req, res, next) => {
-//   res.status(404).json({
-//     status: 'fail',
-//     message: `Can't find ${req.originalUrl} on this server`
-//   });
-// });
+app.use((req, res, next) => {
+  res.status(404).json({
+    status: 'fail',
+    message: `Can't find ${req.originalUrl} on this server`
+  });
+});
 
 
-// app.use((err,req,res,next)=>{
+app.use((err,req,res,next)=>{
 
-//   res.status(500).send("some thing was broken!")
-// })
+  res.status(500).send("some thing was broken!")
+})
