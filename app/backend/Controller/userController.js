@@ -9,7 +9,7 @@ const path = require('path');
 
 
 
-exports.getAllUsers=async()=>{
+exports.getAllUsers=async(req,res,next)=>{
 try{
 const {rows}=await pool.query(`SELECT * FROM users`)
 console.log(rows)
