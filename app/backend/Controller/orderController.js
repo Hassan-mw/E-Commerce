@@ -9,7 +9,7 @@ exports.getAllOrder=async(req,res,next)=>{
   res.status(200).json({
     status:'success',
     data:rows[0]
- })
+ }) 
     }catch(err){
          res.status(500).json({
         status:'fail',
