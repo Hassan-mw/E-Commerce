@@ -17,9 +17,9 @@ exports.getAllPaymentData=async(req,res,next)=>{
 
 exports.createPaymentData=async(req,res,next)=>{
     try{
-           const {user_id,product_id,total_price,status}=req.body
+           const {order_id,user_id,method}=req.body
          
-     const {rows}=await pool.query(`INSERT INTO orders (user_id,product_id,total_price,status) VALUES ($1,$2,$3,$4) RETURNING *`,[user_id,product_id,total_price,status])
+     const {rows}=await pool.query(`INSERT INTO payments (order_id,user_id,method) VALUES ($1,$2,$3) RETURNING *`,[order_id,user_id,method])
    
    
         res.status(201).json({
