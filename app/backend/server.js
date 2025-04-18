@@ -8,6 +8,7 @@ const reviewRoutes=require('./Router/reviewRoutes')
 const cartRoutes=require('./Router/cartRoutes')
 const favouriteRoutes=require('./Router/favouriteRoutes')
 const orderRoutes=require('./Router/orderRoutes')
+const paymentRoutes=require('./Router/paymentRoutes')
 const  AppError=require('./ErrorHandler/appError') 
 app.use(express.json());
 
@@ -21,6 +22,7 @@ app.use('/api/reviews',reviewRoutes);
 app.use('/api/favourites',favouriteRoutes);
 app.use('/api/carts',cartRoutes);
 app.use('/api/order',orderRoutes);
+app.use('/api/order',paymentRoutes);
 
   
 
