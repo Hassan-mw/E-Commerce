@@ -22,7 +22,7 @@ app.use('/api/reviews',reviewRoutes);
 app.use('/api/favourites',favouriteRoutes);
 app.use('/api/carts',cartRoutes);
 app.use('/api/order',orderRoutes);
-app.use('/api/order',paymentRoutes);
+app.use('/api/payment',paymentRoutes);
 
   
 
