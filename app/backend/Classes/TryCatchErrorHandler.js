@@ -1,11 +1,14 @@
-class CatchError {
-constructor(res,error){
-    res.status(500).json({
-        status:'fail',
-        message:error.message
-    })
-}
+// class CatchError {
+// constructor(res,error){
+//     this.res=res
+//     this.error=error
+//     console.log('🚥🚥🚩🏴‍☠️🏴‍☠️🏴🏴🏴🏳🏳🏳')
+//     res.status(500).json({
+//         status:'fail',
+//         message:error.message
+//     })
+// }
 
-}
+// }
 
-module.exports=CatchError
+// module.exports=new CatchError

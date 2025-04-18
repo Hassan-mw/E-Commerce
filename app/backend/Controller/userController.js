@@ -53,14 +53,12 @@ exports.signUp=async (req,res,next) => {
   let filePath;
 try{
    
-// const {name,email,phone}=req.body
-// const {photo}=req.file;
+
 const ext=req.file.mimetype.split('/')[1]
 const fileName=`user_${Date.now()}.${ext}`
  filePath=path.join(__dirname,'../../../public',fileName)
 await fs.writeFile(filePath,req.file.buffer) 
-const {rows}=await pool.query(`INSERT INTO users (name,phone,email,image) VALUES ($1,$2,$3,$4) RETURNING *`,
-  [req.body.name,req.body.phone,req.body.email,fileName])
+const {rows}=await pool.query(`INSERT INTO users (name,phone,email,image) VALUES ($1,$2,$3,$4) RETURNING *`, [req.body.name,req.body.phone,req.body.email,fileName])
 
 
  const token=jwt.sign({id:rows.id},'abcdefghikl',{expiresIn:90})
