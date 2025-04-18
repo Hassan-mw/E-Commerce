@@ -6,6 +6,7 @@ const productRoutes=require('./Router/productRoutes')
 const usersRoutes=require('./Router/usersRoutes')
 const reviewRoutes=require('./Router/reviewRoutes')
 const favouriteRoutes=require('./Router/favouriteRoutes')
+const orderRoutes=require('./Router/orderRoutes')
 const  AppError=require('./ErrorHandler/appError') 
 app.use(express.json());
 
