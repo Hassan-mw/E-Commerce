@@ -3,7 +3,13 @@ const router=express.Router();
 const orderController=require('./../Controller/orderController')
 
 router.route('/')
-.post(orderController.crea)
+.get(orderController.getAllOrder)
+.post(orderController.createOrder)
+
+
+router.route('/:id')
+.delete(orderController.deleteOrder)
+
 
 
 module.exports=router
