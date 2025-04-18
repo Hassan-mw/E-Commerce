@@ -9,6 +9,7 @@ const cartRoutes=require('./Router/cartRoutes')
 const favouriteRoutes=require('./Router/favouriteRoutes')
 const orderRoutes=require('./Router/orderRoutes')
 const paymentRoutes=require('./Router/paymentRoutes')
+const shippingRouter=require('./Router/shippingRouter')
 const  AppError=require('./ErrorHandler/appError') 
 app.use(express.json());
 
@@ -24,7 +25,7 @@ app.use('/api/carts',cartRoutes);
 app.use('/api/order',orderRoutes);
 app.use('/api/payment',paymentRoutes);
 app.use('/api/payment',paymentRoutes);
-app.use('/api/shipping',shipping);
+app.use('/api/shipping',shippingRouter);
 
   
 
