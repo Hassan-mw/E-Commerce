@@ -1,12 +1,13 @@
+const pool = require("../Pool/pool")
 
 
 exports.getAllShippingData=async(req,res,next)=>{
     try{
 
 
-        const {rows}=await pool.query(`SELECT * FROM payments`)
+        const {rows}=await pool.query(`SELECT * FROM shippings`)
         if(!rows){
-           new AppError('No payment for product',400)
+           new AppError('No shipping for product',400)
         }
         res.status(200).json({
            staus:'success',
@@ -23,9 +24,9 @@ exports.getAllShippingData=async(req,res,next)=>{
 
 exports.createShippingData=async(req,res,next)=>{
     try{
-           const {user_id,product_id}=req.body
+           const {user_id,product_id,order_id,address,city,country}=req.body
    
-        const {rows}=await pool.query(`INSERT INTO favourites(user_id,product_id) VALUES($1,$2) RETURNING *`,[user_id,product_id])
+        const {rows}=await pool.query(`INSERT INTO shippings(user_id,product_id,order_id,address,city,country) VALUES($1,$2,$3,$4,$5,$6) RETURNING *`,[user_id,product_id,order_id,address,city,country])
         console.log(rows)
         res.status(201).json({
            staus:'success',
