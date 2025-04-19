@@ -4,4 +4,5 @@ const shippingController=require('./../Controller/shippingController')
 
 router.route('/')
 .get(shippingController.getAllShippingData)
+.post(shippingController.createShippingData)
 module.exports=router
