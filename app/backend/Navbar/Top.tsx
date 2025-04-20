@@ -1,14 +1,13 @@
 import React from 'react'
+import TopLeft from './TopLeft'
+import TopRight from './TopRight'
 
 const Top = () => {
   return (
     <div className='w-full flex items-center justify-center'>
-    <div className='w-full flex items-center justify-center'>
-        <div></div>
-    </div>
-    <div className='w-full flex items-center justify-between'>
-
-    </div>
+   <TopLeft/>
+   <TopRight/>
+    
     </div>
   )
 }
