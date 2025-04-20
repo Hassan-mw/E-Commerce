@@ -4,7 +4,7 @@ import Bottom from './Bottom'
 
 const Navbar = () => {
   return (
-    <div className='w-full flex items-center justify-center'>
+    <div className='w-full flex flex-col items-center justify-center py-6'>
      {/*//! Top  */}
      <Top/>
      {/*//! Bottom  */}
