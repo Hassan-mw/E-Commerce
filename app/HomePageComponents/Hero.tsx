@@ -7,7 +7,7 @@ const Hero = () => {
     <div className='w-full h-full'>
     <div className='absolute w-full h-full'>
      <Image fill className='object-cover h-full w-full' src="/Home_page.png" alt='Home-Page-Image'/>
-      <div className='relative top-1/2 left-23%'><HeroPageData/></div>
+      <div className='fixed top-[40%] left-4'><HeroPageData/></div>
     </div>
     </div>
   )

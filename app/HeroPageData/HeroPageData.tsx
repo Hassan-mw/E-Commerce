@@ -2,10 +2,13 @@ import React from 'react'
 
 const HeroPageData = () => {
   return (
-    <div className='h-36 w-48 bg-red-700'>
-d
+    <div className='w-full sm:w-[400px] flex flex-col space-y-5 '>
+      <div  className='text-7xl font-bold'>Furnimal</div>
+      <div  className='text-3xl font-semibold '>Furniture Store Shopify Theme</div>
+      <div  className='text-lg  text-[#66666b]'> A best template for different purposes that creativity, efficiency, and diversity.</div>
     </div>
   )
+ 
 }
 
 export default HeroPageData
