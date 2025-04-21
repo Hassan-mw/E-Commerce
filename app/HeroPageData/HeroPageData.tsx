@@ -15,7 +15,7 @@ const HeroPageData = () => {
       <div  className={`${jost.className} text-7xl font-bold`}>Furnimal</div>
       <div  className={`${jost.className} text-3xl font-semibold `}>Furniture Store Shopify Theme</div>
       <div  className={`${jost.className} text-md  text-[#66666b]`}> A best template for different purposes that creativity, efficiency, and diversity.</div>
-       <Button href="/" style="bg-blue-500 text-white rounded-md hover:text-blue-700 duration-500"   >Buy Now</Button>
+       <Button href="/" style="bg-blue-500 w-24 flex items-cener justify-center text-white rounded-md hover:text-blue-700 duration-500"   >Buy Now</Button>
     </div>
   )
  

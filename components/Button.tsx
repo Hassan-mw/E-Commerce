@@ -5,7 +5,7 @@ import React from 'react'
 
 const Button = ({style,children,href}:ButtonDataTYpe) => {
   return (
-    <Link href={href} className={style}>
+    <Link href={href} className={${} style}>
         {children}
     </Link>
   )
