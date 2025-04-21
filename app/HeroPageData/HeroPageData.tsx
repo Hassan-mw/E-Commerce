@@ -1,6 +1,7 @@
 import React from 'react'
 
 import { Jost } from 'next/font/google'
+import Button from '@/components/Button'
 
 const jost=Jost({
   weight:['500'],
@@ -14,7 +15,7 @@ const HeroPageData = () => {
       <div  className={`${jost.className} text-7xl font-bold`}>Furnimal</div>
       <div  className={`${jost.className} text-3xl font-semibold `}>Furniture Store Shopify Theme</div>
       <div  className={`${jost.className} text-md  text-[#66666b]`}> A best template for different purposes that creativity, efficiency, and diversity.</div>
-       
+       <Button/>
     </div>
   )
  
