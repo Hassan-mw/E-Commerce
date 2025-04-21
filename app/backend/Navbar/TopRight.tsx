@@ -18,10 +18,10 @@ const TopRight = () => {
     <div className='hover:cursor-pointer'>Contack us</div>
     <div className='hover:cursor-pointer'>Help & support</div>
      </div>
-     <div style={{fontWeight:300}} className={`${jost.className} flex items-center justify-center gap-x-4  text-[#C4C4C4]`}>
- <span className='hover:cursor-pointer hover:text-slate-500 duration-500'> <FaFacebookF /></span>
- <span className='hover:cursor-pointer  hover:text-slate-500 duration-500'>  <RiInstagramFill /></span>
- <span className='hover:cursor-pointer  hover:text-slate-500 duration-500'>   <FaTwitter /></span>
+     <div style={{fontWeight:300}} className={`${jost.className} flex items-center justify-center gap-x-4  text-[#b1afaf]`}>
+ <span className='hover:cursor-pointer hover:text-slate-400 duration-500'> <FaFacebookF /></span>
+ <span className='hover:cursor-pointer  hover:text-slate-400 duration-500'>  <RiInstagramFill /></span>
+ <span className='hover:cursor-pointer  hover:text-slate-400 duration-500'>   <FaTwitter /></span>
      </div>
 </div>
   )
