@@ -1,9 +1,9 @@
 import React from 'react'
 
-const Button = () => {
+const Button = ({style}:buttonStyles) => {
   return (
-    <div>
-        fgfd
+    <div className={style}>
+        
     </div>
   )
 }
