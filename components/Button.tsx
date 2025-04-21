@@ -1,10 +1,13 @@
+'use client'
+import { ButtonDataTYpe } from '@/app/Types/dataType'
+import Link from 'next/link'
 import React from 'react'
 
-const Button = ({style}:buttonStyles) => {
+const Button = ({style,children,href}:ButtonDataTYpe) => {
   return (
-    <div className={style}>
-        
-    </div>
+    <Link href={href} className={style}>
+        {children}
+    </Link>
   )
 }
 
