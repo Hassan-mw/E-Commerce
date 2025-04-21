@@ -22,7 +22,7 @@ import {
 import { FiSearch } from "react-icons/fi";
 const BottomLeft = () => {
   return (
-    <div className='w-full flex items-center justify-center gap-x-12'>
+    <div className='w-full flex items-center justify-start gap-x-12 '>
     <div className='flex items-center justify-center gap-x-3'><Image height={20} width={20} src="/category_iamge.png" alt="logo" /><span className={`${jost.className} text-white text-2xl`}>Categories</span></div>
     <div className='flex items-center justify-center text-white '>
   

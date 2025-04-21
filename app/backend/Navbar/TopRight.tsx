@@ -11,8 +11,8 @@ const jost=Jost({
 
 const TopRight = () => {
   return (
-    <div className='w-full flex items-center justify-center gap-x-12'>
-     <div style={{fontWeight:300}} className={`${jost.className} flex items-center justify-center gap-x-8 text-md text-[#555555]`}>
+    <div className='w-full flex items-center justify-end  gap-x-16'>
+     <div style={{fontWeight:300}} className={`${jost.className}  w-[80%]  flex items-center justify-between gap-x-8 text-md text-[#555555]`}>
     <div>About us</div>
     <div>Blog</div>
     <div>Contack us</div>

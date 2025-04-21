@@ -13,7 +13,7 @@ import { MdPerson } from "react-icons/md";
 
 const BottomRight = () => {
   return (
-    <div className='w-full flex items-center justify-center gap-x-12 text-white'>
+    <div className='w-full flex items-center justify-end gap-x-12 text-white'>
     <div className='flex items-center justify-center gap-x-2'><MdPerson /><span>Sign in</span></div>
     <div className='flex items-center justify-center gap-x-2'><GoHeart /> <span>Favourites</span></div>
     <div className='flex items-center justify-center gap-x-2'><FaCartArrowDown  /><span>Card</span></div>
