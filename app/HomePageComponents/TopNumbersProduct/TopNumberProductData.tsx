@@ -12,9 +12,9 @@ const jost=Jost({
 const TopNUmberProductData = () => {
     const productData=[
       {id:1,name:"Gaming Chair",details:"Black gaming chair confortable ",rating:36,price:82,image:"top_hundred_photo_1.png"},
-      {id:2,name:"Black Sneakers",details:"Black color sneakers for men",rating:"44",price:55,image:"top_hundred_photo_2.png"},
       {id:3,name:"Black Sneakers",details:"Black color sneakers for men",rating:"44",price:55,image:"top_hundred_photo_3.png"},
       {id:4,name:"Black Sneakers",details:"Black color sneakers for men",rating:"44",price:55,image:"top_hundred_photo_4.png"},
+      {id:2,name:"Black Sneakers",details:"Black color sneakers for men",rating:"44",price:55,image:"top_hundred_photo_2.png"},
         // {id:1,name:"Gaming Controller",details:"Pink gaming controller for girls",rating:"66",price:56,image:"trending_product_1.png"},
         // {id:4,name:"Gaming Chair",details:"Black gaming chair confortable ",rating:36,price:82,image:"trending_product_3.png"},
     ]
@@ -30,11 +30,24 @@ const TopNUmberProductData = () => {
     {/* //! IMAGE */}
 
 <Image height={444} width={444} src={`/${data.image}`} className='object-cover w-full h-full sm:max-h-80   object-top rounded-t-md' alt='product_image' />
-   <div className='bg-white shadow-2xl border border-slate-100 rounded-b-md  w-full flex   items-center justify-between p-3 text-white'>
-    <div className='flex flex-col space-y-1 items-start justify-start'>
-    <div className={`${jost.className}`}></div>
-    </div>
+   <div className='bg-white shadow-2xl border border-slate-100 rounded-b-md  w-full flex flex-col  items-start justify-start space-y-1 p-3 text-white'>
 
+    {/* //!  Name */}
+    <div  style={{fontWeight:300}} className={`${jost.className} text-md text-black font-semibold `}>Mango</div>
+    {/* //!  Product_short_detail */}
+    <div  style={{fontWeight:100}} className={`${jost.className}  text-xs text-[#555555] font-semibold `}> Kimono & Caftan -Black Regular fit </div>
+
+
+    {/* //!  Product_Rating */}
+    <div   className={`${jost.className} text-xs text-slate-400 font-semibold flex items-center justify-center gap-x-3 `}><span style={{fontWeight:200}} className='text-xs'>⭐⭐⭐⭐</span><span className='text-thin'>(34)</span> </div>
+    {/* //!  Priceing */}
+    <div className={`flex items-center justify-center gap-x-3`}>
+        <span  style={{fontWeight:500}}  className='text-sm text-red-600'>$228.99</span>
+        <span  style={{fontWeight:400}} className='text-slate-500 text-[12px]'>$54.99</span>
+        <span className=' rounded-xs text-red-500 text-[11px] '>-40%</span>
+    
+    
+    </div>
     </div>
     </div>
       )}
