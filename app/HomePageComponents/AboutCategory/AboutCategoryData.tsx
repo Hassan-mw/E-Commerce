@@ -14,31 +14,32 @@ const jost=Jost({
 const AboutCategoryData = () => {
   return (
     <div className='w-full flex items-center justify-center'>
-    <div className='w-full h-[350px] max-w-screen-xl grid grid-cols-2 gap-6'>
-     <div className='flex items-center justify-center w-full h-full'>
+    <div className='w-full  max-w-screen-xl grid grid-cols-1 sm:grid-cols-2 gap-6'>
+     {/* //! 1 */}
+     <div className='flex max-h-[350px] items-center justify-center w-full h-full rounded-md'>
       {/* Text */}
-      <div className='w-full h-full flex flex-col items-start justify-start p-3 bg-red-500 text-white'>
+      <div className='w-[70%] h-full flex flex-col space-y-5 items-start justify-start p-3 bg-[#BF2E3B] text-white'>
      <div className={`${jost.className} text-xl`}>Never-Ending Summer</div>
      <div style={{fontWeight:300}} className={`${jost.className} text-md`}>Throwback Shirts & all-day dressed</div>
      <div style={{fontWeight:200}} className={`${jost.className} text-xs border-b border-white`}>Explore all category</div>
       </div>
       <div className='w-full'>
-   <Image height={444} width={444} src="/red_dress.png" alt='red-dress'/>
+   <Image height={444} width={444} className='object-cover  max-h-[350px] h-full w-full object-top' src="/red_dress.png" alt='red-dress'/>
       </div>
      </div>
-    <div className='w-full h-full max-w-screen-xl flex items-center justify-center'>
-     <div className='flex items-center justify-center w-full h-full'>
+     {/* //! 2 */}
+     <div className='flex max-h-[350px] items-center justify-center w-full h-full rounded-md'>
       {/* Text */}
-      <div className='w-1/2 h-full flex flex-col items-start justify-start p-3 bg-red-500 text-white'>
+      <div className='w-[70%] h-full flex flex-col space-y-5 items-start justify-start p-3 bg-[#1D5159] text-white'>
      <div className={`${jost.className} text-xl`}>Never-Ending Summer</div>
      <div style={{fontWeight:300}} className={`${jost.className} text-md`}>Throwback Shirts & all-day dressed</div>
      <div style={{fontWeight:200}} className={`${jost.className} text-xs border-b border-white`}>Explore all category</div>
       </div>
       <div className='w-full'>
-   <Image height={444} width={444} src="/red_dress.png" alt='red-dress'/>
+   <Image height={444} width={444} className='object-cover  max-h-[350px] h-full w-full object-top' src="/red_dress.png" alt='red-dress'/>
       </div>
      </div>
-    </div>
+   
     </div>
     </div>
   )
