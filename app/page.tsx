@@ -3,6 +3,7 @@ import Hero from './HomePageComponents/Hero'
 import FlasDeals from './HomePageComponents/FlashDeals/FlasDeals'
 import TrendingProduct from './HomePageComponents/TrendingProduct/TrendingProduct'
 import TopNumberProduct from './HomePageComponents/TopNumbersProduct/TopNumberProduct'
+import AboutCategory from './HomePageComponents/AboutCategory/AboutCategory'
 
 
 const page = () => {
@@ -12,6 +13,7 @@ const page = () => {
     <FlasDeals/>
     <TrendingProduct/>
     <TopNumberProduct/>
+    <AboutCategory/>
     </div>
   )
 }
