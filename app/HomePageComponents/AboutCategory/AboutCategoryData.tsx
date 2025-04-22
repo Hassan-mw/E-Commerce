@@ -31,12 +31,12 @@ const AboutCategoryData = () => {
      <div className='flex max-h-[350px] items-center justify-center w-full h-full rounded-md'>
       {/* Text */}
       <div className='w-[70%] h-full flex flex-col space-y-5 items-start justify-start p-3 bg-[#1D5159] text-white'>
-     <div className={`${jost.className} text-xl`}>Never-Ending Summer</div>
-     <div style={{fontWeight:300}} className={`${jost.className} text-md`}>Throwback Shirts & all-day dressed</div>
+     <div className={`${jost.className} text-xl`}>Famous sport brands</div>
+     <div style={{fontWeight:300}} className={`${jost.className} text-md`}>Get in gym essentials</div>
      <div style={{fontWeight:200}} className={`${jost.className} text-xs border-b border-white`}>Explore all category</div>
       </div>
-      <div className='w-full'>
-   <Image height={444} width={444} className='object-cover  max-h-[350px] h-full w-full object-top' src="/red_dress.png" alt='red-dress'/>
+      <div className='w-full h-full'>
+   <Image height={444} width={444} className='object-cover   h-full w-full ' src="/blue_dress.png" alt='red-dress'/>
       </div>
      </div>
    
