@@ -39,11 +39,11 @@ const TopNUmberProductData = () => {
 
 
     {/* //!  Product_Rating */}
-    <div   className={`${jost.className} text-xs text-slate-400 font-semibold flex items-center justify-center gap-x-3 `}><span style={{fontWeight:200}} className='text-xs'>⭐⭐⭐⭐</span><span className='text-thin'>(34)</span> </div>
+    <div   className={`${jost.className} text-xs text-[#555555] font-semibold flex items-center justify-center gap-x-3 `}><span style={{fontWeight:200}} className='text-xs'>⭐⭐⭐⭐</span><span className='text-thin'>(34)</span> </div>
     {/* //!  Priceing */}
     <div className={`flex items-center justify-center gap-x-3`}>
-        <span  style={{fontWeight:500}}  className='text-sm text-red-600'>$228.99</span>
-        <span  style={{fontWeight:400}} className='text-slate-500 text-[12px]'>$54.99</span>
+        <span  style={{fontWeight:500}}  className='text-xs text-red-600'>$228.99</span>
+        <span  style={{fontWeight:400}} className='text-[#555555] text-[12px]'>$54.99</span>
         <span className=' rounded-xs text-red-500 text-[11px] '>-40%</span>
     
     
