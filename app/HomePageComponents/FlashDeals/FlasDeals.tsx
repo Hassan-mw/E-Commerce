@@ -11,8 +11,8 @@ const jost=Jost({
 const FlasDeals = () => {
   return (
     <div className='w-full flex items-center justify-center bg-white py-9'>
-    <div className='w-full max-w-screen-xl  flex flex-col items-center justify-center'>
-     <div style={{fontWeight:200}} className={`${jost.className} w-full flex items-center justify-start text-3xl px-10`}>FLash Sales</div>
+    <div className='w-full max-w-screen-xl px-10 flex flex-col items-center justify-center'>
+     <div style={{fontWeight:200}} className={`${jost.className} w-full flex items-center justify-start text-3xl `}>FLash Sales</div>
       <FlashSalesData/> 
     </div>
     </div>
