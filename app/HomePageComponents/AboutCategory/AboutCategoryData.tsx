@@ -1,3 +1,4 @@
+import { AboutCategoryDataTYpe } from '@/app/Types/dataType'
 import { Jost } from 'next/font/google'
 import Image from 'next/image'
 import React from 'react'
@@ -11,11 +12,11 @@ const jost=Jost({
 })
 
 
-const AboutCategoryData = ({data}:) => {
+const AboutCategoryData = ({data}:AboutCategoryDataTYpe) => {
   return (
     <div className=' w-full flex items-center justify-center'>
     <div className='w-full  max-w-screen-xl grid grid-cols-1 sm:grid-cols-2 gap-6'>
-    {data.map((data,index)=>
+    {data.map((data,index:number)=>
    
      <div key={data.id} className='flex max-h-[350px] items-center justify-center w-full h-full rounded-md'>
    
