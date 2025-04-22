@@ -1,10 +1,19 @@
+import { Jost } from 'next/font/google'
 import React from 'react'
+import FlashSalesData from './FlashSalesData'
+
+const jost=Jost({
+  weight:['500'],
+  subsets:['latin']
+})
+
 
 const FlasDeals = () => {
   return (
-    <div className='w-full flex items-center justify-center'>
-    <div className='w-full max-w-screen-xl bg-red-700 flex items-center justify-center'>
-
+    <div className='w-full flex items-center justify-center bg-white py-9'>
+    <div className='w-full max-w-screen-xl  flex flex-col items-center justify-center'>
+     <div style={{fontWeight:200}} className={`${jost.className} w-full flex items-center justify-start text-3xl px-10`}>FLash Sales</div>
+      <FlashSalesData/> 
     </div>
     </div>
   )
