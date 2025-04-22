@@ -23,7 +23,7 @@ const TrendingProductData = () => {
         productData.map((data,index)=>
       
   <div key={data.id} className='bg-white hover:cursor-pointer rounded-md flex flex-col items-center justify-center  w-full'>
-  
+   
 
     {/* //! IMAGE */}
     
