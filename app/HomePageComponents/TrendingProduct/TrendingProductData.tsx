@@ -17,7 +17,7 @@ const TrendingProductData = () => {
         // {id:4,name:"Gaming Chair",details:"Black gaming chair confortable ",rating:36,price:82,image:"trending_product_3.png"},
     ]
   return (
-    <div className='w-full  grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3   sm:gap-7 lg:gap-12 py-9'>
+    <div className='w-full space-y-7 md:space-y-0 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3   sm:gap-7 lg:gap-12 py-9'>
         {
 
         productData.map((data,index)=>
