@@ -11,13 +11,15 @@ const jost=Jost({
 
 const TopNUmberProductData = () => {
     const productData=[
-      {id:3,name:"Gaming Chair",details:"Black gaming chair confortable ",rating:36,price:82,image:"trending_product_3.png"},
-      {id:2,name:"Black Sneakers",details:"Black color sneakers for men",rating:"44",price:55,image:"trending_product_2.png"},
-        {id:1,name:"Gaming Controller",details:"Pink gaming controller for girls",rating:"66",price:56,image:"trending_product_1.png"},
+      {id:1,name:"Gaming Chair",details:"Black gaming chair confortable ",rating:36,price:82,image:"top_hundred_photo_1.png"},
+      {id:2,name:"Black Sneakers",details:"Black color sneakers for men",rating:"44",price:55,image:"top_hundred_photo_2.png"},
+      {id:3,name:"Black Sneakers",details:"Black color sneakers for men",rating:"44",price:55,image:"top_hundred_photo_2.png"},
+      {id:4,name:"Black Sneakers",details:"Black color sneakers for men",rating:"44",price:55,image:"top_hundred_photo_2.png"},
+        // {id:1,name:"Gaming Controller",details:"Pink gaming controller for girls",rating:"66",price:56,image:"trending_product_1.png"},
         // {id:4,name:"Gaming Chair",details:"Black gaming chair confortable ",rating:36,price:82,image:"trending_product_3.png"},
     ]
   return (
-    <div className='w-full  grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3   sm:gap-7 lg:gap-12 py-9'>
+    <div className='w-full  grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4   sm:gap-7 lg:gap-12 py-9'>
         {
 
         productData.map((data,index)=>
