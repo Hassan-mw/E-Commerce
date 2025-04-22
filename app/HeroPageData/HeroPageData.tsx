@@ -11,7 +11,7 @@ const jost=Jost({
 
 const HeroPageData = () => {
   return (
-    <div className={`${jost.className} w-full sm:w-[500px] md:w-full flex flex-col space-y-2 `}>
+    <div className={`${jost.className} w-full sm:w-[500px] md:w-full flex flex-col space-y-2 pl-7 `}>
       <div  className={`${jost.className} text-7xl font-bold`}>Furnimal</div>
       <div  className={`${jost.className} text-3xl font-semibold `}>Furniture Store Shopify Theme</div>
       <div  className={`${jost.className} text-md  text-[#66666b]`}> A best template for different purposes that creativity, efficiency, and diversity.</div>
