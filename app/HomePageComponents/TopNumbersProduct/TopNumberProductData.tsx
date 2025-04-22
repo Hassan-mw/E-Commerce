@@ -9,7 +9,7 @@ const jost=Jost({
 })
 
 
-const TrendingProductData = () => {
+const TopNUmberProductData = () => {
     const productData=[
       {id:3,name:"Gaming Chair",details:"Black gaming chair confortable ",rating:36,price:82,image:"trending_product_3.png"},
       {id:2,name:"Black Sneakers",details:"Black color sneakers for men",rating:"44",price:55,image:"trending_product_2.png"},
@@ -47,4 +47,4 @@ const TrendingProductData = () => {
   )
 }
 
-export default TrendingProductData
+export default TopNUmberProductData
