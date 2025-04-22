@@ -9,8 +9,8 @@ const AboutCategory = () => {
     {id:2,title:'Famous sport brandsNever-Ending Summer',belowTitle:'Get in gym essentialsThrowback Shirts & all-day dressed',image:'bluedianne_dress.png',style:'bg-[#1D5159]'}
   ]
   const data2=[
-    {id:1,title:'The Pinky Barbie',belowTitle:'Lets play  dressed up',image:'pink_dress.png',style:'bg-[#D11FB5]'},
-    {id:2,title:'Best Seller Dress',belowTitle:'poolside glam include',image:'blue_dress.png',style:'bg-[#0186C4]'}
+    {id:1,title:'The Pinky Barbie',belowTitle:'Lets play  dressed up & glow',image:'pink_dress.png',style:'bg-[#D11FB5]'},
+    {id:2,title:'Best Seller Dress',belowTitle:'poolside glam include and beautyfull',image:'blue_dress.png',style:'bg-[#0186C4]'}
   ]
   return (
     <div className='hidden lg:block'>
