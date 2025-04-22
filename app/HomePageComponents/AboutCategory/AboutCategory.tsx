@@ -1,6 +1,7 @@
 import { Jost } from 'next/font/google'
 import React from 'react'
 import AboutCategoryData from './AboutCategoryData'
+import MobileShow from './MobileShow'
 
 const jost=Jost({
   weight:['500'],
