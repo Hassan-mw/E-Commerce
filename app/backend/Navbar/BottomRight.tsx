@@ -2,12 +2,12 @@ import { Jost } from 'next/font/google'
 
 
 import { RiInstagramFill } from "react-icons/ri";
-import { FaCartArrowDown, FaFacebookF, FaTwitter } from "react-icons/fa6";
 
 const jost=Jost({
   weight:['500'],
   subsets:['latin']
 })
+import { FaCartArrowDown, FaFacebookF, FaTwitter } from "react-icons/fa6";
 import { GoHeart } from "react-icons/go";
 import { MdPerson } from "react-icons/md";
 
