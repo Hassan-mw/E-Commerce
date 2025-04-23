@@ -37,7 +37,7 @@ const MobileShow = () => {
     <div style={{fontWeight:300}} className={`${jost.className} text-md text-[#465D6B]`}>Snap on a magnatic case,wallet, or both.And get fater wireless charging.</div>
      </div>
      <div>
-        <Image height={333} width={333} className='object-cover h-full w-full' src="/Iphone.png" alt='Iphone'/>
+        <Image height={333} width={333} className='object-cover h-full w-full' src="/sneakers_set.png" alt='Iphone'/>
      </div>
      </CarouselItem>
     
