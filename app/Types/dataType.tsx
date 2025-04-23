@@ -7,7 +7,7 @@ export interface ButtonDataTYpe{
 }
 
 interface AboutCategorySubDataType{
-data:[]
+      
      id:number;
     title:string;
     belowTitle:string;
@@ -17,7 +17,7 @@ data:[]
 }
 
 export interface AboutCategoryDataTYpe{
-
+ 
     data:[AboutCategorySubDataType]
    
 }
