@@ -19,10 +19,10 @@ const jost=Jost({
   
 const MobileShow = () => {
   return (
-    <div className='w-full flex items-center justify-between px-20 bg-[#F7DDD0] rounded-md'>
-      <Carousel>
-  <CarouselContent>
-    <CarouselItem>
+    // <div className='w-full flex items-center justify-between px-20 bg-[#F7DDD0] rounded-md'>
+      <Carousel className='pb-22'>
+  <CarouselContent className='bg-[#F7DDD0] max-h-80 w-full'>
+    <CarouselItem  className='w-full flex items-center justify-between px-30 bg-[#F7DDD0] rounded-md'>
      <div className=' flex flex-col items-start justify-start space-y-2'>
     <div className={`${jost.className} text-2xl text-[#465D6B]`}>MAGSAFE</div>
     <div style={{fontWeight:300}} className={`${jost.className} text-md text-[#465D6B]`}>Snap on a magnatic case,wallet, or both.And get fater wireless charging.</div>
@@ -31,7 +31,7 @@ const MobileShow = () => {
         <Image height={333} width={333} className='object-cover h-full w-full' src="/Iphone.png" alt='Iphone'/>
      </div>
      </CarouselItem>
-    <CarouselItem>
+    <CarouselItem  className='w-full flex items-center justify-between px-20 bg-[#F7DDD0] rounded-md'>
      <div className=' flex flex-col items-start justify-start space-y-2'>
     <div className={`${jost.className} text-2xl text-[#465D6B]`}>MAGSAFE</div>
     <div style={{fontWeight:300}} className={`${jost.className} text-md text-[#465D6B]`}>Snap on a magnatic case,wallet, or both.And get fater wireless charging.</div>
@@ -39,12 +39,12 @@ const MobileShow = () => {
      <div>
         <Image height={333} width={333} className='object-cover h-full w-full' src="/Iphone.png" alt='Iphone'/>
      </div>
-     </CarouselItem>
+     </CarouselItem >
      </CarouselContent>
   <CarouselPrevious />
   <CarouselNext />
 </Carousel>
-    </div>
+    // </div>
   )
 }
 
