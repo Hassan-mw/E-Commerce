@@ -35,11 +35,11 @@ const Sidebar = () => {
       </SheetTrigger>
       <SheetContent className='bg-white'>
         <SheetHeader>
-          <SheetTitle>    <div className='flex items-start justify-start gap-x-3'><Image height={33} width={33} src="/Navbar_logo.png" alt="logo" /><span className={`${jost.className} text-xl`}>Limunea</span></div>
+          <SheetTitle>   
           </SheetTitle>
           <SheetDescription> </SheetDescription>
-          <SheetFooter className='w-full flex flex-col space-y-8 pt-8 px-2'>
-
+          <SheetFooter className='w-full flex flex-col space-y-16 pt-8 px-2'>
+          <div className='flex items-center justify-center gap-x-3'><Image height={50} width={50} src="/Navbar_logo.png" alt="logo" /><span className={`${jost.className} text-2xl`}>Limunea</span></div>
           {/* //!   1 */}
              
             <div className="flex flex-col space-y-2 items-start justify-start">
@@ -60,9 +60,9 @@ const Sidebar = () => {
           <span className={`${jost.className} text-2xl hover:cursor-pointer flex items-center justify-center border-b-2 text-black`}>Category</span>   
           
            <div className='w-full flex items-start justify-between gap-x-12 xl:gap-x-12 text-[#666678] '>
-              <div className={`${jost.className} flex items-center justify-center gap-x-2 hover:cursor-pointer`}><MdPerson size={20} /><span>Sign in</span></div>
-              <div className={`${jost.className} flex items-center justify-center gap-x-2 hover:cursor-pointer`}><GoHeart  size={20}  /><span>Favourite</span> </div>
-              <div className={`${jost.className} flex items-center justify-center gap-x-2 hover:cursor-pointer`}><FaCartArrowDown  size={20}   /><span>Cart</span></div>
+              <div className={`${jost.className} flex items-center justify-center gap-x-2 hover:cursor-pointer hover:text-blue-400 duration-500`}><MdPerson size={20} /><span>Sign in</span></div>
+              <div className={`${jost.className} flex items-center justify-center gap-x-2 hover:cursor-pointer hover:text-blue-400 duration-500`}><GoHeart  size={20}  /><span>Favourite</span> </div>
+              <div className={`${jost.className} flex items-center justify-center gap-x-2 hover:cursor-pointer hover:text-blue-400 duration-500`}><FaCartArrowDown  size={20}   /><span>Cart</span></div>
           </div>
           </div>
           {/* //!   3 */}
@@ -76,8 +76,10 @@ const Sidebar = () => {
           <span className='hover:cursor-pointer  hover:text-blue-400 duration-500 flex items-center justify-center gap-x-2'>   <FaTwitter /><span>Twitter</span></span>
               </div>
           </div>
-
-           
+  
+            <div className="w-full flex items-center justify-center pt-16">
+  <div style={{fontWeight:300}} className={`${jost.className} hover:cursor-pointer w-5/6 flex items-center justify-center hover:bg-blue-700 duration-500 bg-blue-500 text-white text-xl p-2 rounded-md`}>DOWNLOAD APP</div>
+            </div>
           </SheetFooter>
         </SheetHeader>
       </SheetContent>
