@@ -18,6 +18,6 @@ interface AboutCategorySubDataType{
 
 export interface AboutCategoryDataTYpe{
  
-    data:[AboutCategorySubDataType]
+    data:AboutCategorySubDataType[ ]
    
 }
