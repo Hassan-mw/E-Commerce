@@ -14,7 +14,7 @@ const page = () => {
     <TrendingProduct/>
     <TopNumberProduct/>
     <AboutCategory/>
-    <TopNumberProduct/>
+    {/* <Footer/> */}
     </div>
   )
 }
