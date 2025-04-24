@@ -1,6 +1,7 @@
 import { Jost } from 'next/font/google'
 import React from 'react'
 import { MdKeyboardArrowRight } from 'react-icons/md'
+import ProductData from '../ProductData'
 const jost=Jost({
   weight:['500'],
   subsets:['latin']
@@ -29,6 +30,8 @@ const page = async({params}:{params:{productcategory:string}}) => {
       
      </div>
      </div>
+     {/* DataPage */}
+     <ProductData/>
     </div>
     </div>
   )
