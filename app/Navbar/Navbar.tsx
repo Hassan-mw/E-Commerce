@@ -19,6 +19,7 @@ import {
   SelectValue,
 } from "@/components/ui/select"
 import { FiSearch } from 'react-icons/fi'
+import Link from 'next/link'
 
 const jost=Jost({
   weight:['500'],
@@ -41,7 +42,7 @@ const Navbar = () => {
 
 <Sidebar/>
 
-    <div className='flex items-center justify-center gap-x-3'><Image height={45} width={45} src="/Navbar_logo.png" alt="logo" /><span className={`${jost.className} text-2xl`}>Limunea</span></div>
+    <Link href="/" className='flex items-center justify-center gap-x-3'><Image height={45} width={45} src="/Navbar_logo.png" alt="logo" /><span className={`${jost.className} text-2xl`}>Limunea</span></Link>
     <div className='flex items-center justify-center gap-x-2'><FaCartArrowDown size={20}  /><span className='text-xl'>Card</span></div>
     </div>
     <div className='w-full sm:w-[70%] flex items-center justify-center border gap-x-0 border-slate-200 rounded-sm py-1 px-2 '>
