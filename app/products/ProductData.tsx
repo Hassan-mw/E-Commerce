@@ -1,13 +1,13 @@
 import React from 'react'
 import ProductSideBarTrigger from './ProductSideBarTrigger'
 import TopNUmberProductData from '../HomePageComponents/TopNumbersProduct/TopNumberProductData'
-import ProductDataArray from './ProductDataArray'
 
 const ProductData = () => {
   return (
     <div className='w-full flex flex-col items-center justify-center bg-white py-6'>
      <div>
-        <ProductDataArray/>
+      <TopNUmberProductData style='lg:grid-cols-3 xl:grid-cols-4' /> 
+      {/* <TopNUmberProductData/> */}
     </div>
     </div>
   )

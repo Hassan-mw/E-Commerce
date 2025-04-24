@@ -9,7 +9,7 @@ const jost=Jost({
 })
 
 
-const TopNUmberProductData = () => {
+const TopNUmberProductData = ({style}:{style:string}) => {
     const productData=[
       {id:1,name:"Mango",details:"Kimono & Caftan - Black - Regular fit ",rating:34,price:342,image:"top_hundred_photo_1.png"},
       {id:3,name:"Iniqlo ",details:"Midi atlas Slim fit - bohemian ",rating:"44",price:234,image:"top_hundred_photo_3.png"},
@@ -19,7 +19,7 @@ const TopNUmberProductData = () => {
         // {id:4,name:"Gaming Chair",details:"Black gaming chair confortable ",rating:36,price:82,image:"trending_product_3.png"},
     ]
   return (
-    <div className='w-full grid gap-5 grid-cols-1 sm:grid-cols-2  lg:grid-cols-4   sm:gap-7 lg:gap-12 py-9'>
+    <div className={` w-full grid gap-5 grid-cols-1 sm:grid-cols-2  ${style}   sm:gap-7 lg:gap-12 py-9`}>
         {
 
         productData.map((data,index)=>
