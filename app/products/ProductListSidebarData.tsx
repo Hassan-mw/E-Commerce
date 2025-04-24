@@ -1,13 +1,21 @@
+'use client'
 import { Jost } from 'next/font/google'
-import React from 'react'
+import React, { useState } from 'react'
 const jost=Jost({
   weight:['500'],
   subsets:['latin']
 })
 import { IoSearchOutline } from "react-icons/io5";
 import { BiCategory } from "react-icons/bi";
+import { usePathname, useSearchParams } from 'next/navigation';
+
 
 const ProductListSidebarData = () => {
+  const [model,setModel]=useState('all')
+  
+  const searchParams=useSearchParams()
+  const pathName=usePathname()
+  console.log(model,searchParams,pathName,'🏴‍☠️🏴⛽🚏')
 
   const modelArray=[
     {id:1,name:'Shorts',url:'shorts'},
@@ -56,7 +64,7 @@ const ProductListSidebarData = () => {
     {/* Search by brand  */}
     <div className='w-full flex flex-col space-y-2 border-b pb-10 border-slate-300'>
     <div className={`${jost.className} text-xl`}>Brand</div>
-    <div className='border w-full rounded-md  border-slate-400 p-2 flex items-center justify-between'><input type='text' className='focus:outline-none  placeholder:text-sm' placeholder='Search by brand '  /><span><IoSearchOutline /></span></div>
+    <div className='border w-full rounded-md  border-slate-400 p-2 flex items-center justify-between'><input type='text' className=' focus:outline-none w-[70%]   placeholder:text-sm' placeholder='Search by brand '  /><span><IoSearchOutline /></span></div>
     </div>
 
 
@@ -65,7 +73,8 @@ const ProductListSidebarData = () => {
      <div className={`${jost.className} text-xl`}>Model</div>
      {
      modelArray.map((data,index)=>
-    <div key={data.id} className=' w-full flex items-center justify-start gap-x-4'><input type='checkbox' className='focus:outline-none size-4 placeholder:text-sm' placeholder='Search by brand '  /><span className='tetxt-xl'>{data.name}</span></div>
+    <div key={data.id} className=' w-full flex items-center justify-start gap-x-4'>
+      <input value={data.url} onChange={()=>setModel(data.name)} name='model' type='radio' className='focus:outline-none size-4 placeholder:text-sm' placeholder='Search by brand '  /><span className='tetxt-xl'>{data.name}</span></div>
     )}
     </div>
 
@@ -75,8 +84,10 @@ const ProductListSidebarData = () => {
     <div className={`${jost.className} text-xl`}>Style</div>
       {
       styleArray.map((data,index)=>
-        <div key={data.id} className=' w-full flex items-center justify-start gap-x-4'><input type='checkbox' className='focus:outline-none size-4 placeholder:text-sm' placeholder='Search by brand '  /><span className='tetxt-xl'>{data.name}</span></div>
+        <div key={data.id} className=' w-full flex items-center justify-start gap-x-4'>
+          <input type='radio' name='style' className='focus:outline-none size-4 placeholder:text-sm'  placeholder='Search by brand '  /><span className='tetxt-xl'>{data.name}</span></div>
        )}
+       {/* <input type='checkbox' name='style' className='focus:outline-none size-4 placeholder:text-sm'   /><span className='tetxt-xl'>fjf</span> */}
     </div>
 
 
