@@ -18,9 +18,9 @@ import { FaFacebookF, FaTwitter } from "react-icons/fa6";
 
 const Footer = () => {
   return (
-    <div className='w-full flex flex-col space-y-5 py-10 items-center justify-center  '>
+    <div className='w-full flex flex-col space-y-5 items-center justify-center pb-9  '>
       
-       <div className='w-full flex  items-center justify-center bg-[#D1E2EB]'>
+       <div className='w-full flex  items-center justify-center bg-[#D1E2EB] py-10 '>
        <div className='w-full max-w-screen-lg space-y-18 flex flex-col items-center justify-center '>
        <div className='hidden md:block w-full gird place-items-center'>
        <div className='w-[60%] lg:w-1/2 bg-[#7296AB] text-white flex flex-col items-center justify-center space-y-2 p-4 rounded-md'>
@@ -28,8 +28,8 @@ const Footer = () => {
         <div style={{fontWeight:200}} className={` font-thin text-md pb-4`}>Reqister your email not to miss last minutes off+ Free delivery</div>
        <div className='w-full  flex items-center justify-center'>
       <div className='bg-white w-[70%] rounded-sm px-3 flex items-center justify-between py-1' >
-    <div><input type='text' className='focus:outline-none text-black placeholder:text-[#9D9D9D]' placeholder='Enter your email'/></div>
-    <div className='text-black'><LucideSend size={18} /></div>
+    <div><input type='text' className='focus:outline-none text-black placeholder:text-[#9D9D9D] placeholder:text-sm' placeholder='Enter your email'/></div>
+    <div className='text-black hover:cursor-pointer'><LucideSend size={18} /></div>
       </div>
        </div>
        </div>

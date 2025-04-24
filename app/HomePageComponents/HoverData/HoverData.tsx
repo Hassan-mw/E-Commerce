@@ -280,7 +280,7 @@ const HoverData=()=> {
     <div className="w-full flex items-center justify-center ">
 
     <NavigationMenu className="w-screen flex items-center justify-between ">
-      <NavigationMenuList className="space-x-12">
+      <NavigationMenuList className="space-x-5 xl:gap-x-12">
         {/* //! 1 */}
           
         <NavigationMenuItem>
