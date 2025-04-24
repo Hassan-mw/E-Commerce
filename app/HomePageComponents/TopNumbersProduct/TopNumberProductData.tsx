@@ -15,8 +15,7 @@ const TopNUmberProductData = ({style}:{style:string}) => {
       {id:3,name:"Iniqlo ",details:"Midi atlas Slim fit - bohemian ",rating:"44",price:234,image:"top_hundred_photo_3.png"},
       {id:4,name:"Mango dress",details:"Kimono & Caftan - Colorful - Night club fit",rating:222,price:55,image:"top_hundred_photo_4.png"},
       {id:2,name:"Zara",details:"Midi top- Daily fit",rating:77,price:346,image:"top_hundred_photo_2.png"},
-        // {id:1,name:"Gaming Controller",details:"Pink gaming controller for girls",rating:"66",price:56,image:"trending_product_1.png"},
-        // {id:4,name:"Gaming Chair",details:"Black gaming chair confortable ",rating:36,price:82,image:"trending_product_3.png"},
+       
     ]
   return (
     <div className={` w-full grid gap-5 grid-cols-1 sm:grid-cols-2  ${style}   sm:gap-7 lg:gap-12 py-9`}>

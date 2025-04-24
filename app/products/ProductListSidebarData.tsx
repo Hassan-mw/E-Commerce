@@ -15,7 +15,7 @@ const ProductListSidebarData = () => {
   
   const searchParams=useSearchParams()
   const pathName=usePathname()
-  console.log(model,searchParams,pathName,'🏴‍☠️🏴⛽🚏')
+
 
   const modelArray=[
     {id:1,name:'Shorts',url:'shorts'},
