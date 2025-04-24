@@ -30,7 +30,7 @@ const mens: { title: string; href: string; description: string }[] = [
   },
   {
     title: "Mans Shirts",
-    href: "/docs/primitives/hover-card",
+    href:"/products/Man_Shirts",
     description:
       "",
   },
