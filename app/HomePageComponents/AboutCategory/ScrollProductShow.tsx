@@ -36,7 +36,7 @@ const ScrollProductShow = () => {
 
     <CarouselItem  className=' w-full flex items-center justify-between px-20 bg-[#F7DDD0] '>
      <div className=' flex flex-col items-start justify-start space-y-2 pl-10'>
-    <div className={`${jost.className} text-2xl text-[#31373a]`}>Reebox</div>
+    <div className={`${jost.className} text-2xl text-[#31373a]`}>Truly Free</div>
     <div style={{fontWeight:300}} className={`${jost.className} text-md text-[#465D6B]`}>Flexible sole, appropriate tread for the function, and ability to absorb impact.</div>
      </div>
      <div>
@@ -64,7 +64,7 @@ const ScrollProductShow = () => {
     <div style={{fontWeight:300}} className={`${jost.className} text-md text-[#465D6B]`}>CAROTE Nonstick Pots and Pans,Cookware Set 16pcs Kitchen Cooking Sets, Pot and Pan Non Stick w/Frying pan.</div>
      </div>
      <div>
-        <Image height={333} width={333} className='object-cover h-full w-full max-h-44' src="/cooking_set.jpg" alt='Iphone'/>
+        <Image height={333} width={333} className='object-cover h-full w-full max-h-44' src="/cooking_set.png" alt='Iphone'/>
      </div>
      </CarouselItem>
     
