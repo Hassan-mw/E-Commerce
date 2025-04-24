@@ -23,8 +23,8 @@ import { Jost } from "next/font/google"
 
 const mens: { title: string; href: string; description: string }[] = [
   {
-    title: "Mans Shose",
-    href: "/docs/primitives/alert-dialog",
+    title: "Mans Shoes",
+    href:"/products/Man+Shoes",
     description:
       "",
   },
