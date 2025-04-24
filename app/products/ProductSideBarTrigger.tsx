@@ -15,6 +15,7 @@ import { Jost } from 'next/font/google'
 import React from 'react'
 import { MdMenu } from 'react-icons/md'
 import { IoMdClose } from "react-icons/io";
+import ProductListSidebarData from "./ProductListSidebarData";
 
 const jost=Jost({
   weight:['500'],
@@ -40,9 +41,9 @@ const ProductSideBarTrigger = () => {
 
         </SheetDescription>
       </SheetHeader>
-      <SheetFooter>
+      <SheetFooter className="w-full h-full flex flex-col ">
         {/* Data */}
-        {/* <JobListSidebarData/> */}
+        <ProductListSidebarData/>
   
           </SheetFooter>
     </SheetContent>
