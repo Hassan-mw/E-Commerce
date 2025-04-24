@@ -45,7 +45,7 @@ const page = async({params}:{params:{productcategory:string}}) => {
 
      {/*//!  DataPage */}
      <div  className="w-full h-full flex flex-col lg:flex-row lg:space-x-5 px-5  max-w-screen-2xl">
-        <div className='w-[40%] hidden lg:block pt-12'>
+        <div className='w-[40%] hidden lg:block py-12'>
           <ProductListSidebarData/>
        
         </div>
