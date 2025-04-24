@@ -12,10 +12,10 @@ const jost=Jost({
 const HeroPageData = () => {
   return (
     <div className={`${jost.className} w-full sm:w-[500px] md:w-full flex flex-col space-y-2 pl-7 lg:space-y-2 `}>
-      <div  className={`${jost.className} text-7xl font-bold`}>Furnimal</div>
-      <div  className={`${jost.className} text-3xl font-semibold `}>Furniture Store Shopify Theme</div>
+      <div  className={`${jost.className} text-7xl font-bold text-[#b6886c]`}>Limunea</div>
+      <div  className={`${jost.className} text-3xl font-semibold text-[#d8a07d]`}>Furniture Store Shopify Theme</div>
       <div  className={`${jost.className} text-md  text-[#66666b] lg:pb-14`}> A best template for different purposes that creativity, efficiency, and diversity.</div>
-       <Button href="/" style="px-4 py-2 text-md bg-blue-500 w-32 flex items-cener justify-center text-white rounded-md hover:bg-blue-700 duration-500"   >Buy Now</Button>
+       <Button href="/products" style="px-4 py-2 text-md bg-[#dfb9a1] w-32 flex items-cener justify-center text-black rounded-md  "   >Buy Now</Button>
     </div>
   )
  
