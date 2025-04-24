@@ -17,7 +17,7 @@ const jost=Jost({
   } from "@/components/ui/carousel"
 
   
-const MobileShow = () => {
+const ScrollProductShow = () => {
   return (
     // <div className='w-full flex items-center justify-between px-20 bg-[#F7DDD0] rounded-md'>
       <Carousel className='   '>
@@ -49,4 +49,4 @@ const MobileShow = () => {
   )
 }
 
-export default MobileShow
+export default ScrollProductShow

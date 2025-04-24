@@ -1,7 +1,7 @@
 
 import React from 'react'
 import AboutCategoryData from './AboutCategoryData'
-import MobileShow from './MobileShow'
+import ScrollProductShow from './ScrollProductShow'
 
 
 const AboutCategory = () => {
@@ -19,7 +19,7 @@ const AboutCategory = () => {
     <div className='w-full max-w-screen-xl px-10 flex flex-col items-center justify-center space-y-8'>
     
       <AboutCategoryData data={data1} /> 
-      <MobileShow/>
+      <ScrollProductShow/>
       <AboutCategoryData data={data2} /> 
       {/* <AboutCategoryData/>  */}
     </div>

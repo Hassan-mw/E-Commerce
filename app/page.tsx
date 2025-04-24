@@ -16,7 +16,7 @@ const page = () => {
     <TrendingProduct/>
     <TopNumberProduct/>
     <AboutCategory/>
-    {/* <Footer/> */}
+  
     </div>
   )
 }
