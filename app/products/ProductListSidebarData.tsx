@@ -1,21 +1,33 @@
 'use client'
 import { Jost } from 'next/font/google'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 const jost=Jost({
   weight:['500'],
   subsets:['latin']
 })
 import { IoSearchOutline } from "react-icons/io5";
 import { BiCategory } from "react-icons/bi";
-import { usePathname, useSearchParams } from 'next/navigation';
+import { usePathname, useRouter, useSearchParams } from 'next/navigation';
+// import { useRouter } from 'next/';
 
 
 const ProductListSidebarData = () => {
   const [model,setModel]=useState('all')
+  const [style,setStyle]=useState('all')
+  const [color,setColor]=useState('all')
   
   const searchParams=useSearchParams()
   const pathName=usePathname()
+  const router=useRouter()
+ 
+  useEffect(()=>{
+    const params=new URLSearchParams(searchParams)
 
+    params.set('abc',model)
+
+    router.replace(`${pathName}?${params.toString()}`,{scroll:false})
+
+  },[model])
 
   const modelArray=[
     {id:1,name:'Shorts',url:'shorts'},

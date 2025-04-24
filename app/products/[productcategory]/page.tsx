@@ -50,16 +50,9 @@ const page = async({params}:{params:{productcategory:string}}) => {
        
         </div>
         <div className='w-full     '>
-      
-         
-
            <ProductData/>
-
-
-        
           </div>
           </div>
-      
     </div>
     </div>
   )
