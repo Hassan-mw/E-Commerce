@@ -26,83 +26,247 @@ const mens: { title: string; href: string; description: string }[] = [
     title: "Mans Shose",
     href: "/docs/primitives/alert-dialog",
     description:
-      "A modal dialog that interrupts the user with important content and expects a response.",
+      "",
   },
   {
     title: "Mans Shirts",
     href: "/docs/primitives/hover-card",
     description:
-      "For sighted users to preview content available behind a link.",
+      "",
   },
   {
     title: "Mans Boots",
     href: "/docs/primitives/progress",
     description:
-      "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
+      "",
   },
   {
     title: "Mans Jacket",
     href: "/docs/primitives/progress",
     description:
-      "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
+      "",
+  },
+  {
+    title: "Mans Watches",
+    href: "/docs/primitives/progress",
+    description:
+      "",
+  },
+  {
+    title: "Mans Ties",
+    href: "/docs/primitives/progress",
+    description:
+      "",
   }
   
  
 
 ]
+
 const womens: { title: string; href: string; description: string }[] = [
   {
     title: "Womans Shose",
     href: "/docs/primitives/alert-dialog",
     description:
-      "A modal dialog that interrupts the user with important content and expects a response.",
+      "",
   },
   {
     title: "Womans Shirts",
     href: "/docs/primitives/hover-card",
     description:
-      "For sighted users to preview content available behind a link.",
+      "",
   },
   {
     title: "Womans Boots",
     href: "/docs/primitives/progress",
     description:
-      "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
+      "",
   },
   {
     title: "Womans Jacket",
     href: "/docs/primitives/progress",
     description:
-      "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
+      "",
+  },
+  {
+    title: "Womans Glasses",
+    href: "/docs/primitives/progress",
+    description:
+      "",
+  },
+  {
+    title: "Womans Rings",
+    href: "/docs/primitives/progress",
+    description:
+      "",
   }
   
  
 
 ]
+
 const childrens: { title: string; href: string; description: string }[] = [
   {
     title: "Childrens Shose",
     href: "/docs/primitives/alert-dialog",
     description:
-      "A modal dialog that interrupts the user with important content and expects a response.",
+      "",
   },
   {
     title: "Childrens Shirts",
     href: "/docs/primitives/hover-card",
     description:
-      "For sighted users to preview content available behind a link.",
+      "",
   },
   {
     title: "Childrens Boots",
     href: "/docs/primitives/progress",
     description:
-      "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
+      "",
   },
   {
     title: "Childrens Jacket",
     href: "/docs/primitives/progress",
     description:
-      "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
+      "",
+  },
+  {
+    title: "Childrens Toys",
+    href: "/docs/primitives/progress",
+    description:
+      "",
+  },
+  {
+    title: "Childrens Story Books",
+    href: "/docs/primitives/progress",
+    description:
+      "",
+  }
+  
+ 
+
+]
+
+const gaming: { title: string; href: string; description: string }[] = [
+  {
+    title: "Gaming Headphones",
+    href: "/docs/primitives/alert-dialog",
+    description:
+      "",
+  },
+  {
+    title: "Gaming Chairs",
+    href: "/docs/primitives/hover-card",
+    description:
+      "",
+  },
+  {
+    title: "Gaming Mouse",
+    href: "/docs/primitives/progress",
+    description:
+      "",
+  },
+  {
+    title: "Gaming Keyboard",
+    href: "/docs/primitives/progress",
+    description:
+      "",
+  },
+  {
+    title: "Gaming Mouse Pad",
+    href: "/docs/primitives/progress",
+    description:
+      "",
+  },
+  {
+    title: "Gaming Led Lights",
+    href: "/docs/primitives/progress",
+    description:
+      "",
+  }
+  
+ 
+
+]
+
+const sports: { title: string; href: string; description: string }[] = [
+  {
+    title: "Sports  Water Bottle",
+    href: "/docs/primitives/alert-dialog",
+    description:
+      "",
+  },
+  {
+    title: "Sports  Bots",
+    href: "/docs/primitives/hover-card",
+    description:
+      "",
+  },
+  {
+    title: "Sports  Shirts",
+    href: "/docs/primitives/progress",
+    description:
+      "",
+  },
+  {
+    title: "Sports  Watches",
+    href: "/docs/primitives/progress",
+    description:
+      "",
+  },
+  {
+    title: "Sports  Sunglasses",
+    href: "/docs/primitives/progress",
+    description:
+      "",
+  },
+  {
+    title: "Sports Shorts",
+    href: "/docs/primitives/progress",
+    description:
+      "",
+  }
+  
+ 
+
+]
+
+const kitchen: { title: string; href: string; description: string }[] = [
+  {
+    title: "kitchen Knief",
+    href: "/docs/primitives/alert-dialog",
+    description:
+      "",
+  },
+  {
+    title: "kitchen  Cooker",
+    href: "/docs/primitives/hover-card",
+    description:
+      "",
+  },
+  {
+    title: "kitchen  Coofe Machine",
+    href: "/docs/primitives/progress",
+    description:
+      "",
+  },
+  {
+    title: "kitchen  Mats",
+    href: "/docs/primitives/progress",
+    description:
+      "",
+  },
+  {
+    title: "kitchen  Bowls",
+    href: "/docs/primitives/progress",
+    description:
+      "",
+  },
+  {
+    title: "kitchen Pans",
+    href: "/docs/primitives/progress",
+    description:
+      "",
   }
   
  
@@ -112,14 +276,15 @@ const childrens: { title: string; href: string; description: string }[] = [
 
 const HoverData=()=> {
   return (
-    <div className="w-full flex items-center justify-center">
+    <div className="w-full hidden md:block ">
+    <div className="w-full flex items-center justify-center ">
 
-    <NavigationMenu className="w-screen flex items-center justify-center ">
-      <NavigationMenuList>
+    <NavigationMenu className="w-screen flex items-center justify-between ">
+      <NavigationMenuList className="space-x-12">
         {/* //! 1 */}
           
         <NavigationMenuItem>
-          <NavigationMenuTrigger className={`${jost.className} hover:cursor-pointer`}>Mans</NavigationMenuTrigger>
+          <NavigationMenuTrigger className={`${jost.className} hover:cursor-pointer text-lg`}>Mans</NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] bg-white ">
               {mens.map((component) => (
@@ -137,7 +302,7 @@ const HoverData=()=> {
         {/* //! 2 */}
           
         <NavigationMenuItem>
-        <NavigationMenuTrigger className={`${jost.className}`}>Womens</NavigationMenuTrigger>
+        <NavigationMenuTrigger  className={`${jost.className} hover:cursor-pointer text-lg`}>Womens</NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] bg-white ">
               {womens.map((component) => (
@@ -154,7 +319,7 @@ const HoverData=()=> {
         </NavigationMenuItem>
         {/* //! 3 */}
         <NavigationMenuItem>
-        <NavigationMenuTrigger className={`${jost.className}`}>Childrens</NavigationMenuTrigger>
+        <NavigationMenuTrigger className={`${jost.className} hover:cursor-pointer text-lg`}>Childrens</NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] bg-white ">
               {childrens.map((component) => (
@@ -170,8 +335,63 @@ const HoverData=()=> {
           </NavigationMenuContent>
         </NavigationMenuItem>
        
+        {/* //! 4 */}
+        <NavigationMenuItem>
+        <NavigationMenuTrigger className={`${jost.className} hover:cursor-pointer text-lg`}>Gaming</NavigationMenuTrigger>
+          <NavigationMenuContent>
+            <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] bg-white ">
+              {gaming.map((component) => (
+                <ListItem
+                  key={component.title}
+                  title={component.title}
+                  href={component.href}
+                >
+                  {component.description}
+                </ListItem>
+              ))}
+            </ul>
+          </NavigationMenuContent>
+        </NavigationMenuItem>
+
+        {/* //! 5 */}
+        <NavigationMenuItem>
+        <NavigationMenuTrigger className={`${jost.className} text-lg hover:cursor-pointer`}>Sports</NavigationMenuTrigger>
+          <NavigationMenuContent>
+            <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] bg-white ">
+              {sports.map((component) => (
+                <ListItem
+                  key={component.title}
+                  title={component.title}
+                  href={component.href}
+                >
+                  {component.description}
+                </ListItem>
+              ))}
+            </ul>
+          </NavigationMenuContent>
+        </NavigationMenuItem>
+       
+        {/* //! 6 */}
+        <NavigationMenuItem>
+        <NavigationMenuTrigger className={`${jost.className} text-lg hover:cursor-pointer`}>Kitchen</NavigationMenuTrigger>
+          <NavigationMenuContent>
+            <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] bg-white ">
+              {kitchen.map((component) => (
+                <ListItem
+                  key={component.title}
+                  title={component.title}
+                  href={component.href}
+                >
+                  {component.description}
+                </ListItem>
+              ))}
+            </ul>
+          </NavigationMenuContent>
+        </NavigationMenuItem>
+       
       </NavigationMenuList>
     </NavigationMenu>
+    </div>
     </div>
   )
 }
@@ -191,8 +411,8 @@ const ListItem = React.forwardRef<
           )}
           {...props}
         >
-          <div className="text-sm font-medium leading-none">{title}</div>
-          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+          <div className={`${jost.className} text-sm  leading-none hover:text-blue-400 duration-300`}>{title}</div>
+          <p style={{fontWeight:200}} className={`${jost.className} line-clamp-2  text-[#b1afaf]`}>
             {children}
           </p>
         </a>
