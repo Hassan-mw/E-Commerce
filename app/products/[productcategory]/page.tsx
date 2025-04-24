@@ -31,23 +31,22 @@ const page = async({params}:{params:{productcategory:string}}) => {
      </div>
      </div>
      {/* DataPage */}
-     <div  className="w-full h-full flex flex-col lg:flex-row lg:space-x-5 py-7 p-3  max-w-screen-2xl">
+     <div  className="w-full h-full flex flex-col lg:flex-row lg:space-x-5 px-5  max-w-screen-2xl">
         <div className='w-[40%] hidden lg:block '>
           {/* <JobCategorySidebarData/> */}
        
         </div>
-        <div className='w-full  lg:w-full  p-2 '>
-          <div className='w-full flex flex-col items-center space-y-5'>
+        <div className='w-full     '>
+      
          
-           {/* Main Body */}
-           <div className='w-full  flex-1 '>
+
            <ProductData/>
 
 
-           </div>
+        
           </div>
           </div>
-         </div>
+      
     </div>
     </div>
   )
