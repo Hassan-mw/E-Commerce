@@ -87,8 +87,10 @@ exports.createproduct = async (req, res, next) => {
       const images=[]
       // 7. Write file to disk manually
       await fs.writeFile(filePath, req.files.main_image[0].buffer);
-     req.files.images.forEach((file,i) => {
-     const arrayFilename=`product_${Date.now()}-${i+1}.${ext}`;   
+     req.files.images.forEach(async(file,i) => {
+        // console.log(file,'🚘🚜🚜🚛🚛🚚🚚🚒🚒🛴🚲🚝🚲🚛🚛')
+     const arrayFilename=`product_${Date.now()}-${i+1}.${ext}`;  
+     await fs.writeFile(arrayFilename, file.buffer);
      images.push(arrayFilename) 
        });
 console.log(images,'🚅🚄🚃🚞🛴🚲🚲🛹')
