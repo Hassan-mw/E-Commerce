@@ -19,7 +19,7 @@ const ProductListSidebarData = () => {
   const searchParams=useSearchParams()
   const pathName=usePathname()
   const router=useRouter()
- 
+ console.log(color,'🚈🚅🚚🚒🚒🚑🦽')
   useEffect(()=>{
     const params=new URLSearchParams(searchParams)
 
@@ -66,7 +66,9 @@ const ProductListSidebarData = () => {
     {id:8,name:'3XL',url:"3xl"}
   ]
 
-  
+  const handleColorChange=(data:string)=>{
+    setColor(data)
+  }
 
   return (
     <div className='w-full lg:w-[70%] h-full  flex flex-col items-start justify-start  space-y-12 '> 
@@ -105,14 +107,14 @@ const ProductListSidebarData = () => {
 
     {/*  box by color */}
     <div className='w-full flex flex-col space-y-2 border-b pb-3 border-slate-300'>
-    <div className={`${jost.className} text-xl`}>Brand</div>
+    <div className={`${jost.className} text-xl`}>Color</div>
     <div className='w-full grid grid-cols-4 gap-x-3 gap-y-5'>
     { 
     colorArray.map((data,index)=>
-    <div key={data.id} className={` size-6 rounded-full bg-${data.name}-500`}></div>
-    )}
-   <div className='size-6 rounded-full border border-slate-300 bg-white'></div>
-   <div className='size-6 rounded-full bg-black'></div>
+    <div  onClick={()=>handleColorChange(data.name)} key={data.id} className={` size-6 rounded-full bg-${data.name}-500`}></div>
+    )} 
+   <div onClick={()=>handleColorChange('white')}  className='size-6 rounded-full border border-slate-300 bg-white'></div>
+   <div onClick={()=>handleColorChange('black')}  className='size-6 rounded-full bg-black'></div>
     </div>
   
     </div>
