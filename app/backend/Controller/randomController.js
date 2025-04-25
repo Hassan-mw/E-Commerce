@@ -30,7 +30,7 @@ const upload=multer({
 
 exports.uploadProductPicture=upload.fields([
   {name:'main_image',maxCount:1},
-  {name:'images',maxCount:2},
+  {name:'images',maxCount:3},
 ])
 
 exports.getAllProducts = async (req,res,next) => {
@@ -88,7 +88,7 @@ exports.createproduct = async (req, res, next) => {
       // 7. Write file to disk manually
       await fs.writeFile(filePath, req.files.main_image[0].buffer);
      req.files.images.forEach(async(file,i) => {
-        // console.log(file,'🚘🚜🚜🚛🚛🚚🚚🚒🚒🛴🚲🚝🚲🚛🚛')
+        console.log(file,'🚘🚜🚜🚛🚛🚚🚚🚒🚒🛴🚲🚝🚲🚛🚛')
      const arrayFilename=`product_${Date.now()}-${i+1}.${ext}`;  
      await fs.writeFile(arrayFilename, file.buffer);
      images.push(arrayFilename) 
@@ -98,8 +98,8 @@ console.log(images,'🚅🚄🚃🚞🛴🚲🚲🛹')
       const query = `
         INSERT INTO products (
           main_image,images,name, shortdetail, ratingnumber, price, discount, brand, model, 
-          style, color, size, prodcutDetails
-        ) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11,$12,$13) 
+          style, color, size, prodcutDetails,details
+        ) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11,$12,$13,$14) 
         RETURNING *;
       `; 
   
@@ -117,6 +117,7 @@ console.log(images,'🚅🚄🚃🚞🛴🚲🚲🛹')
         req.body.color,
         req.body.size ,
         req.body.prodcutDetails ,
+        req.body.details 
       ]);
   
       res.status(201).json({
