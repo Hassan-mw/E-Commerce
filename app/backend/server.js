@@ -10,13 +10,12 @@ const favouriteRoutes=require('./Router/favouriteRoutes')
 const orderRoutes=require('./Router/orderRoutes')
 const paymentRoutes=require('./Router/paymentRoutes')
 const shippingRouter=require('./Router/shippingRouter')
+const randomRoutes=require('./Router/randomRoutes')
 const  AppError=require('./ErrorHandler/appError') 
 app.use(express.json()); 
 
 
-
-
-
+app.use('/api/random',randomRoutes);
 app.use('/api/products',productRoutes);
 app.use('/api/users',usersRoutes);
 app.use('/api/reviews',reviewRoutes);
@@ -30,11 +29,10 @@ app.use('/api/shippings',shippingRouter);
   
 
 
-  
 Pool.connect({
     host:"localhost",
     port:5432,
-    database:'E-commers',
+    database:'E-commers_Cloths',
     user:'postgres',
     password:'hassan'
 }).then(()=>{
@@ -61,7 +59,7 @@ app.use('/',(req, res, next) => {
 });
 
 
-app.use((err,req,res,next)=>{
+// app.use((err,req,res,next)=>{
 
-  res.status(500).send("some thing was broken!")
-})
+//   res.status(500).send("some thing a was broken!")
+// })
