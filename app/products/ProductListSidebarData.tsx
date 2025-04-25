@@ -8,6 +8,7 @@ const jost=Jost({
 import { IoSearchOutline } from "react-icons/io5";
 import { BiCategory } from "react-icons/bi";
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
+import Image from 'next/image';
 // import { useRouter } from 'next/';
 
 
@@ -19,41 +20,39 @@ const ProductListSidebarData = () => {
   const searchParams=useSearchParams()
   const pathName=usePathname()
   const router=useRouter()
- console.log(color,'🚈🚅🚚🚒🚒🚑🦽')
+ 
+  
   useEffect(()=>{
     const params=new URLSearchParams(searchParams)
 
-    params.set('abc',model)
+    if(model!=='all')  params.set('model',model); else params.delete('model');
+    if(color!=='all')  params.set('color',color); else params.delete('color');
 
     router.replace(`${pathName}?${params.toString()}`,{scroll:false})
 
-  },[model])
+  },[model,color])
 
   const modelArray=[
-    {id:1,name:'Shorts',url:'shorts'},
-    {id:2,name:'Mid-length',url:'mid-length'},
-    {id:3,name:'Sweather',url:'sweather'},
-    {id:4,name:'Party Dresses',url:'party-dresses'},
-    {id:5,name:'Requlae Fit',url:'reqular-fit'}
+    {id:1,name:'All',url:'all'},
+    {id:2,name:'Shorts',url:'shorts'},
+    {id:3,name:'Mid-length',url:'mid-length'},
+    {id:4,name:'Sweather',url:'sweather'},
+    {id:5,name:'Party Dresses',url:'party-dresses'},
+    {id:6,name:'Requlae Fit',url:'reqular-fit'}
   ]
 
 
   const styleArray=[
-    {id:1,name:'Casual',url:'casual'},
-    {id:2,name:'Bussiness Casual',url:'bussiness-casual'},
-    {id:3,name:'Bohemian',url:'bohemian'},
-    {id:4,name:'Zara',url:'zara'},
-    {id:5,name:'Mango',url:'mango'}
+    {id:1,name:'All',url:'all'},
+    {id:2,name:'Casual',url:'casual'},
+    {id:3,name:'Bussiness Casual',url:'bussiness-casual'},
+    {id:4,name:'Bohemian',url:'bohemian'},
+    {id:5,name:'Zara',url:'zara'},
+    {id:6,name:'Mango',url:'mango'}
+
   ]
 
-  const colorArray=[
-    {id:1,name:'green'},
-    {id:2,name:'red'},
-    {id:3,name:'blue'},
-    {id:4,name:'yellow'},
-    {id:5,name:'pink'},
-    {id:6,name:'purple'}
-  ]
+
 
   const sizeArray=[
     {id:1,name:'2XS',url:"2xs"},
@@ -109,12 +108,15 @@ const ProductListSidebarData = () => {
     <div className='w-full flex flex-col space-y-2 border-b pb-3 border-slate-300'>
     <div className={`${jost.className} text-xl`}>Color</div>
     <div className='w-full grid grid-cols-4 gap-x-3 gap-y-5'>
-    { 
-    colorArray.map((data,index)=>
-    <div  onClick={()=>handleColorChange(data.name)} key={data.id} className={` size-6 rounded-full bg-${data.name}-500`}></div>
-    )} 
-   <div onClick={()=>handleColorChange('white')}  className='size-6 rounded-full border border-slate-300 bg-white'></div>
-   <div onClick={()=>handleColorChange('black')}  className='size-6 rounded-full bg-black'></div>
+    <div onClick={()=>handleColorChange('all')}   className='hover:cursor-pointer'><Image height={23} width={25} src="/all_color.jpeg"  alt='all_color'/></div>
+    <div  onClick={()=>handleColorChange('red')}       className={`hover:cursor-pointer size-6 rounded-full bg-red-500`}></div>
+    <div  onClick={()=>handleColorChange('blue')}      className={`hover:cursor-pointer  size-6 rounded-full bg-blue-500`}></div>
+    <div  onClick={()=>handleColorChange('white')}     className='hover:cursor-pointer size-6 rounded-full border border-slate-300 bg-white'></div>
+    <div  onClick={()=>handleColorChange('purple')}    className={`hover:cursor-pointer  size-6 rounded-full bg-purple-500`}></div>
+    <div  onClick={()=>handleColorChange('orange')}    className={`hover:cursor-pointer  size-6 rounded-full bg-orange-500`}></div>
+    <div  onClick={()=>handleColorChange('pink')}      className={`hover:cursor-pointer  size-6 rounded-full bg-pink-500`}></div>
+    <div  onClick={()=>handleColorChange('gray')}      className={`hover:cursor-pointer  size-6 rounded-full bg-gray-500`}></div>
+    {/* <div  onClick={()=>handleColorChange('black')}     className='hover:cursor-pointer size-6 rounded-full bg-black'></div> */}
     </div>
   
     </div>
