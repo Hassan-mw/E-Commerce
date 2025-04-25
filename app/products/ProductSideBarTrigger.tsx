@@ -29,7 +29,7 @@ const ProductSideBarTrigger = () => {
     <div>
         <Sheet>
     <SheetTrigger className="text-blue-600 flex items-center space-x-3 hover:cursor-pointer"><MdMenu size={20} /> <span className={`  ${jost.className} font-bold`}>Show Sidebar</span></SheetTrigger>
-    <SheetContent className="w-[360px] h-full overflow-y-auto bg-white p-0">
+    <SheetContent className="w-[360px] h-full overflow-y-auto bg-white">
       <SheetHeader className="w-full flex flex-col">
         <SheetTitle className=" w-full p-3">
            <div className="flex items-center justify-center  border-b py-3 ">
@@ -41,7 +41,7 @@ const ProductSideBarTrigger = () => {
 
         </SheetDescription>
       </SheetHeader>
-      <SheetFooter className="w-full h-full flex flex-col ">
+      <SheetFooter className="w-full h-full flex flex-col p-6 ">
         {/* Data */}
         <ProductListSidebarData/>
   

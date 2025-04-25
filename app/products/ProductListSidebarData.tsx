@@ -16,21 +16,26 @@ const ProductListSidebarData = () => {
   const [model,setModel]=useState('all')
   const [style,setStyle]=useState('all')
   const [color,setColor]=useState('all')
+  const [size,setSize]=useState('all')
+  const [price,setPrice]=useState('0')
   
   const searchParams=useSearchParams()
   const pathName=usePathname()
   const router=useRouter()
  
-  
+
   useEffect(()=>{
     const params=new URLSearchParams(searchParams)
 
     if(model!=='all')  params.set('model',model); else params.delete('model');
     if(color!=='all')  params.set('color',color); else params.delete('color');
+    if(style!=='all')  params.set('style',style); else params.delete('style');
+    if(size!=='all')  params.set('size',size); else params.delete('size');
+    if(price!=='0')  params.set('price',price); else params.delete('price');
 
     router.replace(`${pathName}?${params.toString()}`,{scroll:false})
 
-  },[model,color])
+  },[model,color,style,size,price])
 
   const modelArray=[
     {id:1,name:'All',url:'all'},
@@ -70,7 +75,7 @@ const ProductListSidebarData = () => {
   }
 
   return (
-    <div className='w-full lg:w-[70%] h-full  flex flex-col items-start justify-start  space-y-12 '> 
+    <div className='w-full lg:w-[70%] h-full  flex flex-col items-start justify-start  space-y-12 sm:pb-8 lg:pb-3'> 
     <div className='flex  items-center justify-center gap-x-3 '><div><BiCategory size={22} /></div><div className={`${jost.className} text-xl`}>All Categores</div></div>
     
     
@@ -87,7 +92,7 @@ const ProductListSidebarData = () => {
      {
      modelArray.map((data,index)=>
     <div key={data.id} className=' w-full flex items-center justify-start gap-x-4'>
-      <input value={data.url} onChange={()=>setModel(data.name)} name='model' type='radio' className='focus:outline-none size-4 placeholder:text-sm' placeholder='Search by brand '  /><span className='tetxt-xl'>{data.name}</span></div>
+    <input value={data.url} onChange={()=>setModel(data.url)} name='model' type='radio' className='focus:outline-none size-4 placeholder:text-sm' placeholder='Search by brand '  /><span className='tetxt-xl'>{data.name}</span></div>
     )}
     </div>
 
@@ -98,7 +103,7 @@ const ProductListSidebarData = () => {
       {
       styleArray.map((data,index)=>
         <div key={data.id} className=' w-full flex items-center justify-start gap-x-4'>
-          <input type='radio' name='style' className='focus:outline-none size-4 placeholder:text-sm'  placeholder='Search by brand '  /><span className='tetxt-xl'>{data.name}</span></div>
+          <input value={data.url} onChange={()=>setStyle(data.url)}  type='radio' name='style' className='focus:outline-none size-4 placeholder:text-sm'  placeholder='Search by brand '  /><span className='tetxt-xl'>{data.name}</span></div>
        )}
        {/* <input type='checkbox' name='style' className='focus:outline-none size-4 placeholder:text-sm'   /><span className='tetxt-xl'>fjf</span> */}
     </div>
@@ -128,7 +133,7 @@ const ProductListSidebarData = () => {
     <div className='w-full grid grid-cols-4 gap-x-3 gap-y-5'>
       {
        sizeArray.map((data,index)=>
-      <div key={data.id} className={`${jost.className} border border-slate-200 text-[#555555] hover:cursor-pointer hover:bg-[#D1E2EB] duration-200 flex items-center justify-center  px-2 py-1 rounded-sm`}>{data.name}</div>
+      <div onClick={()=>setSize(data.url)} key={data.id} className={`${jost.className} border border-slate-200 text-[#555555] hover:cursor-pointer ${size===data.url ? 'bg-[#D1E2EB]' : 'bg-while'} hover:bg-[#D1E2EB] duration-200 flex items-center justify-center  px-2 py-1 rounded-sm`}>{data.name}</div>
        )
       }
  
@@ -139,7 +144,7 @@ const ProductListSidebarData = () => {
     <div className='w-full flex flex-col space-y-2  border-slate-300'>
     <div className={`${jost.className} text-xl`}>PRICE</div>
       <div className='w-full flex flex-col space-y-3'>
-        <div><input type='range' min='0' max='600' className='w-full'/></div>
+        <div><input value={price}  onChange={(e)=>setPrice(e.target.value)} type='range' min='0' max='600' className='w-full'/></div>
 
       </div>
   
