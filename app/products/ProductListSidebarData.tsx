@@ -141,7 +141,7 @@ const ProductListSidebarData = () => {
 
 
     {/* Price */}
-    <div className='w-full flex flex-col space-y-2  border-slate-300'>
+    <div className='w-full flex flex-col space-y-2  border-slate-300 pb-12 '>
     <div className={`${jost.className} text-xl`}>PRICE</div>
       <div className='w-full flex flex-col space-y-3'>
         <div><input value={price}  onChange={(e)=>setPrice(e.target.value)} type='range' min='0' max='600' className='w-full'/></div>

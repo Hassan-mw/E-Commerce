@@ -32,10 +32,10 @@ const ProductSideBarTrigger = () => {
     <SheetContent className="w-[360px] h-full overflow-y-auto bg-white">
       <SheetHeader className="w-full flex flex-col">
         <SheetTitle className=" w-full p-3">
-           <div className="flex items-center justify-center  border-b py-3 ">
+           {/* <div className="flex items-center justify-center  border-b py-3 ">
            <SheetClose className={` ${jost.className} hover:cursor-pointer  flex items-center justify-center text-sm text-red-600 `}><div><IoMdClose  size={20} /> </div>Close</SheetClose>
            </div>
-   
+    */}
         </SheetTitle>
         <SheetDescription>
 
