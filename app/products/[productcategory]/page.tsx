@@ -5,6 +5,7 @@ import ProductData from '../ProductData'
 import ProductSideBarTrigger from '../ProductSideBarTrigger'
 import ProductListSidebarData from '../ProductListSidebarData'
 import { getAllProduct } from '@/app/API/FeatchAllProduct'
+import SortingBy from '../SortingBy'
 const jost=Jost({
   weight:['500'],
   subsets:['latin']
@@ -39,6 +40,8 @@ const page = async({params}:{params:{productcategory:string}}) => {
       <span className={` ${jost.className} flex items-center justify-center  text-sm text-[#555555]`}>110 items</span>
       
      </div>
+     {/* Showing sort by */}
+     <SortingBy/>
       {/* Side bar trigger shower */}
      <div className=' lg:hidden  w-full flex items-end justify-end '> <ProductSideBarTrigger/></div>
            

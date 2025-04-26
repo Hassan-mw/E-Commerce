@@ -23,7 +23,7 @@ const TopNUmberProductData = ({data}:TopNumberProductDataType) => {
        
     // ]
   return (
-    <div className={`  w-full grid gap-5 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3  2xl:grid-cols-4 sm:gap-7 lg:gap-12 py-9`}>
+    <div className={`  w-full grid gap-5 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3  sm:gap-7  py-9`}>
         {
 
         data.map((data,index:number)=>
@@ -33,7 +33,7 @@ const TopNUmberProductData = ({data}:TopNumberProductDataType) => {
 
     {/* //! IMAGE */}
 
-<Image height={400} width={400} src={`/${data.main_image}`} className='object-cover w-full h-full max-h-96 xl:max-h-64 shadow-2xl border border-slate-200 object-top rounded-t-md' alt='product_image' />
+<Image height={400} width={400} src={`/${data.main_image}`} className='object-cover w-full h-full max-h-96 md:max-h-64 lg:max-g-96 xl:max-h-[400px] shadow-2xl border border-slate-200 object-top rounded-t-md' alt='product_image' />
    <div className=' shadow-2xl h-36 bg-white border border-slate-100 rounded-b-md  w-full flex  sm:flex-col md:flex-row md:gap-x-3 lg:gap-x-0 lg:flex-col items-center justify-between sm:justify-start sm:items-start md:justify-between lg:justify-start space-y-1 p-3 text-white'>
     <div className='flex flex-col items-start justify-start space-y-2'>
 
