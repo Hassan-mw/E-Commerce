@@ -98,8 +98,8 @@ console.log(images,'🚅🚄🚃🚞🛴🚲🚲🛹')
       const query = `
         INSERT INTO products (
           main_image,images,name, shortdetail, ratingnumber, price, discount, brand, model, 
-          style, color, size, prodcutDetails,details
-        ) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11,$12,$13,$14) 
+          style, color, size, prodcutDetails,detailsrating,type
+        ) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11,$12,$13,$14,$15,$16) 
         RETURNING *;
       `; 
   
@@ -117,7 +117,9 @@ console.log(images,'🚅🚄🚃🚞🛴🚲🚲🛹')
         req.body.color,
         req.body.size ,
         req.body.prodcutDetails ,
-        req.body.details 
+        req.body.details ,
+        req.body.rating ,
+        req.body.type
       ]);
   
       res.status(201).json({

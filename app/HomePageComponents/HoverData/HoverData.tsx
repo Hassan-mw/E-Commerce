@@ -21,27 +21,27 @@ import {
 } from "@/components/ui/navigation-menu"
 import { Jost } from "next/font/google"
 
-const mens: { title: string; href: string; description: string }[] = [
+const brand: { title: string; href: string; description: string }[] = [
   {
-    title: "Mans Shoes",
+    title: "All",
     href:"/products/Man+Shoes",
     description:
       "",
   },
   {
-    title: "Mans Shirts",
+    title: "Shorts",
     href:"/products/Man_Shirts",
     description:
       "",
   },
   {
-    title: "Mans Boots",
+    title: "Mid-length",
     href: "/docs/primitives/progress",
     description:
       "",
   },
   {
-    title: "Mans Jacket",
+    title: "Sweather",
     href: "/docs/primitives/progress",
     description:
       "",
@@ -63,44 +63,31 @@ const mens: { title: string; href: string; description: string }[] = [
 
 ]
 
-const womens: { title: string; href: string; description: string }[] = [
+const shirts: { title: string; href: string; description: string }[] = [
   {
-    title: "Womans Shose",
+    title: "Shirt Colors",
     href: "/docs/primitives/alert-dialog",
     description:
       "",
   },
   {
-    title: "Womans Shirts",
+    title: "Shirts Size",
     href: "/docs/primitives/hover-card",
     description:
       "",
   },
   {
-    title: "Womans Boots",
+    title: "Shirts Price",
     href: "/docs/primitives/progress",
     description:
       "",
   },
   {
-    title: "Womans Jacket",
-    href: "/docs/primitives/progress",
-    description:
-      "",
-  },
-  {
-    title: "Womans Glasses",
-    href: "/docs/primitives/progress",
-    description:
-      "",
-  },
-  {
-    title: "Womans Rings",
+    title: "Shirts Rating",
     href: "/docs/primitives/progress",
     description:
       "",
   }
-  
  
 
 ]
@@ -284,10 +271,10 @@ const HoverData=()=> {
         {/* //! 1 */}
           
         <NavigationMenuItem>
-          <NavigationMenuTrigger className={`${jost.className} hover:cursor-pointer text-lg`}>Mans</NavigationMenuTrigger>
+          <NavigationMenuTrigger className={`${jost.className} hover:cursor-pointer text-lg`}>Brand</NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] bg-white ">
-              {mens.map((component) => (
+              {brand.map((component) => (
                 <ListItem
                   key={component.title}
                   title={component.title}
@@ -302,10 +289,10 @@ const HoverData=()=> {
         {/* //! 2 */}
           
         <NavigationMenuItem>
-        <NavigationMenuTrigger  className={`${jost.className} hover:cursor-pointer text-lg`}>Womens</NavigationMenuTrigger>
+        <NavigationMenuTrigger  className={`${jost.className} hover:cursor-pointer text-lg`}>Shirts</NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] bg-white ">
-              {womens.map((component) => (
+              {shirts.map((component) => (
                 <ListItem
                   key={component.title}
                   title={component.title}
@@ -319,7 +306,7 @@ const HoverData=()=> {
         </NavigationMenuItem>
         {/* //! 3 */}
         <NavigationMenuItem>
-        <NavigationMenuTrigger className={`${jost.className} hover:cursor-pointer text-lg`}>Childrens</NavigationMenuTrigger>
+        <NavigationMenuTrigger className={`${jost.className} hover:cursor-pointer text-lg`}>Sweather</NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] bg-white ">
               {childrens.map((component) => (
