@@ -1,3 +1,4 @@
+import { TopNumberProduct, TopNumberProductDataType } from '@/app/Types/dataType'
 import Button from '@/components/Button'
 import { Jost } from 'next/font/google'
 import Image from 'next/image'
@@ -8,8 +9,12 @@ const jost=Jost({
   subsets:['latin']
 })
 
+interface dataType{
+  style:string;
+  data:TopNumberProductDataType
+}
 
-const TopNUmberProductData = ({style:string,data}:TopNumberProductDataType) => {
+const TopNUmberProductData = ({data}:TopNumberProductDataType) => {
     // const productData=[
     //   {id:1,name:"Mango",details:"Kimono & Caftan - Black - Regular fit ",rating:34,price:342,image:"top_hundred_photo_1.png"},
     //   {id:3,name:"Iniqlo ",details:"Midi atlas Slim fit - bohemian ",rating:"44",price:234,image:"top_hundred_photo_3.png"},
@@ -18,10 +23,10 @@ const TopNUmberProductData = ({style:string,data}:TopNumberProductDataType) => {
        
     // ]
   return (
-    <div className={` w-full grid gap-5 grid-cols-1 sm:grid-cols-2  ${style}   sm:gap-7 lg:gap-12 py-9`}>
+    <div className={` w-full grid gap-5 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4   sm:gap-7 lg:gap-12 py-9`}>
         {
 
-        data.map((data,index)=>
+        data.map((data,index:number)=>
       
   <div key={data.id} className='bg-white hover:cursor-pointer rounded-md flex flex-col items-center justify-center  w-full'>
    
