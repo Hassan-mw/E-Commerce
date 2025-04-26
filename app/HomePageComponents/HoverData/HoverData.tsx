@@ -21,239 +21,203 @@ import {
 } from "@/components/ui/navigation-menu"
 import { Jost } from "next/font/google"
 
-const brand: { title: string; href: string; description: string }[] = [
+interface discriptionDataType{
+  id:number;
+  data:string
+}
+
+const Model: { title: string; href: string; description: discriptionDataType[] }[] = [
   {
     title: "All",
     href:"/products/Man+Shoes",
-    description:
-      "",
+    description:[
+      {id:1,data:''}
+    ]
   },
   {
     title: "Shorts",
     href:"/products/Man_Shirts",
-    description:
-      "",
+    description:[
+      {id:2,data:''}
+    ]
   },
   {
     title: "Mid-length",
     href: "/docs/primitives/progress",
-    description:
-      "",
+    description:[
+      {id:3,data:''}
+    ]
   },
   {
     title: "Sweather",
     href: "/docs/primitives/progress",
-    description:
-      "",
-  },
-  {
-    title: "Mans Watches",
-    href: "/docs/primitives/progress",
-    description:
-      "",
-  },
-  {
-    title: "Mans Ties",
-    href: "/docs/primitives/progress",
-    description:
-      "",
+    description:[
+      {id:4,data:''}
+    ]
   }
   
  
 
 ]
 
-const shirts: { title: string; href: string; description: string }[] = [
+const shirts: { title: string; href: string; description: discriptionDataType[]  }[] = [
   {
     title: "Shirt Colors",
     href: "/docs/primitives/alert-dialog",
-    description:
-      "",
+    description:[
+      {id:1,data:''}
+    ]
   },
   {
     title: "Shirts Size",
     href: "/docs/primitives/hover-card",
-    description:
-      "",
+    description:[
+      {id:1,data:''}
+    ]
   },
   {
     title: "Shirts Price",
     href: "/docs/primitives/progress",
-    description:
-      "",
+    description:[
+      {id:1,data:''}
+    ]
   },
   {
     title: "Shirts Rating",
     href: "/docs/primitives/progress",
-    description:
-      "",
+    description:[
+      {id:1,data:''}
+    ]
   }
  
 
 ]
 
-const childrens: { title: string; href: string; description: string }[] = [
+const sweather: { title: string; href: string; description: discriptionDataType[]  }[] = [
   {
-    title: "Childrens Shose",
+    title: "Sweather Size",
     href: "/docs/primitives/alert-dialog",
-    description:
-      "",
+    description:[
+      {id:1,data:''}
+    ]
   },
   {
-    title: "Childrens Shirts",
-    href: "/docs/primitives/hover-card",
-    description:
-      "",
-  },
-  {
-    title: "Childrens Boots",
+    title: "Sweather Color",
     href: "/docs/primitives/progress",
-    description:
-      "",
+    description:[
+      {id:1,data:''}
+    ]
   },
   {
-    title: "Childrens Jacket",
+    title: "Sweather Size",
     href: "/docs/primitives/progress",
-    description:
-      "",
+    description:[
+      {id:1,data:''}
+    ]
   },
   {
-    title: "Childrens Toys",
+    title: "Sweather Rating",
     href: "/docs/primitives/progress",
-    description:
-      "",
-  },
-  {
-    title: "Childrens Story Books",
-    href: "/docs/primitives/progress",
-    description:
-      "",
+    description:[
+      {id:1,data:''}
+    ]
   }
-  
+ 
+
+]
+const Size: { title: string; href: string; description: discriptionDataType[]  }[] = [
+  {
+    title: "3xl",
+    href: "/docs/primitives/alert-dialog",
+    description:[
+      {id:1,data:''}
+    ]
+  },
+  {
+    title: "2xl",
+    href: "/docs/primitives/hover-card",
+    description:[
+      {id:1,data:''}
+    ]
+  },
+  {
+    title: "XL",
+    href: "/docs/primitives/progress",
+    description:[
+      {id:1,data:''}
+    ]
+  },
+  {
+    title: "L",
+    href: "/docs/primitives/progress",
+    description:[
+      {id:1,data:''}
+    ]
+  }
+
+]
+
+const Color: { title: string; href: string; description: discriptionDataType[]  }[] = [
+  {
+    title: "Color  Red",
+    href: "/docs/primitives/alert-dialog",
+    description:[
+      {id:1,data:''}
+    ]
+  },
+  {
+    title: "Color  Green",
+    href: "/docs/primitives/hover-card",
+    description:[
+      {id:1,data:''}
+    ]
+  },
+  {
+    title: "Color  White",
+    href: "/docs/primitives/progress",
+    description:[
+      {id:1,data:''}
+    ]
+  },
+  {
+    title: "Color  Yellow",
+    href: "/docs/primitives/progress",
+    description:[
+      {id:1,data:''}
+    ]
+  }
  
 
 ]
 
-const gaming: { title: string; href: string; description: string }[] = [
+const Price: { title: string; href: string; description: discriptionDataType[]  }[] = [
   {
-    title: "Gaming Headphones",
+    title: "Below 100$",
     href: "/docs/primitives/alert-dialog",
-    description:
-      "",
+    description:[
+      {id:1,data:''}
+    ]
   },
   {
-    title: "Gaming Chairs",
+    title: "Below  200$",
     href: "/docs/primitives/hover-card",
-    description:
-      "",
+    description:[
+      {id:1,data:''}
+    ]
   },
   {
-    title: "Gaming Mouse",
+    title: "Below  300$",
     href: "/docs/primitives/progress",
-    description:
-      "",
+    description:[
+      {id:1,data:''}
+    ]
   },
   {
-    title: "Gaming Keyboard",
+    title: "Below  400$",
     href: "/docs/primitives/progress",
-    description:
-      "",
-  },
-  {
-    title: "Gaming Mouse Pad",
-    href: "/docs/primitives/progress",
-    description:
-      "",
-  },
-  {
-    title: "Gaming Led Lights",
-    href: "/docs/primitives/progress",
-    description:
-      "",
-  }
-  
- 
-
-]
-
-const sports: { title: string; href: string; description: string }[] = [
-  {
-    title: "Sports  Water Bottle",
-    href: "/docs/primitives/alert-dialog",
-    description:
-      "",
-  },
-  {
-    title: "Sports  Bots",
-    href: "/docs/primitives/hover-card",
-    description:
-      "",
-  },
-  {
-    title: "Sports  Shirts",
-    href: "/docs/primitives/progress",
-    description:
-      "",
-  },
-  {
-    title: "Sports  Watches",
-    href: "/docs/primitives/progress",
-    description:
-      "",
-  },
-  {
-    title: "Sports  Sunglasses",
-    href: "/docs/primitives/progress",
-    description:
-      "",
-  },
-  {
-    title: "Sports Shorts",
-    href: "/docs/primitives/progress",
-    description:
-      "",
-  }
-  
- 
-
-]
-
-const kitchen: { title: string; href: string; description: string }[] = [
-  {
-    title: "kitchen Knief",
-    href: "/docs/primitives/alert-dialog",
-    description:
-      "",
-  },
-  {
-    title: "kitchen  Cooker",
-    href: "/docs/primitives/hover-card",
-    description:
-      "",
-  },
-  {
-    title: "kitchen  Coofe Machine",
-    href: "/docs/primitives/progress",
-    description:
-      "",
-  },
-  {
-    title: "kitchen  Mats",
-    href: "/docs/primitives/progress",
-    description:
-      "",
-  },
-  {
-    title: "kitchen  Bowls",
-    href: "/docs/primitives/progress",
-    description:
-      "",
-  },
-  {
-    title: "kitchen Pans",
-    href: "/docs/primitives/progress",
-    description:
-      "",
+    description:[
+      {id:1,data:''}
+    ]
   }
   
  
@@ -271,16 +235,16 @@ const HoverData=()=> {
         {/* //! 1 */}
           
         <NavigationMenuItem>
-          <NavigationMenuTrigger className={`${jost.className} hover:cursor-pointer text-lg`}>Brand</NavigationMenuTrigger>
+          <NavigationMenuTrigger className={`${jost.className} hover:cursor-pointer text-lg`}>Model</NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] bg-white ">
-              {brand.map((component) => (
+              {Model.map((component) => (
                 <ListItem
                   key={component.title}
                   title={component.title}
                   href={component.href}
                 >
-                  {component.description}
+                  {component.description.map((data,index)=><span key={data.id}>{data.data}</span>)}
                 </ListItem>
               ))}
             </ul>
@@ -309,7 +273,7 @@ const HoverData=()=> {
         <NavigationMenuTrigger className={`${jost.className} hover:cursor-pointer text-lg`}>Sweather</NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] bg-white ">
-              {childrens.map((component) => (
+              {sweather.map((component) => (
                 <ListItem
                   key={component.title}
                   title={component.title}
@@ -324,10 +288,10 @@ const HoverData=()=> {
        
         {/* //! 4 */}
         <NavigationMenuItem>
-        <NavigationMenuTrigger className={`${jost.className} hover:cursor-pointer text-lg`}>Gaming</NavigationMenuTrigger>
+        <NavigationMenuTrigger className={`${jost.className} hover:cursor-pointer text-lg`}>Size</NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] bg-white ">
-              {gaming.map((component) => (
+              {Size.map((component) => (
                 <ListItem
                   key={component.title}
                   title={component.title}
@@ -342,10 +306,10 @@ const HoverData=()=> {
 
         {/* //! 5 */}
         <NavigationMenuItem>
-        <NavigationMenuTrigger className={`${jost.className} text-lg hover:cursor-pointer`}>Sports</NavigationMenuTrigger>
+        <NavigationMenuTrigger className={`${jost.className} text-lg hover:cursor-pointer`}>Color</NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] bg-white ">
-              {sports.map((component) => (
+              {Color.map((component) => (
                 <ListItem
                   key={component.title}
                   title={component.title}
@@ -360,10 +324,10 @@ const HoverData=()=> {
        
         {/* //! 6 */}
         <NavigationMenuItem>
-        <NavigationMenuTrigger className={`${jost.className} text-lg hover:cursor-pointer`}>Kitchen</NavigationMenuTrigger>
+        <NavigationMenuTrigger className={`${jost.className} text-lg hover:cursor-pointer`}>Price</NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] bg-white ">
-              {kitchen.map((component) => (
+              {Price.map((component) => (
                 <ListItem
                   key={component.title}
                   title={component.title}

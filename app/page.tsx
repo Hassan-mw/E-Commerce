@@ -10,7 +10,7 @@ import HoverData from './HomePageComponents/HoverData/HoverData'
 const page = () => {
   return (
     <div className='w-full h-full flex flex-col '>
-    <HoverData/>
+    {/* <HoverData/> */}
     <Hero/>
     <FlasDeals/>
     <TrendingProduct/>

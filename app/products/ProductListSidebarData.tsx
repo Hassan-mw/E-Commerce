@@ -121,6 +121,10 @@ const ProductListSidebarData = () => {
     <div  onClick={()=>handleColorChange('orange')}    className={`hover:cursor-pointer  size-6 rounded-full bg-orange-500`}></div>
     <div  onClick={()=>handleColorChange('pink')}      className={`hover:cursor-pointer  size-6 rounded-full bg-pink-500`}></div>
     <div  onClick={()=>handleColorChange('gray')}      className={`hover:cursor-pointer  size-6 rounded-full bg-gray-500`}></div>
+    <div  onClick={()=>handleColorChange('green')}      className={`hover:cursor-pointer  size-6 rounded-full bg-green-500`}></div>
+    <div  onClick={()=>handleColorChange('yellow')}      className={`hover:cursor-pointer  size-6 rounded-full bg-yellow-500`}></div>
+    <div  onClick={()=>handleColorChange('black')}      className={`hover:cursor-pointer  size-6 rounded-full bg-black`}></div>
+    <div  onClick={()=>handleColorChange('amber')}      className={`hover:cursor-pointer  size-6 rounded-full bg-amber-500`}></div>
     {/* <div  onClick={()=>handleColorChange('black')}     className='hover:cursor-pointer size-6 rounded-full bg-black'></div> */}
     </div>
   
