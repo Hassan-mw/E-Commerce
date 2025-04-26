@@ -51,24 +51,14 @@ exports.getAllProducts = async (req,res,next) => {
   };
 
 
-  exports.createproduct=async(req,res,next)=>{
-    try{
-     console.log(req.files)
-    }catch(err){
-        res.status(500).json({
-                    status:'fail',
-                    message:err.message,
-                    details:err.details,
-                  }) 
-    }
-  }
+
   
 exports.createproduct = async (req, res, next) => {
   let filename = null;
   let filePath = null;
   let images;
   try {
-    //   console.log(req.files,'🚪🪑🪑🌃🌁🌁⛺⛺')
+      console.log(req.files.images,'🚪🪑🪑🌃🌁🌁⛺⛺')
     //    console.log(req.file,'🚚🛴🚲🚲🚈🚈🚅🚊🚅🚉🚉🚉🚊✈🛰',req.body)
       const requiredFields = ['name', 'price', 'rating', 'color', 'size', 'brand'];
       const missingFields = requiredFields.filter(field => !req.body[field]);
@@ -78,9 +68,9 @@ exports.createproduct = async (req, res, next) => {
     //   }
   
       // 5. Check if file exists
-      if (!req.files.main_image) {
-        return next(new AppError('Please upload a product image', 400));
-      }
+      // if (!req.files.main_image) {
+      //   return next(new AppError('Please upload a product image', 400));
+      // }
   
       // 6. Only NOW process the file (since validation passed)
       const ext = req.files.main_image[0].mimetype.split('/')[1];     //jpeg or png

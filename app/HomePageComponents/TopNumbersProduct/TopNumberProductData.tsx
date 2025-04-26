@@ -28,20 +28,20 @@ const TopNUmberProductData = ({style,data}:{style:string}) => {
 
     {/* //! IMAGE */}
 
-<Image height={400} width={400} src={`/${data.main_image}`} className='object-cover w-full h-full max-h-96   object-top rounded-t-md' alt='product_image' />
-   <div className='bg-white shadow-2xl border border-slate-100 rounded-b-md  w-full flex  sm:flex-col md:flex-row md:gap-x-3 lg:gap-x-0 lg:flex-col items-center justify-between sm:justify-start sm:items-start md:justify-between lg:justify-start space-y-1 p-3 text-white'>
+<Image height={400} width={400} src={`/${data.main_image}`} className='object-cover w-full h-full max-h-96 xl:max-h-56 shadow-2xl border border-slate-200 object-top rounded-t-md' alt='product_image' />
+   <div className=' shadow-2xl h-36 bg-white border border-slate-100 rounded-b-md  w-full flex  sm:flex-col md:flex-row md:gap-x-3 lg:gap-x-0 lg:flex-col items-center justify-between sm:justify-start sm:items-start md:justify-between lg:justify-start space-y-1 p-3 text-white'>
     <div className='flex flex-col items-start justify-start space-y-2'>
 
    
     {/* //!  Name */}
     <div  style={{fontWeight:300}} className={`${jost.className} text-md text-black font-semibold `}>{data.name}</div>
     {/* //!  Product_short_detail */}
-    <div  style={{fontWeight:100}} className={`${jost.className}  text-xs text-[#555555] font-semibold `}> {data.shortdetail}</div>
+    <div  style={{fontWeight:100}} className={`${jost.className}  text-xs text-[#555555] font-semibold w-52 `}> {data.shortdetail}</div>
     </div>
     <div className='flex flex-col items-start justify-start space-y-2'>
     
     {/* //!  Product_Rating */}
-    <div   className={`${jost.className} text-xs text-[#555555] font-semibold flex items-center justify-center gap-x-3 `}><span style={{fontWeight:200}} className='text-xs'>⭐⭐⭐⭐</span><span className='text-thin'>({data.rating})</span> </div>
+    <div   className={`${jost.className} text-xs text-[#555555] font-semibold flex items-center justify-center gap-x-3 `}><span style={{fontWeight:200}} className='text-xs'>⭐⭐⭐⭐</span><span className='text-thin'>({data.ratingnumber})</span> </div>
     {/* //!  Priceing */}
     <div className={`flex items-center justify-center gap-x-3`}>
         <span  style={{fontWeight:500}}  className='text-xs text-red-600'>${data.price}.99</span>

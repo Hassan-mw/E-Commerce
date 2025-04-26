@@ -31,7 +31,7 @@ const upload=multer({
 
 exports.uploadProductPicture=upload.fields([
   {name:'main_image',maxCount:1},
-  {name:'images',maxCount:4},
+  {name:'images',maxCount:3},
 ])
 
 exports.getAllProducts = async (req,res,next) => {
@@ -56,7 +56,7 @@ exports.getAllProducts = async (req,res,next) => {
     let filePath = null;
     let images;
     try {
-      //   console.log(req.files,'🚪🪑🪑🌃🌁🌁⛺⛺')
+        console.log(req.files,'🚪🪑🪑🌃🌁🌁⛺⛺')
       //    console.log(req.file,'🚚🛴🚲🚲🚈🚈🚅🚊🚅🚉🚉🚉🚊✈🛰',req.body)
         const requiredFields = ['name', 'price', 'rating', 'color', 'size', 'brand'];
         const missingFields = requiredFields.filter(field => !req.body[field]);
@@ -66,9 +66,9 @@ exports.getAllProducts = async (req,res,next) => {
       //   }
     
         // 5. Check if file exists
-        if (!req.files.main_image) {
-          return next(new AppError('Please upload a product image', 400));
-        }
+        // if (!req.files.main_image) {
+        //   return next(new AppError('Please upload a product image', 400));
+        // }
     
         // 6. Only NOW process the file (since validation passed)
         const ext = req.files.main_image[0].mimetype.split('/')[1];     //jpeg or png
@@ -81,6 +81,7 @@ exports.getAllProducts = async (req,res,next) => {
       await fs.writeFile(filePath, req.files.main_image[0].buffer);
   
        req.files.images.forEach(async(file,i) => {
+        // console.log(file,'🚟🚟🚇🚈🚅🚅🚄🚄🚄🚅🚅🚅🚅')
        const arrayFilename=`product_${Date.now()}-${i+1}.${ext}`;  
        await fs.writeFile(arrayFilename, file.buffer);
        images.push(arrayFilename) 
