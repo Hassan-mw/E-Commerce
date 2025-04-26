@@ -9,26 +9,26 @@ const jost=Jost({
 })
 
 
-const TopNUmberProductData = ({style}:{style:string}) => {
-    const productData=[
-      {id:1,name:"Mango",details:"Kimono & Caftan - Black - Regular fit ",rating:34,price:342,image:"top_hundred_photo_1.png"},
-      {id:3,name:"Iniqlo ",details:"Midi atlas Slim fit - bohemian ",rating:"44",price:234,image:"top_hundred_photo_3.png"},
-      {id:4,name:"Mango dress",details:"Kimono & Caftan - Colorful - Night club fit",rating:222,price:55,image:"top_hundred_photo_4.png"},
-      {id:2,name:"Zara",details:"Midi top- Daily fit",rating:77,price:346,image:"top_hundred_photo_2.png"},
+const TopNUmberProductData = ({style,data}:{style:string}) => {
+    // const productData=[
+    //   {id:1,name:"Mango",details:"Kimono & Caftan - Black - Regular fit ",rating:34,price:342,image:"top_hundred_photo_1.png"},
+    //   {id:3,name:"Iniqlo ",details:"Midi atlas Slim fit - bohemian ",rating:"44",price:234,image:"top_hundred_photo_3.png"},
+    //   {id:4,name:"Mango dress",details:"Kimono & Caftan - Colorful - Night club fit",rating:222,price:55,image:"top_hundred_photo_4.png"},
+    //   {id:2,name:"Zara",details:"Midi top- Daily fit",rating:77,price:346,image:"top_hundred_photo_2.png"},
        
-    ]
+    // ]
   return (
     <div className={` w-full grid gap-5 grid-cols-1 sm:grid-cols-2  ${style}   sm:gap-7 lg:gap-12 py-9`}>
         {
 
-        productData.map((data,index)=>
+        data.map((data,index)=>
       
   <div key={data.id} className='bg-white hover:cursor-pointer rounded-md flex flex-col items-center justify-center  w-full'>
    
 
     {/* //! IMAGE */}
 
-<Image height={400} width={400} src={`/${data.image}`} className='object-cover w-full h-full max-h-96   object-top rounded-t-md' alt='product_image' />
+<Image height={400} width={400} src={`/${data.main_image}`} className='object-cover w-full h-full max-h-96   object-top rounded-t-md' alt='product_image' />
    <div className='bg-white shadow-2xl border border-slate-100 rounded-b-md  w-full flex  sm:flex-col md:flex-row md:gap-x-3 lg:gap-x-0 lg:flex-col items-center justify-between sm:justify-start sm:items-start md:justify-between lg:justify-start space-y-1 p-3 text-white'>
     <div className='flex flex-col items-start justify-start space-y-2'>
 
@@ -36,7 +36,7 @@ const TopNUmberProductData = ({style}:{style:string}) => {
     {/* //!  Name */}
     <div  style={{fontWeight:300}} className={`${jost.className} text-md text-black font-semibold `}>{data.name}</div>
     {/* //!  Product_short_detail */}
-    <div  style={{fontWeight:100}} className={`${jost.className}  text-xs text-[#555555] font-semibold `}> {data.details}</div>
+    <div  style={{fontWeight:100}} className={`${jost.className}  text-xs text-[#555555] font-semibold `}> {data.shortdetail}</div>
     </div>
     <div className='flex flex-col items-start justify-start space-y-2'>
     

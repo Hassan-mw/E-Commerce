@@ -4,6 +4,7 @@ import { MdKeyboardArrowRight } from 'react-icons/md'
 import ProductData from '../ProductData'
 import ProductSideBarTrigger from '../ProductSideBarTrigger'
 import ProductListSidebarData from '../ProductListSidebarData'
+import { getAllProduct } from '@/app/API/FeatchAllProduct'
 const jost=Jost({
   weight:['500'],
   subsets:['latin']
@@ -14,6 +15,8 @@ const jost=Jost({
 
 
 const page = async({params}:{params:{productcategory:string}}) => {
+  const data=await getAllProduct()
+  console.log(data,'🚜🚜🚛🚛🚚🚚🚒🚒🚑')
   const {productcategory}=await params
    const [category,productName]=productcategory.split('_')
   return (
@@ -50,7 +53,7 @@ const page = async({params}:{params:{productcategory:string}}) => {
        
         </div>
         <div className='w-full     '>
-           <ProductData/>
+           <ProductData data={data}/>
           </div>
           </div>
     </div>
