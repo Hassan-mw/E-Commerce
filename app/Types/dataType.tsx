@@ -21,3 +21,7 @@ export interface AboutCategoryDataTYpe{
     data:AboutCategorySubDataType[ ]
    
 }
+
+export interface TopNumberProductDataType{
+    
+}

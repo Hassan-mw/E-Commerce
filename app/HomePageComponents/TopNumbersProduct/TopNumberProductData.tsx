@@ -9,7 +9,7 @@ const jost=Jost({
 })
 
 
-const TopNUmberProductData = ({style,data}:{style:string}) => {
+const TopNUmberProductData = ({style:string,data}:TopNumberProductDataType) => {
     // const productData=[
     //   {id:1,name:"Mango",details:"Kimono & Caftan - Black - Regular fit ",rating:34,price:342,image:"top_hundred_photo_1.png"},
     //   {id:3,name:"Iniqlo ",details:"Midi atlas Slim fit - bohemian ",rating:"44",price:234,image:"top_hundred_photo_3.png"},
@@ -28,7 +28,7 @@ const TopNUmberProductData = ({style,data}:{style:string}) => {
 
     {/* //! IMAGE */}
 
-<Image height={400} width={400} src={`/${data.main_image}`} className='object-cover w-full h-full max-h-96 xl:max-h-56 shadow-2xl border border-slate-200 object-top rounded-t-md' alt='product_image' />
+<Image height={400} width={400} src={`/${data.main_image}`} className='object-cover w-full h-full max-h-96 xl:max-h-64 shadow-2xl border border-slate-200 object-top rounded-t-md' alt='product_image' />
    <div className=' shadow-2xl h-36 bg-white border border-slate-100 rounded-b-md  w-full flex  sm:flex-col md:flex-row md:gap-x-3 lg:gap-x-0 lg:flex-col items-center justify-between sm:justify-start sm:items-start md:justify-between lg:justify-start space-y-1 p-3 text-white'>
     <div className='flex flex-col items-start justify-start space-y-2'>
 
