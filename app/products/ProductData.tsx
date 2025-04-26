@@ -12,11 +12,11 @@ interface dataType{
 const ProductData = ({data}:TopNumberProductDataType) => {
   return (
     <div className='w-full flex flex-col items-center justify-center bg-white py-6'>
-     <div>
+     {/* <div> */}
       <TopNUmberProductData data={data}  /> 
       {/* <TopNUmberProductData data={data} style='lg:grid-cols-3 xl:grid-cols-4' />  */}
      
-    </div>
+    {/* </div> */}
     </div>
   )
 }
