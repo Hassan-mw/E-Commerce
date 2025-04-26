@@ -16,9 +16,9 @@ const jost=Jost({
 
 
 const page = async({params,searchParams}:{params:{productcategory:string},searchParams:URLSearchParams}) => {
-  const data=await getAllProduct()
-  const x=await searchParams
-  console.log(x,'🚜🚜🚛🚛🚚🚚🚒🚒🚑')
+  const parameters=await searchParams
+  const data=await getAllProduct({parameters})
+  
   const {productcategory}=await params
    const [category,productName]=productcategory.split('_')
   return (

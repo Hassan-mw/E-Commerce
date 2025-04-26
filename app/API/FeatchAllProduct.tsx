@@ -1,6 +1,9 @@
-export const getAllProduct=async()=>{
+export const getAllProduct=async({parameters}:{parameters:URLSearchParams})=>{
+
     try{
- const response=await fetch(`http://localhost:5000/api/products`)
+      const parametersData=new URLSearchParams(parameters)
+      console.log(parameters,parametersData)
+ const response=await fetch(`http://localhost:5000/api/products?${parametersData}`)
 
  const data=await response.json()
  return data.data
