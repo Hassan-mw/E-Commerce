@@ -65,6 +65,7 @@ exports.getAllProducts = async (req,res,next) => {
 exports.createproduct = async (req, res, next) => {
   let filename = null;
   let filePath = null;
+  let images;
   try {
     //   console.log(req.files,'🚪🪑🪑🌃🌁🌁⛺⛺')
     //    console.log(req.file,'🚚🛴🚲🚲🚈🚈🚅🚊🚅🚉🚉🚉🚊✈🛰',req.body)
@@ -84,22 +85,25 @@ exports.createproduct = async (req, res, next) => {
       const ext = req.files.main_image[0].mimetype.split('/')[1];     //jpeg or png
        filename = `product_${Date.now()}.${ext}`;   
        filePath = path.join(__dirname, '../../../public', `product_${Date.now()}.${ext}`); //C:\Users\A.M.W\Desktop\e-commers\e-commers\public\product_1744267348373.jpeg 
-      const images=[]
+       images=[]
+
+
       // 7. Write file to disk manually
-      await fs.writeFile(filePath, req.files.main_image[0].buffer);
+    await fs.writeFile(filePath, req.files.main_image[0].buffer);
+
      req.files.images.forEach(async(file,i) => {
-        console.log(file,'🚘🚜🚜🚛🚛🚚🚚🚒🚒🛴🚲🚝🚲🚛🚛')
      const arrayFilename=`product_${Date.now()}-${i+1}.${ext}`;  
      await fs.writeFile(arrayFilename, file.buffer);
      images.push(arrayFilename) 
        });
-console.log(images,'🚅🚄🚃🚞🛴🚲🚲🛹')
+
+
       // 8. Proceed with database insertion
       const query = `
         INSERT INTO products (
           main_image,images,name, shortdetail, ratingnumber, price, discount, brand, model, 
-          style, color, size, prodcutDetails,detailsrating,type
-        ) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11,$12,$13,$14,$15,$16) 
+          style, color, size, prodcutDetails,details,rating
+        ) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11,$12,$13,$14,$15) 
         RETURNING *;
       `; 
   
@@ -117,9 +121,8 @@ console.log(images,'🚅🚄🚃🚞🛴🚲🚲🛹')
         req.body.color,
         req.body.size ,
         req.body.prodcutDetails ,
-        req.body.details ,
-        req.body.rating ,
-        req.body.type
+        req.body.details,
+        req.body.rating 
       ]);
   
       res.status(201).json({
@@ -127,20 +130,26 @@ console.log(images,'🚅🚄🚃🚞🛴🚲🚲🛹')
         data: result.rows[0]
       });
   
-    } catch (err) {
+    } catch (err) { 
+    
+
+      try {
+          await fs.unlink(filePath);
+        images.forEach(async el=>await fs.unlink(el))  
+
+        } catch (cleanupErr) {
+          console.error('Error cleaning up file:', cleanupErr.message);
+        }
       console.log(err)
       res.status(500).json({ 
         status:'fail',
         message:err.message,
         details:err.details,
+        detail:err.detail,
       })
-      if (filename && filePath) {
-        try {
-          await fs.unlink(filePath);
-        } catch (cleanupErr) {
-          console.error('Error cleaning up file:', cleanupErr.message);
-        }
-      }
+      // if (filename && filePath) {
+      
+      // }
       next(err);
     }
   };
