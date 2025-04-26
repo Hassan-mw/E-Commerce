@@ -15,9 +15,10 @@ const jost=Jost({
 
 
 
-const page = async({params}:{params:{productcategory:string}}) => {
+const page = async({params,searchParams}:{params:{productcategory:string},searchParams:URLSearchParams}) => {
   const data=await getAllProduct()
-  console.log(data,'🚜🚜🚛🚛🚚🚚🚒🚒🚑')
+  const x=await searchParams
+  console.log(x,'🚜🚜🚛🚛🚚🚚🚒🚒🚑')
   const {productcategory}=await params
    const [category,productName]=productcategory.split('_')
   return (
@@ -32,8 +33,8 @@ const page = async({params}:{params:{productcategory:string}}) => {
 
 
       {/*//! Current Page showing +  side bar trigger  bg-[#E9E9E9]*/}
-     <div className='w-full flex items-center justify-center bg-[#E9E9E9] py-3 px-5 '>
-     <div className='w-full max-w-screen-2xl grid grid-cols-3 '>
+     <div className='w-full flex items-center justify-center bg-[#E9E9E9] py-3 px-5'>
+     <div className='w-full max-w-screen-2xl grid grid-cols-3 lg:grid-cols-2 px-5'>
       {/* Number of product shower */}
      <div className=' flex items-center justify-start gap-x-3 '>
       <span style={{fontWeight:300}} className={` ${jost.className} flex items-center text-lg justify-center text-[#262626]`}>{category}</span>

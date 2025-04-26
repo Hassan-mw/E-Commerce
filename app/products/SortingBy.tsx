@@ -12,10 +12,10 @@ const SortingBy = () => {
     <div className='w-full flex items-center justify-end'>
 
     <Select >
-    <SelectTrigger className="w-[150px]">
-      <SelectValue placeholder="Sort by order" />
+    <SelectTrigger className="w-[140px] hover:cursor-pointer  placeholder:text-[#7B7B7B] border-[#7B7B7B] outline-[#7B7B7B]">
+      <SelectValue  placeholder="Sort by order" />
     </SelectTrigger>
-    <SelectContent className='border-[#7B7B7B] outline-[#7B7B7B]'>
+    <SelectContent className='bg-white'>
       <SelectItem value="light">Light</SelectItem>
       <SelectItem value="dark">Dark</SelectItem>
       <SelectItem value="system">System</SelectItem>
