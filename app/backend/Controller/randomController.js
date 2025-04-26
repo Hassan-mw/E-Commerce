@@ -62,6 +62,7 @@ exports.getAllProducts = async (req,res,next) => {
                   }) 
     }
   }
+  
 exports.createproduct = async (req, res, next) => {
   let filename = null;
   let filePath = null;
