@@ -37,8 +37,8 @@ exports.uploadProductPicture=upload.fields([
 exports.getAllProducts = async (req,res,next) => {
     try {
       const {x}=req.query
-      console.log(x,'🚜🚛🚛🚚🚚🛹🦼🦼',req.query)
-     const {rows}=await pool.query("SELECT * FROM products")
+      
+     const {rows}=await pool.query(`SELECT * FROM products WHERE name="abc' `)
       res.status(200).json({
         length:rows.length,
         status: 'success',
@@ -48,7 +48,7 @@ exports.getAllProducts = async (req,res,next) => {
       console.error(err);
       res.status(500).json({
         status: 'error',
-        message: "Can't create a product ",
+        message: err.message
       });
     }
   };
