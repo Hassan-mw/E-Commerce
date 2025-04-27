@@ -2,12 +2,12 @@ import React from 'react'
 import ImageHandler from './ImageHandler'
 import TopDataHandler from './TopDataHandler'
 
-const ProductDetailsData = ({images}) => {
+const ProductDetailsData = ({images,name,price}) => {
   return (
     <div className='w-full flex flex-col space-y-4'>
      <div className='w-full grid grid-cols-1 gap-x-2'>
       <ImageHandler images={images}/> 
-      <TopDataHandler /> 
+      <TopDataHandler price={price} name={name}  /> 
      </div>
     </div>
   )
