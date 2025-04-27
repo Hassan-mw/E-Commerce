@@ -11,6 +11,11 @@ const ImageHandler = ({images}:{images:string[]}) => {
         <Image key={index} height={400} width={400} className='w-full h-full object-cover p-2 object-center max-h-48' src={`/${data}`} alt="Images" />
         )}
         </div>
+        {/* Large Image */}
+        <div className='w-full h-full '>
+        <Image height={400} width={400} className='w-full h-full object-cover p-2 object-center max-h-[350px]' src={`/${images[0]}`} alt="Images" />
+        
+        </div>
 
     </div>
   )
