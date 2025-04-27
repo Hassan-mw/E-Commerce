@@ -10,8 +10,8 @@ router.route('/')
 
 
 
-router.route('/:name')
-.get(productController.getProductByName)
+router.route('/:id')
+.get(productController.getProductById)
 .delete(productController.deleteProduct)
 
 

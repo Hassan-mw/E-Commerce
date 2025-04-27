@@ -30,7 +30,7 @@ const ProductArrray = ({data}:TopNumberProductDataType) => {
 
         data.map((data,index:number)=>
       
-  <Link href={`/productsDetails/${data.name}`} key={data.id} className='bg-white hover:cursor-pointer rounded-md flex flex-col items-center justify-center  w-full'>
+  <Link href={`/productsDetails/${data.id}`} key={data.id} className='bg-white hover:cursor-pointer rounded-md flex flex-col items-center justify-center  w-full'>
    
 
     {/* //! IMAGE */}

@@ -147,12 +147,12 @@ exports.getAllProducts = async (req,res,next) => {
   };
    
  
-exports.getProductByName=async(req,res,next)=>{
+exports.getProductById=async(req,res,next)=>{
   try{
-    const {name}=req.params
-   console.log(name,'☜(ﾟヮﾟ☜)☜(ﾟヮﾟ☜)😫😣😴😮🤗')
-  const {rows} =await pool.query(`SELECT * FROM products WHERE name=$1`,[name])
-  console.log(rows,'😈👿👾🧐👽👻👿')
+    const {id}=req.params
+
+  const {rows} =await pool.query(`SELECT * FROM products WHERE id=$1`,[id])
+  console.log(rows,id,'😈👿👾🧐👽👻👿')
   res.status(200)
   .json({
     status:'success',

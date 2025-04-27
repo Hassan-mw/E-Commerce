@@ -8,6 +8,7 @@ router.route('/')
 
 
 router.route('/:id')
+// .get(orderController.getOrderById)
 .delete(orderController.deleteOrder)
 
 

@@ -36,6 +36,25 @@ exports.createOrder=async(req,res,next)=>{
     })
     }
 }
+
+exports.getOrderById=async(req,res,next)=>{
+    try{
+   const {id}=req.params
+   console.log(id)
+   const {rows}=await pool.query(`SELECT * FROM products WHERE id=$1`,[id])
+     console.log(rows)
+   res.status(200).json({
+    status:'success',
+    data:rows[0]
+   })
+    }catch(err){
+    res.status(500).json({
+       status:'fail',
+       message:err.message
+     })
+    }
+}
+
 exports.deleteOrder=async(req,res,next)=>{
     try{
         const {id}=req.params
