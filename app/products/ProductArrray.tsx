@@ -46,7 +46,7 @@ const ProductArrray = ({data}:TopNumberProductDataType) => {
     {/* //!  Name */}
     <div  style={{fontWeight:300}} className={`${jost.className} text-md text-black font-semibold `}>{data.name}</div>
     {/* //!  Product_short_detail */}
-    <div  style={{fontWeight:100}} className={`${jost.className}  text-xs text-[#555555] font-semibold w-52 `}> {data.shortdetail}</div>
+    <div  style={{fontWeight:100}} className={`${jost.className}  text-xs text-[#555555] font-semibold w-52 `}> {data.shortdetail},{data.id}</div>
     </div>
     <div className='flex flex-col items-start justify-start space-y-2'>
     
