@@ -4,7 +4,7 @@ const pool = require("../Pool/pool")
 
 exports.getAllOrder=async(req,res,next)=>{
     try{
-  const {rows}=await pool.query(`SELECT * FROM orders`)
+  const {rows}=await pool.query(`SELECT * FROM orders ORDER BY id`)
   
   res.status(200).json({
     status:'success',

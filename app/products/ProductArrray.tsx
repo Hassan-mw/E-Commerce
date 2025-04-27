@@ -15,6 +15,7 @@ interface dataType{
 }
 
 const ProductArrray = ({data}:TopNumberProductDataType) => {
+  console.log(data)
     // const productData=[
     //   {id:1,name:"Mango",details:"Kimono & Caftan - Black - Regular fit ",rating:34,price:342,image:"top_hundred_photo_1.png"},
     //   {id:3,name:"Iniqlo ",details:"Midi atlas Slim fit - bohemian ",rating:"44",price:234,image:"top_hundred_photo_3.png"},
