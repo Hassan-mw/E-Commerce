@@ -2,6 +2,7 @@ import { TopNumberProduct, TopNumberProductDataType } from '@/app/Types/dataType
 import Button from '@/components/Button'
 import { Jost } from 'next/font/google'
 import Image from 'next/image'
+import Link from 'next/link'
 import React from 'react'
 
 const jost=Jost({
@@ -29,14 +30,14 @@ const ProductArrray = ({data}:TopNumberProductDataType) => {
 
         data.map((data,index:number)=>
       
-  <div key={data.id} className='bg-white hover:cursor-pointer rounded-md flex flex-col items-center justify-center  w-full'>
+  <Link href={`/productsDetails/${data.name}`} key={data.id} className='bg-white hover:cursor-pointer rounded-md flex flex-col items-center justify-center  w-full'>
    
 
     {/* //! IMAGE */}
 
-<div className='w-full h-full   shadow-2xl'>
+<div className='w-full h-full border-t border-slate-100 rounded-t-md shadow-2xl'>
 
-<Image height={400} width={400} src={`/${data.main_image}`} className='object-contain max-h-[400px] w-full h-full  object-center p-3 rounded-t-md' alt='product_image' />
+<Image height={400} width={400} src={`/${data.main_image}`} className='object-contain max-h-[400px]   w-full h-full  object-center p-3 rounded-t-md' alt='product_image' />
 {/* <Image height={800} width={800} src={`/${data.main_image}`} className='object-cover object-top aspect-auto  w-full h-full max-h-96 md:max-h-64 lg:max-g-96 xl:max-h-[400px] shadow-2xl border border-slate-200 object-top rounded-t-md' alt='product_image' /> */}
 </div>
    <div className=' shadow-2xl h-36 bg-white border border-slate-100 rounded-b-md  w-full flex  sm:flex-col md:flex-row md:gap-x-3 lg:gap-x-0 lg:flex-col items-center justify-between sm:justify-start sm:items-start md:justify-between lg:justify-start space-y-1 p-3 text-white'>
@@ -63,7 +64,7 @@ const ProductArrray = ({data}:TopNumberProductDataType) => {
     </div>
 
     </div>
-    </div>
+    </Link>
       )}
     </div>
   )
