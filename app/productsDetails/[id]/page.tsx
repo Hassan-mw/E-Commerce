@@ -12,7 +12,7 @@ const jost=Jost({
 const page = async({params}:{params:{id:URLSearchParams}}) => {
     const {id}=await params
     const data=await getProductById({id})
-    const {name,main_image,style}=data[0]
+    const {name,main_image,style,images}=data[0]
 
   return (
     <div className='w-full flex items-center justify-center'>
@@ -25,7 +25,7 @@ const page = async({params}:{params:{id:URLSearchParams}}) => {
            <span className={` ${jost.className} flex items-center justify-center  text-sm text-[#555555]`}>{name} </span>
           </div>
         
-       <ProductDetailsData/> 
+       <ProductDetailsData  images={images} /> 
 
     </div>
     </div>
