@@ -38,7 +38,7 @@ exports.getAllProducts = async (req,res,next) => {
     try {
       const {x}=req.query
       
-     const {rows}=await pool.query(`SELECT * FROM products WHERE name="abc' `)
+     const {rows}=await pool.query(`SELECT * FROM products  `)
       res.status(200).json({
         length:rows.length,
         status: 'success',
