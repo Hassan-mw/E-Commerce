@@ -36,6 +36,8 @@ exports.uploadProductPicture=upload.fields([
 
 exports.getAllProducts = async (req,res,next) => {
     try {
+      const {x}=req.query
+      console.log(x,'🚜🚛🚛🚚🚚🛹🦼🦼',req.query)
      const {rows}=await pool.query("SELECT * FROM products")
       res.status(200).json({
         length:rows.length,
