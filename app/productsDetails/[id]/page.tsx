@@ -18,7 +18,7 @@ const page = async({params}:{params:{id:URLSearchParams}}) => {
 
   return (
     <div className='w-full flex items-center justify-center'>
-    <div className='w-full max-w-screen-2xl  flex flex-col spcae-y-4 items-center justify-center'>
+    <div className='w-full max-w-screen-2xl  flex flex-col space-y-8 items-center justify-center'>
      {/* Current Page showing */}
        <div className='w-full flex   max-w-screen-2xl items-start justify-start space-x-3 bg-white py-3 px-5'>
            <Link href="/" style={{fontWeight:300}} className={` ${jost.className} flex hover:cursor-pointer items-center text-sm justify-center text-[#555555]`}>Homepage <MdKeyboardArrowRight size={20} /></Link>

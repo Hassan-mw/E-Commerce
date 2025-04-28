@@ -1,10 +1,28 @@
-import React from 'react'
+'use client';
+
+const jost=Jost({
+  weight:['500'],
+  subsets:['latin']
+})
+
+import { Jost } from "next/font/google";
+import { useState } from "react";
 
 const DataDetails = () => {
+    const [currentDetails,setCurrentDetails]=useState('PRODUCT DETAILS')
+    const data=[
+        {id:1,name:'PRODUCT DETAILS'},
+        {id:2,name:'REVIEWS'},
+        {id:3,name:'SHIPPING & PAYMENT'}
+    ]
   return (
-    <div>
+    <div className="w-full flex items-center justify-center gap-x-6 ">
+        {
+            data.map((data,index)=>
+                <div key={data.id} onClick={()=>setCurrentDetails(data.name)} style={{fontWeight:400}} className={`${jost.className} ${currentDetails===data.name ? 'text-[#262626]' : 'text-[#9D9D9D]'  } hover:cursor-pointer text-sm ${jost.className} `}>{data.name}</div>
+            )
+            }
 
-        
     </div>
   )
 }
