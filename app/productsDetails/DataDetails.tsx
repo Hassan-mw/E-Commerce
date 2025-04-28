@@ -7,6 +7,9 @@ const jost=Jost({
 
 import { Jost } from "next/font/google";
 import { useState } from "react";
+import ProductDetail from "./ProductDetail";
+import ReviewDetail from "./ReviewDetail";
+import ShippingPaymentDetail from "./ShippingPaymentDetail";
 
 const DataDetails = () => {
     const [currentDetails,setCurrentDetails]=useState('PRODUCT DETAILS')
@@ -23,6 +26,9 @@ const DataDetails = () => {
             )
             }
 
+    {currentDetails==='PRODUCT DETAILS' && <ProductDetail/>}
+    {currentDetails==='REVIEWS' && <ReviewDetail/>}
+    {currentDetails==='SHIPPING & PAYMENT' && <ShippingPaymentDetail/>}
     </div>
   )
 }
