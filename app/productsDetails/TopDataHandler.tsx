@@ -2,6 +2,7 @@ import Button from '@/components/Button'
 import { Jost } from 'next/font/google'
 import React from 'react'
 import { FaCirclePlus } from 'react-icons/fa6'
+import { PiBasketThin } from 'react-icons/pi'
 
 
 const jost=Jost({
@@ -9,7 +10,7 @@ const jost=Jost({
   subsets:['latin']
 })
 
-const TopDataHandler = ({name,price}) => {
+const TopDataHandler = ({name,price,color,quantity,size}) => {
   return (
     <div className='w-full flex flex-col space-y-4 px-5'>
   {/* Name + Price */}
@@ -21,12 +22,9 @@ const TopDataHandler = ({name,price}) => {
  {/* Size */}
  <div className='flex flex-col spce-y-2'>
     <div className={`${jost.className} flex items-center justify-start gap-x-8 `}>
-        <span style={{fontWeight:200}} className={`${jost.className} text-xs text-[#262626] min-w-14`}>size</span>
-        
+        <span style={{fontWeight:200}} className={`${jost.className} text-sm text-[#262626] min-w-14`}>size</span>
         <div className={`${jost.className} flex items-center justify-center gap-x-3 `}> 
-        <span style={{fontWeight:200}} className={`${jost.className} border rounded-sm border-slate-200 px-3 py-0.5 text-[#555555] text-xs`}>sm</span>
-        <span style={{fontWeight:200}} className={`${jost.className} border rounded-sm border-slate-200 px-3 py-0.5 text-[#555555]  text-xs`}>md</span>
-        <span style={{fontWeight:200}} className={`${jost.className} border rounded-sm border-slate-200 px-3 py-0.5 text-[#555555] text-xs`}>xl</span>
+        <span style={{fontWeight:200}} className={`${jost.className} border rounded-sm border-slate-200 px-3 py-0.5 text-[#555555] text-xs`}>{size}</span>
         </div>
         </div>
 
@@ -35,12 +33,11 @@ const TopDataHandler = ({name,price}) => {
  {/* color */}
  <div className='flex flex-col spce-y-2'>
     <div className={`${jost.className} flex items-center justify-start gap-x-8 `}>
-        <span style={{fontWeight:200}} className={`${jost.className} text-xs text-[#262626] min-w-14`}>color</span>
+        <span style={{fontWeight:200}} className={`${jost.className} text-sm text-[#262626] min-w-14`}>color</span>
         
         <div className={`${jost.className} flex items-center justify-center gap-x-3 `}> 
-        <span className='size-3 rounded-full bg-green-600'></span>    
-        <span className='size-3 rounded-full bg-blue-600'></span>    
-        <span className='size-3 rounded-full bg-yellow-600'></span>    
+        <span className={`size-3 rounded-full bg-${color}-600`}></span>    
+ 
        
       
         </div>
@@ -51,7 +48,7 @@ const TopDataHandler = ({name,price}) => {
  {/* shipping */}
  <div className='flex flex-col items-start spce-y-2 '>
   <div className={`${jost.className} flex items-start justify-start gap-x-8 `}>
-  <span style={{fontWeight:200}} className={`${jost.className} text-xs text-[#262626] min-w-14 `}>Shipping</span>  
+  <span style={{fontWeight:200}} className={`${jost.className} text-sm text-[#262626] min-w-14 `}>Shipping</span>  
   <div className={`flex flex-col  items-start justify-start gap-x-3 `}> 
   <div style={{fontWeight:100}} className={`${jost.className} text-xs text-[#262626]`}>Free Shipping to Victoria teritory</div>
   <div  className={` text-[10px] text-[#9D9D9D]`}>Delivery time 14 -17 days</div>
@@ -67,7 +64,7 @@ const TopDataHandler = ({name,price}) => {
         
         <div className={`${jost.className} flex   items-center justify-start gap-x-3 `}> 
         <div style={{fontWeight:100}} className={`${jost.className} border px-3 py-1 w-20 flex items-center justify-between rounded-md border-slate-300 text-xs`}><span className='text-slate-500 hover:cursor-pointer'>--</span><span>2</span><span className='text-slate-500 hover:cursor-pointer'>+</span ></div>
-        <div style={{fontWeight:100}} className={`${jost.className} text-[11px] text-[#555555]`}>50 Avaliable</div>
+        <div style={{fontWeight:100}} className={`${jost.className} text-[11px] text-[#555555]`}>{quantity} Avaliable</div>
        
       
         </div>
@@ -88,13 +85,19 @@ const TopDataHandler = ({name,price}) => {
         
    
  </div>
+ 
  {/* CTA */}
  <div className='flex items-center justify-center gap-x-7'>
-  <Button style='bg-[#4172DC] text-white w-full p-3 rounded-md  flex items-center justify-center' href='/'>SHOP NOW</Button>
+  <Button style='bg-[#4172DC] hover:bg-blue-600 duration-500 text-white w-full p-3 rounded-md  flex items-center justify-center' href='/'>SHOP NOW</Button>
   {/* <div className=''></div> */}
-  <div className='bg-[#4172DC] text-white w-full p-3 rounded-md '>SHOP NOW</div>
+  <div className='border border-[#555555] hover:shadow-2xl hover:cursor-pointer duration-500  text-[#555555] gap-x-1  p-3 rounded-md w-full flex items-center justify-center '>
+  <PiBasketThin size={19} />
+   <span style={{fontWeight:400}} className={`${jost.className}  `}>ADD TO BASKET</span>
+    </div>
 
  </div>
+
+ 
     </div>
   )
 }
