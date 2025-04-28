@@ -11,7 +11,7 @@ import ProductDetail from "./ProductDetail";
 import ReviewDetail from "./ReviewDetail";
 import ShippingPaymentDetail from "./ShippingPaymentDetail";
 
-const DataDetails = ({details,shortdetail}) => {
+const DataDetails = ({details,shortdetail,prodcutdetails}) => {
     const [currentDetails,setCurrentDetails]=useState('PRODUCT DETAILS')
     const data=[
         {id:1,name:'PRODUCT DETAILS'},
@@ -28,7 +28,7 @@ const DataDetails = ({details,shortdetail}) => {
             }
     </div>
 
-    {currentDetails==='PRODUCT DETAILS' && <ProductDetail details={details} shortdetail={shortdetail} />}
+    {currentDetails==='PRODUCT DETAILS' && <ProductDetail prodcutdetails={prodcutdetails} details={details} shortdetail={shortdetail} />}
     {currentDetails==='REVIEWS' && <ReviewDetail/>}
     {currentDetails==='SHIPPING & PAYMENT' && <ShippingPaymentDetail/>}
     </div>

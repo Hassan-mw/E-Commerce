@@ -15,7 +15,7 @@ const page = async({params}:{params:{id:URLSearchParams}}) => {
     const {id}=await params
     const data=await getProductById({id})
     console.log(data)
-    const {name,main_image,style,images,price,color,size,quantity,details,shortdetail}=data[0]
+    const {name,main_image,style,images,price,color,size,quantity,details,shortdetail,prodcutdetails}=data[0]
 
   return (
     <div className='w-full flex items-center justify-center'>
@@ -30,7 +30,7 @@ const page = async({params}:{params:{id:URLSearchParams}}) => {
         
      <ProductDetailsData price={price} name={name}  images={images} color={color} quantity={quantity} size={size} /> 
            
-     <DataDetails details={details} shortdetail={shortdetail}  />      
+     <DataDetails details={details} shortdetail={shortdetail} prodcutdetails={prodcutdetails}  />      
     </div>
     </div>
   )
