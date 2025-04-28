@@ -6,7 +6,7 @@ const ImageHandler = ({images}:{images:string[]}) => {
     const [currentChageImage,setCurrentChangeImage]=useState('')
     console.log(currentChageImage,'🛹🦼🚲🛹🛹🦼🦼')
   return (
-    <div className='w-full flex gap-x-4  spcae-y-2 p-5 '>
+    <div className='w-full flex gap-x-4  spcae-y-2 p-5 bg-green-400 '>
         {/* Small Images */}
         <div className='   grid grid-cols-1 gap-y-3 grid-rows-6 place-items-center h-[400px]'>
         {images.map((data,index)=>
@@ -15,7 +15,7 @@ const ImageHandler = ({images}:{images:string[]}) => {
         )}
         </div>
         {/* Large Image */}
-        <div className='w-full bg-[#ffffff]  h-[400px] '>
+        <div className='w-full bg-[#3e0808]  h-[400px] '>
         <Image  height={200} width={500} quality={100} className='w-full h-full  object-contain  object-center  rounded-md' src={`/${currentChageImage==='' ? images[0] : currentChageImage}`} alt="Images" />
         
         </div>
