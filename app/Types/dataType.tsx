@@ -53,3 +53,13 @@ export interface ProductDetailsDataType{
     quantity:number;
     size:number
 }
+
+//////////////////
+
+export interface producutDetailsDataType{
+
+    details:string[];
+    shortdetail:string;
+    prodcutdetails:string;
+
+}

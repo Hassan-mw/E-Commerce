@@ -10,8 +10,9 @@ import { useState } from "react";
 import ProductDetail from "./ProductDetail";
 import ReviewDetail from "./ReviewDetail";
 import ShippingPaymentDetail from "./ShippingPaymentDetail";
+import { producutDetailsDataType } from "../Types/dataType";
 
-const DataDetails = ({details,shortdetail,prodcutdetails}) => {
+const DataDetails = ({details,shortdetail,prodcutdetails}:producutDetailsDataType) => {
     const [currentDetails,setCurrentDetails]=useState('PRODUCT DETAILS')
     const data=[
         {id:1,name:'PRODUCT DETAILS'},

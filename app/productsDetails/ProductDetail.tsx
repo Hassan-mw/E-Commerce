@@ -6,7 +6,11 @@ const jost=Jost({
   weight:['500'],
   subsets:['latin']
 })
-const ProductDetail = ({details,shortdetail,prodcutdetails}) => {
+
+import { LuDot } from "react-icons/lu";
+import { producutDetailsDataType } from '../Types/dataType';
+
+const ProductDetail = ({details,shortdetail,prodcutdetails}:producutDetailsDataType) => {
     console.log(details,'🚈🛹🦼🦼🦽🦽🚍🚍')
   return (
     <div className='w-full grid grid-cols-2 gap-8 p-5'>
@@ -25,8 +29,8 @@ const ProductDetail = ({details,shortdetail,prodcutdetails}) => {
     <div className={`${jost.className} text-xl`}>Composition</div>
     {
      details.map((data,index)=>
-    <div key={index} style={{fontWeight:200}} className="w-full flex items-start justify-start gap-x-2">
-       <div c>  <GoDotFill size={10} /></div>
+    <div key={index} style={{fontWeight:200}} className="w-full flex items-start justify-start gap-x-1">
+       <div >  <LuDot /></div>
         <span className={`${jost.className}  text-[#7c7979] text-xs`}> {data}</span></div>
     )}
     </div>
