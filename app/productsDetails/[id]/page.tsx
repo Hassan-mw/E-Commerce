@@ -13,7 +13,7 @@ const jost=Jost({
 const page = async({params}:{params:{id:URLSearchParams}}) => {
     const {id}=await params
     const data=await getProductById({id})
-    const {name,main_image,style,images,price}=data[0]
+    const {name,main_image,style,images,price,color,size}=data[0]
 
   return (
     <div className='w-full flex items-center justify-center'>

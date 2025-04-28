@@ -44,3 +44,7 @@ export interface TopNumberProductDataType{
     data:TopNumberProduct[]
 }
 ////////////////////
+
+export interface ProductDetailsDataType{
+    
+}
