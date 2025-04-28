@@ -19,12 +19,14 @@ const DataDetails = () => {
         {id:3,name:'SHIPPING & PAYMENT'}
     ]
   return (
-    <div className="w-full flex items-center justify-center gap-x-6 ">
+    <div className="w-full flex flex-col space-y-3 items-center justify-center gap-x-6 ">
+    <div className="w-full flex  items-center justify-center gap-x-6 ">
         {
             data.map((data,index)=>
                 <div key={data.id} onClick={()=>setCurrentDetails(data.name)} style={{fontWeight:400}} className={`${jost.className} ${currentDetails===data.name ? 'text-[#262626]' : 'text-[#9D9D9D]'  } hover:cursor-pointer text-sm ${jost.className} `}>{data.name}</div>
             )
             }
+    </div>
 
     {currentDetails==='PRODUCT DETAILS' && <ProductDetail/>}
     {currentDetails==='REVIEWS' && <ReviewDetail/>}
