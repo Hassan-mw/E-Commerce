@@ -16,43 +16,43 @@ import { FaTshirt } from "react-icons/fa";
 const ProductDetail = ({details,shortdetail,prodcutdetails}:producutDetailsDataType) => {
     console.log(details,'🚈🛹🦼🦼🦽🦽🚍🚍')
   return (
-    <div className='w-full grid grid-cols-2 gap-8 p-5'>
+    <div className='w-full grid grid-cols-2 gap-8 md:gap-x-12 md:gap-y-10 lg:gap-x-24  p-5'>
     {/* 1 */}
-    <div className={`${jost.className} flex flex-col items-start justify-start`}>
-    <div className={`${jost.className} text-xl`}>Product Description</div>
-    <div style={{fontWeight:200}} className={`${jost.className} text-[#7c7979] text-xs`}> {prodcutdetails} </div>
+    <div className={`${jost.className} flex flex-col items-start justify-start space-y-3` }>
+    <div className={`${jost.className} text-xl lg:text-2xl text-[#262626]`}>Product Description</div>
+    <div style={{fontWeight:300}} className={`${jost.className} text-[#555555] text-sm md:text-md  lg:text-lg`}> {prodcutdetails} </div>
     </div>
 
     {/* 2 */}
-    <div className={`${jost.className} flex flex-col items-start justify-start`}>
-    <div className={`${jost.className} text-xl`}>Composition</div>
-    <div style={{fontWeight:200}} className={`${jost.className} text-[#7c7979] text-xs`}> We work with monitoring programmes to ensure compliance with our social, environmental and health and safety standards for our products. To assess compliance, we have developed a programme of audits and continuous improvement plans.OUTER SHELL90% cotton10% linen</div>
+    <div className={`${jost.className} flex flex-col items-start justify-start  space-y-3`}>
+    <div className={`${jost.className} text-xl text-[#262626]`}>Composition</div>
+    <div style={{fontWeight:200}} className={`${jost.className} text-[#555555]  text-sm md:text-md  lg:text-lg`}> We work with monitoring programmes to ensure compliance with our social, environmental and health and safety standards for our products. To assess compliance, we have developed a programme of audits and continuous improvement plans.OUTER SHELL90% cotton10% linen</div>
     </div>
 
 
     {/* 3 */}
-    <div className={`${jost.className} flex flex-col items-start justify-start `}>
-    <div className={`${jost.className} text-xl`}>Product Description</div>
+    <div className={`${jost.className} flex flex-col items-start justify-start  space-y-3`}>
+    <div className={`${jost.className} text-xl text-[#262626] `}>Product Description</div>
     <div>
     {
      details.map((data,index)=>
     <div key={index} className="w-full flex items-start justify-start space-x-0.5">
     <div >  <LuDot /></div>
-    <span style={{fontWeight:200}} className={`${jost.className}  text-[#7c7979] text-xs`}> {data}</span></div>
+    <span style={{fontWeight:200}} className={`${jost.className} text-[#555555]  text-sm md:text-md  lg:text-lg`}> {data}</span></div>
     )}
     </div>
     </div>
 
 
     {/* 4 */}
-    <div className={`${jost.className} flex flex-col items-start justify-start `}>
-    <div className={`${jost.className} text-xl`}>Care instructions</div>
-    <div className='flex flex-col space-y-2 text-[#7c7979]'>
-    <div className='w-full flex items-start space-x-1 justify-start'><MdWaterDrop /><span style={{fontWeight:200}} className={`${jost.className}  text-[#7c7979] text-xs`}>Machine wash at max. 30ºC/86ºF with short spin  .</span></div>
-    <div className='w-full flex items-start space-x-1 justify-start'><MdIron /><span style={{fontWeight:200}} className={`${jost.className}  text-[#7c7979] text-xs`}>Iron at a maximum of 110ºC/230ºF .</span></div>
-    <div className='w-full flex items-start space-x-1 justify-start'><PiHairDryerFill /><span style={{fontWeight:200}} className={`${jost.className}  text-[#7c7979] text-xs`}>Do not dry clean .</span></div>
-    <div className='w-full flex items-start space-x-1 justify-start'><PiWashingMachineFill /><span style={{fontWeight:200}} className={`${jost.className}  text-[#7c7979] text-xs`}>Wash inside out .</span></div>
-    <div className='w-full flex items-start space-x-1 justify-start'><FaTshirt /><span style={{fontWeight:200}} className={`${jost.className}  text-[#7c7979] text-xs`}>Wash separately .</span></div>
+    <div className={`${jost.className} flex flex-col items-start justify-start  space-y-3`}>
+    <div className={`${jost.className} text-xl text-[#262626]`}>Care instructions</div>
+    <div className='flex flex-col space-y-2 text-[#555555]'>
+    <div className='w-full flex itemce space-x-1 justify-start'><MdWaterDrop /><span style={{fontWeight:200}} className={`${jost.className}   text-sm md:text-md  lg:text-lg`}>Machine wash at max. 30ºC/86ºF with short spin  .</span></div>
+    <div className='w-full flex itemce space-x-1 justify-start'><MdIron /><span style={{fontWeight:200}} className={`${jost.className}   text-sm md:text-md  lg:text-lg`}>Iron at a maximum of 110ºC/230ºF .</span></div>
+    <div className='w-full flex itemce space-x-1 justify-start'><PiHairDryerFill /><span style={{fontWeight:200}} className={`${jost.className}   text-sm md:text-md  lg:text-lg`}>Do not dry clean .</span></div>
+    <div className='w-full flex itemce space-x-1 justify-start'><PiWashingMachineFill /><span style={{fontWeight:200}} className={`${jost.className}   text-sm md:text-md  lg:text-lg`}>Wash inside out .</span></div>
+    <div className='w-full flex itemce space-x-1 justify-start'><FaTshirt /><span style={{fontWeight:200}} className={`${jost.className}   text-sm md:text-md  lg:text-lg`}>Wash separately .</span></div>
    
     </div>
     </div>

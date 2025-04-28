@@ -88,7 +88,7 @@ const TopDataHandler = ({name,price,color,quantity,size}:ProductDetailsDataType)
  </div>
  
  {/* CTA */}
- <div className='flex items-center justify-center gap-x-7'>
+ <div className='lg:w-[70%] flex sm:flex-col md:flex-row items-center justify-center gap-x-7 sm:gap-x-0 sm:gap-y-4 md:gap-x-5'>
   <Button style='bg-[#4172DC] hover:bg-blue-600 duration-500 text-white w-full p-3 rounded-md  flex items-center justify-center' href='/'>SHOP NOW</Button>
   {/* <div className=''></div> */}
   <div className='border border-[#555555] hover:shadow-2xl hover:cursor-pointer duration-500  text-[#555555] gap-x-1  p-3 rounded-md w-full flex items-center justify-center '>
