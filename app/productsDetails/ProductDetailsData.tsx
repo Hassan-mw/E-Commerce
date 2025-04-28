@@ -1,6 +1,7 @@
 import React from 'react'
 import ImageHandler from './ImageHandler'
 import TopDataHandler from './TopDataHandler'
+import { ProductDetailsDataType } from '../Types/dataType'
 
 const ProductDetailsData = ({images,name,price}:ProductDetailsDataType) => {
   return (

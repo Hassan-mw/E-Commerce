@@ -2,6 +2,14 @@ import { Jost } from 'next/font/google'
 import React from 'react'
 import { FaCirclePlus } from 'react-icons/fa6'
 
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion"
+
+
 const jost=Jost({
   weight:['500'],
   subsets:['latin']
@@ -50,6 +58,17 @@ const TopDataHandler = ({name,price}) => {
  <div className='flex flex-col spce-y-2'>
     <div className={`${jost.className} flex items-center justify-start gap-x-8 `}>
         <span style={{fontWeight:200}} className={`${jost.className} text-xs text-[#262626]`}>Shipping</span>
+     <Accordion type="single" collapsible>
+     <AccordionItem value="item-1">
+    <AccordionTrigger className='flex items-center justify-start bg-green-500'>
+   
+      </AccordionTrigger>
+    <AccordionContent>
+      Yes. It adheres to the WAI-ARIA design pattern.
+    </AccordionContent>
+    </AccordionItem>
+    </Accordion>
+
         
         <div className={`flex flex-col  items-start justify-start gap-x-3 `}> 
         <div style={{fontWeight:100}} className={`${jost.className} text-xs text-[#262626]`}>Free Shipping to Victoria teritory</div>
