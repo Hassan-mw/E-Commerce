@@ -46,5 +46,10 @@ export interface TopNumberProductDataType{
 ////////////////////
 
 export interface ProductDetailsDataType{
-    
+    images:string[];
+    name:string;
+    price:number;
+    color:string;
+    quantity:number;
+    size:number
 }

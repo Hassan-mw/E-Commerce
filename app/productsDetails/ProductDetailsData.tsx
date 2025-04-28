@@ -8,7 +8,7 @@ const ProductDetailsData = ({images,name,price,color,quantity,size}:ProductDetai
     <div className='w-full flex flex-col space-y-4'>
      <div className='w-full grid grid-cols-1 gap-x-2'>
       <ImageHandler images={images}/> 
-      <TopDataHandler price={price} name={name} color={color} quantity={quantity} size={size}  /> 
+      <TopDataHandler images={images} price={price} name={name} color={color} quantity={quantity} size={size}  /> 
      </div>
     </div>
   )

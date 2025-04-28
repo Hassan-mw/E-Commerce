@@ -3,6 +3,7 @@ import { Jost } from 'next/font/google'
 import React from 'react'
 import { FaCirclePlus } from 'react-icons/fa6'
 import { PiBasketThin } from 'react-icons/pi'
+import { ProductDetailsDataType } from '../Types/dataType'
 
 
 const jost=Jost({
@@ -10,7 +11,7 @@ const jost=Jost({
   subsets:['latin']
 })
 
-const TopDataHandler = ({name,price,color,quantity,size}) => {
+const TopDataHandler = ({name,price,color,quantity,size}:ProductDetailsDataType) => {
   return (
     <div className='w-full flex flex-col space-y-4 px-5'>
   {/* Name + Price */}
