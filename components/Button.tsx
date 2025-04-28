@@ -6,7 +6,7 @@ import React from 'react'
 
 
 const jost=Jost({
-  weight:['500'],
+  weight:['300'],
   subsets:['latin']
 })
 
