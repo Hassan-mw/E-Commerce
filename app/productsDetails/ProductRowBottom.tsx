@@ -1,5 +1,6 @@
 import { Jost } from 'next/font/google'
 import Image from 'next/image'
+import Link from 'next/link';
 
 
 const jost=Jost({
@@ -22,7 +23,7 @@ const ProductRowBottom = () => {
     {/* 1 */}
     {
         data.map((data,index)=>
-    <div key={data.id} className='border rounded-sm border-slate-200  w-[85%] sm:w-full flex sm:flex-col items-center justify-start py-3'>
+    <Link href={`/productsDetails/${data.product_id}`} key={data.id} className='border rounded-sm border-slate-200  w-[85%] sm:w-full flex sm:flex-col items-center justify-start py-3'>
     <Image height={300} width={300} className='h-full max-h-[180px] lg:max-h-[300px] p-3 object-contain rounded-sm ' src={`/${data.image}`} alt='product' />
     <div className='w-full h-full px-6  flex flex-col items-start justify-center space-y-3'>
         {/* Name */}
@@ -40,7 +41,7 @@ const ProductRowBottom = () => {
        <span  className={`${jost.className}  text-[#262626] `}>ADD TO BASKET</span>
      </div>
     </div>
-    </div>
+    </Link>
     )}
     
    
