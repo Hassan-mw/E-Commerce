@@ -23,11 +23,11 @@ const ProductRowBottom = () => {
     {
         data.map((data,index)=>
     <div key={data.id} className='border rounded-sm border-slate-200  w-[85%] sm:w-full flex sm:flex-col items-center justify-start py-3'>
-    <Image height={120} width={100} className='h-full max-h-[200px] lg:max-h-[400px] p-3 object-contain rounded-sm ' src={`/${data.image}`} alt='product' />
+    <Image height={300} width={300} className='h-full max-h-[180px] lg:max-h-[300px] p-3 object-contain rounded-sm ' src={`/${data.image}`} alt='product' />
     <div className='w-full h-full px-6  flex flex-col items-start justify-center space-y-3'>
         {/* Name */}
     <div className={`${jost.className} text-xl`}>{data.name}</div>
-    <div className={`flex items-center justify-center gap-x-3`}>
+    <div className={ ` w-full flex items-center justify-between gap-x-3 md:w-[65%] lg:w-full`}>
         <span  style={{fontWeight:500}}  className='text-xs text-red-600'>${data.price}.99</span>
         <span  style={{fontWeight:400}} className='text-[#555555] text-[12px]'>${data.price*2+9}.99</span>
         <span className=' rounded-xs text-red-500 text-[11px] '>-40%</span>
@@ -35,7 +35,7 @@ const ProductRowBottom = () => {
     
     </div>
      {/* Button */}
-     <div className='border text-sm border-[#555555] hover:shadow-xl hover:cursor-pointer duration-500  text-[#555555] gap-x-3  py-2 rounded-md w-[65%] sm:w-full flex items-center justify-center '>
+     <div className='border text-sm border-[#555555] hover:shadow-xl hover:cursor-pointer duration-500  text-[#555555] gap-x-3  py-2 rounded-md  w-full flex items-center justify-center '>
       <span className={`${jost.className}  text-[#262626]`}>$28</span>
        <span  className={`${jost.className}  text-[#262626] `}>ADD TO BASKET</span>
      </div>
