@@ -5,6 +5,7 @@ import ProductDetailsData from '../ProductDetailsData'
 import { getProductById } from '@/app/API/FeatchAllProduct'
 import Link from 'next/link'
 import DataDetails from '../DataDetails'
+import ProductRowBottom from '../ProductRowBottom'
 
 const jost=Jost({
   weight:['500'],
@@ -28,9 +29,9 @@ const page = async({params}:{params:{id:URLSearchParams}}) => {
            <span className={` ${jost.className} flex items-center justify-center  text-sm text-[#555555]`}>{name} </span>
       </div>
         
-     <ProductDetailsData price={price} name={name}  images={images} color={color} quantity={quantity} size={size} /> 
-           
-     <DataDetails details={details} shortdetail={shortdetail} prodcutdetails={prodcutdetails}  />      
+     <ProductDetailsData price={price} name={name}  images={images} color={color} quantity={quantity} size={size} />  
+     <DataDetails details={details} shortdetail={shortdetail} prodcutdetails={prodcutdetails}  />     
+     <ProductRowBottom/> 
     </div>
     </div>
   )

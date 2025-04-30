@@ -36,8 +36,8 @@ const TopDataHandler = ({name,price,color,quantity,size}:ProductDetailsDataType)
     <div className={`${jost.className} flex items-center justify-start gap-x-8 `}>
         <span style={{fontWeight:200}} className={`${jost.className} text-sm text-[#262626] min-w-14`}>color</span>
         
-        <div className={`${jost.className} flex items-center justify-center gap-x-3 `}> 
-        <span className={`size-3 rounded-full bg-${color}-600`}></span>    
+        <div className={`${jost.className} flex items-center justify-center border gap-x-3 `}> 
+        <span  className={`size-3 rounded-full ${color!=='black' || 'white' ? ` bg-${color}-600` : `bg-${color}`  } `} ></span>    
  
        
       

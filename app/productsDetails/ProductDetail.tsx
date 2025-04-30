@@ -33,12 +33,12 @@ const ProductDetail = ({details,shortdetail,prodcutdetails}:producutDetailsDataT
     {/* 3 */}
     <div className={`${jost.className} flex flex-col items-start justify-start  space-y-3`}>
     <div className={`${jost.className} text-xl text-[#262626] `}>Product Description</div>
-    <div>
+    <div className="flex flex-col space-y-3">
     {
      details.map((data,index)=>
-    <div key={index} className="w-full flex items-start justify-start space-x-0.5">
-    <div >  <LuDot /></div>
-    <span style={{fontWeight:200}} className={`${jost.className} text-[#555555]  text-sm md:text-md  lg:text-lg`}> {data}</span></div>
+    <div key={index} className="w-full">
+    {/* <div >  <LuDot /></div> */}
+    <span style={{fontWeight:200}} className={`${jost.className} text-[#555555] flex items-start justify-start space-x-0.5 text-sm md:text-md  lg:text-lg`}> <span className="text-lg text-black md:pt-1"><LuDot /></span> {data}</span></div>
     )}
     </div>
     </div>
@@ -48,11 +48,11 @@ const ProductDetail = ({details,shortdetail,prodcutdetails}:producutDetailsDataT
     <div className={`${jost.className} flex flex-col items-start justify-start  space-y-3`}>
     <div className={`${jost.className} text-xl text-[#262626]`}>Care instructions</div>
     <div className='flex flex-col space-y-2 text-[#555555]'>
-    <div className='w-full flex itemce space-x-1 justify-start'><MdWaterDrop /><span style={{fontWeight:200}} className={`${jost.className}   text-sm md:text-md  lg:text-lg`}>Machine wash at max. 30ºC/86ºF with short spin  .</span></div>
-    <div className='w-full flex itemce space-x-1 justify-start'><MdIron /><span style={{fontWeight:200}} className={`${jost.className}   text-sm md:text-md  lg:text-lg`}>Iron at a maximum of 110ºC/230ºF .</span></div>
-    <div className='w-full flex itemce space-x-1 justify-start'><PiHairDryerFill /><span style={{fontWeight:200}} className={`${jost.className}   text-sm md:text-md  lg:text-lg`}>Do not dry clean .</span></div>
-    <div className='w-full flex itemce space-x-1 justify-start'><PiWashingMachineFill /><span style={{fontWeight:200}} className={`${jost.className}   text-sm md:text-md  lg:text-lg`}>Wash inside out .</span></div>
-    <div className='w-full flex itemce space-x-1 justify-start'><FaTshirt /><span style={{fontWeight:200}} className={`${jost.className}   text-sm md:text-md  lg:text-lg`}>Wash separately .</span></div>
+    <div className='w-full flex itemce space-x-1 justify-start lg:items-center'><MdWaterDrop /><span style={{fontWeight:200}} className={`${jost.className}   text-sm md:text-md  lg:text-lg`}>Machine wash at max. 30ºC/86ºF with short spin  .</span></div>
+    <div className='w-full flex itemce space-x-1 justify-start lg:items-center'><MdIron /><span style={{fontWeight:200}} className={`${jost.className}   text-sm md:text-md  lg:text-lg`}>Iron at a maximum of 110ºC/230ºF .</span></div>
+    <div className='w-full flex itemce space-x-1 justify-start lg:items-center'><PiHairDryerFill /><span style={{fontWeight:200}} className={`${jost.className}   text-sm md:text-md  lg:text-lg`}>Do not dry clean .</span></div>
+    <div className='w-full flex itemce space-x-1 justify-start lg:items-center'><PiWashingMachineFill /><span style={{fontWeight:200}} className={`${jost.className}   text-sm md:text-md  lg:text-lg`}>Wash inside out .</span></div>
+    <div className='w-full flex itemce space-x-1 justify-start lg:items-center'><FaTshirt /><span style={{fontWeight:200}} className={`${jost.className}   text-sm md:text-md  lg:text-lg`}>Wash separately .</span></div>
    
     </div>
     </div>
