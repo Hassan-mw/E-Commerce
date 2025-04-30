@@ -1,4 +1,5 @@
 import React from 'react'
+import TotalReviews from './TotalReviews'
 
 const ReviewDetail = () => {
   return (
