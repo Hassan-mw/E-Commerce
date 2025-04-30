@@ -2,7 +2,11 @@ import React from 'react'
 
 const ReviewDetail = () => {
   return (
-    <div>ReviewDetail</div>
+    <div className='w-full flex flex-col space-y-3'>
+      <TotalReviews/>
+
+
+    </div>
   )
 }
 
