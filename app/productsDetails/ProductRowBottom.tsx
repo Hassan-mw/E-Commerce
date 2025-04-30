@@ -10,10 +10,10 @@ const jost=Jost({
 const ProductRowBottom = () => {
     const price=55;
     const data=[
-        {id:1,image:"product_1745605506649.jpg",name:"SHORT PRINTED DRESS",product_id:2,price:55 },
-        {id:2,image:"product_1745606831633.jpg",name:"SHORT PRINTED DRESS",product_id:2,price:55 },
-        {id:3,image:"product_1745606572852.jpg",name:"SHORT PRINTED DRESS",product_id:2,price:55 },
-        {id:4,image:"product_1745657137870.jpg",name:"SHORT PRINTED DRESS",product_id:2,price:55 },
+        {id:1,image:"product_1745605506649.jpg",name:"SHORT PRINTED DRESS",product_id:10,price:55 },
+        {id:2,image:"product_1745606831633.jpg",name:"SHORT PRINTED DRESS",product_id:17,price:55 },
+        {id:3,image:"product_1745606572852.jpg",name:"SHORT PRINTED DRESS",product_id:9,price:55 },
+        {id:4,image:"product_1745657137870.jpg",name:"SHORT PRINTED DRESS",product_id:7,price:55 },
     ]
   return (
     <div className='w-full flex flex-col space-y-5 px-5 py-10 '>
