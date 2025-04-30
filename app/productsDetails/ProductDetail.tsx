@@ -37,7 +37,6 @@ const ProductDetail = ({details,shortdetail,prodcutdetails}:producutDetailsDataT
     {
      details.map((data,index)=>
     <div key={index} className="w-full">
-    {/* <div >  <LuDot /></div> */}
     <span style={{fontWeight:200}} className={`${jost.className} text-[#555555] flex items-start justify-start space-x-0.5 text-md  lg:text-lg`}> <span className="text-lg text-black md:pt-1"><LuDot /></span> {data}</span></div>
     )}
     </div>
