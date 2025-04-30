@@ -1,5 +1,6 @@
 import React from 'react'
 import TotalReviews from './TotalReviews'
+import AllReviewsColoums from './AllReviewsColoums'
 
 const ReviewDetail = () => {
   return (
