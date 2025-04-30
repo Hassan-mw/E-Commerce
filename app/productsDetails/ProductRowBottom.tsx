@@ -23,7 +23,7 @@ const ProductRowBottom = () => {
     {
         data.map((data,index)=>
     <div key={data.id} className='border rounded-sm border-slate-200  w-[85%] sm:w-full flex sm:flex-col items-center justify-start py-3'>
-    <Image height={120} width={100} className='h-full max-h-[200px] lg:max-h-[300px] p-3 object-contain rounded-sm ' src={`/${data.image}`} alt='product' />
+    <Image height={120} width={100} className='h-full max-h-[200px] lg:max-h-[400px] p-3 object-contain rounded-sm ' src={`/${data.image}`} alt='product' />
     <div className='w-full h-full px-6  flex flex-col items-start justify-center space-y-3'>
         {/* Name */}
     <div className={`${jost.className} text-xl`}>{data.name}</div>
