@@ -1,6 +1,7 @@
 import { Jost } from 'next/font/google'
 import Image from 'next/image'
 import Link from 'next/link';
+import { getAllSimilarProducts } from '../API/FetchingAllSimilarProducts';
 
 
 const jost=Jost({
@@ -8,8 +9,8 @@ const jost=Jost({
   subsets:['latin']
 })
 
-const ProductRowBottom = async({id}:number) => {
- const data=await getAllSimilarProducts()
+const ProductRowBottom = async({id}:{id:number}) => {
+ const datas=await getAllSimilarProducts(id)
 
 
     const price=55;

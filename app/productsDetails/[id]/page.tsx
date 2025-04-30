@@ -31,7 +31,7 @@ const page = async({params}:{params:{id:URLSearchParams}}) => {
         
      <ProductDetailsData price={price} name={name}  images={images} color={color} quantity={quantity} size={size} />  
      <DataDetails details={details} shortdetail={shortdetail} prodcutdetails={prodcutdetails}  />     
-     <ProductRowBottom/> 
+     <ProductRowBottom id={id}/> 
     </div>
     </div>
   )
