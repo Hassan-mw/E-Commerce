@@ -8,7 +8,10 @@ const jost=Jost({
   subsets:['latin']
 })
 
-const ProductRowBottom = () => {
+const ProductRowBottom = async({id}:number) => {
+ const data=await getAllSimilarProducts()
+
+
     const price=55;
     const data=[
         {id:1,image:"product_1745605506649.jpg",name:"SHORT PRINTED DRESS",product_id:10,price:55 },
