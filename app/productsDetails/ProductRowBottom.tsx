@@ -12,7 +12,7 @@ const ProductRowBottom = () => {
     const data=[
         {id:1,image:"product_1745605506649.jpg",name:"SHORT PRINTED DRESS",product_id:2,price:55 },
         {id:2,image:"product_1745606831633.jpg",name:"SHORT PRINTED DRESS",product_id:2,price:55 },
-        {id:3,image:"product_1745609186138.jpg",name:"SHORT PRINTED DRESS",product_id:2,price:55 },
+        {id:3,image:"product_1745606572852.jpg",name:"SHORT PRINTED DRESS",product_id:2,price:55 },
         {id:4,image:"product_1745657137870.jpg",name:"SHORT PRINTED DRESS",product_id:2,price:55 },
     ]
   return (
