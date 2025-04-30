@@ -11,6 +11,7 @@ const orderRoutes=require('./Router/orderRoutes')
 const paymentRoutes=require('./Router/paymentRoutes')
 const shippingRouter=require('./Router/shippingRouter')
 const randomRoutes=require('./Router/randomRoutes')
+const similarRoutes=require('./Router/similarRoutes')
 const  AppError=require('./ErrorHandler/appError') 
 app.use(express.json()); 
 
