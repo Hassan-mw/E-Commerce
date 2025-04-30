@@ -5,3 +5,32 @@ npm i path
 npm i multer  //to manage form-data
 npm i migrate
 npm i node-pg-migrate
+
+
+-- CREATE TABLE similarProducts(
+--  id SERIAL PRIMARY KEY,
+--  name  VARCHAR(50) NOT NULL,
+--  main_image VARCHAR(100) NOT NULL,
+--    similarProducts  INTEGER,
+--  images  VARCHAR[],
+--  shortdetail  VARCHAR(150),
+--  ratingnumber INTEGER,
+--  price INTEGER,
+--  discount  INTEGER NOT NULL,
+--  brand VARCHAR(50),
+--  model VARCHAR(50),
+--  style VARCHAR(50),
+--  color VARCHAR(50),
+--  size VARCHAR(50),
+--  productdetails VARCHAR(400),
+--  details VARCHAR[],
+--  rating INTEGER,
+--  quantity INTEGER
+
+-- )
+
+-- DROP TABLE similarProducts
+  ALTER TABLE similarProducts ADD FOREIGN KEY  (products)   REFERENCES product_id(id) ; 
+ -- FOREIGN KEY   (product_id)   REFERENCES products(id) ,   
+
+-- SELECT * FROM products;
