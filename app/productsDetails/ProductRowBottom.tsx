@@ -10,7 +10,7 @@ const jost=Jost({
 })
 
 const ProductRowBottom = async({id}:{id:URLSearchParams}) => {
- const datas=await getAllSimilarProducts(id)
+ const datas=await getAllSimilarProducts({id})
 
 
     const price=55;
