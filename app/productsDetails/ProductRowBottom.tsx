@@ -9,7 +9,7 @@ const jost=Jost({
   subsets:['latin']
 })
 
-const ProductRowBottom = async({id}:{id:number}) => {
+const ProductRowBottom = async({id}:{id:URLSearchParams}) => {
  const datas=await getAllSimilarProducts(id)
 
 
