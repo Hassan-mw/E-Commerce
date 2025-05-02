@@ -19,11 +19,14 @@ const AllReviewsColoums = () => {
         reviewData.map((data,index)=>
      
           <div key={data.id} className='flex flex-col space-y-3'>
+            <div className='flex items-center justify-between '>
             <div className='flex items-center justify-start gap-x-4'>
               {/* image */}
-          <Image height={150} width={150} className='rounded-full size-11 object-cover' src={`/${data.image}`} alt='Image' />
+              <Image height={150} width={150} className='rounded-full size-11 object-cover' src={`/${data.image}`} alt='Image' />
               {/* Name */}
               <div className={`${jost.className} text-2xl text-[39D9D9D]`}>{data.name}</div>
+            </div>
+            <LikeDislikeIcons/>
             </div>
             {/* Review */}
             <div>{data.comment}</div>
