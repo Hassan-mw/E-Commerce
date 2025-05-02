@@ -11,7 +11,7 @@ const jost=Jost({
 const TotalReviews = () => {
   return (
     <div className='w-full  flex  items-center justify-center'>
-    <div className='w-full max-w-screen-lg flex flex-col items-center justify-center sm:justify-between sm:flex-row  gap-y-6 md:ap-x-5 p-5'>
+    <div className='w-full max-w-screen-xl flex flex-col items-center justify-center sm:justify-between sm:flex-row  gap-y-6 md:ap-x-5 p-5'>
         {/* review-text */}
         <div className={`w-full flex flex-col items-start justify-center gap-y-1 space-y-2`}>
         <div className={`${jost.className} text-xl `}> Total review rate  </div>

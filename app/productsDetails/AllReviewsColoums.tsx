@@ -16,7 +16,7 @@ const AllReviewsColoums = () => {
   ]
   return (
     <div className='w-full flex items-center justify-center'>
-    <div className='w-full max-w-screen-lg flex flex-col space-y-9 p-5'>
+    <div className='w-full max-w-screen-xl flex flex-col space-y-9 p-5'>
       {
         reviewData.map((data,index)=>
      
@@ -24,7 +24,7 @@ const AllReviewsColoums = () => {
             <div className='flex items-center justify-between '>
             <div className='flex items-center justify-start gap-x-4'>
               {/* image */}
-              <Image height={150} width={150} className='rounded-full size-11 object-cover' src={`/${data.image}`} alt='Image' />
+              <Image height={150} width={150} className='rounded-full size-9 object-cover' src={`/${data.image}`} alt='Image' />
               {/* Name */}
               <div className={`${jost.className} text-2xl text-[39D9D9D]`}>{data.name}</div>
             </div>
