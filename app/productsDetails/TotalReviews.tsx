@@ -1,6 +1,7 @@
 import { Jost } from 'next/font/google'
 import React from 'react'
 import { Progress } from "@/components/ui/progress"
+import RatingProgress from './RatingProgress'
 
 const jost=Jost({
   weight:['500'],
