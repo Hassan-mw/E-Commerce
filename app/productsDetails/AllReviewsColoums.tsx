@@ -14,14 +14,14 @@ const AllReviewsColoums = () => {
     {id:4,image:"user_1744831788917.jpeg",name:"Sam", comment:"I love this brand cloths.These are reliable,and they sustain for long term."},
   ]
   return (
-    <div className='w-full flex flex-col space-y-9 '>
+    <div className='w-full flex flex-col space-y-9 p-5'>
       {
         reviewData.map((data,index)=>
      
           <div key={data.id} className='flex flex-col space-y-3'>
             <div className='flex items-center justify-start gap-x-4'>
               {/* image */}
-          <Image height={300} width={300} className='rounded-full size-11 object-cover' src={`/${data.image}`} alt='Image' />
+          <Image height={150} width={150} className='rounded-full size-11 object-cover' src={`/${data.image}`} alt='Image' />
               {/* Name */}
               <div className={`${jost.className} text-2xl text-[39D9D9D]`}>{data.name}</div>
             </div>
