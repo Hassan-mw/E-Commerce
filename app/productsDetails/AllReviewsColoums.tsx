@@ -7,6 +7,9 @@ const jost=Jost({
   subsets:['latin']
 })
 const AllReviewsColoums = () => {
+  const reviewData=[
+    {id:1,image:"user_1744831856658.jpeg",name:"Ryan", comment:""}
+  ]
   return (
     <div className='w-full flex flex-col space-y-9 '>
       {/* 1 */}
