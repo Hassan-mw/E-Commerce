@@ -21,7 +21,7 @@ const TotalReviews = () => {
         <div className='w-full flex flex-col space-y-2'>
        <div className='  flex items-center justify-center space-x-2'>
         <div className={`${jost.className} text-sm`}>5 Stars</div>
-        <RatingProgress/>
+        <RatingProgress precent="65" />
         <div className='bg-slate-500'><Progress className='bg-green-500 w-[66%]' value={44} /></div>
         <div className={`${jost.className} text-sm`}>74 %</div>
         </div>
