@@ -16,7 +16,7 @@ const AllReviewsColoums = () => {
   ]
   return (
     <div className='w-full flex items-center justify-center'>
-    <div className='w-full max-w-screen-xl flex flex-col space-y-9 p-5'>
+    <div className='w-full max-w-screen-xl flex flex-col space-y-9 '>
       {
         reviewData.map((data,index)=>
      
