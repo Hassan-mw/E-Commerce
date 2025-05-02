@@ -9,10 +9,10 @@ const jost=Jost({
 })
 const AllReviewsColoums = () => {
   const reviewData=[
-    {id:1,image:"user_1744831856658.jpeg",name:"Ryan", comment:"Good items i love that one"},
-    {id:2,image:"user_1744831788917.jpeg",name:"Sam", comment:"I love this brand cloths.These are reliable,and they sustain for long term."},
-    {id:3,image:"user_1744831788917.jpeg",name:"Sam", comment:"I love this brand cloths.These are reliable,and they sustain for long term."},
-    {id:4,image:"user_1744831788917.jpeg",name:"Sam", comment:"I love this brand cloths.These are reliable,and they sustain for long term."},
+    {id:1,image:"user_1744831856658.jpeg",name:"Ryan", comment:"Good items i love that one",like:'10',disLikes:'1'},
+    {id:2,image:"user_1744831788917.jpeg",name:"Sam", comment:"I love this brand cloths.These are reliable,and they sustain for long term.",like:'1',disLikes:'1'},
+    {id:3,image:"user_1744831788917.jpeg",name:"Sam", comment:"I love this brand cloths.These are reliable,and they sustain for long term.",like:'5',disLikes:'2'},
+    {id:4,image:"user_1744831788917.jpeg",name:"Sam", comment:"I love this brand cloths.These are reliable,and they sustain for long term.",like:'2',disLikes:'0'},
   ]
   return (
     <div className='w-full flex flex-col space-y-9 p-5'>
@@ -27,7 +27,7 @@ const AllReviewsColoums = () => {
               {/* Name */}
               <div className={`${jost.className} text-2xl text-[39D9D9D]`}>{data.name}</div>
             </div>
-            <LikeDislikeIcons/>
+            <LikeDislikeIcons like={data.like} disLike={data.disLikes}  />
             </div>
             {/* Review */}
             <div>{data.comment}</div>
