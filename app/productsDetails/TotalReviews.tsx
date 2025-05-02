@@ -11,15 +11,15 @@ const jost=Jost({
 const TotalReviews = () => {
   return (
     <div className='w-full  flex  items-center justify-center'>
-    <div className='w-full max-w-screen-xl flex flex-col items-center justify-center sm:justify-between sm:flex-row  gap-y-6 md:ap-x-5 '>
+    <div className='w-full max-w-screen-xl flex flex-col items-start justify-center sm:justify-between sm:flex-row  gap-y-6 md:ap-x-5 '>
         {/* review-text */}
-        <div className={`w-full flex flex-col items-start justify-center gap-y-1 space-y-2`}>
+        <div className={`w-full flex flex-col items-start justify-start  gap-y-1 space-y-2`}>
         <div className={`${jost.className} text-xl `}> Total review rate  </div>
         <div style={{fontWeight:400}} className={`${jost.className} text-sm text-[#555555] `}>Average rating (10 Reviews & 125 ratings) </div>
          <div  style={{fontWeight:300}}  className='flex items-center justify-start gap-x-5'><span>⭐⭐⭐</span><span className={`${jost.className} text-md text-[#555555] `}>4.8/5</span></div>
         </div>
         {/* review-radio */}
-        <div className='w-full flex flex-col space-y-2'>
+        <div className='w-full flex flex-col  space-y-2'>
           {/* 1 */}
        <div className='  flex items-center justify-center space-x-2'>
         <div className={`${jost.className} flex items-center justify-center gap-x-1 text-sm`}><span>5</span> <span>Stars</span></div>
