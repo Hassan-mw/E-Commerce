@@ -11,11 +11,11 @@ const jost=Jost({
 const TotalReviews = () => {
    const dataReviews=
     {totalReviews:23,fiveStares:8,fourStar:5,threeStar:2,twoStar:5,oneStar:3}
-    const fiveStarRating=((dataReviews.fiveStares/dataReviews.totalReviews)*100).toFixed(0)
-    const fourStarRating=((dataReviews.fourStar/dataReviews.totalReviews)*100).toFixed(0)
-    const threeStarRating=((dataReviews.threeStar/dataReviews.totalReviews)*100).toFixed(0)
-    const twoStarRating=((dataReviews.twoStar/dataReviews.totalReviews)*100).toFixed(0)
-    const oneStarRating=((dataReviews.oneStar/dataReviews.totalReviews)*100).toFixed(0)
+    const fiveStarRating=((dataReviews.fiveStares/dataReviews.totalReviews)*100).toFixed(0);
+    const fourStarRating=((12/dataReviews.totalReviews)*100).toFixed(0);
+    const threeStarRating=((dataReviews.threeStar/dataReviews.totalReviews)*100).toFixed(0);
+    const twoStarRating=((dataReviews.twoStar/dataReviews.totalReviews)*100).toFixed(0);
+    const oneStarRating=((dataReviews.oneStar/dataReviews.totalReviews)*100).toFixed(0);
     console.log(fiveStarRating,fourStarRating,threeStarRating,twoStarRating,oneStarRating)
     const sumReviews=dataReviews.fiveStares+dataReviews.fourStar+dataReviews.threeStar+dataReviews.twoStar+dataReviews.oneStar
     const avgRating=(dataReviews.totalReviews/5)
@@ -33,35 +33,42 @@ const TotalReviews = () => {
           {/* 1 */}
        <div className='  flex items-center justify-center space-x-2'>
         <div className={`${jost.className} flex items-center justify-center gap-x-1 text-sm`}><span>5</span> <span>Stars</span></div>
-        <RatingProgress precent={`w-[${fiveStarRating}%]`} />
+        <RatingProgress precent={fiveStarRating} />
         <div className={`${jost.className} flex items-center justify-center gap-x-1 text-sm`}><span>{fiveStarRating}</span> <span>%</span></div>
 
         </div>
           {/* 2 */}
        <div className='  flex items-center justify-center space-x-2'>
+        <div className={`${jost.className} flex items-center justify-center gap-x-1 text-sm`}><span>5</span> <span>Stars</span></div>
+        <RatingProgress precent={`w-[${44}%]`} />
+        <div className={`${jost.className} flex items-center justify-center gap-x-1 text-sm`}><span>{fourStarRating}</span> <span>%</span></div>
+
+        </div>
+          {/* 2 */}
+       <div className='  flex items-center justify-center space-x-2'>
         <div className={`${jost.className} flex items-center justify-center gap-x-1 text-sm`}><span>4</span> <span>Stars</span></div>
-        <RatingProgress  precent={`w-[${fourStarRating}%]`} />
+        <RatingProgress  precent={fourStarRating} />
         <div className={`${jost.className} flex items-center justify-center gap-x-1 text-sm`}><span>{fourStarRating}</span> <span>%</span></div>
 
         </div>
           {/* 3 */}
        <div className='  flex items-center justify-center space-x-2'>
         <div className={`${jost.className} flex items-center justify-center gap-x-1 text-sm`}><span>3</span> <span>Stars</span></div>
-        <RatingProgress  precent={`w-[${threeStarRating}%]`} />
+        <RatingProgress  precent={threeStarRating} />
         <div className={`${jost.className} flex items-center justify-center gap-x-1 text-sm`}><span>{threeStarRating}</span> <span>%</span></div>
 
         </div>
           {/* 4 */}
        <div className='  flex items-center justify-center space-x-2'>
         <div className={`${jost.className} flex items-center justify-center gap-x-1 text-sm`}><span>1</span> <span>Stars</span></div>
-        <RatingProgress  precent={`w-[${twoStarRating}%]`}/>
+        <RatingProgress  precent={twoStarRating}/>
         <div className={`${jost.className} flex items-center justify-center gap-x-1 text-sm`}><span>{twoStarRating}</span> <span>%</span></div>
 
         </div>
           {/* 5 */}
        <div className='  flex items-center justify-center space-x-2'>
         <div className={`${jost.className} flex items-center justify-center gap-x-1 text-sm`}><span>5</span> <span>Stars</span></div>
-        <RatingProgress  precent={`w-[${oneStarRating}%]`} />
+        <RatingProgress  precent={oneStarRating} />
         <div className={`${jost.className} flex items-center justify-center gap-x-1 text-sm`}><span>{oneStarRating}</span> <span>%</span></div>
 
         </div>
