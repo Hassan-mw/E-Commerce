@@ -1,6 +1,7 @@
 import { Jost } from 'next/font/google'
 import Image from 'next/image'
 import React from 'react'
+import LikeDislikeIcons from './LikeDislikeIcons'
 
 const jost=Jost({
   weight:['500'],
