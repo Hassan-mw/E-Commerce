@@ -15,7 +15,8 @@ const AllReviewsColoums = () => {
     {id:4,image:"user_1744831788917.jpeg",name:"Sam", comment:"I love this brand cloths.These are reliable,and they sustain for long term.",like:'2',disLikes:'0'},
   ]
   return (
-    <div className='w-full flex flex-col space-y-9 p-5'>
+    <div className='w-full flex items-center justify-center'>
+    <div className='w-full max-w-screen-lg flex flex-col space-y-9 p-5'>
       {
         reviewData.map((data,index)=>
      
@@ -34,6 +35,7 @@ const AllReviewsColoums = () => {
           </div>
              )
       }
+    </div>
     </div>
   )
 }
