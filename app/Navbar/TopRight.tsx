@@ -24,7 +24,7 @@ const TopRight = () => {
  <span className='hover:cursor-pointer  hover:text-blue-400 duration-500'>  <RiInstagramFill /></span>
  <span className='hover:cursor-pointer  hover:text-blue-400 duration-500'>   <FaTwitter /></span>
      </div>
-</div>blog_main_image
+</div>
   )
 }
 
