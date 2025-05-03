@@ -31,7 +31,7 @@ const TotalReviews = () => {
     <div className='w-full max-w-screen-xl flex flex-col items-start justify-center sm:justify-between sm:flex-row  gap-y-6 md:ap-x-5 '>
         {/* review-text */}
         <div className={`w-full flex flex-col items-start justify-start  gap-y-1 space-y-2`}>
-        <div className={`${jost.className} text-xl `}> Total review rate  </div>
+      <div className={`${jost.className} text-xl lg:text-2xl text-[#262626]`}>Total review rate</div>
         <div style={{fontWeight:400}} className={`${jost.className} text-sm text-[#555555] `}>Average rating ({avgRating} {fourStarRating} Reviews & {sumReviews} ratings) </div>
          <div  style={{fontWeight:300}}  className='flex items-center justify-start gap-x-5'><span>⭐⭐⭐</span><span className={`${jost.className} text-md text-[#555555] `}>4.8/5</span></div>
         </div>
