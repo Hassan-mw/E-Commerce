@@ -18,13 +18,14 @@ const TotalReviews = () => {
     const oneStarRating=((dataReviews.oneStar/dataReviews.totalReviews)*100).toFixed(0)
     const sumReviews=dataReviews.fiveStares+dataReviews.fourStar+dataReviews.threeStar+dataReviews.twoStar+dataReviews.oneStar
     const avgRating=(dataReviews.totalReviews/5)
+    console.log(fiveStarRating,fourStarRating,threeStarRating)
   return (
     <div className='w-full  flex  items-center justify-center'>
     <div className='w-full max-w-screen-xl flex flex-col items-start justify-center sm:justify-between sm:flex-row  gap-y-6 md:ap-x-5 '>
         {/* review-text */}
         <div className={`w-full flex flex-col items-start justify-start  gap-y-1 space-y-2`}>
         <div className={`${jost.className} text-xl `}> Total review rate  </div>
-        <div style={{fontWeight:400}} className={`${jost.className} text-sm text-[#555555] `}>Average rating ({avgRating} Reviews & {sumReviews} ratings) </div>
+        <div style={{fontWeight:400}} className={`${jost.className} text-sm text-[#555555] `}>Average rating ({avgRating} {fourStarRating} Reviews & {sumReviews} ratings) </div>
          <div  style={{fontWeight:300}}  className='flex items-center justify-start gap-x-5'><span>⭐⭐⭐</span><span className={`${jost.className} text-md text-[#555555] `}>4.8/5</span></div>
         </div>
         {/* review-radio */}
@@ -39,8 +40,13 @@ const TotalReviews = () => {
           {/* 2 */}
        <div className='  flex items-center justify-center space-x-2'>
         <div className={`${jost.className} flex items-center justify-center gap-x-1 text-sm`}><span>4</span> <span>Stars</span></div>
-        <RatingProgress  precent={`w-[${fourStarRating}%]`} />
-        <div className={`${jost.className} flex items-center justify-center gap-x-1 text-sm`}><span>{fourStarRating}</span> <span>%</span></div>
+        {/* <RatingProgress  precent={`w-{22%}`} /> */}
+        <div className='w-full bg-[#D9D9D9] h-3 rounded-md'> 
+       <div className={`w-[${threeStarRating}%] bg-[#4172DC] h-3 rounded-md`}> 
+     
+       </div>
+      </div>
+         <div className={`${jost.className} flex items-center justify-center gap-x-1 text-sm`}><span>{fourStarRating}</span> <span>%</span></div>
 
         </div>
           {/* 3 */}
