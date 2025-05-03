@@ -20,7 +20,7 @@ const DataDetails = ({details,shortdetail,prodcutdetails}:producutDetailsDataTyp
         {id:3,name:'SHIPPING & PAYMENT'}
     ]
   return (
-    <div className="w-full flex flex-col space-y-3 items-center justify-center gap-x-6 ">
+    <div className="w-full flex flex-col space-y-3 items-center justify-center gap-x-6 py-6 ">
     <div className="w-full flex  items-center justify-center gap-x-6 ">
         {
             data.map((data,index)=>
