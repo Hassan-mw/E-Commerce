@@ -24,10 +24,13 @@ const AllReviewsColoums = () => {
             <div className='flex items-start justify-between '>
             <div className='flex items-start justify-start gap-x-4 '>
               {/* image */}
-              <img className='rounded-full size-10  object-contain b' src={`/${data.image}`} alt='Image' />
-              <div className='flex flex-col items-start justify-start '>
+              <img className='rounded-full size-10 p-1 object-cover ' src={`/${data.image}`} alt='Image' />
+              <div className='flex flex-col items-start justify-start pt-2'>
               {/* Name */}
-              <div className={`${jost.className} text-2xl text-[39D9D9D] pb-2`}>{data.name}</div>
+            <div className='flex items-start justify-start gap-x-2'>
+            <div style={{fontWeight:400}} className={`${jost.className} text-xs text-[#39D9D9D] pb-2`}>{data.name}</div>
+            <div style={{fontWeight:200}} className={`${jost.className} text-[10px] text-[#767676]  `}>8 months age</div>
+              </div>  
               {/* Review */}
               <div>{data.comment}</div>
               </div>

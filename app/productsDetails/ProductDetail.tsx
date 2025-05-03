@@ -16,7 +16,7 @@ import { FaTshirt } from "react-icons/fa";
 const ProductDetail = ({details,shortdetail,prodcutdetails}:producutDetailsDataType) => {
     console.log(details,'🚈🛹🦼🦼🦽🦽🚍🚍')
   return (
-    <div className='w-full grid grid-cols-1 sm:grid-cols-2 gap-8 md:gap-x-12 md:gap-y-10 lg:gap-x-24  p-5 pb-10'>
+    <div className='w-full border-t  border-[#D9D9D9] grid grid-cols-1 sm:grid-cols-2 gap-8 md:gap-x-12 md:gap-y-10 lg:gap-x-24  p-5 pb-10'>
     {/* 1 */}
     <div className={`${jost.className} flex flex-col items-start justify-start space-y-3` }>
     <div className={`${jost.className} text-xl lg:text-2xl text-[#262626]`}>Product Description</div>
