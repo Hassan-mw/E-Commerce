@@ -21,7 +21,7 @@ const TotalReviews = () => {
     console.log(fiveStarRating,fourStarRating,threeStarRating)
 
     function calculatingRating(rating:number){
-      return  ((rating/dataReviews.totalReviews)*100).toFixed(0)
+      return  ((rating/dataReviews.totalReviews)*100).toFixed(0)+'%'
     }
 
 //  console.log(calculatingRating(22),'....fmghlahkldahdhht')
