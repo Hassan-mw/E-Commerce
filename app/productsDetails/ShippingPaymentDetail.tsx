@@ -1,6 +1,7 @@
 import { Jost } from 'next/font/google'
 import React from 'react'
 import Shippingplace from './Shippingplace'
+import Table from './Table'
 
 const jost=Jost({
   weight:['500'],
@@ -15,6 +16,7 @@ const ShippingPaymentDetail = () => {
    <div className={`${jost.className} text-xl lg:text-2xl text-[#262626]`}>Shipping</div>
    <div style={{fontWeight:300}} className={`${jost.className} text-sm text-[#262626]`}>Calculate the shipping cost by region</div>
    <Shippingplace/>
+   <Table/>
    </div>
 
     </div>
