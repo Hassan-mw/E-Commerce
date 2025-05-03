@@ -19,7 +19,7 @@ const jost=Jost({
 const Shippingplace = () => {
   return (
     <div className='flex items-center justify-center gap-x-8'>
-   <div className={`${jost.className} text-sm`}>Shipping to</div>
+   <div style={{fontWeight:300}} className={`${jost.className} text-sm`}>Shipping to</div>
    <div className=' '><Select>
       <SelectTrigger className="w-[150px] border-[#C4C4C4] z-20 ">
         <SelectValue placeholder="Select a fruit" />
