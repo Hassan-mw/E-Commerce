@@ -1,6 +1,6 @@
 import React from 'react'
 
-const RatingProgress = ({precent}:{precent:number}) => {
+const RatingProgress = ({precent}:{precent:string}) => {
   console.log(precent)
   return (
     <div className='w-full bg-[#D9D9D9] h-3 rounded-md'> 
