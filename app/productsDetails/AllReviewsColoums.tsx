@@ -24,7 +24,7 @@ const AllReviewsColoums = () => {
             <div className='flex items-start justify-between '>
             <div className='flex items-start justify-start gap-x-4 '>
               {/* image */}
-              <img className='rounded-full size-10 p-1 object-cover ' src={`/${data.image}`} alt='Image' />
+              <img className='rounded-full h-10 w-10 p-1 object-cover ' src={`/${data.image}`} alt='Image' />
               <div className='flex flex-col items-start justify-start pt-2'>
               {/* Name */}
             <div className='flex items-start justify-start gap-x-2'>
