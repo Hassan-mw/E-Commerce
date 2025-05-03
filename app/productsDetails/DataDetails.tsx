@@ -24,7 +24,7 @@ const DataDetails = ({details,shortdetail,prodcutdetails}:producutDetailsDataTyp
     <div className="w-full flex  items-center justify-center gap-x-6 ">
         {
             data.map((data,index)=>
-                <div key={data.id} onClick={()=>setCurrentDetails(data.name)} style={{fontWeight:400}} className={`${jost.className} ${currentDetails===data.name ? 'text-[#262626]' : 'text-[#9D9D9D]'  } hover:cursor-pointer text-sm ${jost.className} `}>{data.name}</div>
+                <div key={data.id} onClick={()=>setCurrentDetails(data.name)} style={{fontWeight:400}} className={`${jost.className} ${currentDetails===data.name ? 'text-[#262626]' : 'text-[#9D9D9D]'  } hover:text-blue-500 duration-300 hover:cursor-pointer text-sm ${jost.className} `}>{data.name}</div>
             )
             }
     </div>
