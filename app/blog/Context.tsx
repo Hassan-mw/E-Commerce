@@ -1,6 +1,9 @@
 import { Jost } from 'next/font/google'
 import Image from 'next/image'
 import React from 'react'
+import { FaArrowRight, FaClock } from 'react-icons/fa6'
+import { IoHeartSharp } from 'react-icons/io5'
+import { RiMessage3Fill } from 'react-icons/ri'
 
 const jost=Jost({
   weight:['500'],
@@ -22,15 +25,38 @@ const Context = () => {
     
     {/* 3-Icons */}
      <div className='flex items-center justify-center space-x-8 '>
-     <div className='flex items-center justify-center gap-x-2'> <span>20 July 2020</span></div>   
-     <div className='flex items-center justify-center gap-x-2'> <span>830</span></div>   
-     <div className='flex items-center justify-center gap-x-2'> <span>19</span></div>   
+     <div className='flex items-center justify-center gap-x-2'><span><FaClock /></span> <span>20 July 2020</span></div>   
+     <div className='flex items-center justify-center gap-x-2'><span><IoHeartSharp /></span> <span>830</span></div>   
+     <div className='flex items-center justify-center gap-x-2'><span><RiMessage3Fill /></span> <span>19</span></div>   
      </div>
     
     {/* Button */}
     <div className='border rounded-md flex items-center justify-center gap-x-2 px-3 py-2'>
     <div>READ MORE</div>
+    <span><FaArrowRight /></span>
     </div>
+
+   {/* Text */}
+   <div className='grid  grid-cols-3  md:max-w-96 lg:max-w-[500px] xl:max-w-[650px] gap-x-8 border-t'>
+   {/* 1 */}
+   <div className='flex flex-col items-start justify-start space-y-3 '>
+    <div style={{fontWeight:500}} className={`${jost.className} font-bold text-md text-[#FFC000] pt-4`}>Elevating Everyday Style</div>
+    <div className='text-xs'>Explore the art of blending high-end and budget-friendly fashion items to create stylish and versatile outfits.</div>
+   </div>
+
+   {/* 2 */}
+   <div className={`${jost.className}flex flex-col   items-start justify-start space-y-3`}>
+    <div style={{fontWeight:500}} className='text-md text-[#D9D9D9] pt-4'>Sustainable Fashion</div>
+    <div className='text-xs'>Discuss the growing importance of sustainable fashion and its impact on the environment.</div>
+   </div>
+
+   {/* 3 */}
+   <div className={`${jost.className} flex  flex-col  items-start justify-start space-y-3`}>
+    <div style={{fontWeight:500}} className='text-md text-[#D9D9D9] pt-4'>The Evolution of Workwear</div>
+    <div className='text-xs'>Showcase versatile outfit ideas that strike a balance between professionalism and personal expression.</div>
+   </div>
+
+   </div>
     </div>
     </div>
   )
