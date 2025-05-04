@@ -1,6 +1,7 @@
 import React from 'react'
 import Context from './Context'
 import Images from './Images'
+import BelowData from './BelowData'
 
 const page = () => {
   return (
@@ -9,7 +10,7 @@ const page = () => {
        <Images/>
       <div className='absolute top-20 left-7 sm:left-10 md:left-8 lg:left-15'> <Context/></div> 
       </div>
-      <BelowData/>blog_bottom_box_left
+      <BelowData/>
     </div>
   )
 }
