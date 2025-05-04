@@ -37,26 +37,28 @@ const Context = () => {
     </div>
 
    {/* Text */}
-   <div className='grid  grid-cols-3  md:max-w-96 lg:max-w-[500px] xl:max-w-[650px] gap-x-8 border-t'>
+   <div className='hidden xl:block'>
+   <div className=' grid  grid-cols-3   xl:max-w-[620px] gap-x-4 border-t text-white'>
    {/* 1 */}
    <div className='flex flex-col items-start justify-start space-y-3 '>
-    <div style={{fontWeight:500}} className={`${jost.className} font-bold text-md text-[#FFC000] pt-4`}>Elevating Everyday Style</div>
+    <div style={{fontWeight:500}} className={`${jost.className} font-bold text-md  pt-4`}>Elevating Everyday Style</div>
     <div className='text-xs'>Explore the art of blending high-end and budget-friendly fashion items to create stylish and versatile outfits.</div>
    </div>
 
    {/* 2 */}
-   <div className={`${jost.className}flex flex-col   items-start justify-start space-y-3`}>
-    <div style={{fontWeight:500}} className='text-md text-[#D9D9D9] pt-4'>Sustainable Fashion</div>
+   <div className={`${jost.className} flex flex-col   items-start justify-start space-y-3`}>
+    <div style={{fontWeight:500}} className='text-md  pt-4'>Sustainable Fashion</div>
     <div className='text-xs'>Discuss the growing importance of sustainable fashion and its impact on the environment.</div>
    </div>
 
    {/* 3 */}
-   <div className={`${jost.className} flex  flex-col  items-start justify-start space-y-3`}>
-    <div style={{fontWeight:500}} className='text-md text-[#D9D9D9] pt-4'>The Evolution of Workwear</div>
+   <div className={`${jost.className} flex  flex-col  items-start justify-start space-y-3 `}>
+    <div style={{fontWeight:500}} className='text-md  pt-4'>The Evolution of Workwear</div>
     <div className='text-xs'>Showcase versatile outfit ideas that strike a balance between professionalism and personal expression.</div>
    </div>
 
    </div>
+    </div>
     </div>
     </div>
   )
