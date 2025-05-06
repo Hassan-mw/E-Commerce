@@ -12,6 +12,7 @@ const page = () => {
       <div className='absolute top-20 left-7 sm:left-10 md:left-8 lg:left-15'> <Context/></div> 
       </div>
       <BelowData/>
+      {/* <BelowData/> */}
     </div>
     </div>
   )
