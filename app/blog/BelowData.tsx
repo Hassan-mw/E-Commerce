@@ -10,28 +10,29 @@ const jost=Jost({
 
 const BelowData = () => {
   return (
-    <div className='w-full max-w-[1100px] bg-green-400 flex items-center justify-center '>
+    <div className='w-full max-w-[1100px] md:bg-orange-400 lg:bg-purple-400 flex items-center justify-center '>
     {/* //!   Left-Data */}
     <div className='w-full flex flex-col space-y-2'>
       {/* top-1 */}
-    <div className='w-full grid grid-cols-5 gap-x-3 max-h-96'>
+    <div className='w-full flex items-center justify-center gap-x-3 '>
       {/* top-1-left */}
-    <div className=' col-span-3 grid grid-cols-2 '>
+    <div className='  w-[60%] grid grid-cols-2 '>
    <div className='w-full flex flex-col items-start justify-start bg-white h-full p-4 '>
     <div className={`${jost.className} text-[#262626] text-md`}>Stylish woman in summer outfit isolated posing in fashion trend isolated</div>
     <div className={`${jost.className} text-[#555555] text-xs`}>In this captivating scene, a stylish woman stands confidently against a pristine backdrop, capturing the essence of summer's allure. Bathed in the gentle sunlight, she emanates an air of effortless chic. Her outfit is a harmonious blend of contemporary trends and timeless elegance, perfectly attuned to the vibrant season.</div>
     <span className={`${jost.className} text-xs gap-x-3  text-white flex items-center justify-center`}>READ MORE <FaArrowRight /></span>
     
    </div>
-    <Image height={400} width={400} className='bg-red-400 flex w-full h-full max-h-96 object-top object-contain' src="/a-w.png" alt="blog_main_image" />  
+    <Image height={400} width={400} className='bg-white  md:hidden lg:block  w-full h-full max-h-96 object-center object-contain' src="/a-w.png" alt="blog_main_image" />  
+    <Image height={400} width={400} className='bg-white hidden md:block  w-full h-full max-h-96 object-center object-contain' src="/blog_2.png" alt="blog_main_image" />  
     {/* <Image height={200} width={200} className='bg-[#DDD9D8] h-full ' src="/blog_bottom_box_left.png" alt="blog_main_image" />   */}
     </div>
 
 
-    <div className='flex col-span-2 bg-red-400 max-h-96 '>
-    {/* <Image height={400} width={400} className='bg-red-400 flex w-full h-full max-h-96 object-top object-contain'  src="/image-woman-dress.png" alt="blog_main_image" />   */}
+    <div className='flex w-full h-full bg-[#5522bb] max-w-[40%] max-h-96 '>
+    <Image height={225} width={225} className='bg-red-400  object-top object-contain'  src="/image-woman-dress.png" alt="blog_main_image" />  
   
-    {/* <Image height={400} width={400} className='bg-white h-full w-full object-cover' src="/image-woman-dress.png" alt="blog_main_image" />   */}
+    {/* <Image height={400} width={400} className='bg-[#afaeb1] w-full h-full max-h-72 object-top object-cover' src="/Card.png" alt="blog_main_image" />   */}
    
     </div>
 
