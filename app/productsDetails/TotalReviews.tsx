@@ -11,6 +11,7 @@ const jost=Jost({
 const TotalReviews = () => {
    const dataReviews=
     {totalReviews:23,fiveStares:8,fourStar:5,threeStar:2,twoStar:5,oneStar:3}
+    
     const fiveStarRating=((dataReviews.fiveStares/dataReviews.totalReviews)*100).toFixed(0)
     const fourStarRating=((dataReviews.fourStar/dataReviews.totalReviews)*100).toFixed(0)
     const threeStarRating=((dataReviews.threeStar/dataReviews.totalReviews)*100).toFixed(0)
