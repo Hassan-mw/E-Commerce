@@ -15,14 +15,15 @@ const BelowData = () => {
     <div className='w-full flex flex-col space-y-2'>
       {/* top-1 */}
     <div className='w-full grid grid-cols-2 gap-x-3'>
-    <div className='flex items-center justify-center'>
-   <div className='flex flex-col items-start justify-start '>
+    <div className='flex items-center justify-center '>
+   <div className='flex flex-col items-start justify-start bg-white h-full p-4 '>
     <div className={`${jost.className} text-[#262626] text-md`}>Stylish woman in summer outfit isolated posing in fashion trend isolated</div>
     <div className={`${jost.className} text-[#555555] text-xs`}>In this captivating scene, a stylish woman stands confidently against a pristine backdrop, capturing the essence of summer's allure. Bathed in the gentle sunlight, she emanates an air of effortless chic. Her outfit is a harmonious blend of contemporary trends and timeless elegance, perfectly attuned to the vibrant season.</div>
     <span className={`${jost.className} text-xs gap-x-3  text-white flex items-center justify-center`}>READ MORE <FaArrowRight /></span>
     
    </div>
-    <Image height={200} width={200} className='' src="/blog_bottom_box_left.png" alt="blog_main_image" />  
+    <Image height={200} width={200} className='bg-white h-full ' src="/a-w.png" alt="blog_main_image" />  
+    {/* <Image height={200} width={200} className='bg-[#DDD9D8] h-full ' src="/blog_bottom_box_left.png" alt="blog_main_image" />   */}
     </div>
 
     </div>
