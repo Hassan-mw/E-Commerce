@@ -15,6 +15,6 @@ const page = () => {
     </div>
     </div>
   )
-}
+}F7DDD0
 
 export default page

@@ -37,7 +37,7 @@ const Context = () => {
     </div>
 
    {/* Text */}
-   <div className='hidden xl:block pt-8 2xl:pt-24'>
+   <div className='hidden xl:block pt-6'>
    <div className=' grid  grid-cols-3   xl:max-w-[620px] gap-x-4 border-t text-white'>
    {/* 1 */}
    <div className='flex flex-col items-start justify-start space-y-3 '>
