@@ -10,27 +10,36 @@ const jost=Jost({
 
 const BelowData = () => {
   return (
-    <div className='w-full max-w-screen-xl bg-green-400 flex items-center justify-center '>
+    <div className='w-full max-w-[1100px] bg-green-400 flex items-center justify-center '>
     {/* //!   Left-Data */}
     <div className='w-full flex flex-col space-y-2'>
       {/* top-1 */}
-    <div className='w-full grid grid-cols-2 gap-x-3'>
-    <div className='flex items-center justify-center '>
-   <div className='flex flex-col items-start justify-start bg-white h-full p-4 '>
+    <div className='w-full grid grid-cols-5 gap-x-3 max-h-96'>
+      {/* top-1-left */}
+    <div className=' col-span-3 grid grid-cols-1 '>
+   <div className='w-full flex flex-col items-start justify-start bg-white h-full p-4 '>
     <div className={`${jost.className} text-[#262626] text-md`}>Stylish woman in summer outfit isolated posing in fashion trend isolated</div>
     <div className={`${jost.className} text-[#555555] text-xs`}>In this captivating scene, a stylish woman stands confidently against a pristine backdrop, capturing the essence of summer's allure. Bathed in the gentle sunlight, she emanates an air of effortless chic. Her outfit is a harmonious blend of contemporary trends and timeless elegance, perfectly attuned to the vibrant season.</div>
     <span className={`${jost.className} text-xs gap-x-3  text-white flex items-center justify-center`}>READ MORE <FaArrowRight /></span>
     
    </div>
-    <Image height={200} width={200} className='bg-white h-full ' src="/a-w.png" alt="blog_main_image" />  
+    <Image height={400} width={400} className='bg-red-400 flex w-full h-full max-h-96 object-top object-contain' src="/a-w.png" alt="blog_main_image" />  
     {/* <Image height={200} width={200} className='bg-[#DDD9D8] h-full ' src="/blog_bottom_box_left.png" alt="blog_main_image" />   */}
     </div>
 
+
+    <div className='flex col-span-2 bg-red-400 items-center justify-start '>
+  
+    <Image height={200} width={200} className='bg-white h-full ' src="/image-woman-dress.png" alt="blog_main_image" />  
+   
     </div>
 
     </div>
+    {/* top-1-right */}
+    
+    </div>
     {/* //! Right-Data */}
-     <div className='flex flex-col w-[30%] items-center justify-center gap-y-6'>
+     <div className='flex flex-col w-[40%] items-center justify-center gap-y-6'>
       
       </div>    
     </div>
