@@ -5,7 +5,7 @@ import BelowData from './BelowData'
 
 const page = () => {
   return (
-    <div className='w-full max-w-screen-xl flex flex-col items-center justify-center  '>
+    <div className='w-full flex  items-center justify-center  '>
     <div className='w-full max-w-screen-xl flex flex-col items-center justify-center  '>
      <div className='relative'>
        <Images/>
