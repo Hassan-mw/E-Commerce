@@ -16,20 +16,21 @@ const BelowData = () => {
       {/* top-1 */}
     <div className='w-full flex items-center justify-center gap-x-3 '>
       {/* top-1-left */}
-    <div className='  w-[60%] grid grid-cols-2 '>
+    <div className='  w-[70%] grid grid-cols-2 '>
    <div className='w-full flex flex-col items-start justify-start bg-white h-full p-4 '>
-    <div className={`${jost.className} text-[#262626] text-md`}>Stylish woman in summer outfit isolated posing in fashion trend isolated</div>
-    <div className={`${jost.className} text-[#555555] text-xs`}>In this captivating scene, a stylish woman stands confidently against a pristine backdrop, capturing the essence of summer's allure. Bathed in the gentle sunlight, she emanates an air of effortless chic. Her outfit is a harmonious blend of contemporary trends and timeless elegance, perfectly attuned to the vibrant season.</div>
+    <div className={`${jost.className} text-[#262626] text-xs lg:text-md`}>Stylish woman in summer outfit isolated posing in fashion trend isolated</div>
+    <div className={`${jost.className} text-[#555555] text-[8px]`}>In this captivating scene, a stylish woman stands confidently against a pristine backdrop, capturing the essence of summer's allure. Bathed in the gentle sunlight, she emanates an air of effortless chic. Her outfit is a harmonious blend of contemporary trends and timeless elegance, perfectly attuned to the vibrant season.</div>
     <span className={`${jost.className} text-xs gap-x-3  text-white flex items-center justify-center`}>READ MORE <FaArrowRight /></span>
     
    </div>
-    <Image height={400} width={400} className='bg-white  md:hidden lg:block  w-full h-full max-h-96 object-center object-contain' src="/a-w.png" alt="blog_main_image" />  
-    <Image height={400} width={400} className='bg-white hidden md:block  w-full h-full max-h-96 object-center object-contain' src="/blog_2.png" alt="blog_main_image" />  
+    <Image height={400} width={400} className='bg-white  hidden lg:block  w-full h-full max-h-96 object-center object-contain' src="/a-w.png" alt="blog_main_image" />  
+    <Image height={400} width={400} className='bg-white hidden md:block lg:hidden  w-full h-full max-h-96 object-center object-contain' src="/blog_2.png" alt="blog_main_image" />  
+    <Image height={400} width={400} className='bg-white  md:hidden  w-full h-full max-h-96 object-center object-contain' src="/blog_3.png" alt="blog_main_image" />  
     {/* <Image height={200} width={200} className='bg-[#DDD9D8] h-full ' src="/blog_bottom_box_left.png" alt="blog_main_image" />   */}
     </div>
 
 
-    <div className='flex w-full h-full bg-[#5522bb] max-w-[40%] max-h-96 '>
+    <div className='flex w-full h-full bg-[#5522bb] max-w-[30%] max-h-96 '>
     <Image height={225} width={225} className='bg-red-400  object-top object-contain'  src="/image-woman-dress.png" alt="blog_main_image" />  
   
     {/* <Image height={400} width={400} className='bg-[#afaeb1] w-full h-full max-h-72 object-top object-cover' src="/Card.png" alt="blog_main_image" />   */}
@@ -41,8 +42,10 @@ const BelowData = () => {
     
     </div>
     {/* //! Right-Data */}
-     <div className='flex flex-col w-[40%] items-center justify-center gap-y-6'>
+     <div className=' hidden sm:block w-[40%] '>
+     <div className='flex flex-colitems-center justify-center gap-y-6'>
       
+      </div>    
       </div>    
     </div>
   )
