@@ -4,9 +4,9 @@ import React from 'react'
 const TopRight = () => {
   return (
     
-  <div className='w-full h-full max-w-[30%] bg-orange-500'>
+  <div className='w-full h-full bg-orange-500 col-span-1'>
   {/* v */}
-      <Image height={200} width={200} className='bg-[#16092f]  w-full h-full max-h-72 object-top object-cover' src="/Card.png" alt="blog_main_image" />  
+      <Image height={500} width={500} className='w-full h-full object-fit' src="/Card.png" alt="blog_main_image" />  
     </div>
      
  

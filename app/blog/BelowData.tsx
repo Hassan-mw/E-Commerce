@@ -17,7 +17,7 @@ const BelowData = () => {
     {/* <div className='w-full flex flex-col space-y-2'> */}
     
 
-    <div className='w-full flex items-center justify-center  bg-sky-400 gap-x-1 '>
+    <div className='w-full grid grid-cols-4 bg-sky-400 gap-x-1 '>
      <TopLeft/>
      <TopRight/>
 
