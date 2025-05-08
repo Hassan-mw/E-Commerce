@@ -38,8 +38,8 @@ const TextData = () => {
    
    {/* 3_small_iamge */}
    <div className='w-full max-w-[30%] flex flex-col gap-4'>
-   <Image height={400} width={400} className='w-full h-full' src="/a-w.png" alt="blog_main_image" />  
-   blog_below_small_image_1
+   <Image height={400} width={400} className='w-full h-full' src="/   blog_below_small_image_1
+.png" alt="blog_main_image" />  
    </div>
     </div>
     </div>
