@@ -22,7 +22,7 @@ const LeftBottom = () => {
        <div  className={`${jost.className}  text-[11px] text-[#555555]` }>In the heart of the bustling city, a stylish young man navigates the urban landscape with an air of contemporary confidence. His ensemble effortlessly captures the essence of city chic...</div>
       </div>
       {/* Time-Message */}
-      <div className='flex items-center justify-start gap-x-2 text-[9px] text-[#C4C4C4] w-full'> <div>3 hour age</div><div className='flex items-center justify-center gap-x-2  '><span><RiMessage3Fill /></span> <span>19</span></div>      </div>
+      <div className='flex items-center justify-start gap-x-2 text-[9px] text-[#959595] w-full'> <div>3 hour age</div><div className='flex items-center justify-center gap-x-2  '><span><RiMessage3Fill /></span> <span>19</span></div>      </div>
       </div>
 
      {/* 2 */}
@@ -34,7 +34,7 @@ const LeftBottom = () => {
        <div  className={`${jost.className}  text-[11px] text-[#555555]` }>In the heart of the bustling city, a stylish young man navigates the urban landscape with an air of contemporary confidence. His ensemble effortlessly captures the essence of city chic...</div>
       </div>
       {/* Time-Message */}
-      <div className='flex items-center justify-start gap-x-2 text-[9px] text-[#C4C4C4] w-full'> <div>3 hour age</div><div className='flex items-center justify-center gap-x-2  '><span><RiMessage3Fill /></span> <span>19</span></div>      </div>
+      <div className='flex items-center justify-start gap-x-2 text-[9px] text-[#959595] w-full'> <div>3 hour age</div><div className='flex items-center justify-center gap-x-2  '><span><RiMessage3Fill /></span> <span>19</span></div>      </div>
       </div>
 
      {/* 3 */}
@@ -46,7 +46,7 @@ const LeftBottom = () => {
        <div  className={`${jost.className}  text-[11px] text-[#555555]` }>In the heart of the bustling city, a stylish young man navigates the urban landscape with an air of contemporary confidence. His ensemble effortlessly captures the essence of city chic...</div>
       </div>
       {/* Time-Message */}
-      <div className='flex items-center justify-start gap-x-2 text-[9px] text-[#C4C4C4] w-full'> <div>3 hour age</div><div className='flex items-center justify-center gap-x-2  '><span><RiMessage3Fill /></span> <span>19</span></div>      </div>
+      <div className='flex items-center justify-start gap-x-2 text-[9px] text-[#959595] w-full'> <div>3 hour age</div><div className='flex items-center justify-center gap-x-2  '><span><RiMessage3Fill /></span> <span>19</span></div>      </div>
       </div>
 
 
