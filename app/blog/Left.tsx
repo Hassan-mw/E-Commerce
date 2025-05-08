@@ -4,7 +4,7 @@ import TopRight from './TopRight'
 
 const Left = () => {
   return (
-    <div className='w-full grid grid-cols-4 bg-sky-400 gap-x-1 '>
+    <div className='w-full grid grid-cols-4 bg-sky-400 sm:bg-purple-500 gap-x-1 '>
      <TopLeft/>
      <TopRight/>
 

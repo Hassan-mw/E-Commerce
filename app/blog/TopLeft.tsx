@@ -10,7 +10,7 @@ const jost=Jost({
 
 const TopLeft = () => {
   return (
-    <div className='  w-full grid grid-cols-5 sm:col-span-6 col-span-3 '>
+    <div className='  w-full grid grid-cols-5 sm:grid-cols-6 col-span-3 '>
     <div className=' flex flex-col items-start justify-start  p-4 space-y-3 w-full bg-pink-500 col-span-3 md:col-span-4'>
      <div className={`${jost.className} text-[#262626]  text-[10px] lg:text-md`}>Stylish woman in summer outfit isolated posing in fashion trend isolated</div>
      <div className={`${jost.className} text-[#555555] text-[11px] hidden xl:block `}>In this captivating scene, a stylish woman stands confidently against a pristine backdrop, capturing the essence of summer's allure. Bathed in the gentle sunlight, she emanates an air of effortless chic. Her outfit is a harmonious blend of contemporary trends and timeless elegance, perfectly attuned to the vibrant season.</div>
