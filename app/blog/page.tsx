@@ -2,6 +2,7 @@ import React from 'react'
 import Context from './Context'
 import Images from './Images'
 import BelowData from './BelowData'
+import TextData from './TextData'
 
 const page = () => {
   return (
