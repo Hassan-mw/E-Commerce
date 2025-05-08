@@ -11,24 +11,21 @@ const jost=Jost({
 const TopLeft = () => {
   return (
     <div className='  w-full grid grid-cols-5 sm:grid-cols-6 col-span-3 '>
-    <div className=' flex flex-col items-start justify-start  p-4 space-y-3 w-full col-span-3 sm:col-span-4'>
-     <div className={`${jost.className} text-[#262626]  text-[10px] lg:text-md`}>Stylish woman in summer outfit isolated posing in fashion trend isolated</div>
-     <div className={`${jost.className} text-[#555555] text-[11px] hidden xl:block `}>In this captivating scene, a stylish woman stands confidently against a pristine backdrop, capturing the essence of summer's allure. Bathed in the gentle sunlight, she emanates an air of effortless chic. Her outfit is a harmonious blend of contemporary trends and timeless elegance, perfectly attuned to the vibrant season.</div>
-     <div className={`${jost.className} text-[#555555] text-[9px] hidden sm:block`}>In this captivating scene, a stylish woman stands confidently against a pristine backdrop, capturing the essence of summer's allure. Bathed in the gentle sunlight, she emanates an air of effortless chic. Her outfit ....</div>
-     <div className={`${jost.className} text-[#555555] text-[9px] sm:hidden`}>In this captivating scene, a stylish woman stands confidently against a pristine backdrop, capturing the essence of summer's allure. Bathed in the gentle ....</div>
-    <div className='w-full flex items-start justify-start' >  <span style={{fontWeight:200}} className={`  gap-x-3 bg-[#4172DC]  p-2  text-[9px]  rounded-xs text-white flex items-center justify-center`}>READ MORE <FaArrowRight /></span></div>
+    <div className=' flex flex-col items-start justify-start  p-4 space-y-3  col-span-3 md:space-y-5 sm:col-span-4 md:col-span-3 lg:space-y-9 w-full max-w-52 sm:max-w-full  '>
+     <div className={`${jost.className} text-[#262626]  text-[10px] sm:text-sm lg:text-xl`}>Stylish woman in summer outfit isolated posing in fashion trend isolated</div>
+     <div className={`${jost.className} text-[#555555] text-[11px]  hidden md:block `}>In this captivating scene, a stylish woman stands confidently against a pristine backdrop, capturing the essence of summer's allure. Bathed in the gentle sunlight, she emanates an air of effortless chic. Her outfit is a harmonious blend of contemporary trends and timeless elegance, perfectly attuned .</div>
+     <div className={`${jost.className} text-[#555555] text-[9px]  sm:text-[11px] md:hidden`}>In this captivating scene, a stylish woman stands confidently against a pristine backdrop, capturing the essence of summer's allure. Bathed in the gentle sunlight, she emanates an air of effortless chic. Her outfit ....</div>
+   
+    <div className='w-full flex items-start justify-start' >  <span style={{fontWeight:200}} className={`  gap-x-3 bg-[#4172DC] md:px-3 lg:px-5 p-2  text-[9px]  rounded-xs text-white flex items-center justify-center`}>READ MORE <FaArrowRight /></span></div>
      
     </div>
 
 
 
-     <Image height={400} width={400} className='bg-white  hidden md:block  col-span-2 h-full w-full    object-center ' src="/a-w.png" alt="blog_main_image" />  
+     <Image height={400} width={400} className='bg-white  hidden md:block md:col-span-3 h-full w-full    object-center ' src="/a-w.png" alt="blog_main_image" />  
      <Image height={500} width={500} className='bg-white hidden sm:block md:hidden col-span-2 h-full w-full    object-center ' src="/blog_2.png" alt="blog_main_image" />  
-     <Image height={500} width={500} className='bg-red-800 sm:hidden  col-span-2 h-full w-full    object-center ' src="/a-w.png" alt="blog_main_image" />  
-     {/* <div className='w-full h-full bg-green-600'>  */}
- {/* f */}
-     {/* </div> */}
-     {/* <Image height={200} width={200} className='bg-[#DDD9D8] h-full ' src="/blog_bottom_box_left.png" alt="blog_main_image" />   */}
+     <Image height={500} width={500} className='bg-red-800 sm:hidden  col-span-2 h-full w-full    object-center  ' src="/a-w.png" alt="blog_main_image" />  
+
      </div>
   )
 }

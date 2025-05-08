@@ -14,7 +14,7 @@ const jost=Jost({
 
 const BelowData = () => {
   return (
-    <div className='w-full max-w-[1100px] md:bg-orange-400 lg:bg-purple-400 flex items-center justify-center px-3 '>
+    <div className='w-full max-w-[1100px]  flex items-center justify-center px-3 '>
 
 
     {/* //!   Left-Data */}
