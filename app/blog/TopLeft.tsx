@@ -11,9 +11,9 @@ const jost=Jost({
 const TopLeft = () => {
   return (
     <div className='  w-full grid grid-cols-5 sm:grid-cols-6 col-span-3 '>
-    <div className=' flex flex-col items-start justify-start  p-4 space-y-3  col-span-3 md:space-y-5 sm:col-span-4 md:col-span-3 lg:space-y-9 w-full max-w-52 sm:max-w-full  '>
+    <div className=' flex flex-col items-start justify-start  p-4 space-y-3  col-span-3 md:space-y-5 sm:col-span-4 md:col-span-3 lg:space-y-6 w-full max-w-52 sm:max-w-full  '>
      <div className={`${jost.className} text-[#262626]  text-[10px] sm:text-sm lg:text-xl`}>Stylish woman in summer outfit isolated posing in fashion trend isolated</div>
-     <div className={`${jost.className} text-[#555555] text-[11px]  hidden md:block `}>In this captivating scene, a stylish woman stands confidently against a pristine backdrop, capturing the essence of summer's allure. Bathed in the gentle sunlight, she emanates an air of effortless chic. Her outfit is a harmonious blend of contemporary trends and timeless elegance, perfectly attuned .</div>
+     <div className={`${jost.className} text-[#555555] text-[11px]  hidden md:block lg:text-md `}>In this captivating scene, a stylish woman stands confidently against a pristine backdrop, capturing the essence of summer's allure. Bathed in the gentle sunlight, she emanates an air of effortless chic. Her outfit is a harmonious blend of contemporary trends and timeless elegance, perfectly attuned to the vibrant season.</div>
      <div className={`${jost.className} text-[#555555] text-[9px]  sm:text-[11px] md:hidden`}>In this captivating scene, a stylish woman stands confidently against a pristine backdrop, capturing the essence of summer's allure. Bathed in the gentle sunlight, she emanates an air of effortless chic. Her outfit ....</div>
    
     <div className='w-full flex items-start justify-start' >  <span style={{fontWeight:200}} className={`  gap-x-3 bg-[#4172DC] md:px-3 lg:px-5 p-2  text-[9px]  rounded-xs text-white flex items-center justify-center`}>READ MORE <FaArrowRight /></span></div>

@@ -17,12 +17,17 @@ const BelowData = () => {
     <div className='w-full max-w-[1100px]  flex items-center justify-center px-3 '>
 
 
-    {/* //!   Left-Data */}
-    <div className='w-full flex items-center justify-center  space-x-2'>
-   <Left/>
+  
+  <div className='w-full flex items-center justify-center  space-x-2'>
+  <div className='w-full flex flex-col space-y-4 items-center justify-center  '>
+     <Left/>
+
+    </div>
+
+
    <Right/>
 
-    {/* //! Right-Data */}
+
      
     </div>
     </div>
