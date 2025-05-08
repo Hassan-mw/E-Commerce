@@ -15,7 +15,7 @@ const LeftBottom = () => {
      
      {/* 1 */}
      <div className='w-full h-full flex flex-col items-center justify-center space-y-1'>
-      <Image height={300} width={300} src="/bottomleft_iamge_1.png" alt='bottomleft_iamge_1'  />
+      <Image height={300} width={300} src="/bottomleft_image_1.png" alt='bottomleft_image_1'  />
       <div className='flex flex-col items-start justify-start space-y-1'>
        <div className={`${jost.className}  text-xs text-[#FF7A00]` }>Fashion</div>
        <div className={`${jost.className}  text-md text-[#262626]` }>Stylish young man out in town</div>
@@ -27,7 +27,7 @@ const LeftBottom = () => {
 
      {/* 2 */}
      <div className='w-full h-full flex flex-col items-center justify-center space-y-1'>
-      <Image height={300} width={300} src="/bottomleft_iamge_1.png" alt='bottomleft_image_2'  />
+      <Image height={300} width={300} src="/bottomleft_image_2.png" alt='bottomleft_image_2'  />
       <div className='flex flex-col items-start justify-start space-y-1'>
        <div className={`${jost.className}  text-xs text-[#FF7A00]` }>Fashion</div>
        <div className={`${jost.className}  text-md text-[#262626]` }>Stylish young man out in town</div>
@@ -39,7 +39,7 @@ const LeftBottom = () => {
 
      {/* 3 */}
      <div className='w-full h-full flex flex-col items-center justify-center space-y-1'>
-      <Image height={300} width={300} src="/bottomleft_iamge_1.png" alt='bottomleft_iamge_1'  />
+      <Image height={300} width={300} src="/bottomleft_image_3.png" alt='bottomleft_image_3'  />
       <div className='flex flex-col items-start justify-start space-y-1'>
        <div className={`${jost.className}  text-xs text-[#FF7A00]` }>Fashion</div>
        <div className={`${jost.className}  text-md text-[#262626]` }>Stylish young man out in town</div>
