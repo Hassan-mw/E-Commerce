@@ -4,6 +4,8 @@ import React from 'react'
 import { FaArrowRight } from 'react-icons/fa6'
 import TopLeft from './TopLeft'
 import TopRight from './TopRight'
+import Left from './Left'
+import Right from './Right'
 
 const jost=Jost({
   weight:['500'],
@@ -16,16 +18,12 @@ const BelowData = () => {
 
 
     {/* //!   Left-Data */}
-    <div className='w-full flex flex-col space-y-2'>
-   
-
+    <div className='w-full flex items-center justify-center  space-x-2'>
+   <Left/>
+   <Right/>
 
     {/* //! Right-Data */}
-     <div className=' hidden sm:block w-[30%] bg-amber-600 '>
-     <div className='flex flex-colitems-center justify-center gap-y-6'>
-      g
-      </div>    
-      </div>    
+     
     </div>
     </div>
   )

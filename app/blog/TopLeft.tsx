@@ -22,7 +22,7 @@ const TopLeft = () => {
 
 
      <Image height={400} width={400} className='bg-white  hidden md:block  col-span-2 h-full w-full    object-center ' src="/a-w.png" alt="blog_main_image" />  
-     <Image height={400} width={400} className='bg-white hidden sm:block md:hidden  sm:col-span-2 h-full w-full    object-center ' src="/blog_2.png" alt="blog_main_image" />  
+     <Image height={400} width={400} className='bg-white hidden sm:block md:hidden col-span-2 h-full w-full    object-center ' src="/blog_2.png" alt="blog_main_image" />  
      <Image height={500} width={500} className='bg-red-800 sm:hidden  col-span-2 h-full w-full    object-center ' src="/a-w.png" alt="blog_main_image" />  
      {/* <div className='w-full h-full bg-green-600'>  */}
  {/* f */}
