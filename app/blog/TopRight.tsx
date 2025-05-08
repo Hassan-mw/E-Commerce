@@ -7,6 +7,7 @@ const TopRight = () => {
   <div className='w-full h-full bg-orange-500 col-span-1'>
   {/* v */}
       <Image height={500} width={500} className='w-full h-full object-fit' src="/Card.png" alt="blog_main_image" />  
+      <Image height={500} width={500} className='w-full h-full object-fit' src="/Card.png" alt="blog_main_image" />  
     </div>
      
  
