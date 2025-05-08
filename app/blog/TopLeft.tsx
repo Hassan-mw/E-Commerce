@@ -1,4 +1,12 @@
+import { Jost } from 'next/font/google'
+import Image from 'next/image'
 import React from 'react'
+import { FaArrowRight } from 'react-icons/fa6'
+
+const jost=Jost({
+  weight:['500'],
+  subsets:['latin']
+}) 
 
 const TopLeft = () => {
   return (

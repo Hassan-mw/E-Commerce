@@ -2,6 +2,7 @@ import { Jost } from 'next/font/google'
 import Image from 'next/image'
 import React from 'react'
 import { FaArrowRight } from 'react-icons/fa6'
+import TopLeft from './TopLeft'
 
 const jost=Jost({
   weight:['500'],
@@ -15,8 +16,8 @@ const BelowData = () => {
     <div className='w-full flex flex-col space-y-2'>
       {/* top-1 */}
     <div className='w-full flex items-center justify-center gap-x-3 h-full bg-sky-400 '>
-      {/* top-1-left */}
-  
+     <TopLeft/>
+     <TopRight/>
 
 
     {/* <div className=' w-full h-full  max-w-[35%] bg-red-400  '> */}
