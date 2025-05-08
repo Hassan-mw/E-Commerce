@@ -3,6 +3,7 @@
 
 import Right from './Right'
 import LeftTop from './LeftTop'
+import LeftBottom from './LeftBottom'
 
   
 
