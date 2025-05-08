@@ -13,25 +13,20 @@ const jost=Jost({
 const BelowData = () => {
   return (
     <div className='w-full max-w-[1100px] md:bg-orange-400 lg:bg-purple-400 flex items-center justify-center px-3 '>
+
+
     {/* //!   Left-Data */}
-    {/* <div className='w-full flex flex-col space-y-2'> */}
-    
+    <div className='w-full flex flex-col space-y-2'>
+   
 
-    <div className='w-full grid grid-cols-4 bg-sky-400 gap-x-1 '>
-     <TopLeft/>
-     <TopRight/>
 
-    </div>
-
-    {/* top-1-right */}
-    
-    {/* </div> */}
     {/* //! Right-Data */}
-     <div className=' hidden sm:block w-[40%] '>
+     <div className=' hidden sm:block w-[30%] bg-amber-600 '>
      <div className='flex flex-colitems-center justify-center gap-y-6'>
-      
+      g
       </div>    
       </div>    
+    </div>
     </div>
   )
 }
