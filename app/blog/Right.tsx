@@ -11,14 +11,14 @@ const jost=Jost({
 
 const Right = () => {
   return (
-    <div className=' hidden min-h-full lg:block w-[30%]  '>
+    <div className=' hidden min-h-full lg:block h-full w-[30%] bg-green-500  '>
     <div className='flex flex-col items-center justify-center '>
 
 
   {/* 1 */}
-  <div className='w-full flex flex-col space-y-3 bg-[#9DB8C9] rounded-md  relative p-3'>
+  <div className='w-full h-1/4 flex flex-col space-y-3 bg-[#9DB8C9] xl:rounded-md  relative p-3'>
   <div className='absolute top-3 left-2'><Image height={40} width={40} className='z-5' src="/Quote.png" alt="Quote" /></div>
-  <div className={`${jost.className} text-2xl text-white z-10 pl-5`}>Wireless Earbuds</div>
+  <div className={`${jost.className} text-xs text-white z-10 pl-5`}>Wireless Earbuds</div>
   {/* Text */}
   <div style={{fontWeight:200}} className={` text-xs text-white z-10  pl-5`}>"I've been using the XYZ Wireless Earbuds for a few weeks now, and they've completely...</div>
    {/* Image-Name */}
@@ -37,7 +37,7 @@ const Right = () => {
 
   
   {/* 2 */}
-  <div className='w-full flex flex-col space-y-3 bg-[#9DB8C9] rounded-md  relative p-3'>
+  <div className='w-full h-1/4 flex flex-col space-y-3 bg-[#9DB8C9] xl:rounded-md relative p-3'>
   <div className='absolute top-3 left-2'><Image height={40} width={40} className='z-5' src="/Quote.png" alt="Quote" /></div>
   <div className={`${jost.className} text-xl text-white z-10 pl-5`}>Wireless Earbuds</div>
   {/* Text */}
@@ -57,7 +57,7 @@ const Right = () => {
   </div>
 
   {/* 3 */}
-  <div className='w-full flex flex-col space-y-3 bg-[#9DB8C9] rounded-md  relative p-3'>
+  <div className='w-full h-1/4 flex flex-col space-y-3 bg-[#9DB8C9] xl:rounded-md relative p-3'>
   <div className='absolute top-3 left-2'><Image height={40} width={40} className='z-5' src="/Quote.png" alt="Quote" /></div>
   <div className={`${jost.className} text-xl text-white z-10 pl-5`}>Wireless Earbuds</div>
   {/* Text */}
@@ -77,7 +77,7 @@ const Right = () => {
   </div>
 
   {/* 4 */}
-  <div className='w-full flex flex-col space-y-3 bg-[#9DB8C9] rounded-md  relative p-3'>
+  <div className='w-full h-1/4 flex flex-col space-y-3 bg-[#9DB8C9] xl:rounded-md relative p-3'>
   <div className='absolute top-3 left-2'><Image height={40} width={40} className='z-5' src="/Quote.png" alt="Quote" /></div>
   <div className={`${jost.className} text-xl text-white z-10 pl-5`}>Wireless Earbuds</div>
   {/* Text */}
