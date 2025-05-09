@@ -21,7 +21,7 @@ const TextData = () => {
     <div className='w-full flex  items-center justify-center'> 
     <div className='w-full max-w-screen-lg flex flex-col space-y-8 '>
       {/* text-data */}
-    <div className='w-full  flex flex-col space-y-4 '>
+    <div className='w-full  flex flex-col   space-y-4 '>
      <div className={`${jost.className}  text-2xl text-[#262626] `}>"Unveiling Timeless Elegance: Exploring the Allure of Vintage Fashion"</div>
   
     {data.map((data,index)=>
@@ -32,16 +32,7 @@ const TextData = () => {
      ) }
     </div>
     {/* images */}
-    <div className='w-full flex items-center justify-center gap-x-3'>
-   {/* Large_image */}
-     <Image height={400} width={400} className='w-full h-full' src="/blog_below_large_image.png" alt="blog_below_large_image" />  
    
-   {/* 3_small_iamge */}
-   <div className='w-full max-w-[30%] flex flex-col gap-4'>
-   <Image height={400} width={400} className='w-full h-full' src="/   blog_below_small_image_1
-.png" alt="blog_main_image" />  
-   </div>
-    </div>
     </div>
     </div>
   )

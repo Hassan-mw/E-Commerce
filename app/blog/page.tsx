@@ -3,6 +3,11 @@ import Context from './Context'
 import Images from './Images'
 import BelowData from './BelowData'
 import TextData from './TextData'
+import {
+  ResizableHandle,
+  ResizablePanel,
+  ResizablePanelGroup,
+} from "@/components/ui/resizable"
 
 const page = () => {
   return (
@@ -15,6 +20,12 @@ const page = () => {
       <BelowData/>
       <TextData/>
       {/* <BelowData/> */}
+      <ResizablePanelGroup direction="horizontal">
+  <ResizablePanel>One</ResizablePanel>
+  <ResizableHandle />
+  <ResizablePanel>Two</ResizablePanel>
+</ResizablePanelGroup>
+
     </div>
     </div>
   )
