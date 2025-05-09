@@ -43,7 +43,7 @@ import LeftBottom from './LeftBottom'
 
 const BelowData = () => {
   return (
-    <div className='w-full max-w-[1240px]  flex items-center justify-center lg:px-8 '>
+    <div className='w-full max-w-[1150px]  flex items-center justify-center lg:px-8 '>
 
 
   
@@ -55,7 +55,7 @@ const BelowData = () => {
     </div>
 
 
-   <Right/>
+    <Right/>
 
 
      
