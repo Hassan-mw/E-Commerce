@@ -18,8 +18,8 @@ const TextData = () => {
   ]
 
   return (
-    <div className='w-full flex  items-center justify-center'> 
-    <div className='w-full max-w-screen-lg flex flex-col space-y-8 '>
+    <div className='w-full flex  items-center justify-center '> 
+    <div className='w-full max-w-[1100px]  flex flex-col space-y-8 '>
       {/* text-data */}
     <div className='w-full  flex flex-col   space-y-4 '>
      <div className={`${jost.className}  text-2xl text-[#262626] `}>"Unveiling Timeless Elegance: Exploring the Allure of Vintage Fashion"</div>
