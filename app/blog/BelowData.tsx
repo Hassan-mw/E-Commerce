@@ -48,7 +48,7 @@ const BelowData = () => {
 
   
   <div className='w-full flex items-start justify-start bg-red-400  lg:space-x-12'>
-  <div className='w-full flex flex-col space-y-4 items-center justify-center  '>
+  <div className='w-full flex flex-col space-y-4 items-center justify-between  '>
      <LeftTop/>
      <LeftBottom/>
 
