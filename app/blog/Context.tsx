@@ -25,13 +25,13 @@ const Context = () => {
     
     {/* 3-Icons */}
      <div className='flex items-center justify-center space-x-4 lg:gap-x-7 '>
-     <div className='flex items-center justify-center gap-x-2 text-xs sm:text-md' ><span><FaClock /></span> <span>20 July 2020</span></div>   
-     <div className='flex items-center justify-center gap-x-2 text-xs sm:text-md'><span><IoHeartSharp /></span> <span>830</span></div>   
-     <div className='flex items-center justify-center gap-x-2 text-xs sm:text-md '><span><RiMessage3Fill /></span> <span>19</span></div>   
+     <div className='flex items-center justify-center gap-x-2 text-xs sm:text-md border-b border-[#a690be] hover:border-white duration-300 hover:cursor-pointer' ><span><FaClock /></span> <span>20 July 2020</span></div>   
+     <div className='flex items-center justify-center gap-x-2 text-xs sm:text-md border-b border-[#a690be] hover:border-white duration-300 hover:cursor-pointer'><span><IoHeartSharp /></span> <span>830</span></div>   
+     <div className='flex items-center justify-center gap-x-2 text-xs sm:text-md border-b border-[#a690be] hover:border-white duration-300 hover:cursor-pointer '><span><RiMessage3Fill /></span> <span>19</span></div>   
      </div>
     
     {/* Button */}
-    <div className='border rounded-md flex items-center justify-center gap-x-2 px-3 py-2'>
+    <div className='border hover:cursor-pointer hover:border-[#ffffff] hover:bg-[#ffffff] hover:text-[#745e90] duration-500 text-xs lg:text-md rounded-md flex items-center justify-center gap-x-2 px-3 py-2'>
     <div>READ MORE</div>
     <span><FaArrowRight /></span>
     </div>
