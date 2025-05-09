@@ -12,7 +12,7 @@ const jost=Jost({
 const Right = () => {
   return (
     <div className=' hidden min-h-full lg:block w-[30%]  '>
-    <div className='flex flex-col items-center justify-center gap-y-6'>
+    <div className='flex flex-col items-center justify-center '>
 
 
   {/* 1 */}
