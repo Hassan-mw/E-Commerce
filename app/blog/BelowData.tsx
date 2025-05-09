@@ -9,7 +9,7 @@ import LeftBottom from './LeftBottom'
 
 const BelowData = () => {
   return (
-    <div className='w-full max-w-[1100px]  flex items-center justify-center px-3 bg-gray-600'>
+    <div className='w-full max-w-[1100px]  flex items-center justify-center px-3 '>
 
 
   
