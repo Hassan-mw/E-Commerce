@@ -2,7 +2,7 @@
 module.exports = {
   theme: {
     screens: {
-      mdl: '500px',
+      mdl: '900px',
       
     },
     colors: {
