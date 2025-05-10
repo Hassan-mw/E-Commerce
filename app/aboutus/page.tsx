@@ -3,6 +3,7 @@ import Image from 'next/image'
 import React from 'react'
 import { MdKeyboardArrowRight } from 'react-icons/md'
 import AboutUsData from './AboutUsData'
+import AboutUsLogin from './AboutUsLogin'
 
 const jost=Jost({
   weight:['500'],
