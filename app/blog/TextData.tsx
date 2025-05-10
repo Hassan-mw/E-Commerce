@@ -26,7 +26,7 @@ const TextData = () => {
   
     {data.map((data,index)=>
       <div key={data.id} className='flex flex-col items-start justify-start space-y-1 '>
-      <div className={`${jost.className} text-sm text-[#6d6b6b]`}>{data.title}</div>
+      <div style={{fontWeight:300}}  className={`${jost.className} text-xs text-[#6d6b6b]`}>{data.title}</div>
       <div style={{fontWeight:300}} className={`${jost.className} text-xs text-[#707377]`}>{data.data}</div>
       </div>
      ) }
