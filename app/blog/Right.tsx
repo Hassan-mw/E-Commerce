@@ -11,8 +11,8 @@ const jost=Jost({
 
 const Right = () => {
   return (
-    <div className=' hidden min-h-full lg:block h-full w-[30%] lg:bg-green-50 xl:bg-pink-600  '>
-    <div className='h-full flex flex-col items-center justify-center '>
+    <div className=' hidden min-h-full lg:block h-full w-[30%]   '>
+    <div className='h-full flex flex-col items-center justify-center space-y-1'>
 
 
   {/* 1 */}
