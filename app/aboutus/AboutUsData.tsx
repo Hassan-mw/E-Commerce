@@ -72,7 +72,7 @@ const AboutUsData = () => {
 
    {/* ms-screen-contant */}
     <div className='hidden sm:block w-full'>
-    <div className='max-w-[850px] lg:max-w-full w-full flex items-center justify-center  '>
+    <div className=' w-full flex items-center justify-center  '>
     <div className=' w-full  grid grid-cols-2 items-start justify-start  gap-x-3 h-full  '>
 
     {/* text */}
@@ -88,7 +88,7 @@ const AboutUsData = () => {
     <div className=' pb-12 lg:pb-20 w-full grid grid-cols-1 lg:grid-cols-2  place-content-center  gap-4 '>
 
       {/*  1   */}
-    <div className='flex flex-col items-center justify-center shadow-2xl rounded-md border border-slate-100 bg-white p-2 space-y-4'>
+    <div className='flex flex-col items-center justify-center shadow-2xl rounded-md border border-slate-100 bg-white p-2 space-y-6'>
       <div className='flex items-start justify-start lg:flex-col lg:space-y-2 lg:items-center lg:justify-center'>
     <span className='size-9 rounded-full bg-[#EAF3FB] flex  items-center justify-center text-blue-500 mr-4'><BsShop size={25} /></span>
      <div className='flex flex-col items-start justify-start lg:space-y-2 lg:items-center lg:justify-center'>
@@ -103,7 +103,7 @@ const AboutUsData = () => {
     </div>
 
       {/*  2   */}
-    <div className='flex flex-col items-center justify-center shadow-2xl rounded-md border border-slate-100 bg-white p-2 space-y-4'>
+    <div className='flex flex-col items-center justify-center shadow-2xl rounded-md border border-slate-100 bg-white p-2 space-y-6'>
       <div className='flex items-start justify-start lg:flex-col lg:space-y-2 lg:items-center lg:justify-center'>
     <span className='size-9 rounded-full bg-[#EAF3FB] flex  items-center justify-center text-blue-500 mr-4 '><RiDiscountPercentFill size={25} /></span>
      <div className='flex flex-col items-start justify-start lg:space-y-2 lg:items-center lg:justify-center'>
@@ -119,7 +119,7 @@ const AboutUsData = () => {
 
 
       {/*  3  */}
-    <div className='flex flex-col items-center justify-center shadow-2xl rounded-md border border-slate-100 bg-white p-2 space-y-4'>
+    <div className='flex flex-col items-center justify-center shadow-2xl rounded-md border border-slate-100 bg-white p-2 space-y-6'>
       <div className='flex items-start justify-start lg:flex-col lg:space-y-2 lg:items-center lg:justify-center '>
     <span className='size-9 rounded-full bg-[#EAF3FB] flex  items-center justify-center text-blue-500 mr-4'><RiCustomerService2Line size={25} /></span>
      <div className='flex flex-col items-start justify-start lg:space-y-2  lg:items-center lg:justify-center'>
@@ -135,7 +135,7 @@ const AboutUsData = () => {
 
 
       {/*  4  */}
-    <div className='flex flex-col items-center justify-center shadow-2xl rounded-md border border-slate-100 bg-white p-2 space-y-4'>
+    <div className='flex flex-col items-center justify-center shadow-2xl rounded-md border border-slate-100 bg-white p-2 space-y-6'>
       <div className='flex items-start justify-start lg:flex-col lg:space-y-2 lg:items-center lg:justify-center '>
     <span className='size-9 rounded-full bg-[#EAF3FB] flex  items-center justify-center text-blue-500 mr-4'><GiCargoShip size={25} /></span>
      <div className='flex flex-col items-start justify-start lg:space-y-2 lg:items-center lg:justify-center'>

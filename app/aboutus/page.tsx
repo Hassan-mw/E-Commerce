@@ -12,7 +12,7 @@ const jost=Jost({
 const page = () => {
   return (
   <div className='w-full flex items-center justify-center '>
-     <div className='max-w-[1200px] w-full flex flex-col items-center justify-center p-5 '>
+     <div className='max-w-[880px] lg:max-w-[1200px] w-full flex flex-col items-center justify-center p-5 '>
        {/* Current Page showing */}
       <div className='w-full flex    pb-4 items-start justify-start space-x-3 '>
        <span style={{fontWeight:300}} className={` ${jost.className} flex items-center text-sm justify-center text-[#555555]`}>Homepage <MdKeyboardArrowRight size={20} /></span>
