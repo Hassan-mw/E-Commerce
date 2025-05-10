@@ -70,10 +70,11 @@ const AboutUsData = () => {
 
 
 
-    <div className='w-full grid grid-cols-1 md:grid-cols-2 items-end justify-end  gap-x-25 h-full '>
+    <div className='w-full grid grid-cols-1 sm:grid-cols-2 items-end justify-end  gap-x-3 h-full '>
        {/* Image */}
      <div className='w-full pt-8 bg-green-500 h-full flex items-center justify-end'>
-     <Image height={500} width={500} className='  max-w-full flex items-center object-contain' src="/aboutus_main_image.png" alt="aboutus_main_image"/>
+     <Image height={500} width={500} className=' h-full max-h-[500px] w-full flex items-center object-contain sm:hidden ' src="/aboutus_main_image.png" alt="aboutus_main_image"/>
+     <Image height={500} width={500} className='  max-w-full object-contain hidden sm:block' src="/about_second_image.png" alt="about_second_image"/>
      </div> 
       {/* Context */}
     <div className='w-full flex flex-col  items-start justify-start space-y-14'>
