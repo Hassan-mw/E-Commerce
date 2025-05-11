@@ -1,9 +1,11 @@
+'use client'
 import { TopNumberProduct, TopNumberProductDataType } from '@/app/Types/dataType'
 import Button from '@/components/Button'
 import { Jost } from 'next/font/google'
 import Image from 'next/image'
 import Link from 'next/link'
-import React from 'react'
+import React, { useContext } from 'react'
+import { DataContext } from '../ContextApi/ContextApi'
 
 const jost=Jost({
   weight:['500'],
@@ -17,8 +19,9 @@ interface dataType{
 
 const ProductArrray = ({data}:TopNumberProductDataType) => {
 
-
-
+    const {model,setModel}:any=useContext(DataContext)
+    console.log(model,'dfs4dg56s4dg65s4d4gsd45gs')
+    
   return (
     <div className={`  w-full grid gap-5 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4   sm:gap-7 lg:gap-x-14 py-9 sm:px-2`}>
         {
