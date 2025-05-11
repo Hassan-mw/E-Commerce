@@ -1,7 +1,7 @@
 'use client'
 import { Jost } from 'next/font/google'
 import Image from 'next/image'
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 
 
 
@@ -22,21 +22,21 @@ import {
 import { FiSearch } from "react-icons/fi";
 import Link from 'next/link'
 import { usePathname, useRouter, useSearchParams } from 'next/navigation'
+import { DataContext } from '../ContextApi/ContextApi'
+
+type DataType={
+  brand:string;
+}
 const TopLeft = () => {
 
 
-    const [model,setModel]=useState('all')
+    // const [model,setModel]=useState('all')
     const searchParams=useSearchParams()
     const pathName=usePathname()
     const router=useRouter()
-   
+    const {brand,setBrand}:DataType=useContext(DataContext)
   
-    useEffect(()=>{
-      const params=new URLSearchParams(searchParams)
-  
-      if(model!=='all')  params.set('model',model); else params.delete('model');
-      router.replace(`${pathName}?${params.toString()}`,{scroll:false})
-    },[model])
+ 
   
 
   return (
@@ -45,17 +45,18 @@ const TopLeft = () => {
     <div className='flex items-center justify-center border gap-x-0 border-slate-200 rounded-sm py-1 px-2 '>
       <div className='w-1/2 '><input type='text' className='w-5/6  focus:outline-none placeholder:text-slate-500 placeholder:text-sm ' placeholder='Search Product'/></div>
      <div className='mr-5 '>
-      <Select value={model} onValueChange={(e)=>setModel(e)}>
+      <Select value={brand} onValueChange={(e)=>setBrand(e)}>
       <SelectTrigger className="w-[120px] outline-none border-none shadow-none z-20 ">
-        <SelectValue className='placeholder:text-slate-500' placeholder="Brand" />
+        <SelectValue className='placeholder:text-slate-500' placeholder="Category" />
       </SelectTrigger>
-      <SelectContent>
+      <SelectContent className='bg-white text-black'>
         <SelectGroup>
+          <SelectLabel>Fruits</SelectLabel>
+          <SelectItem value="oukods">Oukods</SelectItem>
           <SelectItem value="tiger">Tiger</SelectItem>
           <SelectItem value="kirana">Kirana</SelectItem>
           <SelectItem value="prettygarden">Prettygarden</SelectItem>
-          <SelectItem value="oukods">Oukods</SelectItem>
-          <SelectItem value="grace">Grace</SelectItem>
+          <SelectItem value="qualfort">Qualfort</SelectItem>
         </SelectGroup>
       </SelectContent>
     </Select></div>

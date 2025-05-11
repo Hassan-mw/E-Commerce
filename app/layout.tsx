@@ -30,8 +30,8 @@ export default function RootLayout({
     <html lang="en">
       <body>
            <div className="w-full h-full flex flex-col overflow-hidden overflow-x-hidden">
-        <Navbar/>
         <DataProvider>
+        <Navbar/>
         {children}
         </DataProvider>
         <Footer/>
