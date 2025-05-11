@@ -12,13 +12,17 @@ import Image from 'next/image';
 import { DataContext } from '../ContextApi/ContextApi';
 // import { useRouter } from 'next/';
 
+// interface DataType{
+//   model:string;
+// }
+
 
 const ProductListSidebarData = () => {
   const [style,setStyle]=useState('all')
   const [color,setColor]=useState('all')
   const [size,setSize]=useState('all')
   const [price,setPrice]=useState('0')
-  const {model,setModel}=useContext(DataContext)
+  const {model,setModel}:any=useContext(DataContext)
   
   const searchParams=useSearchParams()
   const pathName=usePathname()
