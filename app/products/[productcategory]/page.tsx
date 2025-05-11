@@ -33,16 +33,16 @@ const page = async({params,searchParams}:{params:{productcategory:string},search
 
 
       {/*//! Current Page showing +  side bar trigger  bg-[#E9E9E9]*/}
-     <div className='w-full flex items-center justify-center bg-[#E9E9E9] py-3 px-1 sm:px-3'>
-     <div className='w-full max-w-screen-2xl grid grid-cols-3 lg:grid-cols-2 '>
+     <div className='w-full flex items-center justify-center bg-[#E9E9E9] '>
+     <div className='w-full max-w-screen-2xl grid grid-cols-3 lg:grid-cols-2 py-3 px-1 sm:px-6  xl:px-5'>
       {/* Number of product shower */}
-     <div className='flex items-center justify-start gap-x-3 '>
+     <div className='  flex items-center justify-start gap-x-3 '>
       <span style={{fontWeight:300}} className={` ${jost.className} flex items-center text-sm justify-center text-[#262626]`}>{category}</span>
       <span style={{fontWeight:300}} className={` ${jost.className} flex items-center justify-center  text-sm text-[#555555]`}>{data.length} items</span>
       
      </div>
       {/* Side bar trigger shower */}
-     <div className=' lg:hidden  w-full flex items-center justify-start  '> <ProductSideBarTrigger/></div>
+     <div className=' lg:hidden  w-full flex items-center justify-start '> <ProductSideBarTrigger/></div>
            
      {/* Showing sort by */}
     <SortingBy/>
