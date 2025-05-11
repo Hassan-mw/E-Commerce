@@ -27,8 +27,8 @@ const page = async({params,searchParams}:{params:{productcategory:string},search
       {/* Current Page showing */}
      <div className='w-full flex   max-w-screen-2xl items-start justify-start space-x-3 bg-white py-3 px-5'>
       <span style={{fontWeight:300}} className={` ${jost.className} flex items-center text-sm justify-center text-[#555555]`}>Homepage <MdKeyboardArrowRight size={20} /></span>
-      <span className={` ${jost.className} flex items-center justify-center  text-sm text-[#555555]`}>{category} <MdKeyboardArrowRight size={20} /></span>
-      <span className={` ${jost.className} flex items-center justify-center  text-sm text-[#555555]`}>{productName} <MdKeyboardArrowRight size={20} /></span>
+      <span className={` ${jost.className} flex items-center justify-center  text-sm text-[#555555]`}>{category} </span>
+      {/* <span className={` ${jost.className} flex items-center justify-center  text-sm text-[#555555]`}>{productName} <MdKeyboardArrowRight size={20} /></span> */}
      </div>
 
 
@@ -38,7 +38,7 @@ const page = async({params,searchParams}:{params:{productcategory:string},search
       {/* Number of product shower */}
      <div className=' flex items-center justify-start gap-x-3 '>
       <span style={{fontWeight:300}} className={` ${jost.className} flex items-center text-lg justify-center text-[#262626]`}>{category}</span>
-      <span className={` ${jost.className} flex items-center justify-center  text-sm text-[#555555]`}>110 items</span>
+      <span className={` ${jost.className} flex items-center justify-center  text-sm text-[#555555]`}>{data.length} items</span>
       
      </div>
       {/* Side bar trigger shower */}

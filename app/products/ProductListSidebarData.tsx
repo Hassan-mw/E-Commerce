@@ -133,7 +133,12 @@ const ProductListSidebarData = () => {
 
     {/*  box by Size */}
     <div className='w-full flex flex-col space-y-2 border-b pb-3 border-slate-300'>
+    <div className='flex items-center justify-between '>
     <div className={`${jost.className} text-xl`}>SIZE</div>
+     <div onClick={()=>setSize('all')} className={`${jost.className} border border-slate-200 text-[#555555] hover:cursor-pointer ${size==='all' ? 'bg-[#D1E2EB]' : 'bg-while'} hover:bg-[#D1E2EB] duration-200 flex items-center justify-center  px-3 rounded-sm`}>All</div>
+      
+    </div>
+   
     <div className='w-full grid grid-cols-4 gap-x-3 gap-y-5'>
       {
        sizeArray.map((data,index)=>
@@ -141,14 +146,14 @@ const ProductListSidebarData = () => {
        )
       }
  
-    </div></div>
-
+    </div>
+    </div>
 
     {/* Price */}
     <div className='w-full flex flex-col space-y-2  border-slate-300 pb-12 '>
     <div className={`${jost.className} text-xl`}>PRICE</div>
       <div className='w-full flex flex-col space-y-3'>
-        <div><input value={price}  onChange={(e)=>setPrice(e.target.value)} type='range' min='0' max='600' className='w-full'/></div>
+        <div><input value={price}  onChange={(e)=>setPrice(e.target.value)} type='range' min='0' max='60' className='w-full'/></div>
 
       </div>
   
