@@ -37,8 +37,8 @@ const page = async({params,searchParams}:{params:{productcategory:string},search
      <div className='w-full max-w-screen-2xl grid grid-cols-3 lg:grid-cols-2 px-5'>
       {/* Number of product shower */}
      <div className=' flex items-center justify-start gap-x-3 '>
-      <span style={{fontWeight:300}} className={` ${jost.className} flex items-center text-lg justify-center text-[#262626]`}>{category}</span>
-      <span className={` ${jost.className} flex items-center justify-center  text-sm text-[#555555]`}>{data.length} items</span>
+      <span style={{fontWeight:300}} className={` ${jost.className} flex items-center text-sm justify-center text-[#262626]`}>{category}</span>
+      <span style={{fontWeight:300}} className={` ${jost.className} flex items-center justify-center  text-sm text-[#555555]`}>{data.length} items</span>
       
      </div>
       {/* Side bar trigger shower */}
