@@ -18,9 +18,12 @@ interface dataType{
 }
 
 const ProductArrray = ({data}:TopNumberProductDataType) => {
-
-    const {model,setModel}:any=useContext(DataContext)
-    console.log(model,'dfs4dg56s4dg65s4d4gsd45gs')
+  let productArray=data
+  const {brand,setBrand}:any=useContext(DataContext)
+  if(brand!=='all'){
+  productArray=productArray.filter(data=>data.brand===brand)
+  }
+  console.log(brand)
     
   return (
     <div className={`  w-full grid gap-5 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4   sm:gap-7 lg:gap-x-14 py-9 sm:px-2`}>

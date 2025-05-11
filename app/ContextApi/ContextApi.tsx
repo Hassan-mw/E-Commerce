@@ -4,20 +4,15 @@
 import { useContext, useState } from "react";
 import { createContext } from "react";
 
-interface DataTYpe{
-    model:string;
 
-}
 
-const DataContext=createContext({ 
-    data:""
- })
+const DataContext=createContext({ })
 
 function DataProvider({children}:{children:React.ReactNode}){
-     const [model,setModel]=useState('all')
+     const [brand,setBrand]=useState('all')
    
   return(
-    <DataContext.Provider value={{model,setModel}}>
+    <DataContext.Provider value={{brand,setBrand}}>
     {children}
     </DataContext.Provider>
   )

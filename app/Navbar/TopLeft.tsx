@@ -47,20 +47,19 @@ const TopLeft = () => {
      <div className='mr-5 '>
       <Select value={model} onValueChange={(e)=>setModel(e)}>
       <SelectTrigger className="w-[120px] outline-none border-none shadow-none z-20 ">
-        <SelectValue className='placeholder:text-slate-500' placeholder="Category" />
+        <SelectValue className='placeholder:text-slate-500' placeholder="Brand" />
       </SelectTrigger>
       <SelectContent>
         <SelectGroup>
-          <SelectLabel>Fruits</SelectLabel>
-          <SelectItem value="shorts">Shorts</SelectItem>
-          <SelectItem value="mid-length">Mid Length</SelectItem>
-          <SelectItem value="sweather">Sweather</SelectItem>
-          <SelectItem value="party-dresses">Party Dresses</SelectItem>
-          <SelectItem value="reqular-fit">Regular Fit</SelectItem>
+          <SelectItem value="tiger">Tiger</SelectItem>
+          <SelectItem value="kirana">Kirana</SelectItem>
+          <SelectItem value="prettygarden">Prettygarden</SelectItem>
+          <SelectItem value="oukods">Oukods</SelectItem>
+          <SelectItem value="grace">Grace</SelectItem>
         </SelectGroup>
       </SelectContent>
     </Select></div>
-    <Link href="/products/All?model=reqular-fit" className='border-l pl-2'>
+    <Link href="/products/All" className='border-l pl-2'>
     <FiSearch size={20} />
     </Link>
     </div>
