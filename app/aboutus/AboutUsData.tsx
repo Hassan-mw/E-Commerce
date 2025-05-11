@@ -85,7 +85,7 @@ const AboutUsData = () => {
      </div>
 
     {/* 4 -boxes */}
-    <div className=' pb-12 lg:pb-20 w-full grid grid-cols-1 lg:grid-cols-2  place-content-center  gap-4 '>
+    <div className=' pb-12 lg:pb-20 w-full grid grid-cols-1 lg:grid-cols-2 xl:gap-y-12  place-content-center  gap-4 '>
 
       {/*  1   */}
     <div className='flex flex-col items-center justify-center shadow-2xl rounded-md border border-slate-100 bg-white p-2 space-y-6'>
@@ -94,10 +94,10 @@ const AboutUsData = () => {
      <div className='flex flex-col items-start justify-start lg:space-y-2 lg:items-center lg:justify-center'>
 
     <div style={{fontWeight:300}} className={`${jost.className}  text-[11px]`}>Full category shop</div>
-    <div style={{fontWeight:300}} className={`${jost.className}  text-[9px] text-[#555555]`}>Explore our comprehensive online store where you'll find a diverse range of products across multiple categories, all curated to cater to your various needs and ...</div>
+    <div style={{fontWeight:300}} className={`${jost.className} xl:w-[70%]   text-[9px] text-[#555555]`}>Explore our comprehensive online store where you'll find a diverse range of products across multiple categories, all curated to cater to your various needs and ...</div>
      </div>
       </div>
-    <div className='w-full flex items-center justify-center p-2 bg-blue-500 rounded-xs '>
+    <div className='w-full xl:w-[80%]  flex items-center justify-center p-2 bg-blue-500 rounded-xs '>
       <span className={`${jost.className} text-[9px] gap-x-3  text-white flex items-center justify-center`}>READ MORE <FaArrowRight /></span>
     </div>
     </div>
@@ -109,10 +109,10 @@ const AboutUsData = () => {
      <div className='flex flex-col items-start justify-start lg:space-y-2 lg:items-center lg:justify-center'>
 
     <div style={{fontWeight:300}} className={`${jost.className}  text-[11px]`}>Extraordinary discount</div>
-    <div style={{fontWeight:300}} className={`${jost.className}  text-[9px] text-[#555555]`}> Experience unparalleled savings on a wide selection of premium products that enhance your lifestyle without compromising on quality...</div>
+    <div style={{fontWeight:300}} className={`${jost.className}  xl:w-[70%]  text-[9px] text-[#555555]`}> Experience unparalleled savings on a wide selection of premium products that enhance your lifestyle without compromising on quality...</div>
      </div>
       </div>
-    <div className='w-full flex items-center justify-center p-2 bg-blue-500 rounded-xs '>
+    <div className='w-full xl:w-[80%]  flex items-center justify-center p-2 bg-blue-500 rounded-xs '>
       <span className={`${jost.className} text-[9px] gap-x-3  text-white flex items-center justify-center`}>READ MORE <FaArrowRight /></span>
     </div>
     </div>
@@ -125,10 +125,10 @@ const AboutUsData = () => {
      <div className='flex flex-col items-start justify-start lg:space-y-2  lg:items-center lg:justify-center'>
 
     <div style={{fontWeight:300}} className={`${jost.className}  text-[11px]`}>24-hour customer service</div>
-    <div style={{fontWeight:300}} className={`${jost.className}  text-[9px] text-[#555555]`}>Enjoy the convenience of free cargo services, ensuring your purchases are delivered right to your doorstep without any additional cost. Experience seamless...</div>
+    <div style={{fontWeight:300}} className={`${jost.className}  xl:w-[70%]   text-[9px] text-[#555555]`}>Enjoy the convenience of free cargo services, ensuring your purchases are delivered right to your doorstep without any additional cost. Experience seamless...</div>
      </div>
       </div>
-    <div className='w-full flex items-center justify-center p-2 bg-blue-500 rounded-xs '>
+    <div className='w-full xl:w-[80%]  flex items-center justify-center p-2 bg-blue-500 rounded-xs '>
       <span className={`${jost.className} text-[9px] gap-x-3  text-white flex items-center justify-center`}>READ MORE <FaArrowRight /></span>
     </div>
     </div>
@@ -141,10 +141,10 @@ const AboutUsData = () => {
      <div className='flex flex-col items-start justify-start lg:space-y-2 lg:items-center lg:justify-center'>
 
     <div style={{fontWeight:300}} className={`${jost.className}  text-[11px]`}>Free Cargo</div>
-    <div style={{fontWeight:300}} className={`${jost.className}  text-[9px] text-[#555555]`}>Our commitment to exceptional customer care means our 24-hour customer service team is always available to assist you, ensuring your inquiries and concerns...</div>
+    <div style={{fontWeight:300}} className={`${jost.className}  xl:w-[70%]  text-[9px] text-[#555555]`}>Our commitment to exceptional customer care means our 24-hour customer service team is always available to assist you, ensuring your inquiries and concerns...</div>
      </div>
       </div>
-    <div className='w-full flex items-center justify-center p-2 bg-blue-500 rounded-xs '>
+    <div className='w-full xl:w-[80%]  flex items-center justify-center p-2 bg-blue-500 rounded-xs '>
       <span className={`${jost.className} text-[9px] gap-x-3  text-white flex items-center justify-center`}>READ MORE <FaArrowRight /></span>
     </div>
     </div>
