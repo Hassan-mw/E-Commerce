@@ -23,14 +23,14 @@ const ProductArrray = ({data}:TopNumberProductDataType) => {
   if(brand!=='all'){
   productArray=productArray.filter(data=>data.brand===brand)
   }
-  console.log(brand)
+
     
   return (
     <div className={`  w-full grid gap-5 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4   sm:gap-7 lg:gap-x-14 py-9 sm:px-2`}>
         {
           
 
-        data.map((data,index:number)=>
+        productArray.map((data,index:number)=>
       // <div>
   <Link href={`/productsDetails/${data.id}`} key={data.id} className='bg-white hover:cursor-pointer rounded-md flex flex-col items-center justify-center  w-full'>
    
