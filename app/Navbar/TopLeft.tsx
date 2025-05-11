@@ -60,7 +60,7 @@ const TopLeft = () => {
         </SelectGroup>
       </SelectContent>
     </Select></div>
-    <Link href={`/products`} className='border-l pl-2'>
+    <Link href="/products/All?model=reqular-fit" className='border-l pl-2'>
     <FiSearch size={20} />
     </Link>
     </div>

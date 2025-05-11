@@ -1,6 +1,6 @@
 'use client'
 import { Jost } from 'next/font/google'
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 const jost=Jost({
   weight:['500'],
   subsets:['latin']
@@ -9,24 +9,20 @@ import { IoSearchOutline } from "react-icons/io5";
 import { BiCategory } from "react-icons/bi";
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import Image from 'next/image';
-import { DataContext } from '../ContextApi/ContextApi';
 // import { useRouter } from 'next/';
-
-// interface DataType{
-//   model:string;
-// }
 
 
 const ProductListSidebarData = () => {
+  const [model,setModel]=useState('all')
   const [style,setStyle]=useState('all')
   const [color,setColor]=useState('all')
   const [size,setSize]=useState('all')
   const [price,setPrice]=useState('0')
-  const {model,setModel}:any=useContext(DataContext)
   
   const searchParams=useSearchParams()
   const pathName=usePathname()
   const router=useRouter()
+ 
 
   useEffect(()=>{
     const params=new URLSearchParams(searchParams)
