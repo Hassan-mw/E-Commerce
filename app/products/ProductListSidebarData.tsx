@@ -1,6 +1,6 @@
 'use client'
 import { Jost } from 'next/font/google'
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 const jost=Jost({
   weight:['500'],
   subsets:['latin']
@@ -9,6 +9,7 @@ import { IoSearchOutline } from "react-icons/io5";
 import { BiCategory } from "react-icons/bi";
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import Image from 'next/image';
+import { DataContext } from '../ContextApi/ContextApi';
 // import { useRouter } from 'next/';
 
 
@@ -22,8 +23,8 @@ const ProductListSidebarData = () => {
   const searchParams=useSearchParams()
   const pathName=usePathname()
   const router=useRouter()
- 
-
+  const {data,setData}=useContext(DataContext)
+  console.log(data,'.fgfgkfgkfkfkfkf')
   useEffect(()=>{
     const params=new URLSearchParams(searchParams)
 

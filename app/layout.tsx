@@ -4,6 +4,7 @@ import "./globals.css";
 
 import Footer from "./component_/Footer";
 import Navbar from "./Navbar/Navbar";
+import { DataProvider } from "./ContextApi/ContextApi";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,7 +31,9 @@ export default function RootLayout({
       <body>
            <div className="w-full h-full flex flex-col overflow-hidden overflow-x-hidden">
         <Navbar/>
+        <DataProvider>
         {children}
+        </DataProvider>
         <Footer/>
            </div>
       </body>
