@@ -9,7 +9,7 @@ import {
   
 const SortingBy = () => {
   return (
-    <div className='w-full flex items-center justify-end'>
+    <div className='w-full flex items-end bg-green-400 justify-end'>
 
     <Select >
     <SelectTrigger className="w-[140px] hover:cursor-pointer  placeholder:text-[#7B7B7B] border-[#7B7B7B] outline-[#7B7B7B]">
