@@ -5,23 +5,32 @@ import { useContext, useState } from "react";
 import { createContext } from "react";
 
 
-const DataContext=createContext({
-  brand:""
-})
+const DataContext=createContext({})
 
  const initialState={brand:'all'}
 
-interface DataType {
-    brand:string;
-    setBrand: any
+interface DataTypeBrand {
+    brandName:string;
+}
+interface DataTypeProduct {
+    productName:string;
 }
 
-function DataProvider({children}:{children:React.ReactNode}){
-   const [brand,setBrand]=useState<DataType>('all')
-   const [name,setName]=useState<DataType>('')
 
+
+function DataProvider({children}:{children:React.ReactNode}){
+   const [brand,setBrand]=useState<DataTypeBrand>({brandName:"all"})
+   const [name,setName]=useState<DataTypeProduct>({productName:""})
+   
+   function handleBrandName(data:string){  
+    setBrand({brandName:data})
+   }
+   function handleProductName(data:string){
+    setName({productName:data})
+   }
+    
   return(
-    <DataContext.Provider value={{brand,setBrand,name,setName}}>
+    <DataContext.Provider value={{brand,handleBrandName,handleProductName,setBrand,name,setName}}>
     {children}
     </DataContext.Provider>
   )

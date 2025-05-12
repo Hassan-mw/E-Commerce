@@ -19,7 +19,6 @@ const ProductListSidebarData = () => {
   const [color,setColor]=useState('all')
   const [size,setSize]=useState('all')
   const [price,setPrice]=useState('0')
-    const {brand,setBrand,name,setName}:any=useContext(DataContext)
   
   const searchParams=useSearchParams()
   const pathName=usePathname()
@@ -76,19 +75,22 @@ const ProductListSidebarData = () => {
     setColor(data)
   }
   
+  const {brand,handleBrandName,name,handleProductName}=useContext(DataContext)
   function handleRemoveSelect(){
-    setName(''),
-    setBrand('all')
-  }
+       handleBrandName('')
+      handleProductName('')
+       }
+       console.log(brand.brandName,name.productName,'32633734734')
 
   return (
     <div className='w-full lg:w-[70%] h-full  flex flex-col items-start justify-start  space-y-12 sm:pb-8 lg:pb-3'> 
+      
    {
-    brand!=='all' && name!==''
+     name.productName!=='' && brand.brandName!==''
      &&(
     <div className='w-full flex flex-col items-start justify-start  '>
-     <div style={{fontWeight:300}}  className={`text-xs text-slate-800`}><span className={`${jost.className} text-sm text-black`}>Name : </span> {name} </div>
-     <div style={{fontWeight:300}}  className={`text-xs text-slate-800 `}><span className={`${jost.className} text-sm text-black`}>Brand : </span>{brand}  </div>
+     <div style={{fontWeight:300}}  className={`text-xs text-slate-800`}><span className={`${jost.className} text-sm text-black`}>Name : </span> {name.productName} </div>
+     <div style={{fontWeight:300}}  className={`text-xs text-slate-800 `}><span className={`${jost.className} text-sm text-black`}>Brand : </span>{brand.brandName}  </div>
      <div className='w-full flex items-center justify-center ' ><span className='w-full border border-[#e9e9e9]'></span> <span onClick={()=>handleRemoveSelect()} className='text-2xl pb-2 text-red-500 px-3 hover:cursor-pointer '>x</span><span className='w-full border border-[#e9e9e9]'></span></div>
     </div>
     )}

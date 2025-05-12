@@ -21,8 +21,9 @@ interface dataType{
 const ProductArrray = ({data}:TopNumberProductDataType) => {
   let productArray=data
   const {brand,name}:any=useContext(DataContext)
-  if(brand!=='all' && name!==''){
-    productArray=productArray.filter(data=>data.brand===brand && data.name.toLowerCase()===name.toLowerCase())
+  console.log(brand.brandName,name.productName,'44444444444444445555555555555555555')
+  if(brand.brandName!=='' && name.productName!==''){
+    productArray=productArray.filter(data=>data.brand===brand.brandName && data.name.toLowerCase()===name.productName.toLowerCase())
   }
   console.log(brand,name,'sdgsdlsgsdgk',productArray.length)
   

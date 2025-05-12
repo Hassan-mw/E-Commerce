@@ -1,8 +1,9 @@
 'use state'
 
 type DataType={
-  brand:string,
-  name:string
+  brand:string;
+  name:string;
+   productBrandData: string;
 }
 
 import {
@@ -15,17 +16,27 @@ import {
 } from "@/components/ui/select"
 
 import Link from 'next/link';
-import { useContext } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { FiSearch } from 'react-icons/fi';
 import { DataContext } from "../ContextApi/ContextApi";
 
 const HandleSelect = () => {
-    const {brand,setBrand}:DataType=useContext(DataContext)
-    const {name,setName}:DataType=useContext(DataContext)
+    const [productNameData,setProductNameData]=useState('')
+    const [productBrandData,setProductBrandData]=useState('')
+    const {brand,handleBrandName,name,handleProductName}=useContext(DataContext)
+
+    useEffect(()=>{
+      handleProductName(productNameData)
+    },[productNameData])
+
+    useEffect(()=>{
+      handleBrandName(productBrandData)
+    },[productBrandData])
+
 
   return (
      <div className='flex items-center justify-center border gap-x-0 border-slate-200 rounded-sm py-1 px-2 '>
-          <div className='w-[65%] '><input value={name} onChange={(e)=>setName(e.target.value)} className='w-full  focus:outline-none placeholder:text-black text-xs text-blackplaceholder:text-xs ' placeholder='Product Name' list="Names"/></div>
+          <div className='w-[65%] '><input value={productNameData} onChange={(e)=>setProductNameData(e.target.value)} className='w-full  focus:outline-none placeholder:text-black text-xs text-blackplaceholder:text-xs ' placeholder='Product Name' list="Names"/></div>
            <datalist id="Names">
            <option value="Women's BlackSweather">Women's BlackSweather</option>
            <option value="Women's Cable Cropped">Women's Cable Cropped</option>
@@ -34,7 +45,7 @@ const HandleSelect = () => {
            <option value="QACOHU">QACOHU</option>
            </datalist>
          <div className='mr-5 '></div>
-    <Select value={brand} onValueChange={(e)=>setBrand(e)}>
+    <Select value={productBrandData} onValueChange={(e)=>setProductBrandData(e)}>
       <SelectTrigger className="w-[120px] outline-none border-none shadow-none z-20  text-xs">
         <SelectValue className='placeholder:text-slate-500 placeholder:text-xs' placeholder="Category" />
       </SelectTrigger>

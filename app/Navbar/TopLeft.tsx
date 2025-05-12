@@ -35,7 +35,7 @@ const TopLeft = () => {
     const searchParams=useSearchParams()
     const pathName=usePathname()
     const router=useRouter()
-    const {brand,setBrand}:DataType=useContext(DataContext)
+    
   
  
   
