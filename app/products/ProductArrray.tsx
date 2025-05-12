@@ -4,7 +4,7 @@ import Button from '@/components/Button'
 import { Jost } from 'next/font/google'
 import Image from 'next/image'
 import Link from 'next/link'
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { DataContext } from '../ContextApi/ContextApi'
 import { FiAlertOctagon } from 'react-icons/fi'
 
@@ -20,12 +20,14 @@ interface dataType{
 
 const ProductArrray = ({data}:TopNumberProductDataType) => {
   let productArray=data
-  const {brand,name}:any=useContext(DataContext)
-  console.log(brand.brandName,name.productName,'44444444444444445555555555555555555')
+  const {brand,name,setLength}:any=useContext(DataContext)
+
+  
   if(brand.brandName!=='' && name.productName!==''){
     productArray=productArray.filter(data=>data.brand===brand.brandName && data.name.toLowerCase()===name.productName.toLowerCase())
   }
-  console.log(brand,name,'sdgsdlsgsdgk',productArray.length)
+ 
+
   
     if(productArray.length===0){
       return(
@@ -41,6 +43,12 @@ const ProductArrray = ({data}:TopNumberProductDataType) => {
      </div>
     </div>
       )}
+
+  useEffect(()=>{
+    setLength(productArray.length)
+  },[productArray.length])
+
+
   return (
     <div className={`  w-full grid gap-5 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4   sm:gap-7 lg:gap-x-14 py-9 sm:px-2`}>
         {

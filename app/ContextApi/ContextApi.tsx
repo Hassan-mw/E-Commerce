@@ -20,21 +20,20 @@ interface DataTypeProduct {
 
 function DataProvider({children}:{children:React.ReactNode}){
     const [name,setName]=useState<DataTypeProduct>({productName:""})
-   const [brand,setBrand]=useState<DataTypeBrand>({brandName:""})
-   console.log(name,brand,'This is from contextApi')
-   function handleBrandName(data:string){  
-   console.log(data,'This is from contextApi--brandName')
+    const [brand,setBrand]=useState<DataTypeBrand>({brandName:""})
+    const [length,setLength]=useState<number>(0)
 
+
+   function handleBrandName(data:string){  
     setBrand({brandName:data})
    }
-   function handleProductName(data:string){
-   console.log(data,'This is from contextApi--productName')
 
+   function handleProductName(data:string){
     setName({productName:data})
    }
     
   return(
-    <DataContext.Provider value={{brand,handleBrandName,handleProductName,setBrand,name,setName}}>
+    <DataContext.Provider value={{brand,length,setLength,handleBrandName,handleProductName,setBrand,name,setName}}>
     {children}
     </DataContext.Provider>
   )
