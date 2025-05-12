@@ -9,6 +9,7 @@ import { FaCartArrowDown } from 'react-icons/fa6'
 
 type DataType={
   brand:string;
+  setBrand:React.Dispatch<React.SetStateAction<string>>
 }
 
 import Sidebar from './Sidebar'
@@ -32,7 +33,7 @@ const jost=Jost({
 })
 
 const Navbar = () => {
-      const {brand,setBrand}:DataType=useContext(DataContext)
+      const {brand,setBrand}=useContext(DataContext)
   
   return (
     <div className='w-full   flex flex-col items-center justify-center pt-4 space-y-4 pb-3 lg:pb-0'>
