@@ -1,6 +1,6 @@
 'use client'
 import { Jost } from 'next/font/google'
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 const jost=Jost({
   weight:['500'],
   subsets:['latin']
@@ -9,6 +9,7 @@ import { IoSearchOutline } from "react-icons/io5";
 import { BiCategory } from "react-icons/bi";
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import Image from 'next/image';
+import { DataContext } from '../ContextApi/ContextApi';
 // import { useRouter } from 'next/';
 
 
@@ -18,6 +19,7 @@ const ProductListSidebarData = () => {
   const [color,setColor]=useState('all')
   const [size,setSize]=useState('all')
   const [price,setPrice]=useState('0')
+    const {brand,setBrand,name,setName}:any=useContext(DataContext)
   
   const searchParams=useSearchParams()
   const pathName=usePathname()
@@ -73,9 +75,23 @@ const ProductListSidebarData = () => {
   const handleColorChange=(data:string)=>{
     setColor(data)
   }
+  
+  function handleRemoveSelect(){
+    setName(''),
+    setBrand('all')
+  }
 
   return (
     <div className='w-full lg:w-[70%] h-full  flex flex-col items-start justify-start  space-y-12 sm:pb-8 lg:pb-3'> 
+   {
+    brand!=='all' && name!==''
+     &&(
+    <div className='w-full flex flex-col items-start justify-start  '>
+     <div style={{fontWeight:300}}  className={`text-xs text-slate-800`}><span className={`${jost.className} text-sm text-black`}>Name : </span> {name} </div>
+     <div style={{fontWeight:300}}  className={`text-xs text-slate-800 `}><span className={`${jost.className} text-sm text-black`}>Brand : </span>{brand}  </div>
+     <div className='w-full flex items-center justify-center ' ><span className='w-full border border-[#e9e9e9]'></span> <span onClick={()=>handleRemoveSelect()} className='text-2xl pb-2 text-red-500 px-3 hover:cursor-pointer '>x</span><span className='w-full border border-[#e9e9e9]'></span></div>
+    </div>
+    )}
     <div className='flex  items-center justify-center gap-x-3 '><div><BiCategory size={22} /></div><div className={`${jost.className} text-xl`}>All Categores</div></div>
     
     
