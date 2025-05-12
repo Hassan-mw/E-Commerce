@@ -33,8 +33,8 @@ export default function RootLayout({
         <DataProvider>
         <Navbar/>
         {children}
-        </DataProvider>
         <Footer/>
+        </DataProvider>
            </div>
       </body>
     </html>
