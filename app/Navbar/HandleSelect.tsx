@@ -21,22 +21,17 @@ import { FiSearch } from 'react-icons/fi';
 import { DataContext } from "../ContextApi/ContextApi";
 
 const HandleSelect = () => {
-    const [productNameData,setProductNameData]=useState('')
-    const [productBrandData,setProductBrandData]=useState('')
-    const {brand,handleBrandName,name,handleProductName}=useContext(DataContext)
+  const {brand,handleBrandName,name,handleProductName}=useContext(DataContext)
+  console.log(brand,name,'1111111111112222222222222222222233333333333333333333333333')
+    // const [productNameData,setProductNameData]=useState(brand.brandName)
+    // const [productBrandData,setProductBrandData]=useState(name.productName)
 
-    useEffect(()=>{
-      handleProductName(productNameData)
-    },[productNameData])
 
-    useEffect(()=>{
-      handleBrandName(productBrandData)
-    },[productBrandData])
 
 
   return (
      <div className='flex items-center justify-center border gap-x-0 border-slate-200 rounded-sm py-1 px-2 '>
-          <div className='w-[65%] '><input value={productNameData} onChange={(e)=>setProductNameData(e.target.value)} className='w-full  focus:outline-none placeholder:text-black text-xs text-blackplaceholder:text-xs ' placeholder='Product Name' list="Names"/></div>
+          <div className='w-[65%] '><input value={name.productName} onChange={(e)=>handleProductName(e.target.value)} className='w-full  focus:outline-none placeholder:text-black text-xs text-blackplaceholder:text-xs ' placeholder='Product Name' list="Names"/></div>
            <datalist id="Names">
            <option value="Women's BlackSweather">Women's BlackSweather</option>
            <option value="Women's Cable Cropped">Women's Cable Cropped</option>
@@ -45,13 +40,13 @@ const HandleSelect = () => {
            <option value="QACOHU">QACOHU</option>
            </datalist>
          <div className='mr-5 '></div>
-    <Select value={productBrandData} onValueChange={(e)=>setProductBrandData(e)}>
+    <Select value={brand.brandName} onValueChange={(e)=>handleBrandName(e)}>
       <SelectTrigger className="w-[120px] outline-none border-none shadow-none z-20  text-xs">
-        <SelectValue className='placeholder:text-slate-500 placeholder:text-xs' placeholder="Category" />
+        <SelectValue className='placeholder:text-slate-500 placeholder:text-xs' placeholder="All" />
       </SelectTrigger>
       <SelectContent className='bg-white text-xs text-black'>
         <SelectGroup>
-          <SelectItem value="all">All</SelectItem>
+          {/* <SelectItem defaultValue='All' value="all">All</SelectItem> */}
           <SelectItem value="oukods">Oukods</SelectItem>
           <SelectItem value="tiger">Tiger</SelectItem>
           <SelectItem value="kirana">Kirana</SelectItem>
@@ -60,9 +55,9 @@ const HandleSelect = () => {
         </SelectGroup>
       </SelectContent>
     </Select>
-    <Link href="/products/All" className='border-l pl-2'>
+    {/* <div onClick={()=>handleSearch()} className='hover:cursor-pointer hover:text-blue-500 duration-500 border-l pl-2'>
     <FiSearch size={20} />
-    </Link>
+    </div> */}
      </div>
 
   )

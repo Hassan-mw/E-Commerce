@@ -77,8 +77,9 @@ const ProductListSidebarData = () => {
   
   const {brand,handleBrandName,name,handleProductName}=useContext(DataContext)
   function handleRemoveSelect(){
+    console.log('It worked 123456789')
+       handleProductName('')
        handleBrandName('')
-      handleProductName('')
        }
        console.log(brand.brandName,name.productName,'32633734734')
 
