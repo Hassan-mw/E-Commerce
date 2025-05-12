@@ -13,14 +13,15 @@ const DataContext=createContext({
 
 interface DataType {
     brand:string;
-  setBrand: any
+    setBrand: any
 }
 
 function DataProvider({children}:{children:React.ReactNode}){
    const [brand,setBrand]=useState<DataType>('all')
+   const [name,setName]=useState<DataType>('')
 
   return(
-    <DataContext.Provider value={{brand,setBrand}}>
+    <DataContext.Provider value={{brand,setBrand,name,setName}}>
     {children}
     </DataContext.Provider>
   )
