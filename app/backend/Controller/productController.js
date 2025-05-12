@@ -34,28 +34,49 @@ exports.uploadProductPicture=upload.fields([
   {name:'images',maxCount:3},
 ])
 
+
+
 exports.getAllProducts = async (req,res,next) => {
     try {
+
       const queryData=req.query
       let query='SELECT * FROM products'
       const consditions=[];
       const values=[]
-      // console.log(queryData,'sdhsdrjk')
-   Object.entries( queryData).forEach(([key,value],index)=>{
-      console.log(key,value,index)
+      const allowedFields=['model','style','color','size','price']
+
+
+     Object.entries( queryData).forEach(([key,value],index)=>{
+
+     if(allowedFields.includes(key)){
       values.push(value),
-      consditions.push(`${key} = $${index+1}`)
-    })
+     consditions.push(`${key} = $${values.length}`)
+    }
+  
+  
+  
+   })
+
     if(values.length>0){
-      query+= ' WHERE ' + consditions.join(' AND ')
+      console.log('inside valus',consditions)
+       query+= ' WHERE ' + consditions.join(' AND ')
+      }
+
+     
+
+    if(req.query.sort){
+     
+    query+=  `  ORDER BY ${req.query.sort} `
     }
 
-    console.log(query,consditions,values)
+       
     
     const {rows}=await pool.query(query,values)
-    // console.log(x)
-    // const {rows}=await pool.query(`SELECT * FROM products`)
-    // console.log(rows)
+
+
+
+
+
       res.status(200).json({
         length:rows.length,
         status: 'success',
@@ -69,6 +90,21 @@ exports.getAllProducts = async (req,res,next) => {
       });
     }
   };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 exports.createproduct = async (req, res, next) => {
     let filename = null;

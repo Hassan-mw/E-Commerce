@@ -4,7 +4,7 @@ import Button from '@/components/Button'
 import { Jost } from 'next/font/google'
 import Image from 'next/image'
 import Link from 'next/link'
-import React, { useContext, useEffect } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { DataContext } from '../ContextApi/ContextApi'
 import { FiAlertOctagon } from 'react-icons/fi'
 
@@ -44,10 +44,11 @@ const ProductArrray = ({data}:TopNumberProductDataType) => {
     </div>
       )}
 
-  useEffect(()=>{
-    setLength(productArray.length)
-  },[productArray.length])
-
+  const [productArrayLength,setProductArrayLength]=useState(productArray.length)
+  
+useEffect(()=>{
+  setLength(productArray.length)
+},[productArray])
 
   return (
     <div className={`  w-full grid gap-5 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4   sm:gap-7 lg:gap-x-14 py-9 sm:px-2`}>
