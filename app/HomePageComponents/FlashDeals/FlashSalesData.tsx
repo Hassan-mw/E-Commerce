@@ -1,5 +1,6 @@
 import { Jost } from 'next/font/google'
 import Image from 'next/image'
+import Link from 'next/link'
 import React from 'react'
 
 const jost=Jost({
@@ -10,10 +11,10 @@ const jost=Jost({
 
 const FlashSalesData = () => {
     const productData=[
-        {id:1,name:"Gaming Controller",details:"Pink gaming controller for girls",rating:"66",price:56,image:"product_1744547713587.jpeg"},
-        {id:2,name:"Black Sneakers",details:"Black color sneakers for men",rating:"44",price:55,image:"product_1744546871227.jpeg"},
-        {id:3,name:"Gaming Chair",details:"Black gaming chair confortable ",rating:36,price:82,image:"product_1744305213513.jpeg"},
-        {id:4,name:"Gaming Chair",details:"Black gaming chair confortable ",rating:36,price:82,image:"product_1744311106382.jpeg"}
+        {id:1,name:" Pink Dress",details:"Pink square neck dress ",rating:"66",price:56,image:"product_1745606831633.jpg",linkdeId:17},
+        {id:2,name:"Purple Dress",details:"Purple prom,prty dress ",rating:"346",price:55,image:"product_1745605079427.jpg",linkdeId:5},
+        {id:3,name:"Yellow Dress",details:"Black gaming chair confortable ",rating:234,price:46,image:"product_1745655040481.jpg",linkdeId:16},
+        {id:4,name:"Blue Dress",details:"Black gaming chair confortable ",rating:446,price:36,image:"product_1745607166728.jpg",linkdeId:13}
     ]
   return (
     <div className='w-full  grid grid-cols-1 sm:grid-cols-2  xl:grid-cols-4 gap-10 sm:gap-7 xl:gap-5 py-12'>
@@ -21,7 +22,7 @@ const FlashSalesData = () => {
 
         productData.map((data,index)=>
       
-  <div key={data.id} className='bg-white hover:cursor-pointer rounded-md shadow-2xl border border-slate-200 flex flex-col items-center justify-center space-y-2 py-3 w-full'>
+  <Link href={`/productsDetails/${data.linkdeId}`} key={data.id} className='bg-white hover:cursor-pointer rounded-md shadow-2xl border border-slate-200 flex flex-col items-center justify-center space-y-2 py-3 w-full'>
    <div className='flex flex-col lg:flex-row items-center justify-center lg:gap-x-8 space-y-2'>
 
     {/* //! TEXT */}
@@ -75,7 +76,7 @@ const FlashSalesData = () => {
    </div>
     
     </div>
-    </div>
+    </Link>
       )}
     </div>
   )
