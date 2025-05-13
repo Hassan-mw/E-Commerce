@@ -65,9 +65,10 @@ export default async function LocaleLayout({
         <body>
            <div className="w-full h-full flex flex-col overflow-hidden overflow-x-hidden">
         <DataProvider>
-        <Navbar/>
-         <NextIntlClientProvider>{children}</NextIntlClientProvider>
-
+      <NextIntlClientProvider> 
+         <Navbar/>
+         {children}
+        </NextIntlClientProvider>
         <Footer/>
         </DataProvider>
          </div>
