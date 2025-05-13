@@ -44,7 +44,7 @@ const ProductArrray = ({data}:TopNumberProductDataType) => {
     </div>
       )}
 
-  const [productArrayLength,setProductArrayLength]=useState(productArray.length)
+  // const [productArrayLength,setProductArrayLength]=useState(productArray.length)
   
 useEffect(()=>{
   setLength(productArray.length)

@@ -22,7 +22,7 @@ const page = async({params,searchParams}:{params:{productcategory:string},search
   const length=data.length
   const {productcategory}=await params
   const [category,productName]=productcategory.split('_')
-  if(category!=='all'){
+  if(category!=='All'){
     data=data.filter((data :any,index:number)=>data.color===category)
   }
   console.log(category,12123525346)
@@ -54,11 +54,11 @@ const page = async({params,searchParams}:{params:{productcategory:string},search
      {/*//!  DataPage */}
      <div  className="w-full h-full flex flex-col lg:flex-row lg:space-x-5 px-5  max-w-screen-2xl">
         <div className='w-[40%] hidden lg:block py-12'>
-          <ProductListSidebarData/>
+          <ProductListSidebarData category={category}  />
        
         </div>
         <div className='w-full     '>
-           <ProductData data={data}/>
+           <ProductData  data={data}/>
           </div>
           </div>
     </div>

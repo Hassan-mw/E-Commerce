@@ -10,10 +10,11 @@ import { BiCategory } from "react-icons/bi";
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import Image from 'next/image';
 import { DataContext } from '../ContextApi/ContextApi';
+import Link from 'next/link';
 // import { useRouter } from 'next/';
 
 
-const ProductListSidebarData = () => {
+const ProductListSidebarData = ({category}:{category:string}) => {
   const [model,setModel]=useState('all')
   const [style,setStyle]=useState('all')
   const [color,setColor]=useState('all')
@@ -85,7 +86,7 @@ const ProductListSidebarData = () => {
 
   return (
     <div className='w-full lg:w-[70%] h-full  flex flex-col items-start justify-start  space-y-12 sm:pb-8 lg:pb-3'> 
-      
+    {category!=='All' &&  <Link className='text-red-500 hover:text-red-600' href='/products/All'>Show All Products </Link>}   
    {
      name.productName!=='' && brand.brandName!==''
      &&(

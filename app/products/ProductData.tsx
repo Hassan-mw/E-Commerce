@@ -13,7 +13,8 @@ import { FiAlertOctagon } from 'react-icons/fi'
 
 interface dataType{
 
-  data:TopNumberProduct
+  data:TopNumberProduct;
+  category:string
 }
 
 
@@ -24,7 +25,7 @@ const ProductData = ({data}:TopNumberProductDataType) => {
      {/* {
       data.length>0 ? */}
                             
-     <ProductArrray data={data}  />
+     <ProductArrray  data={data}  />
     {/* // : */}
  
     {/* // }  */}

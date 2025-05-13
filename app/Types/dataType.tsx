@@ -40,7 +40,7 @@ style:String;
 
 }
 export interface TopNumberProductDataType{
-
+   
     data:TopNumberProduct[]
 }
 ////////////////////
