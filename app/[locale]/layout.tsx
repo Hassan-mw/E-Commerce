@@ -72,8 +72,7 @@ export default async function LocaleLayout({
         </DataProvider>
          </div>
       </body>
-      <body>
-      </body>
+
     </html>
   );
 }

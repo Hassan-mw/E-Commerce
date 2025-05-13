@@ -5,9 +5,11 @@ import TrendingProduct from './HomePageComponents/TrendingProduct/TrendingProduc
 import TopNumberProduct from './HomePageComponents/TopNumbersProduct/TopNumberProduct'
 import AboutCategory from './HomePageComponents/AboutCategory/AboutCategory'
 import HoverData from './HomePageComponents/HoverData/HoverData'
+import { useTranslations } from 'next-intl'
 
 
 const page = () => {
+
   return (
     <div className='w-full h-full flex flex-col '>
     {/* <HoverData/> */}
