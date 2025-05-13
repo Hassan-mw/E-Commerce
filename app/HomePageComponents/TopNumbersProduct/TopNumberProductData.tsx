@@ -1,6 +1,7 @@
 import Button from '@/components/Button'
 import { Jost } from 'next/font/google'
 import Image from 'next/image'
+import Link from 'next/link'
 import React from 'react'
 
 const jost=Jost({
@@ -11,10 +12,10 @@ const jost=Jost({
 
 const TopNUmberProductData = ({style}:{style:string}) => {
     const productData=[
-      {id:1,name:"Mango",details:"Kimono & Caftan - Black - Regular fit ",rating:34,price:342,image:"top_hundred_photo_1.png"},
-      {id:3,name:"Iniqlo ",details:"Midi atlas Slim fit - bohemian ",rating:"44",price:234,image:"top_hundred_photo_2.png"},
-      {id:4,name:"Mango dress",details:"Kimono & Caftan - Night club fit",rating:222,price:55,image:"top_hundred_photo_3.png"},
-      {id:2,name:"Zara",details:"Midi top- Daily fit",rating:77,price:346,image:"top_hundred_photo_4.png"},
+      {id:1,name:"Mango",details:"Kimono & Caftan - Black - Regular fit ",rating:34,price:342,image:"top_hundred_photo_1.png",linkdeId:19},
+      {id:3,name:"Iniqlo ",details:"Midi atlas Slim fit - bohemian ",rating:"44",price:234,image:"top_hundred_photo_2.png",linkdeId:20},
+      {id:4,name:"Mango dress",details:"Kimono & Caftan - Night club fit",rating:222,price:55,image:"top_hundred_photo_3.png",linkdeId:21},
+      {id:2,name:"Zara",details:"Midi top- Daily fit",rating:77,price:346,image:"top_hundred_photo_4.png",linkdeId:22},
        
     ]
   return (
@@ -23,7 +24,7 @@ const TopNUmberProductData = ({style}:{style:string}) => {
 
         productData.map((data,index)=>
       
-  <div key={data.id} className='bg-white hover:cursor-pointer rounded-md flex flex-col items-center justify-center  w-full'>
+  <Link href={`productsDetails/${data.linkdeId}`} key={data.id} className='bg-white hover:cursor-pointer rounded-md flex flex-col items-center justify-center  w-full'>
    
 
     {/* //! IMAGE */}
@@ -53,7 +54,7 @@ const TopNUmberProductData = ({style}:{style:string}) => {
     </div>
 
     </div>
-    </div>
+    </Link>
       )}
     </div>
   )

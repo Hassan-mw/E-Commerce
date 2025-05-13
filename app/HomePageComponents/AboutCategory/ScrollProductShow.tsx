@@ -29,7 +29,7 @@ const ScrollProductShow = () => {
     <div style={{fontWeight:300}} className={`${jost.className} text-md text-[#465D6B]`}>Snap on a magnatic case,wallet, or both.And get fater wireless charging.</div>
      </div>
      <div>
-        <Image height={333} width={333} className='object-cover h-full w-full max-h-44' src="/Iphone.png" alt='Iphone'/>
+        <Image height={333} width={333} className='object-cover h-full w-full max-h-44' src="/family_dress_1.jpg" alt='Iphone'/>
      </div>
      </CarouselItem>
     {/* //!  2 */}
@@ -40,7 +40,7 @@ const ScrollProductShow = () => {
     <div style={{fontWeight:300}} className={`${jost.className} text-md text-[#465D6B]`}>Transform your cleaning routine with 9 essential products: Everyday Cleaner.</div>
      </div>
      <div>
-        <Image height={333} width={333} className='object-cover h-full w-full max-h-44' src="/clean_set.png" alt='Iphone'/>
+        <Image height={333} width={333} className='object-cover h-full w-full max-h-44' src="/family_dress_2.jpg" alt='Iphone'/>
      </div>
      </CarouselItem>
     
@@ -52,7 +52,7 @@ const ScrollProductShow = () => {
     <div style={{fontWeight:300}} className={`${jost.className} text-md text-[#465D6B]`}>Flexible sole, appropriate tread for the function, and ability to absorb impact.</div>
      </div>
      <div>
-        <Image height={333} width={333} className='object-cover h-full w-full max-h-44' src="/sneakers_set.png" alt='Iphone'/>
+        <Image height={333} width={333} className='object-cover h-full w-full max-h-44' src="/family_dress_3.jpg" alt='Iphone'/>
      </div>
      </CarouselItem>
     
@@ -64,7 +64,7 @@ const ScrollProductShow = () => {
     <div style={{fontWeight:300}} className={`${jost.className} text-md text-[#465D6B]`}>CAROTE Nonstick Pots and Pans,Cookware Set 16pcs Kitchen Cooking Sets, Pot and Pan Non Stick w/Frying pan.</div>
      </div>
      <div>
-        <Image height={333} width={333} className='object-cover h-full w-full max-h-44' src="/cooking_set.png" alt='Iphone'/>
+        <Image height={333} width={333} className='object-cover h-full w-full max-h-44' src="/family_dress_4.jpg" alt='Iphone'/>
      </div>
      </CarouselItem>
     
