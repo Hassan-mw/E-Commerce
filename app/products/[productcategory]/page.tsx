@@ -18,10 +18,14 @@ const jost=Jost({
 
 const page = async({params,searchParams}:{params:{productcategory:string},searchParams:URLSearchParams}) => {
   const parameters=await searchParams
-  const data=await getAllProduct({parameters})
+  let data=await getAllProduct({parameters})
   const length=data.length
   const {productcategory}=await params
-   const [category,productName]=productcategory.split('_')
+  const [category,productName]=productcategory.split('_')
+  if(category!=='all'){
+    data=data.filter((data :any,index:number)=>data.color===category)
+  }
+  console.log(category,12123525346)
   return (
     <div className='w-full flex items-center justify-center '>
     <div className='w-full flex flex-col items-center justify-center  '>
