@@ -14,6 +14,13 @@ import Link from 'next/link';
 // import { useRouter } from 'next/';
 
 
+interface DataType {
+
+  name:{productName:string};
+  brand:{brandName:string};
+}
+
+
 const ProductListSidebarData = ({category}:{category:string}) => {
   const [model,setModel]=useState('all')
   const [style,setStyle]=useState('all')
