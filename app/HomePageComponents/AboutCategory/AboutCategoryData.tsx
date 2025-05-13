@@ -1,6 +1,7 @@
 import { AboutCategoryDataTYpe } from '@/app/Types/dataType'
 import { Jost } from 'next/font/google'
 import Image from 'next/image'
+import Link from 'next/link'
 import React from 'react'
 
 
@@ -26,7 +27,7 @@ const AboutCategoryData = ({data}:AboutCategoryDataTYpe) => {
      <div className={`${jost.className} text-xl sm:text-sm md:text-xl lg:text-3xl`}>{data.title}</div>
      <div style={{fontWeight:300}} className={`${jost.className} text-md sm:text-xs lg:text-lg`}>{data.belowTitle}</div>
      </div>
-     <div style={{fontWeight:200}} className={`${jost.className} text-xs  sm:text-[10px] md:text-md lg:text-lg border-b border-white`}>Explore all category</div>
+     <Link href={`/products/All?color=${data.color}`} style={{fontWeight:200}} className={`${jost.className} hover:cursor-pointer text-xs  sm:text-[10px] md:text-md lg:text-lg border-b border-white`}>Explore all category</Link>
       </div>
       <div className='w-full h-full lg:w-[70%] '>
    <Image height={666} width={666} className='object-cover  max-h-[350px] h-full w-full object-top rounded-r-md' src={`/${data.image}`} alt='red-dress'/>

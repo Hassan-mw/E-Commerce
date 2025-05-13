@@ -14,7 +14,7 @@ interface AboutCategorySubDataType{
     belowTitle:string;
     image:string;
     style:string;
-    
+    color:String;
 }
 export interface AboutCategoryDataTYpe{
 data:AboutCategorySubDataType[ ]
