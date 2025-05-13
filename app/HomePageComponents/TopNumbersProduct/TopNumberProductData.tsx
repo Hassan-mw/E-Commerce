@@ -13,7 +13,7 @@ const TopNUmberProductData = ({style}:{style:string}) => {
     const productData=[
       {id:1,name:"Mango",details:"Kimono & Caftan - Black - Regular fit ",rating:34,price:342,image:"top_hundred_photo_1.png"},
       {id:3,name:"Iniqlo ",details:"Midi atlas Slim fit - bohemian ",rating:"44",price:234,image:"top_hundred_photo_2.png"},
-      {id:4,name:"Mango dress",details:"Kimono & Caftan - Colorful - Night club fit",rating:222,price:55,image:"top_hundred_photo_3.png"},
+      {id:4,name:"Mango dress",details:"Kimono & Caftan - Night club fit",rating:222,price:55,image:"top_hundred_photo_3.png"},
       {id:2,name:"Zara",details:"Midi top- Daily fit",rating:77,price:346,image:"top_hundred_photo_4.png"},
        
     ]
@@ -28,7 +28,7 @@ const TopNUmberProductData = ({style}:{style:string}) => {
 
     {/* //! IMAGE */}
 
-<Image height={400} width={400} src={`/${data.image}`} className='bg-[#dce5e4] object-contain w-full h-full max-h-72   object-top rounded-t-md' alt='product_image' />
+<Image height={400} width={400} src={`/${data.image}`} className='bg-[#dce5e4] object-contain w-full  max-h-72   object-top rounded-t-md' alt='product_image' />
    <div className='bg-white shadow-2xl border border-slate-100 rounded-b-md  w-full flex  sm:flex-col md:flex-row md:gap-x-3 lg:gap-x-0 lg:flex-col items-center justify-between sm:justify-start sm:items-start md:justify-between lg:justify-start space-y-1 p-3 text-white'>
     <div className='flex flex-col items-start justify-start space-y-2'>
 
