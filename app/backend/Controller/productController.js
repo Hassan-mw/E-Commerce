@@ -66,11 +66,11 @@ exports.getAllProducts = async (req,res,next) => {
 
     if(req.query.sort){
      
-    query+=  `  ORDER BY ${req.query.sort} `
+      query+=  `  ORDER BY ${req.query.sort} `
     }
 
        
-    
+    console.log(query,values)
     const {rows}=await pool.query(query,values)
 
 

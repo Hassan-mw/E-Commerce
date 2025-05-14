@@ -20,15 +20,23 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select"
+
 import { FiSearch } from "react-icons/fi";
+import {   usePathname, useRouter } from "@/i18n/routing";
+import { useParams } from "next/navigation";
 
 const BottomLeft = () => {
    const locale = useLocale();
 console.log(locale,12345678,routing)
-
+       const router = useRouter();
+       const pathname = usePathname();
+       const params = useParams();
   function onSelectChange(nextLocale: string){
 
-
+    router.replace(
+      { pathname, params },
+      { locale: nextLocale as Locale }
+    );
   }
 
   return (
@@ -55,7 +63,7 @@ console.log(locale,12345678,routing)
     
      <div className=' '><Select>
       <SelectTrigger className="w-[100px] outline-none border-none shadow-none z-20 ">
-        <SelectValue placeholder="English" />
+        <SelectValue placeholder="USD" />
       </SelectTrigger>
       <SelectContent>
         <SelectGroup>
