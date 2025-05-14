@@ -4,20 +4,26 @@ import Cart from './CartSections/Cart'
 import CustomerInfo from './CartSections/CustomerInfo'
 import ShippingPayment from './CartSections/ShippingPayment'
 import ProductConfirmation from './CartSections/ProductConfirmation'
+import { Jost } from 'next/font/google'
+
+const jost=Jost({
+  weight:['500'],
+  subsets:['latin']
+})
 
 const CartNavbar = () => {
 
   const [currentDetails,setCurrentDetails]=useState('Cart')
             const data=[
                 {id:1,name:'Cart'},
-                {id:2,name:'CustomerInfo'},
+                {id:2,name:'Customer Info'},
                 {id:3,name:'SHIPPING & PAYMENT'},
                 {id:4,name:'ProductConfirmation'}
             ]
 
 
           return (
-            <div className="w-full flex flex-col space-y-3 items-center justify-center gap-x-6 py-6 ">
+            <div className="w-full bg-green-400 flex flex-col space-y-3 items-center justify-center gap-x-6 py-6 ">
             <div className="w-full flex  items-center justify-center gap-x-6 ">
                 {
                     data.map((data,index)=>
@@ -27,7 +33,7 @@ const CartNavbar = () => {
             </div>
         
             {currentDetails==='CART' && <Cart />}
-            {currentDetails==='CustomerInfo' && <CustomerInfo/>}
+            {currentDetails==='Customer Info' && <CustomerInfo/>}
             {currentDetails==='SHIPPING & PAYMENT' && <ShippingPayment/>}
             {currentDetails==='ProductConfirmation' && <ProductConfirmation/>}
             </div>
