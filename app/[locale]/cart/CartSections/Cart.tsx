@@ -4,7 +4,7 @@ import OrderSubmitionCartColumn from '../CartProductsSection/OrderSubmitionCartC
 
 const Cart = () => {
   return (
-    <div className='w-full flex flex-col sm:flex-row space-y-8 '>
+    <div className='w-full flex flex-col md:flex-row md:space-y-0 md:space-x-5 space-y-8 '>
      <CartProductsColoum/>  
      <OrderSubmitionCartColumn/>  
 

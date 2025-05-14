@@ -13,7 +13,7 @@ const jost=Jost({
 const CartProductsColoum = () => {
 
   return (
-    <div className='w-full flex flex-col space-y-5 px-16'>
+    <div className='w-full flex flex-col space-y-5 px-5'>
       <div className='text-xl font-semibold'>Card</div>
         {/*Single Product -1  */}
         <div className='w-full flex flex-col space-y-2'>
