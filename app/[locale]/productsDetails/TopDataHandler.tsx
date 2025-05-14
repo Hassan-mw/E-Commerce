@@ -1,9 +1,11 @@
+'use client'
 import Button from '@/components/Button'
 import { Jost } from 'next/font/google'
 import React from 'react'
 import { FaCirclePlus } from 'react-icons/fa6'
 import { PiBasketThin } from 'react-icons/pi'
 import { ProductDetailsDataType } from '../Types/dataType'
+import { createProduct } from '../API/Post/CreatePorduct'
 
 
 const jost=Jost({
@@ -11,11 +13,11 @@ const jost=Jost({
   subsets:['latin']
 })
 
-const TopDataHandler = ({name,price,color,quantity,size}:ProductDetailsDataType) => {
+const TopDataHandler = ({id,name,price,color,quantity,size}:ProductDetailsDataType) => {
   
   function handleCart(){
+  createProduct({id})
 
-    
   }
   
   return (

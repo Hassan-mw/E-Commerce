@@ -47,6 +47,7 @@ export interface TopNumberProductDataType{
 
 export interface ProductDetailsDataType{
     images:string[];
+    id:number;
     name:string;
     price:number;
     color:string;

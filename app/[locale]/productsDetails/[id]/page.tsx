@@ -30,7 +30,7 @@ const page = async({params}:{params:{id:URLSearchParams}}) => {
            <span className={` ${jost.className} flex items-center justify-center  text-sm text-[#555555]`}>{name} </span>
       </div>
         
-     <ProductDetailsData price={price} name={name}  images={images} color={color} quantity={quantity} size={size} />  
+     <ProductDetailsData id={id} price={price} name={name}  images={images} color={color} quantity={quantity} size={size} />  
      <DataDetails details={details} shortdetail={shortdetail} prodcutdetails={prodcutdetails}  />     
      <ProductRowBottom id={id}/> 
     </div>

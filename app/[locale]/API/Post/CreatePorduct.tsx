@@ -1,3 +1,5 @@
-export const createProduct=async()=>{
+export const createProduct=async({id}:{id:number})=>{
+try{
 
+}catch
 }
