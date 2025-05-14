@@ -7,6 +7,7 @@ import Link from 'next/link'
 import React, { useContext, useEffect, useState } from 'react'
 import { DataContext } from '../ContextApi/ContextApi'
 import { FiAlertOctagon } from 'react-icons/fi'
+import HandleCurrentCurrency from '@/components/HandleCurrentCurrency'
 
 const jost=Jost({
   weight:['500'],
@@ -82,7 +83,7 @@ useEffect(()=>{
     <div   className={`${jost.className} text-xs text-[#555555] font-semibold flex items-center justify-center gap-x-3 `}><span style={{fontWeight:200}} className='text-xs'>⭐⭐⭐⭐</span><span className='text-thin'>({data.ratingnumber})</span> </div>
     {/* //!  Priceing */}
     <div className={`flex items-center justify-center gap-x-3`}>
-        <span  style={{fontWeight:500}}  className='text-xs text-red-600'>${data.price}.99</span>
+       <HandleCurrentCurrency style="text-xs text-red-600"  currency={data.price} />
         <span  style={{fontWeight:400}} className='text-[#555555] text-[12px]'>${data.price*2+9}.99</span>
         <span className=' rounded-xs text-red-500 text-[11px] '>-40%</span>
     

@@ -2,7 +2,7 @@ import { routing } from "@/i18n/routing";
 import { useLocale } from "next-intl";
 import { Jost } from 'next/font/google'
 import Image from 'next/image'
-import React from 'react'
+import React, { useContext, useState } from 'react'
 
 
 
@@ -24,19 +24,25 @@ import {
 import { FiSearch } from "react-icons/fi";
 import {   usePathname, useRouter } from "@/i18n/routing";
 import { useParams } from "next/navigation";
+import { DataContext } from "../ContextApi/ContextApi";
 
 const BottomLeft = () => {
    const locale = useLocale();
-console.log(locale,12345678,routing)
        const router = useRouter();
        const pathname = usePathname();
        const params = useParams();
-  function onSelectChange(nextLocale: string){
+       const {currentCurrency,setCurrentCurrency}=useContext(DataContext)
+
+     function onSelectChange(nextLocale: string){
 
     router.replace(
       { pathname, params },
       { locale: nextLocale as Locale }
     );
+  }
+
+  const handleCurrentCurrency=(data:string)=>{
+   setCurrentCurrency(data)
   }
 
   return (
@@ -49,7 +55,7 @@ console.log(locale,12345678,routing)
       <SelectTrigger className="w-[100px] outline-none border-none shadow-none z-20 ">
         <SelectValue placeholder="USD" />
       </SelectTrigger>
-      <SelectContent>
+      <SelectContent  className="bg-white border-none py-3">
         <SelectGroup>
          {routing.locales.map((locale) => (
           <SelectItem key={locale} value={locale}>
@@ -61,24 +67,21 @@ console.log(locale,12345678,routing)
     </Select>
     </div>
     
-     <div className=' '><Select>
-      <SelectTrigger className="w-[100px] outline-none border-none shadow-none z-20 ">
+     
+       <Select defaultValue={currentCurrency} onValueChange={handleCurrentCurrency}>
+      <SelectTrigger className="w-[100px]  outline-none border-none shadow-none z-20 ">
         <SelectValue placeholder="USD" />
       </SelectTrigger>
-      <SelectContent>
+      <SelectContent  className="bg-white border-none py-3">
         <SelectGroup>
-          <SelectLabel>Fruits</SelectLabel>
-          <SelectItem value="apple">Apple</SelectItem>
-          <SelectItem value="banana">Banana</SelectItem>
-          <SelectItem value="blueberry">Blueberry</SelectItem>
-          <SelectItem value="grapes">Grapes</SelectItem>
-          <SelectItem value="pineapple">Pineapple</SelectItem>
+          <SelectItem value="USD">USD</SelectItem>
+          <SelectItem value="PKR">PKR</SelectItem>
         </SelectGroup>
       </SelectContent>
     </Select>
     </div>
     
-    </div>
+    
 </div>
   )
 }

@@ -22,7 +22,8 @@ function DataProvider({children}:{children:React.ReactNode}){
     const [name,setName]=useState<DataTypeProduct>({productName:""})
     const [brand,setBrand]=useState<DataTypeBrand>({brandName:""})
     const [length,setLength]=useState<number>(0)
-
+    const [currentCurrency,setCurrentCurrency]=useState('USD')
+    
 
    function handleBrandName(data:string){  
     setBrand({brandName:data})
@@ -33,7 +34,7 @@ function DataProvider({children}:{children:React.ReactNode}){
    }
     
   return(
-    <DataContext.Provider value={{brand,length,setLength,handleBrandName,handleProductName,setBrand,name,setName}}>
+    <DataContext.Provider value={{currentCurrency,setCurrentCurrency,brand,length,setLength,handleBrandName,handleProductName,setBrand,name,setName}}>
     {children}
     </DataContext.Provider>
   )
