@@ -23,7 +23,7 @@ const CartNavbar = () => {
 
 
           return (
-            <div className="w-full bg-green-400 flex flex-col space-y-3 items-center justify-center gap-x-6 py-6 ">
+            <div className="w-full  flex flex-col space-y-3 items-center justify-center gap-x-6 py-6 ">
             <div className="w-full flex  items-center justify-center gap-x-6 ">
                 {
                     data.map((data,index)=>
@@ -32,7 +32,7 @@ const CartNavbar = () => {
                     }
             </div>
         
-            {currentDetails==='CART' && <Cart />}
+            {currentDetails==='Cart' && <Cart />}
             {currentDetails==='Customer Info' && <CustomerInfo/>}
             {currentDetails==='SHIPPING & PAYMENT' && <ShippingPayment/>}
             {currentDetails==='ProductConfirmation' && <ProductConfirmation/>}
