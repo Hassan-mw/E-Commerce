@@ -2,10 +2,11 @@ import { Jost } from 'next/font/google'
 
 import { MdKeyboardArrowRight } from 'react-icons/md'
 import ProductDetailsData from '../ProductDetailsData'
-import { getProductById } from '@/app/API/FeatchAllProduct'
+// import { getProductById } from '@/app/API/FeatchAllProduct'
 import Link from 'next/link'
 import DataDetails from '../DataDetails'
 import ProductRowBottom from '../ProductRowBottom'
+import { getProductById } from '../../API/FeatchAllProduct'
 
 const jost=Jost({
   weight:['500'],

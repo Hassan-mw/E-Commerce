@@ -22,7 +22,7 @@ function DataProvider({children}:{children:React.ReactNode}){
     const [name,setName]=useState<DataTypeProduct>({productName:""})
     const [brand,setBrand]=useState<DataTypeBrand>({brandName:""})
     const [length,setLength]=useState<number>(0)
-    const [currentCurrency,setCurrentCurrency]=useState('USD')
+    const [currentCurrency,setCurrentCurrency]=useState('1_$')
     
 
    function handleBrandName(data:string){  

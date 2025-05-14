@@ -37,7 +37,7 @@ const BottomLeft = () => {
 
     router.replace(
       { pathname, params },
-      { locale: nextLocale as Locale }
+      { locale: nextLocale  }
     );
   }
 
@@ -74,8 +74,9 @@ const BottomLeft = () => {
       </SelectTrigger>
       <SelectContent  className="bg-white border-none py-3">
         <SelectGroup>
-          <SelectItem value="USD">USD</SelectItem>
-          <SelectItem value="PKR">PKR</SelectItem>
+          <SelectItem defaultChecked value='1_$'>USD</SelectItem>
+          <SelectItem value="280.61_₨">PKR</SelectItem>
+          <SelectItem value="85._₹">INR</SelectItem>
         </SelectGroup>
       </SelectContent>
     </Select>
