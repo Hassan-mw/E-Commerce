@@ -8,7 +8,7 @@ const jost=Jost({
 
 const OrderSubmitionCartColumn = () => {
   return (
-    <div className='w-full md:max-h-80  flex  items-center justify-center md:rounded-md bg-[#E9E9E9] p-4'>
+    <div className='w-full md:max-h-80 md:w-[80%] lg:w-[40%] flex  items-center justify-center md:rounded-md bg-[#E9E9E9] p-4 '>
     <div className='w-full max-w-[60%] md:max-w-full flex flex-col  space-y-3 '>
     <div className={`${jost.className} text-md`}>Order Summary</div>     
     <div className='flex items-center justify-between text-sm'><span className='text-[#555555]'>Price</span><span>$99.23</span>  </div>    
