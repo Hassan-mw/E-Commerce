@@ -12,6 +12,12 @@ const jost=Jost({
 })
 
 const TopDataHandler = ({name,price,color,quantity,size}:ProductDetailsDataType) => {
+  
+  function handleCart(){
+
+    
+  }
+  
   return (
     <div className='w-full flex flex-col space-y-4 px-5'>
   {/* Name + Price */}
@@ -93,7 +99,7 @@ const TopDataHandler = ({name,price,color,quantity,size}:ProductDetailsDataType)
   {/* <div className=''></div> */}
   <div className='border border-[#555555] hover:shadow-2xl hover:cursor-pointer duration-500  text-[#555555] gap-x-1  p-3 rounded-md w-full flex items-center justify-center '>
   <PiBasketThin size={19} />
-   <span style={{fontWeight:400}} className={`${jost.className}  `}>ADD TO BASKET</span>
+   <span onClick={()=>handleCart()} style={{fontWeight:400}} className={`${jost.className}  `}>ADD TO BASKET</span>
     </div>
 
  </div>
