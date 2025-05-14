@@ -10,7 +10,7 @@ exports.getAllCart=async(req,resizeBy,next)=>{
     }
 }
 
-exports.createCart=async(req,resizeBy,next)=>{
+exports.createCart=async(req,res,next)=>{
     try{
 
     }catch(error){

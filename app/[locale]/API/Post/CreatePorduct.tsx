@@ -1,5 +1,7 @@
-export const createProduct=async({id}:{id:number})=>{
+export const createProduct=async({id}:{id:URLSearchParams})=>{
 try{
+// const data=await 
+}catch{
 
-}catch
+}
 }
