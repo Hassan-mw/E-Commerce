@@ -2,7 +2,7 @@ import React from 'react'
 
 const CustomerInfo = () => {
   return (
-    <div className='w-full flex flex-col space-y-12 px-5'>
+    <div className='w-full flex flex-col space-y-12 px-14'>
 
     <div className='w-full flex flex-col space-y-4 '>
      <div className='tex-xl font-semibold'>Customer Information</div>
