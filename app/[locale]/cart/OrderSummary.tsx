@@ -6,7 +6,7 @@ const jost=Jost({
   subsets:['latin']
 })
 
-const OrderSubmitionCartColumn = () => {
+const OrderSummary = () => {
   return (
     <div className='w-full md:max-h-80 md:w-[80%] lg:w-[40%] flex  items-center justify-center md:rounded-md bg-[#E9E9E9] p-4 '>
     <div className='w-full max-w-[60%] md:max-w-full flex flex-col  space-y-3 '>
@@ -26,4 +26,4 @@ const OrderSubmitionCartColumn = () => {
   )
 }
 
-export default OrderSubmitionCartColumn
+export default OrderSummary

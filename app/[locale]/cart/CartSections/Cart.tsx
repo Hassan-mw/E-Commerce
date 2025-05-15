@@ -1,6 +1,6 @@
 import React from 'react'
 import CartProductsColoum from '../CartProductsSection/CartProductsColoum'
-import OrderSubmitionCartColumn from '../CartProductsSection/OrderSubmitionCartColumn'
+import OrderSubmitionCartColumn from '../OrderSummary'
 
 const Cart = () => {
   return (
