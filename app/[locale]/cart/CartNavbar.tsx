@@ -1,10 +1,11 @@
 'use client'
 import React, { useState } from 'react'
 import Cart from './CartSections/Cart'
-import CustomerInfo from './CartSections/CustomerInfo'
+
 import ShippingPayment from './CartSections/ShippingPayment'
 import ProductConfirmation from './CartSections/ProductConfirmation'
 import { Jost } from 'next/font/google'
+import CustomerInformation from './CartSections/CustomerInformation'
 
 const jost=Jost({
   weight:['500'],
@@ -33,7 +34,7 @@ const CartNavbar = () => {
             </div>
            
             {currentDetails==='Cart' && <Cart />}
-            {currentDetails==='Customer Info' && <CustomerInfo/>}
+            {currentDetails==='Customer Info' && <CustomerInformation/>}
             {currentDetails==='SHIPPING & PAYMENT' && <ShippingPayment/>}
             {currentDetails==='ProductConfirmation' && <ProductConfirmation/>}
             </div>
