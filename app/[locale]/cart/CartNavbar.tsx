@@ -27,7 +27,7 @@ const CartNavbar = () => {
             <div className="w-full flex  items-center justify-center gap-x-6 ">
                 {
                     data.map((data,index)=>
-                        <div key={data.id} onClick={()=>setCurrentDetails(data.name)} style={{fontWeight:300}} className={`${jost.className} ${currentDetails===data.name ? 'text-[#262626]' : 'text-[#9D9D9D]'  }  duration-300 hover:cursor-pointer text-xs ${jost.className} `}>{data.name}</div>
+                        <div key={data.id} onClick={()=>setCurrentDetails(data.name)} style={{fontWeight:400}} className={` ${currentDetails===data.name ? 'text-[#262626]' : 'text-[#9D9D9D]'  }  duration-300 hover:cursor-pointer text-xs  `}>{data.name}</div>
                     )
                     }
             </div>

@@ -15,8 +15,8 @@ const CartProductsColoum = () => {
 
   return (
     <div className='w-full flex flex-col space-y-5 px-5'>
-      <div className='text-xl font-semibold'>Card</div>
-      
+      <div className='text-md font-semibold'>Card - 3</div>
+
         {/*Single Product -1  */}
         <div className='w-full flex flex-col lg:flex-row lg:space-x-7 lg:space-y-0 space-y-3 lg:items-start lg:justify-start'>
         {/* Upper */}
