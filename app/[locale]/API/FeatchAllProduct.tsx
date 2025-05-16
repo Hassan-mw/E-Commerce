@@ -1,5 +1,7 @@
-export const getAllProduct=async({parameters}:{parameters:URLSearchParams})=>{
 
+
+export const getAllProduct=async({parameters}:{parameters:URLSearchParams})=>{
+    
     try{
       const parametersData=new URLSearchParams(parameters).toString();
 

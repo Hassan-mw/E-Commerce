@@ -8,6 +8,7 @@ import ProductListSidebarData from '../ProductListSidebarData'
 import SortingBy from '../SortingBy'
 import NumberProductShower from '../NumberProductShower'
 import { getAllProduct } from '../../API/FeatchAllProduct'
+import { Suspense } from 'react'
 const jost=Jost({
   weight:['500'],
   subsets:['latin']
@@ -20,15 +21,17 @@ const jost=Jost({
 const page = async({params,searchParams}:{params:{productcategory:string},searchParams:URLSearchParams}) => {
   const parameters=await searchParams
   let data=await getAllProduct({parameters})
-
-  
+  //  const lodaing=true;
   const length=data.length
   const {productcategory}=await params
   const [category,productName]=productcategory.split('_')
   if(category!=='All'){
     data=data.filter((data :any,index:number)=>data.color===category)
   }
-  console.log(category,12123525346)
+  
+  
+
+
   return (
     <div className='w-full flex items-center justify-center '>
     <div className='w-full flex flex-col items-center justify-center  '>
@@ -48,10 +51,10 @@ const page = async({params,searchParams}:{params:{productcategory:string},search
       {/* Side bar trigger shower */}
      <div className=' lg:hidden  w-full flex items-center justify-start '> <ProductSideBarTrigger/></div>
            
-     {/* Showing sort by */}
-    <SortingBy/>
-     </div>
-     </div>
+      {/* Showing sort by */}
+      <SortingBy/>
+      </div>
+      </div>
 
 
      {/*//!  DataPage */}
@@ -60,12 +63,22 @@ const page = async({params,searchParams}:{params:{productcategory:string},search
           <ProductListSidebarData category={category}  />
        
         </div>
+
+    
         <div className='w-full     '>
            <ProductData  data={data}/>
           </div>
+      
           </div>
     </div>
     </div>
+  )
+}
+
+
+function Loading(){
+  return(
+    <div>Loading</div>
   )
 }
 
