@@ -37,6 +37,8 @@ const CartNavbar = () => {
             {currentDetails==='Customer Info' && <CustomerInformation/>}
             {currentDetails==='Shipping & Payment' && <ShippingPayment/>}
             {currentDetails==='Product Confirmation' && <ProductConfirmation/>}
+
+            
             </div>
   
   )

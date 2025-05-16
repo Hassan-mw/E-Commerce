@@ -16,7 +16,7 @@ const ShippingPaymentData = () => {
     <div className='w-full flex flex-col space-y-8 '>
     <div className='flex flex-col items-start justify-start space-y-1'>
     <div className='text-xl font-semibold'>Payment</div>
-    <div className='text-[10px]  text-[#555555]'>Pleease choose a payment method</div>
+    <div className='text-xs text-[#555555]'>Pleease choose a payment method</div>
     </div>
 
    {/* 1 */}
