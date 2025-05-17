@@ -1,18 +1,26 @@
 'use client'
-import React, { useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import Cart from './CartSections/Cart'
 
 import ShippingPayment from './CartSections/ShippingPayment'
 import ProductConfirmation from './CartSections/ProductConfirmation'
 import { Jost } from 'next/font/google'
 import CustomerInformation from './CartSections/CustomerInformation'
+import { cartDataType } from '../Types/dataType'
+import { DataContext } from '../ContextApi/ContextApi'
 
 const jost=Jost({
   weight:['500'],
   subsets:['latin']
 })
 
-const CartNavbar = () => {
+const CartNavbar = ({cartData}:cartDataType) => {
+
+  const {setCartData}=useContext(DataContext)
+
+  useEffect(()=>{
+    setCartData(cartData)
+  },[cartData])
 
   const [currentDetails,setCurrentDetails]=useState('Cart')
             const data=[
@@ -33,7 +41,7 @@ const CartNavbar = () => {
                     }
             </div>
            
-            {currentDetails==='Cart' && <Cart />}
+            {currentDetails==='Cart' && <Cart   />}
             {currentDetails==='Customer Info' && <CustomerInformation/>}
             {currentDetails==='Shipping & Payment' && <ShippingPayment/>}
             {currentDetails==='Product Confirmation' && <ProductConfirmation/>}

@@ -2,7 +2,7 @@ import React from 'react'
 import CartNavbar from './CartNavbar'
 
 
-const CartData = () => {
+const CartData = ({cartData}) => {
   return (
     <div className='w-full flex flex-col '> 
     <CartNavbar/>

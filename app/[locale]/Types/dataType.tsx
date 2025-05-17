@@ -64,3 +64,13 @@ export interface producutDetailsDataType{
     prodcutdetails:string;
 
 }
+
+
+//////////////////////////////////////
+// interface cartData
+
+
+
+export interface cartDataType {
+cartData:TopNumberProduct[]
+}

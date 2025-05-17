@@ -2,6 +2,7 @@ import { Jost } from "next/font/google"
 import { MdKeyboardArrowRight } from "react-icons/md"
 import CartData from "./CartData"
 import { getAllFromCart } from "../API/GET/FetchAllCartsData"
+import CartNavbar from "./CartNavbar"
 
 const jost=Jost({
   weight:['500'],
@@ -9,7 +10,11 @@ const jost=Jost({
 })
 
 const page = async() => {
+
+
+  
   const cartData=await getAllFromCart();
+  console.log(cartData,'ALAJFajhaheuhsegsigphsrghhsgshdjdej')
   return (
   <div className='w-full flex items-center justify-center '>
      <div className='max-w-screen-lg w-full flex flex-col items-center justify-center  space-y-10'>
@@ -20,7 +25,9 @@ const page = async() => {
       </div>
    
       {/* Data */}
-       <CartData/>
+    <CartNavbar   cartData={cartData} />
+
+       {/* <CartData  cartData={cartData}  /> */}
     </div>
     </div>
   )
