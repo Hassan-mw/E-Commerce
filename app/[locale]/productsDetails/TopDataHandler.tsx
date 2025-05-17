@@ -6,7 +6,7 @@ import { FaCirclePlus } from 'react-icons/fa6'
 import { PiBasketThin } from 'react-icons/pi'
 import { ProductDetailsDataType } from '../Types/dataType'
 import { createProduct } from '../API/Post/CreatePorduct'
-
+import axios  from "axios"
 
 const jost=Jost({
   weight:['500'],
@@ -15,10 +15,22 @@ const jost=Jost({
 
 const TopDataHandler = ({id,name,price,color,quantity,size}:ProductDetailsDataType) => {
   
-  function handleCart(){
-  createProduct({id})
-
+  const handleCart=async()=>{
+    if(id){
+      try{
+     await axios.post('http://localhost:5000/api/carts',{ product_id:id})
+  //  const data=   await axios({
+  //   method: 'post',
+  //   url: 'http://localhost:5000/api/carts',
+  //   data: {
+  //    product_id:id
+    }
+    catch(err){
+      console.log(err)
+    }
   }
+}
+
   
   return (
     <div className='w-full flex flex-col space-y-4 px-5'>
@@ -101,7 +113,7 @@ const TopDataHandler = ({id,name,price,color,quantity,size}:ProductDetailsDataTy
   {/* <div className=''></div> */}
   <div className='border border-[#555555] hover:shadow-2xl hover:cursor-pointer duration-500  text-[#555555] gap-x-1  p-3 rounded-md w-full flex items-center justify-center '>
   <PiBasketThin size={19} />
-   <span onClick={()=>handleCart()} style={{fontWeight:400}} className={`${jost.className}  `}>ADD TO BASKET</span>
+   <span onClick={handleCart} style={{fontWeight:400}} className={`${jost.className}  `}>ADD TO BASKET</span>
     </div>
 
  </div>

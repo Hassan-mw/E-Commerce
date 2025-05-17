@@ -14,6 +14,7 @@ exports.getAllCart=async(req,resizeBy,next)=>{
 
 exports.createCart=async(req,res,next)=>{
     try{
+        console.log(req.body,'It reached here')
         const {product_id}=req.body
         console.log(product_id)
         if(!product_id){
