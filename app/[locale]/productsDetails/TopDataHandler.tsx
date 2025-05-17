@@ -23,7 +23,7 @@ console.log(showCartButton,typeof(id))
    const getCartId=async()=>{
     try{
     const data=await getAllCarts()
-    const x=await data.map(el=>el.product_id===id*1  && setShowCartButton(false) )
+    const x=await data.map((el:{product_id:number})=>el.product_id===Number(id  )&& setShowCartButton(false) )
    }catch(err){
     console.log(err)
    }
