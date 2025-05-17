@@ -3,7 +3,7 @@ const pool=require('../Pool/pool');
 
 exports.getAllCart=async(req,res,next)=>{
     try{
-   const {rows}=await pool.query('SELECT product_id FROM carts')
+   const {rows}=await pool.query('SELECT * FROM carts')
    console.log(rows[0])
    res.status(200).json({
     staatus:'success',
