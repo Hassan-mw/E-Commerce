@@ -25,7 +25,8 @@ const TopDataHandler = ({id,name,price,color,quantity,size}:ProductDetailsDataTy
     try{
     const data=await getAllCarts()
     setCartLength(data.length)
-    const x=await data.map((el:{product_id:number})=>el.product_id===Number(id  )&& setShowCartButton(false) )
+    console.log(data,1111111111111111111111111111111111111111111111111111111111111111111111111111111)
+    const x=await data.map((el:{id:number})=>el.id===Number(id  )&& setShowCartButton(false) )
    }catch(err){
     console.log(err)
    }
