@@ -1,12 +1,13 @@
 'use client'
 import Button from '@/components/Button'
 import { Jost } from 'next/font/google'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { FaCirclePlus } from 'react-icons/fa6'
 import { PiBasketThin } from 'react-icons/pi'
 import { ProductDetailsDataType } from '../Types/dataType'
-import { createProduct } from '../API/Post/CreatePorduct'
+import { getAllCarts } from '../API/Post/CreatePorduct'
 import axios  from "axios"
+import { redirect } from 'next/navigation'
 
 const jost=Jost({
   weight:['500'],
@@ -14,22 +15,40 @@ const jost=Jost({
 })
 
 const TopDataHandler = ({id,name,price,color,quantity,size}:ProductDetailsDataType) => {
-  
+   const [showCartButton,setShowCartButton]=useState(true)
+
+console.log(showCartButton,typeof(id))
+
+   useEffect(()=>{   
+   const getCartId=async()=>{
+    try{
+    const data=await getAllCarts()
+    const x=await data.map(el=>el.product_id===id*1  && setShowCartButton(false) )
+   }catch(err){
+    console.log(err)
+   }
+   }
+   getCartId()
+  },[])
+
+
+
+
   const handleCart=async()=>{
     if(id){
       try{
-     await axios.post('http://localhost:5000/api/carts',{ product_id:id})
-  //  const data=   await axios({
-  //   method: 'post',
-  //   url: 'http://localhost:5000/api/carts',
-  //   data: {
-  //    product_id:id
+        await axios.post('http://localhost:5000/api/carts',{ product_id:id})
+      const data=await getAllCarts()
+    // const x=await data.map(el=>el.product_id===id*1  && setShowCartButton(false))
     }
     catch(err){
       console.log(err)
+    }finally{
+        redirect('/cart')
+
     }
   }
-}
+   }
 
   
   return (
@@ -109,13 +128,15 @@ const TopDataHandler = ({id,name,price,color,quantity,size}:ProductDetailsDataTy
  
  {/* CTA */}
  <div className='lg:w-[70%] flex sm:flex-col md:flex-row items-center justify-center gap-x-7 sm:gap-x-0 sm:gap-y-4 md:gap-x-5'>
-  <Button style='bg-[#4172DC] hover:bg-blue-600 duration-500 text-white w-full p-3 rounded-md  flex items-center justify-center' href='/'>SHOP NOW</Button>
-  {/* <div className=''></div> */}
+  <div  className='bg-[#4172DC] hover:bg-blue-600 duration-500 text-white w-full p-3 rounded-md  flex items-center justify-center' >SHOP NOW</div>
+
+ {showCartButton
+  && 
   <div className='border border-[#555555] hover:shadow-2xl hover:cursor-pointer duration-500  text-[#555555] gap-x-1  p-3 rounded-md w-full flex items-center justify-center '>
   <PiBasketThin size={19} />
    <span onClick={handleCart} style={{fontWeight:400}} className={`${jost.className}  `}>ADD TO BASKET</span>
     </div>
-
+  }
  </div>
 
  

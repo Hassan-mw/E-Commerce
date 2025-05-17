@@ -14,13 +14,16 @@ const randomRoutes=require('./Router/randomRoutes')
 const similarProductRoutes=require('./Router/similarProductRoutes')
 const  AppError=require('./ErrorHandler/appError') 
 const cors=require('cors');
-app.use(express.json()); 
 app.use(cors({
   origin:'http://localhost:3000',
   credentials:true,
   methods:['GET','POST'],
   allowedHeaders:['Content-Type','Authentication']
 }));
+
+app.use(express.json()); 
+
+
 
 app.use('/api/random',randomRoutes);
 app.use('/api/getSiilarProduct',similarProductRoutes);
