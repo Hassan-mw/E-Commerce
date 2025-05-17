@@ -1,13 +1,15 @@
 import { Jost } from "next/font/google"
 import { MdKeyboardArrowRight } from "react-icons/md"
 import CartData from "./CartData"
+import { getAllFromCart } from "../API/GET/FetchAllCartsData"
 
 const jost=Jost({
   weight:['500'],
   subsets:['latin']
 })
 
-const page = () => {
+const page = async() => {
+  const cartData=await getAllFromCart();
   return (
   <div className='w-full flex items-center justify-center '>
      <div className='max-w-screen-lg w-full flex flex-col items-center justify-center  space-y-10'>

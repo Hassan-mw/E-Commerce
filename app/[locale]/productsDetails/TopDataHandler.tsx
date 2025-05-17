@@ -15,10 +15,10 @@ const jost=Jost({
 })
 
 const TopDataHandler = ({id,name,price,color,quantity,size}:ProductDetailsDataType) => {
-   const [showCartButton,setShowCartButton]=useState(true)
+   const [showCartButton,setShowCartButton]=useState(true) //shoe or hide button 
 
-console.log(showCartButton,typeof(id))
 
+  // check weather product already in data base
    useEffect(()=>{   
    const getCartId=async()=>{
     try{
@@ -33,7 +33,7 @@ console.log(showCartButton,typeof(id))
 
 
 
-
+  //putting product in to  database
   const handleCart=async()=>{
     if(id){
       try{
