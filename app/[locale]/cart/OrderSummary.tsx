@@ -1,12 +1,27 @@
 import { Jost } from 'next/font/google'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { CiLock } from "react-icons/ci";
+import { getAllCarts } from '../API/Post/CreatePorduct';
 const jost=Jost({
   weight:['500'],
   subsets:['latin']
 })
 
 const OrderSummary = () => {
+    const [cartData,setCartData]=useState([])
+
+    const arrayData=cartData.map((data)=>data.price)
+      console.log(arrayData)   
+        //Fetching all cart
+        useEffect(()=>{
+              const fetData=async()=>{
+             const cartData=await getAllCarts()     
+             setCartData(cartData)
+              }
+              fetData()
+        },[])
+         
+
   return (
     <div className='w-full md:max-h-80 md:w-[80%] lg:w-[40%] flex  items-center justify-center md:rounded-md bg-[#E9E9E9] p-4 '>
     <div className='w-full max-w-[60%] md:max-w-full flex flex-col  space-y-3 '>

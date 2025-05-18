@@ -23,29 +23,29 @@ const CartProductsColoum = () => {
   const {setCartLength}=useContext(DataContext)
 
       // Storing cart length
-        useEffect(()=>{
+      useEffect(()=>{
           setCartLength(cartData.length)
-        },[cartData])
+      },[cartData])
 
-
-           useEffect(()=>{
+      
+      //Fetching all cart
+      useEffect(()=>{
             const fetData=async()=>{
            const cartData=await getAllCarts()     
            setCartData(cartData)
             }
             fetData()
-           },[cartData])
-
+      },[cartData])
 
 
       // Deleting the cart
-         const handleDelete=async(id:{id:number})=>{
+       const handleDelete=async(id:{id:number})=>{
           try{
           const data=  await axios.delete(`http://localhost:5000/api/carts/${id}`)
           }catch(err){
           console.log(err,'55555555555555555555555555555555')
           }
-          }
+       }
 
       
 

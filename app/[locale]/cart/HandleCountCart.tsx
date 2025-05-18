@@ -10,7 +10,7 @@ const HandleCountCart = ({id}:{id:number}) => {
               try{
               const data=  await axios.put(`http://localhost:5000/api/carts/${id}`,{quanitiy:count})
               }catch(err){
-              console.log(err,'55555555555555555555555555555555')
+              console.log(err)
               }
               }
               handleUpdate()
