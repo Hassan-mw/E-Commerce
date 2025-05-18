@@ -1,14 +1,16 @@
 import { Jost } from 'next/font/google'
-
 import { MdKeyboardArrowRight } from 'react-icons/md'
 import ProductData from '../ProductData'
 import ProductSideBarTrigger from '../ProductSideBarTrigger'
-import ProductListSidebarData from '../ProductListSidebarData'
-// import { getAllProduct } from '@/app/API/FeatchAllProduct'
+// import ProductListSidebarData from '../ProductListSidebarData'
+const ProductListSidebarData =dynamic(()=>import('../ProductListSidebarData'))
+
 import SortingBy from '../SortingBy'
 import NumberProductShower from '../NumberProductShower'
 import { getAllProduct } from '../../API/FeatchAllProduct'
-import { Suspense } from 'react'
+import dynamic from 'next/dynamic'
+import { Suspense } from 'react';
+
 const jost=Jost({
   weight:['500'],
   subsets:['latin']
@@ -21,7 +23,7 @@ const jost=Jost({
 const page = async({params,searchParams}:{params:{productcategory:string},searchParams:URLSearchParams}) => {
   const parameters=await searchParams
   let data=await getAllProduct({parameters})
-  //  const lodaing=true;
+
   const length=data.length
   const {productcategory}=await params
   const [category,productName]=productcategory.split('_')
@@ -63,12 +65,13 @@ const page = async({params,searchParams}:{params:{productcategory:string},search
           <ProductListSidebarData category={category}  />
        
         </div>
-
-    
+        
+        
+       <Suspense  fallback={<div>Loading</div>}>
         <div className='w-full     '>
            <ProductData  data={data}/>
           </div>
-      
+      </Suspense>
           </div>
     </div>
     </div>

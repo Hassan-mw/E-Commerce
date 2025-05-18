@@ -24,7 +24,6 @@ const TopDataHandler = ({id,name,price,color,quantity,size}:ProductDetailsDataTy
    const getCartId=async()=>{
     try{
     const data=await getAllCarts()
-    console.log(data,1111111111111111111111111111111111111111111111111111111111111111111111111111111)
     const x=await data.map((el:{id:number})=>el.id===Number(id  )&& setShowCartButton(false) )
    }catch(err){
     console.log(err)
@@ -75,7 +74,7 @@ const TopDataHandler = ({id,name,price,color,quantity,size}:ProductDetailsDataTy
     <div className={`${jost.className} flex items-center justify-start gap-x-8 `}>
         <span style={{fontWeight:200}} className={`${jost.className} text-sm text-[#262626] min-w-14`}>color</span>
         
-        <div className={`${jost.className} flex items-center justify-center border gap-x-3 `}> 
+        <div className={`${jost.className} flex items-center justify-center  gap-x-3 `}> 
         <span  className={`size-3 rounded-full ${color!=='black' || 'white' ? ` bg-${color}-600` : `bg-${color}`  } `} ></span>    
  
        

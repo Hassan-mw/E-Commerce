@@ -14,24 +14,12 @@ const ImageHandler = ({images}:{images:string[]}) => {
           <Image onClick={()=>setCurrentChangeImage(data)} height={400} width={400} className='w-full h-full object-contain  object-center  max-w-20 p-1' src={`/${data}`} alt="Images" /></div>
         )}
         </div>
-        {/* Large Image */}
-        {/* <div className='w-full bg-[#ffffff]  h-[400px] '> */}
-        {/* <Image  height={200} width={500} quality={100} className='w-full h-full  max-h-[500px]  rounded-md' src={`/${currentChageImage==='' ? images[0] : currentChageImage}`} alt="Images" /> */}
-       
-        {/* </div>  */}
+    
        <div className='w-full bg-[#ffffff]  h-[400px] '>
-        <Image  height={200} width={500} quality={100} className='w-full h-full  object-contain  object-center  rounded-md' src={`/${currentChageImage==='' ? images[0] : currentChageImage}`} alt="Images" />
+        <Image loading='lazy'  height={200} width={500} quality={100} className='w-full h-full  object-contain  object-center  rounded-md' src={`/${currentChageImage==='' ? images[0] : currentChageImage}`} alt="Images" />
         
         </div> 
-        {/* Small Images */}
-        {/* <div className='w-full flex items-center justify-center py-5'>
-        <div className='w-full max-w-48 grid grid-cols-4 '>
-        {images.map((data,index)=>
-        <div key={index} onClick={()=>setCurrentChangeImage(data)} className={`size-3 border ${currentChageImage===data ? 'bg-blue-500 border-none': 'border-slate-400' } rounded-full`}></div>
-      
-        )}
-        </div>
-        </div> */}
+       
     </div>
   )
 }
