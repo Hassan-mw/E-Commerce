@@ -10,6 +10,7 @@ router.route('/')
 
 
 router.route('/:id')
+.put(cartController.handleUpdate)
 .delete(cartController.deleteCurrentCart)
 
 

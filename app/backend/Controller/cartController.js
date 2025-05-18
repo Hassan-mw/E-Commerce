@@ -65,3 +65,27 @@ exports.deleteCurrentCart=async(req,res,next)=>{
         })
     }
 }
+
+
+exports.handleUpdate=async(req,res,next)=>{
+    try{
+        
+        const {id}=req.params
+        const {quanitiy}=req.body
+        console.log(id,quanitiy,'%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%')
+    //  const {name}=req.params
+       const {rows}=await pool.query("UPDATE  carts SET quantity=$1 WHERE product_id=$2 ",[quanitiy,id])
+    
+        res.status(200).json({
+        staus:'success',
+        data:rows[0]
+        })
+  
+    }catch(error){
+         console.log(error)
+        res.status(500).json({
+            status:'fail',
+            message:error.message
+        })
+    }
+}

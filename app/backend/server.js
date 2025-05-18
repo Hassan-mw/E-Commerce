@@ -17,7 +17,7 @@ const cors=require('cors');
 app.use(cors({
   origin:'http://localhost:3000',
   credentials:true,
-  methods:['GET','POST','DELETE '],
+  methods:['GET','POST','DELETE ','PUT'],
   allowedHeaders:['Content-Type','Authentication']
 }));
 

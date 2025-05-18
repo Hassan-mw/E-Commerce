@@ -8,6 +8,7 @@ import { deleteCurrentCart } from '../../API/GET/DeletingCart'
 import axios from 'axios'
 import { getAllCarts } from '../../API/Post/CreatePorduct'
 import { cartDataType } from '../../Types/dataType'
+import HandleCountCart from '../HandleCountCart'
 
 
 const jost=Jost({
@@ -21,27 +22,34 @@ const CartProductsColoum = () => {
   const [deletingId,setDeletingId]=useState(0)
   const {setCartLength}=useContext(DataContext)
 
-
+      // Storing cart length
         useEffect(()=>{
           setCartLength(cartData.length)
         },[cartData])
 
-    
-       useEffect(()=>{
-         const handleDelete=async()=>{
+
+           useEffect(()=>{
+            const fetData=async()=>{
+           const cartData=await getAllCarts()     
+           setCartData(cartData)
+            }
+            fetData()
+           },[cartData])
+
+
+
+      // Deleting the cart
+         const handleDelete=async(id:{id:number})=>{
           try{
-          const data=  await axios.delete(`http://localhost:5000/api/carts/${deletingId}`)
-          const cartData=await getAllCarts()
-      
-          setCartData(cartData)
+          const data=  await axios.delete(`http://localhost:5000/api/carts/${id}`)
           }catch(err){
           console.log(err,'55555555555555555555555555555555')
           }
           }
-       handleDelete()
-       },[deletingId])
+
       
 
+   
 
  
   return (
@@ -67,9 +75,9 @@ const CartProductsColoum = () => {
         </div>   
         {/* Bottom */}
         <div className='w-full flex items-center justify-between'>
-        <div className='flex items-center justify-center gap-x-4 px-2 py-1 border rounded-sm border-slate-200 text-[12px]'><span>-</span><span>1</span> <span>+</span></div>
+        <HandleCountCart id={data.id} />  
         <span className={` text-sm`}>${data.price}</span>  
-        <span onClick={()=>setDeletingId(data.id)} className='text-[#7B7B7B] hover:cursor-pointer '><CiTrash size={20} /></span>
+        <span onClick={()=>handleDelete(data.id)} className='text-[#7B7B7B] hover:cursor-pointer '><CiTrash size={20} /></span>
          
         </div>
         </div>
