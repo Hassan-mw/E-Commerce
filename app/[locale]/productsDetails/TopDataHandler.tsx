@@ -38,7 +38,7 @@ const TopDataHandler = ({id,name,price,color,quantity,size}:ProductDetailsDataTy
   const handleCart=async()=>{
     if(id){
       try{
-        await axios.post('http://localhost:5000/api/carts',{ product_id:id})
+        await axios.post('http://localhost:5000/api/carts',{ product_id:id,productprice:price})
     }
     catch(err){
       console.log(err)

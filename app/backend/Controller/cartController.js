@@ -3,7 +3,7 @@ const pool=require('../Pool/pool');
 
 exports.getAllCart=async(req,res,next)=>{
     try{
-   const {rows}=await pool.query('SELECT * FROM products WHERE id  IN (SELECT product_id FROM carts)')
+   const {rows}=await pool.query('SELECT * FROM products  JOIN carts ON products.id=carts.product_id;')
 //    const {rows}=await pool.query('SELECT * FROM carts')
 
    res.status(200).json({
@@ -20,12 +20,12 @@ exports.getAllCart=async(req,res,next)=>{
 
 exports.createCart=async(req,res,next)=>{
     try{
-        const {product_id}=req.body
+        const {product_id,productprice}=req.body
         if(!product_id){
                 return next(new AppError('Can not find "product_id"',500))
             
             }
-            const {rows}=await pool.query('INSERT INTO carts (product_id) VALUES ($1) RETURNING *',[product_id])
+            const {rows}=await pool.query('INSERT INTO carts (product_id,productprice) VALUES ($1,$2) RETURNING *',[product_id,productprice])
         console.log(req.body,'It reached here')
      res.status(401).json({
         staus:'success',
@@ -71,10 +71,10 @@ exports.handleUpdate=async(req,res,next)=>{
     try{
         
         const {id}=req.params
-        const {quanitiy}=req.body
-        console.log(id,quanitiy,'%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%')
+        const {quanitiy,sumPrice}=req.body
+        console.log(id,quanitiy,req.body,'%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%')
     //  const {name}=req.params
-       const {rows}=await pool.query("UPDATE  carts SET quantity=$1 WHERE product_id=$2 ",[quanitiy,id])
+       const {rows}=await pool.query("UPDATE  carts SET quantity=$1 , productprice=$2 WHERE product_id=$3 ",[quanitiy,sumPrice,id])
     
         res.status(200).json({
         staus:'success',

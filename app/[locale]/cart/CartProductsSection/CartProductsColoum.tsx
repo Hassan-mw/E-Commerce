@@ -75,7 +75,7 @@ const CartProductsColoum = () => {
         </div>   
         {/* Bottom */}
         <div className='w-full flex items-center justify-between'>
-        <HandleCountCart id={data.id} />  
+        <HandleCountCart id={data.id} price={data.price} />  
         <span className={` text-sm`}>${data.price}</span>  
         <span onClick={()=>handleDelete(data.id)} className='text-[#7B7B7B] hover:cursor-pointer '><CiTrash size={20} /></span>
          

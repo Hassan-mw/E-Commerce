@@ -2,13 +2,13 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 
-const HandleCountCart = ({id}:{id:number}) => {
+const HandleCountCart = ({id,price}:{id:number,price:number}) => {
     const [count,setCount]=useState(1)
-    
+    const sumPrice=price*count; 
     useEffect(()=>{
      const handleUpdate=async()=>{
               try{
-              const data=  await axios.put(`http://localhost:5000/api/carts/${id}`,{quanitiy:count})
+              const data=  await axios.put(`http://localhost:5000/api/carts/${id}`,{quanitiy:count,sumPrice})
               }catch(err){
               console.log(err)
               }
