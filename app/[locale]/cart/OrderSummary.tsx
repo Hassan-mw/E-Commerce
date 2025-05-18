@@ -1,32 +1,32 @@
 import { Jost } from 'next/font/google'
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { CiLock } from "react-icons/ci";
 import { getAllCarts } from '../API/Post/CreatePorduct';
+import { cartDataType } from '../Types/dataType';
+import { DataContext } from '../ContextApi/ContextApi';
 const jost=Jost({
   weight:['500'],
   subsets:['latin']
 })
 
 const OrderSummary = () => {
-    const [cartData,setCartData]=useState([])
-
+       const {cartData}=useContext(DataContext)
+     
+     console.log(cartData,'&&&&&&&&&&&&&&&########################')
     const arrayData=cartData.map((data)=>data.price)
-      console.log(arrayData)   
-        //Fetching all cart
-        useEffect(()=>{
-              const fetData=async()=>{
-             const cartData=await getAllCarts()     
-             setCartData(cartData)
-              }
-              fetData()
-        },[])
-         
+    let totalPriceSum=0;
+    for(let i=0;i<arrayData.length;i++){
+
+    totalPriceSum+=arrayData[i]
+
+    }
+  // console.log(arrayData)
 
   return (
     <div className='w-full md:max-h-80 md:w-[80%] lg:w-[40%] flex  items-center justify-center md:rounded-md bg-[#E9E9E9] p-4 '>
     <div className='w-full max-w-[60%] md:max-w-full flex flex-col  space-y-3 '>
     <div className={`${jost.className} text-md`}>Order Summary</div>     
-    <div className='flex items-center justify-between text-sm'><span className='text-[#555555]'>Price</span><span>$99.23</span>  </div>    
+    <div className='flex items-center justify-between text-sm'><span className='text-[#555555]'>Price</span><span>${totalPriceSum}.23</span>  </div>    
     <div className='flex items-center justify-between text-sm'><span className='text-[#555555]'>Shipping</span><span>$0</span>  </div>    
     <div className='flex items-center justify-between text-sm'><span className='text-[#555555]'>Tax</span><span>$0</span>  </div>    
     <div className='flex items-center justify-between text-sm'><span className='text-[#555555]'>Discount price</span><span>$47.10</span>  </div>    

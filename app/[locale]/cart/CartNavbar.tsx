@@ -42,7 +42,7 @@ const CartNavbar = ({cartData}:cartDataType) => {
                     }
             </div>
            
-            {currentDetails==='Cart' && <Cart   />}
+            {currentDetails==='Cart' && <Cart  cartData={cartData}  />}
             {currentDetails==='Customer Info' && <CustomerInformation/>}
             {currentDetails==='Shipping & Payment' && <ShippingPayment/>}
             {currentDetails==='Product Confirmation' && <ProductConfirmation/>}

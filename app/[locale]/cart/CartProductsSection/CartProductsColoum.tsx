@@ -18,9 +18,9 @@ const jost=Jost({
 
 
 const CartProductsColoum = () => {
-  const [cartData,setCartData]=useState([])
+  // const [cartData,setCartData]=useState([])
   const [deletingId,setDeletingId]=useState(0)
-  const {setCartLength}=useContext(DataContext)
+  const {setCartLength,cartData,setCartData}=useContext(DataContext)
 
       // Storing cart length
       useEffect(()=>{
@@ -30,12 +30,12 @@ const CartProductsColoum = () => {
       
       //Fetching all cart
       useEffect(()=>{
-            const fetData=async()=>{
-           const cartData=await getAllCarts()     
-           setCartData(cartData)
-            }
-            fetData()
-      },[cartData])
+      const fetData=async()=>{
+      const cartData=await getAllCarts()     
+      setCartData(cartData)
+                }
+      fetData()
+      },[])
 
 
       // Deleting the cart
