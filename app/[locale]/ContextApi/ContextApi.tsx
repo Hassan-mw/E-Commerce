@@ -25,7 +25,7 @@ function DataProvider({children}:{children:React.ReactNode}){
     const [cartLength,setCartLength]=useState<number>(0)
     const [currentCurrency,setCurrentCurrency]=useState('1_$')
     const [cartData,setCartData]=useState([])
-
+      
    function handleBrandName(data:string){  
     setBrand({brandName:data})
    }

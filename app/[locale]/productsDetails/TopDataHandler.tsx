@@ -1,7 +1,7 @@
 'use client'
-import Button from '@/components/Button'
+
 import { Jost } from 'next/font/google'
-import React, { useContext, useEffect, useState } from 'react'
+import  {  useEffect, useState } from 'react'
 import { FaCirclePlus } from 'react-icons/fa6'
 import { PiBasketThin } from 'react-icons/pi'
 import { ProductDetailsDataType } from '../Types/dataType'
@@ -17,14 +17,13 @@ const jost=Jost({
 
 const TopDataHandler = ({id,name,price,color,quantity,size}:ProductDetailsDataType) => {
    const [showCartButton,setShowCartButton]=useState(true) //shoe or hide button 
-   const {setCartLength}=useContext(DataContext)
+  
 
   // check weather product already in data base
    useEffect(()=>{   
    const getCartId=async()=>{
     try{
     const data=await getAllCarts()
-    setCartLength(data.length)
     console.log(data,1111111111111111111111111111111111111111111111111111111111111111111111111111111)
     const x=await data.map((el:{id:number})=>el.id===Number(id  )&& setShowCartButton(false) )
    }catch(err){
@@ -41,8 +40,6 @@ const TopDataHandler = ({id,name,price,color,quantity,size}:ProductDetailsDataTy
     if(id){
       try{
         await axios.post('http://localhost:5000/api/carts',{ product_id:id})
-      const data=await getAllCarts()
-    // const x=await data.map(el=>el.product_id===id*1  && setShowCartButton(false))
     }
     catch(err){
       console.log(err)

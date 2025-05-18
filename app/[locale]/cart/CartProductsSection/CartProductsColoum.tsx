@@ -1,9 +1,13 @@
+'use client'
 import { Jost } from 'next/font/google'
 import Image from 'next/image'
-import React, { useContext } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { CiTrash } from 'react-icons/ci'
 import { DataContext } from '../../ContextApi/ContextApi'
-
+import { deleteCurrentCart } from '../../API/GET/DeletingCart'
+import axios from 'axios'
+import { getAllCarts } from '../../API/Post/CreatePorduct'
+import { cartDataType } from '../../Types/dataType'
 
 
 const jost=Jost({
@@ -13,9 +17,32 @@ const jost=Jost({
 
 
 const CartProductsColoum = () => {
-   const {cartData}=useContext(DataContext)
-       console.log(cartData.map(data=>data.name))
-   
+  const [cartData,setCartData]=useState([])
+  const [deletingId,setDeletingId]=useState(0)
+  const {setCartLength}=useContext(DataContext)
+
+
+        useEffect(()=>{
+          setCartLength(cartData.length)
+        },[cartData])
+
+    
+       useEffect(()=>{
+         const handleDelete=async()=>{
+          try{
+          const data=  await axios.delete(`http://localhost:5000/api/carts/${deletingId}`)
+          const cartData=await getAllCarts()
+      
+          setCartData(cartData)
+          }catch(err){
+          console.log(err,'55555555555555555555555555555555')
+          }
+          }
+       handleDelete()
+       },[deletingId])
+      
+
+
  
   return (
     <div className='w-full flex flex-col space-y-5 px-5'>
@@ -27,7 +54,7 @@ const CartProductsColoum = () => {
          <div className='w-full flex items-start justify-between  '>
         {/* Image+name */}
         <div className='flex items-start justify-start gap-x-3'>
-        <div className='border py-1 px-2 rounded-sm border-slate-200'> <Image height={20} width={20} src={`/${data.image}`} alt='Images' />   </div>
+        <div className='border py-1 px-2 rounded-sm border-slate-200'> <Image height={20} width={20} src={`/${data.main_image}`} alt='Images' />   </div>
          {/* name + color */}
          <div className='flex flex-col items-start justify-start pt-0 space-y-0'>
          <div style={{fontWeight:400}} className={` text-lg md:text-sm lg:text-md`}>{data.name}</div>   
@@ -42,7 +69,7 @@ const CartProductsColoum = () => {
         <div className='w-full flex items-center justify-between'>
         <div className='flex items-center justify-center gap-x-4 px-2 py-1 border rounded-sm border-slate-200 text-[12px]'><span>-</span><span>1</span> <span>+</span></div>
         <span className={` text-sm`}>${data.price}</span>  
-        <span className='text-[#7B7B7B] '><CiTrash size={20} /></span>
+        <span onClick={()=>setDeletingId(data.id)} className='text-[#7B7B7B] hover:cursor-pointer '><CiTrash size={20} /></span>
          
         </div>
         </div>

@@ -8,4 +8,9 @@ router.route('/')
 .get(cartController.getAllCart)
 .post(cartController.createCart)
 
+
+router.route('/:id')
+.delete(cartController.deleteCurrentCart)
+
+
 module.exports=router

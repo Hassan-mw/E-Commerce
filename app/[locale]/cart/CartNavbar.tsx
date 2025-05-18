@@ -20,6 +20,7 @@ const CartNavbar = ({cartData}:cartDataType) => {
 
   useEffect(()=>{
     setCartData(cartData)
+
   },[cartData])
 
   const [currentDetails,setCurrentDetails]=useState('Cart')
