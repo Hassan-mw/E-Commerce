@@ -11,7 +11,7 @@ const ImageHandler = ({images}:{images:string[]}) => {
         <div className='   grid grid-cols-1 gap-y-3 grid-rows-6 place-items-center h-[400px]'>
         {images.map((data,index)=>
         <div key={index} className='border h-15 w-full rounded-md border-slate-400'>
-          <Image onClick={()=>setCurrentChangeImage(data)} height={400} width={400} className='w-full h-full object-contain  object-center  max-w-20 p-1' src={`/${data}`} alt="Images" /></div>
+          <Image  loading='lazy'  onClick={()=>setCurrentChangeImage(data)} height={400} width={400} className='w-full h-full object-contain  object-center  max-w-20 p-1' src={`/${data}`} alt="Images" /></div>
         )}
         </div>
     

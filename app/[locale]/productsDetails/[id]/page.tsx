@@ -1,11 +1,13 @@
 import { Jost } from 'next/font/google'
 
 import { MdKeyboardArrowRight } from 'react-icons/md'
-import ProductDetailsData from '../ProductDetailsData'
+// import ProductDetailsData from '../ProductDetailsData'
 
 import Link from 'next/link'
-import DataDetails from '../DataDetails'
+// import DataDetails from '../DataDetails'
+const DataDetails=dynamic(()=>import('../DataDetails')) ; 
 const ProductRowBottom=dynamic(()=>import('../ProductRowBottom')) ; 
+const ProductDetailsData=dynamic(()=>import('../ProductDetailsData')) ; 
 import { getProductById } from '../../API/FeatchAllProduct'
 import dynamic from 'next/dynamic'
 
@@ -31,7 +33,7 @@ const page = async({params}:{params:{id:URLSearchParams}}) => {
       </div>
         
      <ProductDetailsData id={id} price={price} name={name}  images={images} color={color} quantity={quantity} size={size} />  
-     <DataDetails details={details} shortdetail={shortdetail} prodcutdetails={prodcutdetails}  />     
+     {/* <DataDetails details={details} shortdetail={shortdetail} prodcutdetails={prodcutdetails}  />      */}
      <ProductRowBottom id={id}/> 
     </div>
     </div>
