@@ -50,7 +50,7 @@ exports.deleteCurrentCart=async(req,res,next)=>{
         console.log(id,'17^%$&&#&&1111111111111111111111111111113434444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444441111111111111112222222222222222222')
 
     //  const {name}=req.params
-       const {rows}=await pool.query("DELETE FROM carts WHERE product_id=$1 ",[id])
+       const {rows}=await pool.query("DELETE FROM carts WHERE id=$1 ",[id])
     
         res.status(200).json({
         staus:'success',
@@ -74,7 +74,7 @@ exports.handleUpdate=async(req,res,next)=>{
         const {quanitiy,sumPrice}=req.body
         console.log(id,quanitiy,req.body,'%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%')
     //  const {name}=req.params
-       const {rows}=await pool.query("UPDATE  carts SET quantity=$1 , productprice=$2 WHERE product_id=$3 ",[quanitiy,sumPrice,id])
+       const {rows}=await pool.query("UPDATE  carts SET quantity=$1,productprice=$2 WHERE id=$3 ",[quanitiy,sumPrice,id])
     
         res.status(200).json({
         staus:'success',

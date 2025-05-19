@@ -14,9 +14,10 @@ const jost=Jost({
   subsets:['latin']
 })
 
-const CartNavbar = ({cartData}:cartDataType) => {
+const CartNavbar = () => {
 
-  const {setCartData}=useContext(DataContext)
+  const { setCartLength, cartData, setCartData, count } = useContext(DataContext);
+
 
   useEffect(()=>{
     setCartData(cartData)

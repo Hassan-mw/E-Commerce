@@ -74,3 +74,27 @@ export interface producutDetailsDataType{
 export interface cartDataType {
 cartData:TopNumberProduct[]
 }
+
+
+
+///////////////////////////////
+export interface  TopNumberProductCart{
+brand:string;
+color:string;
+details:string[];
+discord:number;
+id:number;
+images:string[];
+main_image:string;
+model:string;
+name:string;
+price:number;
+prodcutdetails:string;
+rating:number | null ;
+ratingnumber:number;
+shortdetail:string;
+size:string;
+style:String;
+productprice:number;
+quantity:number;
+}
