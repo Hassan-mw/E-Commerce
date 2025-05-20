@@ -12,6 +12,7 @@ const paymentRoutes=require('./Router/paymentRoutes')
 const shippingRouter=require('./Router/shippingRouter')
 const randomRoutes=require('./Router/randomRoutes')
 const similarProductRoutes=require('./Router/similarProductRoutes')
+const addressRoutes=require('./Router/addressRoutes')
 const  AppError=require('./ErrorHandler/appError') 
 const cors=require('cors');
 app.use(cors({
@@ -34,7 +35,7 @@ app.use('/api/favourites',favouriteRoutes);
 app.use('/api/carts',cartRoutes);
 app.use('/api/order',orderRoutes);
 app.use('/api/payment',paymentRoutes);
-app.use('/api/payment',paymentRoutes);
+app.use('/api/address',addressRoutes);
 app.use('/api/shippings',shippingRouter);
 
   
