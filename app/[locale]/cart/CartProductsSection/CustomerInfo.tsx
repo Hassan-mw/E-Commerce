@@ -1,18 +1,22 @@
 'use client';
 
 import axios from "axios";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const CustomerInfo = () => {
   const [information,setInformetion]=useState({email:"",firstName:"",lastName:"",country:"",state:"",address:"",phone:""})
-   
- console.log(information)
+   const [useraddress,setUserAddress]=useState([])   
+ console.log(useraddress.status)
+
+  //handles input  
   function handleChange(e:any){
  
  const {name,value}=e.target;
  setInformetion((pre)=>({...pre,[name]:value}))
   }
+      
 
+  //sending data
    const handleForm=async()=>{
     try{
     const data=await axios.post('http://localhost:5000/api/address',
@@ -29,13 +33,30 @@ const CustomerInfo = () => {
      )}catch(err){
       console.log(err)
      }
+  }
+
+
+  //taking data
+  useEffect(()=>{
+    const fetchingAddress=async()=>{
+    
+    const data=await axios.get('http://localhost:5000/api/address/1')
+    console.log(data)
+    setUserAddress(data.data)
+    // console.log(data)
+
+  
     }
+  fetchingAddress()
+  },[])
 
   return (
 
 
     <div className='w-full flex flex-col space-y-12 px-14'>
-
+    {useraddress.status==='success' ?
+       <div>You not login</div>:
+    <>
     <div className='w-full flex flex-col space-y-4 '>
      <div className='tex-xl font-semibold'>Customer Information</div>
      {/* Email */}
@@ -101,6 +122,10 @@ const CustomerInfo = () => {
 
 
     </div>
+       </>
+       
+    
+       }
      <div className="w-full flex items-center justify-center "><div onClick={handleForm} className="w-24  flex items-center justify-center text-md text-white hover:cursor-pointer bg-blue-600 hover:bg-blue-700 duration-500 p-1 rounded-xl ">Submit</div></div>
     </div>
   )

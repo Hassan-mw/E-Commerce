@@ -206,7 +206,7 @@ exports.getProductById=async(req,res,next)=>{
 
   const {rows} =await pool.query(`SELECT * FROM products WHERE id=$1`,[id])
   console.log(rows,id,'😈👿👾🧐👽👻👿')
-  res.status(200)
+  res.status(201)
   .json({
     status:'success',
     data:rows

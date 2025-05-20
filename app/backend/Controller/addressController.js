@@ -1,6 +1,36 @@
 const pool = require("../Pool/pool")
 
 
+exports.getAddressById=async(req,res,next)=>{
+    try{
+        // console.log(read.params,'FROM address ',$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$)
+        const {id}=req.params;
+        console.log(id,'aaagohsdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddp')
+    
+    const {rows}=await pool.query(`SELECT * FROM address  WHERE user_id=$1`,[id])
+    if(rows.length===0){
+     res.status(200).json({
+     status:'fail',
+     data:[]
+     })
+     }else{
+     res.status(200).json({
+     status:'success',
+     data:rows[0]
+     }) 
+     }
+    
+
+     
+
+
+    }catch(err){
+    res.status(500).json({
+        status:'fail',
+        message:err.message
+    })
+    }
+}
 
 exports.createAddress=async(req,res,next)=>{
  try{
