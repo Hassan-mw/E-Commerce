@@ -1,5 +1,6 @@
 'use client';
 
+import axios from "axios";
 import { useState } from "react";
 
 const CustomerInfo = () => {
@@ -11,6 +12,25 @@ const CustomerInfo = () => {
  const {name,value}=e.target;
  setInformetion((pre)=>({...pre,[name]:value}))
   }
+
+   const handleForm=async()=>{
+    try{
+    const data=await axios.post('http://localhost:5000/api/address',
+      {
+      email:information.email,
+      firstName:information.firstName,
+      lastName:information.lastName,
+      country:information.country,
+      state:information.state,
+      address:information.address,
+      phone:information.phone,
+      
+      }
+     )}catch(err){
+      console.log(err)
+     }
+    }
+
   return (
 
 
@@ -21,7 +41,7 @@ const CustomerInfo = () => {
      {/* Email */}
      <div className='w-full flex flex-col items-start justify-start gap-y-1'>
      <div className='text-xs text-[#555555]'>E-mail</div>
-     <input name="email" value={information.email} onChange={(e)=>handleChange(e)}  type='text'  className='border w-full rounded-sm p-1 text-[#D9D9D9]' />
+     <input required name="email" value={information.email} onChange={(e)=>handleChange(e)}  type='text'  className='border w-full rounded-sm p-1 text-[#D9D9D9]' />
      </div>
 
      {/* First Name - Last Name */}
@@ -81,7 +101,7 @@ const CustomerInfo = () => {
 
 
     </div>
-
+     <div className="w-full flex items-center justify-center "><div onClick={handleForm} className="w-24  flex items-center justify-center text-md text-white hover:cursor-pointer bg-blue-600 hover:bg-blue-700 duration-500 p-1 rounded-xl ">Submit</div></div>
     </div>
   )
 }
