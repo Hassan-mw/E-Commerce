@@ -9,7 +9,7 @@ interface DataType{
   setCount:any
 }
 
-const HandleCountCart = ({id,quantity,price}:{id:number,price:number,count:number,quantity:number,handleCount:any}) => {
+const HandleCountCart = ({id,quantity,price}:{id:number,price:number,quantity:number}) => {
   const[data,setData]=useState(quantity) 
   const {count,setCount}=useContext<DataType>(DataContext)
  
