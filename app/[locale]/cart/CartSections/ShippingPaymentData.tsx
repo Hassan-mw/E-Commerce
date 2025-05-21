@@ -11,6 +11,11 @@ const jost=Jost({
 })
 
 
+const paymentArray=[
+  {id:"payPal",time:"14-21 days",image:"Paypal_method.png"},
+  {id:"RaceCourieser ",image:"mastercard_image_shipping.png"},
+  {id:"TranscoCargo",image:"bitcoin_method.png"},
+]
 const shippingArray=[
   {id:"AUSFF",time:"14-21 days",cost:0,insurance:false,image:"shipping_company_1.png",name:"shippingmethod"},
   {id:"RaceCourieser ",time:"12-18 days",cost:0,insurance:true,image:"shipping_company_2.png",name:"shippingmethod"},
@@ -24,7 +29,8 @@ const ShippingPaymentData = () => {
  const [shippingMethod,setShippingMethod]=useState('')
  const [shippingStatus,setShippingStatus]=useState('')
  const [shippingData,setShippingData]=useState({name:''})
- console.log(shippingData)
+ console.log(shippingMethod,paymentMethod)
+ console.log(shippingStatus,paymentStatus)
 
 
  ////////////////////////////////////////////////////////////////
@@ -90,9 +96,11 @@ const ShippingPaymentData = () => {
 
     const response=await axios.get('http://localhost:5000/api/payment/1')
     const {status,data}=response.data
+    // console.log(status,data)
+    if(status==='success'){
     setPaymentStatus(status)
     setPaymentData({method:data.method})
-  
+     }
     }
   fetchingPayment()
   },[])
@@ -104,8 +112,10 @@ const ShippingPaymentData = () => {
     try{
     const response=await axios.get('http://localhost:5000/api/shipping/1')
          const {status,data}=response.data
+    if(status==='success'){
     setShippingStatus(status)
     setShippingData({name:data.name})
+    }
     }catch(err){
     console.log(err)
     }
@@ -160,47 +170,21 @@ const ShippingPaymentData = () => {
     </div>
 
    {/* 1 */}
-  <div className='w-full flex items-start justify-between p-4 border border-slate-200 rounded-md bg-[#F5F5F5]'>
+  { paymentArray.map((data,index)=>
+  <div key={data.id} className='w-full flex items-start justify-between p-4 border border-slate-200 rounded-md bg-[#F5F5F5]'>
    {/* Left */}
    <div className='flex items-start justify-start gap-x-3 '>
-    <div className='pt-1'> <input checked={paymentData.method==='payPal' ?true :false}  value={paymentStatus==='success'? paymentData:paymentMethod} onChange={(e)=>handlePayment(e)} id='payPal' className='border-[#D9D9D9]   size-4' name="paymentmethod" type='radio'/></div>
+    <div className='pt-1'> <input checked={paymentData.method===data.id ?true :false}  value={paymentStatus==='success'? paymentData:paymentMethod} onChange={(e)=>handlePayment(e)} id='payPal' className='border-[#D9D9D9]   size-4' name="paymentmethod" type='radio'/></div>
   <div className='flex flex-col items-start justify-start'>
    <div className='text-md font-semibold pb-2  text-[#262626]'>Paypal</div>
    <div className='text-xs text-[#555555]'>PayPal is a trusted online payment platform that allows individuals and businesses to securely send and receive money electronically.</div>
   </div>
    </div>
    {/* Right */}
-   <Image height={50} width={50}  className="object-contain"  src="/Paypal_method.png" alt="paypal_methoad" />
+   <Image height={50} width={50}  className="object-contain"  src={`/${data.image}`} alt="paypal_methoad" />
   </div>
-    
-   {/* 2 */}
-  <div className='w-full flex items-start justify-between p-4 border border-slate-200 rounded-md bg-[#F5F5F5]'>
-   {/* Left */}
-   <div className='flex items-start justify-start gap-x-3 '>
-    <div className='pt-1'>  <input checked={paymentData.method==='mastercard' ?true :false} value={paymentStatus==='success'? paymentData:   paymentMethod}  id='mastercard' onChange={(e)=>handlePayment(e)} className='border-[#D9D9D9]   size-4' name="paymentmethod" type='radio'/></div>
-  <div className='flex flex-col items-start justify-start'>
-   <div className='text-md font-semibold pb-2  text-[#262626]'>Mastercard</div>
-   <div className='text-xs text-[#555555]'>Mastercard is a trusted online payment platform that allows individuals and businesses to securely send and receive money electronically.</div>
-  </div>
-   </div>
-   {/* Right */}
-   <Image height={40} width={40}  className="object-contain"  src="/mastercard_image_shipping.png"  alt="mastercard_methoad" />
-  </div>
-    
+   ) }
 
-   {/* 3 */}
-  <div className='w-full flex items-start justify-between p-4 border border-slate-200 rounded-md bg-[#F5F5F5]'>
-   {/* Left */}
-   <div className='flex items-start justify-start gap-x-3 '>
-    <div className='pt-1'>  <input  checked={paymentData.method==='bitcoin' ?true :false} value={paymentStatus==='success'? paymentData:   paymentMethod} id="bitcoin" onChange={(e)=>handlePayment(e)} className='border-[#D9D9D9]   size-4' name="paymentmethod" type='radio'/></div>
-  <div className='flex flex-col items-start justify-start'>
-   <div className='text-md font-semibold pb-2  text-[#262626]'>Bitcoin</div>
-   <div className='text-xs text-[#555555]'>Bitcoin is a trusted online payment platform that allows individuals and businesses to securely send and receive money electronically.</div>
-  </div>
-   </div>
-   {/* Right */}
-   <Image height={50} width={50}  className="object-contain"  src="/bitcoin_method.png"  alt="bitcoin_methoad" />
-  </div>
 
  {
  paymentStatus==='success' ?
@@ -228,7 +212,14 @@ const ShippingPaymentData = () => {
   <div key={data.id} className='w-full flex items-start border border-slate-200 justify-between p-4 rounded-md bg-[#F5F5F5]'>
    {/* Left */}
    <div className='flex items-start justify-start gap-x-3 '>
-    <div className='pt-1'> <input checked={shippingData.name===data.id ?true :false} value={shippingStatus==='success'? shippingData:shippingMethod}   onChange={(e)=>handleShipping(e)} id={data.id} className='border-[#D9D9D9]   size-4' name="shippingmethod" type='radio'/></div>
+    <div className='pt-1'>
+      {
+      shippingStatus==='success'?
+      <input checked={shippingData.name===data.id && true } value={shippingStatus==='success'? shippingData:shippingMethod}   onChange={(e)=>handleShipping(e)} id={data.id} className='border-[#D9D9D9]   size-4' name="shippingmethod" type='radio'/>
+      :
+       <input checked={shippingData.name===data.id  && true} value={shippingData}   onChange={(e)=>handleShipping(e)} id={data.id} className='border-[#D9D9D9]   size-4' name="shippingmethod" type='radio'/>
+      }
+      </div>
   <div className='flex flex-col items-start justify-start'>
    <div className='text-md font-semibold pb-2  text-[#262626]'>{data.id}</div>
    <div className='text-[10px] text-[#555555]'>Delivery time: {data.time}</div>

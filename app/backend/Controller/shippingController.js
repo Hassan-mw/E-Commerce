@@ -46,9 +46,13 @@ exports.createShippingData=async(req,res,next)=>{
 exports.getShippingDataById=async(req,res,next)=>{
     try{
    const {id}=req.params
-   console.log(id,'from get shipping by id')
    const {rows}=await pool.query(`SELECT * FROM shipping WHERE user_id = $1 `,[id])
-
+   if(rows.length===0){
+   res.status(200).json({
+   status:'fail',
+   data:[]
+   }) 
+   }
    res.status(200).json({
    status:'success',
    data:rows[0]
