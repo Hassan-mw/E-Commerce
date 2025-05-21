@@ -9,6 +9,7 @@ router.route('/')
 
 router.route('/:id')
 .get(addressController.getAddressById)
+.put(addressController.updateAddress)
 
 
 module.exports=router
