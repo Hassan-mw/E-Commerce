@@ -1,6 +1,7 @@
+'use client'
 import { Jost } from 'next/font/google'
 import Image from 'next/image'
-import React from 'react'
+import React, { useState } from 'react'
 
 
 const jost=Jost({
@@ -10,6 +11,14 @@ const jost=Jost({
 
 
 const ShippingPaymentData = () => {
+ const [paymentMethod,setPaymentMethod]=useState('')
+ console.log(paymentMethod,1241212)
+
+
+ function handlePayment(e:any){
+  const {id}=e.target;
+ console.log(id)
+ }
   return (
        <div className='w-full   flex flex-col space-y-16 px-5'>
 
@@ -23,7 +32,7 @@ const ShippingPaymentData = () => {
   <div className='w-full flex items-start justify-between p-4 border border-slate-200 rounded-md bg-[#F5F5F5]'>
    {/* Left */}
    <div className='flex items-start justify-start gap-x-3 '>
-    <div className='pt-1'> <input className='border-[#D9D9D9]  size-4' type='radio'/></div>
+    <div className='pt-1'> <input value={paymentMethod} onChange={(e)=>handlePayment(e)} id='payPal' className='border-[#D9D9D9]   size-4' name="paymentmethod" type='radio'/></div>
   <div className='flex flex-col items-start justify-start'>
    <div className='text-md font-semibold pb-2  text-[#262626]'>Paypal</div>
    <div className='text-xs text-[#555555]'>PayPal is a trusted online payment platform that allows individuals and businesses to securely send and receive money electronically.</div>
@@ -37,7 +46,7 @@ const ShippingPaymentData = () => {
   <div className='w-full flex items-start justify-between p-4 border border-slate-200 rounded-md bg-[#F5F5F5]'>
    {/* Left */}
    <div className='flex items-start justify-start gap-x-3 '>
-    <div className='pt-1'> <input className='border-[#D9D9D9]  size-4' type='radio'/></div>
+    <div className='pt-1'>  <input value={paymentMethod}  id='mastercard' onChange={(e)=>handlePayment(e)} className='border-[#D9D9D9]   size-4' name="paymentmethod" type='radio'/></div>
   <div className='flex flex-col items-start justify-start'>
    <div className='text-md font-semibold pb-2  text-[#262626]'>Mastercard</div>
    <div className='text-xs text-[#555555]'>Mastercard is a trusted online payment platform that allows individuals and businesses to securely send and receive money electronically.</div>
@@ -51,7 +60,7 @@ const ShippingPaymentData = () => {
   <div className='w-full flex items-start justify-between p-4 border border-slate-200 rounded-md bg-[#F5F5F5]'>
    {/* Left */}
    <div className='flex items-start justify-start gap-x-3 '>
-    <div className='pt-1'> <input className='border-[#D9D9D9]  size-4' type='radio'/></div>
+    <div className='pt-1'>  <input value={paymentMethod} id="bitcoin" onChange={(e)=>handlePayment(e)} className='border-[#D9D9D9]   size-4' name="paymentmethod" type='radio'/></div>
   <div className='flex flex-col items-start justify-start'>
    <div className='text-md font-semibold pb-2  text-[#262626]'>Bitcoin</div>
    <div className='text-xs text-[#555555]'>Bitcoin is a trusted online payment platform that allows individuals and businesses to securely send and receive money electronically.</div>

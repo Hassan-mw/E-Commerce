@@ -2,7 +2,7 @@
 import React, { useContext, useEffect, useState } from 'react'
 import Cart from './CartSections/Cart'
 
-import ShippingPayment from './CartSections/ShippingPayment'
+import ShippingPayment from './CartProductsSection/ShippingPayment'
 import ProductConfirmation from './CartSections/ProductConfirmation'
 import { Jost } from 'next/font/google'
 import CustomerInformation from './CartSections/CustomerInformation'

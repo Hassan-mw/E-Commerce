@@ -1,6 +1,6 @@
 import React from 'react'
 import OrderSummary from '../OrderSummary'
-import ShippingPaymentData from './ShippingPaymentData'
+import ShippingPaymentData from '../CartSections/ShippingPaymentData'
 
 const ShippingPayment = () => {
   return (

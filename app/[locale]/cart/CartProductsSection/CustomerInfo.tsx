@@ -4,9 +4,9 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 
 const CustomerInfo = () => {
-  const [information,setInformetion]=useState({email:"",firstName:"",lastName:"",country:"",state:"",address:"",phone:""})
+  const [information,setInformetion]=useState({email:"",firstname:"",lastname:"",country:"",state:"",address:"",phone:""})
    const [status,setStatus]=useState('')   
-   const [data,setData]=useState({})   
+   const [data,setData]=useState({}) 
  console.log(data)
 
   //handles input  
@@ -17,22 +17,28 @@ const CustomerInfo = () => {
    setData((pre)=>({...pre,[name]:value}))
 
     }
- setInformetion((pre)=>({...pre,[name]:value}))
+     setInformetion((pre)=>({...pre,[name]:value}))
   }
     
   
   //Handle updating
   const handleFormChanges=async()=>{
-  const x=await axios.put('http://localhost:5000/api/address/1',{
+    try{
+      const x=await axios.put('http://localhost:5000/api/address/1',{
       email:data.email,
-      firstName:data.firstName,
-      lastName:data.lastName,
+      firstName:data.firstname,
+      lastName:data.lastname,
       country:data.country,
       state:data.state,
       address:data.address,
       phone:data.phone,
       
-   })}
+    })}  
+    catch(err){
+      console.log(err)
+    }
+    }
+
 
   //sending data
    const handleForm=async()=>{
@@ -40,8 +46,8 @@ const CustomerInfo = () => {
     const data=await axios.post('http://localhost:5000/api/address',
       {
       email:information.email,
-      firstName:information.firstName,
-      lastName:information.lastName,
+      firstName:information.firstname,
+      lastName:information.lastname,
       country:information.country,
       state:information.state,
       address:information.address,
@@ -81,7 +87,7 @@ const CustomerInfo = () => {
      {/* Email */}
      <div className='w-full flex flex-col items-start justify-start gap-y-1'>
      <div className='text-xs text-[#555555]'>E-mail</div>
-     <input required name="email" value={status==='success'?data.email :information.email} onChange={(e)=>handleChange(e)}  type='text'  className='border w-full rounded-xs p-1 text-[#555555]' />
+     <input required name="email" value={status==='success'? data.email :information.email} onChange={(e)=>handleChange(e)}  type='text'  className='py-1 px-4 text-sm border-[#555555] border w-full rounded-sm  text-[#262626]' />
      </div>
 
      {/* First Name - Last Name */}
@@ -90,13 +96,13 @@ const CustomerInfo = () => {
        {/* First-Name */}
      <div className='w-full flex flex-col items-start justify-start gap-y-1'>
      <div className='text-xs text-[#555555]'>First-Name</div>
-     <input name="firstName" value={status==='success'?data.firstname :information.firstName} onChange={(e)=>handleChange(e)} type='text'  className='border w-full rounded-xs p-1 text-[#555555]' />
+     <input name="firstname" value={status==='success'?data.firstname :information.firstname} onChange={(e)=>handleChange(e)} type='text'   className='py-1 px-4 text-sm border-[#555555] border w-full rounded-sm  text-[#262626]'  />
      </div>
 
       {/* Last-Name */}
      <div className='w-full flex flex-col items-start justify-start gap-y-1'>
      <div className='text-xs text-[#555555]'>Last-Name</div>
-     <input name="lastName" value={status==='success'?data.lastname :information.lastName} onChange={(e)=>handleChange(e)} type='text'  className='border w-full rounded-xs p-1 text-[#555555]' />
+     <input name="lastname" value={status==='success'?data.lastname :information.lastname} onChange={(e)=>handleChange(e)} type='text'   className='py-1 px-4 text-sm border-[#555555] border w-full rounded-sm  text-[#262626]'  />
      </div>
 
      </div>
@@ -109,7 +115,7 @@ const CustomerInfo = () => {
      {/* Country */}
      <div className='w-full flex flex-col items-start justify-start gap-y-1'>
      <div className='text-xs text-[#555555]'>Country</div>
-     <select name="country" value={status==='success'?data.country :information.country} onChange={(e)=>handleChange(e)} className='border border-[#555555] focus:outline-none text-[#555555] w-full rounded-xs p-1  text-xs'>
+     <select name="country" value={status==='success'?data.country :information.country} onChange={(e)=>handleChange(e)}  className='py-1 px-4 text-sm border-[#555555] border w-full rounded-sm  text-[#262626]' >
         <option className='flex items-center justify-center gap-x-1 placeholder:text-xs'>Australia</option>
         <option className='flex items-center justify-center gap-x-1 placeholder:text-xs'>Pakistan</option>
         <option className='flex items-center justify-center gap-x-1 placeholder:text-xs'>India</option>
@@ -119,7 +125,7 @@ const CustomerInfo = () => {
      {/* State/Region */}
      <div className='w-full flex flex-col items-start justify-start gap-y-1'>
      <div className='text-xs text-[#555555]'>State/Region</div>
-     <select name="state" value={status==='success'?data.state :information.state} onChange={(e)=>handleChange(e)} className='border border-[#555555] focus:outline-none text-[#555555] w-full rounded-xs p-1  text-xs'>
+     <select name="state" value={status==='success'?data.state :information.state} onChange={(e)=>handleChange(e)}  className='py-1 px-4 text-sm border-[#555555] border w-full rounded-sm  text-[#262626]' >
         <option className='flex items-center justify-center gap-x-1 placeholder:text-xs'>Australia</option>
         <option className='flex items-center justify-center gap-x-1 placeholder:text-xs'>Pakistan</option>
         <option className='flex items-center justify-center gap-x-1 placeholder:text-xs'>India</option>
@@ -130,13 +136,13 @@ const CustomerInfo = () => {
      {/* Address */}
      <div className='w-full flex flex-col items-start justify-start gap-y-1'>
      <div className='text-xs text-[#555555]'>Address</div>
-     <input name="address" value={status==='success'?data.address :information.address} onChange={(e)=>handleChange(e)} type='text'  className='border w-full rounded-xs p-1 text-[#555555]' />
+     <input name="address" value={status==='success'?data.address :information.address} onChange={(e)=>handleChange(e)} type='text'   className='py-1 px-4 text-sm border-[#555555] border w-full rounded-sm  text-[#262626]'  />
      </div>
 
      {/* Phone Number */}
      <div className='w-full flex flex-col items-start justify-start gap-y-1'>
      <div className='text-xs text-[#555555]'> Phone Number </div>
-     <input name="phone" value={status==='success'?data.phone :information.phone} onChange={(e)=>handleChange(e)} type='text'  className='border w-full rounded-xs p-1 text-[#555555]' />
+     <input name="phone" value={status==='success'?data.phone :information.phone} onChange={(e)=>handleChange(e)} type='text'   className='py-1 px-4 text-sm border-[#555555] border w-full rounded-sm  text-[#262626]'  />
      </div>
 
 
@@ -144,7 +150,7 @@ const CustomerInfo = () => {
      
      {
      status==='success'?
-     <div className="w-full flex items-center justify-center "><div onClick={handleFormChanges} className="w-36  flex items-center justify-center text-sm text-white hover:cursor-pointer bg-blue-600 hover:bg-blue-700 duration-500 p-1 rounded-xl ">Submit Changes</div></div>
+     <div className="w-full flex items-center justify-center "><div onClick={handleFormChanges} className="w-36  flex items-center justify-center text-sm text-white hover:cursor-pointer bg-blue-600 hover:bg-blue-700 duration-500 p-1 rounded-sm ">Submit Changes</div></div>
      
      :
 
