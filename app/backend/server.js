@@ -35,8 +35,8 @@ app.use('/api/favourites',favouriteRoutes);
 app.use('/api/carts',cartRoutes);
 app.use('/api/order',orderRoutes);
 app.use('/api/payment',paymentRoutes);
+app.use('/api/shipping',shippingRouter);
 app.use('/api/address',addressRoutes);
-app.use('/api/shippings',shippingRouter);
 
   
 
