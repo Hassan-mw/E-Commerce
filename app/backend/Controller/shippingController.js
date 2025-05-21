@@ -45,9 +45,10 @@ exports.createShippingData=async(req,res,next)=>{
 
 exports.getShippingDataById=async(req,res,next)=>{
     try{
-   const {id}=req.body
-   const {rows}=await pool.query(`SELECT * FROM shipping WHERE user_id=$1 RETURNING *`,[id])
-   
+   const {id}=req.params
+   console.log(id,'from get shipping by id')
+   const {rows}=await pool.query(`SELECT * FROM shipping WHERE user_id = $1 `,[id])
+
    res.status(200).json({
    status:'success',
    data:rows[0]
@@ -65,6 +66,7 @@ exports.getShippingDataById=async(req,res,next)=>{
 exports.updateShippingData=async(req,res,next)=>{
     try{
    const {name,time,cost,insurance}=req.body
+   console.log(name,time,cost,insurance)
     const {id}=req.params
     console.log(req.body,id)
      const {rows}=await pool.query(`UPDATE  shipping SET name=$1,time=$2,cost=$3,insurance=$4 WHERE user_id=$5 RETURNING *`,[name,time,cost,insurance,id])

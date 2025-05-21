@@ -19,7 +19,7 @@ exports.getAllPaymentData=async(req,res,next)=>{
 exports.getPaymentDataById=async(req,res,next)=>{
     try{
    const {id}=req.params
-   console.log(id,'from get paymentdata by id')
+//    console.log(id,'from get paymentdata by id')
    const {rows}=await pool.query(`SELECT * FROM payment WHERE user_id = $1 `,[id])
    console.log(rows)
    res.status(200).json({

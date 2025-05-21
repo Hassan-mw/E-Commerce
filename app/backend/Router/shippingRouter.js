@@ -12,6 +12,7 @@ router.route('/')
 router.route('/:id')
 .get(shippingController.getShippingDataById) 
 .post(shippingController.createShippingData) 
+.put(shippingController.updateShippingData) 
 
 
 module.exports=router
