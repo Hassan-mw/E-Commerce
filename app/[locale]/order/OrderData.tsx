@@ -9,7 +9,7 @@ const jost=Jost({
 })
 
 
-const OrderData = ({cartData,shippingData,paymentData}) => {
+const OrderData = ({cartData,shippingData,paymentData,customerData}) => {
   console.log(paymentData,shippingData)
   return (
     <div className='w-full flex flex-col space-y-4 p-5'>
@@ -41,9 +41,9 @@ const OrderData = ({cartData,shippingData,paymentData}) => {
   {/* Delivery Info */}
   <div className="mt-4 text-sm text-gray-700">
     <p className="font-semibold">DELIVERY TO:</p>
-    <p>John Doe</p>
-    <p>123 Main St, Springfield</p>
-    <p>Mobile: +1 234 567 8900</p>
+    <p>{customerData.firstname} {customerData.lastname}</p>
+    <p>{customerData.address}</p>
+    <p>Mobile: {customerData.phone}</p>
   </div>
 
   {/* Payment Info */}

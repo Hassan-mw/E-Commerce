@@ -4,6 +4,7 @@ import { getAllFromCart } from "../API/GET/FetchAllCartsData"
 import OrderData from "./OrderData"
 import { getAllFromPaymentById } from "../API/GET/Payment"
 import { getAllFromShippingById } from "../API/GET/Shipping"
+import { getAllCustomerInfo } from "../API/GET/CustomerInformation"
 
 
 const jost=Jost({
@@ -32,7 +33,7 @@ const page = async() => {
       {/* Data */}
     
 
-      <OrderData cartData={cartData} paymentData={paymentData} shippingData={shippingData} />
+      <OrderData cartData={cartData} customerData={customerData} paymentData={paymentData} shippingData={shippingData} />
     </div>
     </div>
   )
