@@ -20,9 +20,11 @@ exports.getAllOrder=async(req,res,next)=>{
 
 exports.createOrder=async(req,res,next)=>{
     try{
-        const {user_id,product_id,total_price,status}=req.body
-      
-  const {rows}=await pool.query(`INSERT INTO orders (user_id,product_id,total_price,status) VALUES ($1,$2,$3,$4) RETURNING *`,[user_id,product_id,total_price,status])
+        console.log(req.params,req.body,'wwe2k26')
+        const {id}=req.params;
+        const {product_id,totalPrice,totalNumProduct}=req.body
+        console.log('fufu',product_id,totalPrice,totalNumProduct,'tyiti')
+  const {rows}=await pool.query(`INSERT INTO orders (user_id,product_id,totalPrice,totalNumProduct) VALUES ($1,$2,$3,$4) RETURNING *`,[id,product_id,totalPrice,totalNumProduct])
 
 
      res.status(201).json({

@@ -4,11 +4,12 @@ const orderController=require('./../Controller/orderController')
 
 router.route('/')
 .get(orderController.getAllOrder)
-.post(orderController.createOrder)
+// .post(orderController.createOrder)
 
 
 router.route('/:id')
-// .get(orderController.getOrderById)
+.post(orderController.createOrder)
+.get(orderController.getOrderById)
 .delete(orderController.deleteOrder)
 
 

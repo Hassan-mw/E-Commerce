@@ -18,19 +18,17 @@ const OrderSummary = () => {
     const [paymentData,setPaymentData]=useState([]) 
     const [information,setInformation]=useState([]) 
     const [addGift,setAddGift]=useState(false) 
-    console.log(addGift)
+    const arrayId=data.map(el=>el.id)
+    console.log(arrayId)
+
      //Fetching all cart
-      useEffect(()=>{
-    
-           const fetData=async()=>{
-           const cartData=await getAllCarts()  
-           
-           setData(cartData)
-       
-           }
-         
-           fetData()
-      },[deletingId,count])
+    useEffect(()=>{
+    const fetData=async()=>{
+    const cartData=await getAllCarts()  
+    setData(cartData)
+    }
+    fetData()
+    },[deletingId,count])
  
 
 
@@ -79,16 +77,7 @@ const OrderSummary = () => {
       }
     fetchingAddress()
      },[])
-  
-     //Sending Order Data
-    const handleOrder=async()=>{
-      try{
-
-        const sendorderData=await axios.post('http://localhost:5000/api/orders/1')
-      }catch(err){
-        console.log(err)
-      }
-     }
+ 
 
    //handleGift 
    function handleFift(e:any){
@@ -109,7 +98,19 @@ const OrderSummary = () => {
     const {cost}=shippingData
   
      const totalPrice=totalProductPriceSum+cost+giftpack
+  
 
+      
+     //Sending Order Data
+    const handleOrder=async()=>{
+      try{
+
+        const sendorderData=await axios.post('http://localhost:5000/api/orders/1'
+        ,{product_id:arrayId,totalPrice,totalNumProduct:data.length})
+      }catch(err){
+        console.log(err)
+      }
+     }
   return (
     <div className='w-full md:max-h-80 md:w-[80%] lg:w-[40%] flex  items-center justify-center md:rounded-md bg-[#E9E9E9] p-4 '>
     <div className='w-full max-w-[60%] md:max-w-full flex flex-col  space-y-3 '>
