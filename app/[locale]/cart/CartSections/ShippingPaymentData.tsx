@@ -12,9 +12,9 @@ const jost=Jost({
 
 
 const paymentArray=[
-  {id:"payPal",time:"14-21 days",image:"Paypal_method.png"},
-  {id:"RaceCourieser ",image:"mastercard_image_shipping.png"},
-  {id:"TranscoCargo",image:"bitcoin_method.png"},
+  {id:"payPal",name:"Paypal",time:"14-21 days",image:"Paypal_method.png"},
+  {id:"RaceCourieser ",name:"RaceCourieser",image:"mastercard_image_shipping.png"},
+  {id:"BitCoin",name:"BitCoin",image:"bitcoin_method.png"},
 ]
 const shippingArray=[
   {id:"AUSFF",time:"14-21 days",cost:0,insurance:false,image:"shipping_company_1.png",name:"shippingmethod"},
@@ -58,9 +58,13 @@ const ShippingPaymentData = () => {
   // Sending payment data
    const handlePaymentForm=async()=>{
       try{
+    const [filteredData]=paymentArray.filter((data)=>data.id===paymentMethod)
+    console.log(filteredData)
+    const {name,image}=filteredData
     const data=await axios.post('http://localhost:5000/api/payment/1',
       {
-     method:paymentMethod
+     method:name,
+     image
       
       }
      )}catch(err){
@@ -73,14 +77,15 @@ const ShippingPaymentData = () => {
    const handleShippingForm=async()=>{
      try{
     const [filteredData]=shippingArray.filter((data)=>data.id===shippingMethod)
-    const {id,insurance,time,cost}=filteredData
+    const {id,insurance,time,cost,image}=filteredData
     console.log(id,insurance,time)
     const data=await axios.post('http://localhost:5000/api/shipping/1',
       {
       name:id,
       cost,
       time,
-      insurance
+      insurance,
+      image
       }
      )}catch(err){
       console.log(err)
@@ -130,7 +135,10 @@ const ShippingPaymentData = () => {
   // handlePaymentFormChanges (UPDATE)
   const handlePaymentFormChanges=async()=>{
   try{
-    const x=await axios.put('http://localhost:5000/api/payment/1',{method:paymentData.method })   
+      const [filteredData]=paymentArray.filter((data)=>data.id===paymentData.method)
+    console.log(filteredData)
+    const {id,image}=filteredData
+    const x=await axios.put('http://localhost:5000/api/payment/1',{method:id,image })   
     }  
    catch(err){
    console.log(err)
@@ -143,20 +151,14 @@ const ShippingPaymentData = () => {
          try{
     const [filteredData]=shippingArray.filter((data)=>data.id===shippingMethod)
     console.log(filteredData)
-    const {id,insurance,time,cost}=filteredData
+    const {id,insurance,time,cost,image}=filteredData
     console.log(id,insurance,time)
-    const data=await axios.put('http://localhost:5000/api/shipping/1', {name:id,cost,time,insurance}
+    const data=await axios.put('http://localhost:5000/api/shipping/1', {name:id,cost,time,insurance,image}
      )}catch(err){
       console.log(err)
      }
   }
-  // try{
-  //   const x=await axios.put('http://localhost:5000/api/shipping/1',{method:shippingData.method })   
-  //   }  
-  //  catch(err){
-  //  console.log(err)
-  //  }
-  //  }
+
 
 
 
@@ -169,15 +171,15 @@ const ShippingPaymentData = () => {
     <div className='text-xs text-[#555555]'>Pleease choose a payment method</div>
     </div>
 
-   {/* 1 */}
-  { paymentArray.map((data,index)=>
-  <div key={data.id} className='w-full flex items-start justify-between p-4 border border-slate-200 rounded-md bg-[#F5F5F5]'>
+   
+   { paymentArray.map((data,index)=>
+   <div key={data.id} className='w-full flex items-start justify-between p-4 border border-slate-200 rounded-md bg-[#F5F5F5]'>
    {/* Left */}
    <div className='flex items-start justify-start gap-x-3 '>
-    <div className='pt-1'> <input checked={paymentData.method===data.id ?true :false}  value={paymentStatus==='success'? paymentData:paymentMethod} onChange={(e)=>handlePayment(e)} id='payPal' className='border-[#D9D9D9]   size-4' name="paymentmethod" type='radio'/></div>
+    <div className='pt-1'> <input checked={paymentData.method===data.id || paymentMethod===data.id  && true}  value={paymentStatus==='success'? paymentData:paymentMethod} onChange={(e)=>handlePayment(e)} id={data.id} className='border-[#D9D9D9]   size-4' name="paymentmethod" type='radio'/></div>
   <div className='flex flex-col items-start justify-start'>
-   <div className='text-md font-semibold pb-2  text-[#262626]'>Paypal</div>
-   <div className='text-xs text-[#555555]'>PayPal is a trusted online payment platform that allows individuals and businesses to securely send and receive money electronically.</div>
+   <div className='text-md font-semibold pb-2  text-[#262626]'>{data.name}</div>
+   <div className='text-xs text-[#555555]'>{data.name} is a trusted online payment platform that allows individuals and businesses to securely send and receive money electronically.</div>
   </div>
    </div>
    {/* Right */}
@@ -186,14 +188,13 @@ const ShippingPaymentData = () => {
    ) }
 
 
- {
- paymentStatus==='success' ?
-  <div className="w-full flex items-center justify-center "><div onClick={handlePaymentFormChanges} className="w-36  flex items-center justify-center text-sm text-white hover:cursor-pointer bg-blue-600 hover:bg-blue-700 duration-500 p-1 rounded-xl ">Submit Changes</div></div>
-  :
-  paymentMethod!=='' && <div className="w-full flex items-center justify-center "><div onClick={handlePaymentForm} className="w-24  flex items-center justify-center text-sm text-white hover:cursor-pointer bg-blue-600 hover:bg-blue-700 duration-500 p-1 rounded-xl ">Submit</div></div>
-
-  }
-
+    {
+    paymentStatus==='success' ?
+    <div className="w-full flex items-center justify-center "><div onClick={handlePaymentFormChanges} className="w-36  flex items-center justify-center text-sm text-white hover:cursor-pointer bg-blue-600 hover:bg-blue-700 duration-500 p-1 rounded-xl ">Submit Changes</div></div>
+    :
+    paymentMethod!=='' && <div className="w-full flex items-center justify-center "><div onClick={handlePaymentForm} className="w-24  flex items-center justify-center text-sm text-white hover:cursor-pointer bg-blue-600 hover:bg-blue-700 duration-500 p-1 rounded-xl ">Submit</div></div>
+    }
+  
     </div>
 
 
@@ -206,18 +207,18 @@ const ShippingPaymentData = () => {
     </div>
 
 
-   {/* 1 */}
- { 
-  shippingArray.map((data,index)=>
+
+   { 
+   shippingArray.map((data,index)=>
   <div key={data.id} className='w-full flex items-start border border-slate-200 justify-between p-4 rounded-md bg-[#F5F5F5]'>
    {/* Left */}
    <div className='flex items-start justify-start gap-x-3 '>
     <div className='pt-1'>
       {
       shippingStatus==='success'?
-      <input checked={shippingData.name===data.id && true } value={shippingStatus==='success'? shippingData:shippingMethod}   onChange={(e)=>handleShipping(e)} id={data.id} className='border-[#D9D9D9]   size-4' name="shippingmethod" type='radio'/>
+      <input checked={shippingData.name===data.id || shippingMethod===data.id  && true } value={shippingStatus==='success'? shippingData:shippingMethod}   onChange={(e)=>handleShipping(e)} id={data.id} className='border-[#D9D9D9]   size-4' name="shippingmethod" type='radio'/>
       :
-       <input checked={shippingData.name===data.id  && true} value={shippingData}   onChange={(e)=>handleShipping(e)} id={data.id} className='border-[#D9D9D9]   size-4' name="shippingmethod" type='radio'/>
+       <input checked={shippingData.name===data.id || shippingMethod===data.id  && true } value={shippingStatus==='success'? shippingData:shippingMethod}  onChange={(e)=>handleShipping(e)} id={data.id} className='border-[#D9D9D9]   size-4' name="shippingmethod" type='radio'/>
       }
       </div>
   <div className='flex flex-col items-start justify-start'>
@@ -231,19 +232,16 @@ const ShippingPaymentData = () => {
    <Image height={70} width={70} className="object-contain" src={`/${data.image}`} alt="paypal_methoad" />  
   </div>
   
-  )}
+   )}
     
 
-    
 
- {/* { shippingMethod!=='' && <div className="w-full flex items-center justify-center "><div onClick={handleShippingForm} className="w-24  flex items-center justify-center text-sm text-white hover:cursor-pointer bg-blue-600 hover:bg-blue-700 duration-500 p-1 rounded-xl ">Submit</div></div>} */}
-   
-  {
-  shippingStatus==='success' ?
-  <div className="w-full flex items-center justify-center "><div onClick={handleShippingFormChanges} className="w-36  flex items-center justify-center text-sm text-white hover:cursor-pointer bg-blue-600 hover:bg-blue-700 duration-500 p-1 rounded-xl ">Submit Changes</div></div>
-  :
-  shippingMethod!=='' && <div className="w-full flex items-center justify-center "><div onClick={handleShippingForm} className="w-24  flex items-center justify-center text-sm text-white hover:cursor-pointer bg-blue-600 hover:bg-blue-700 duration-500 p-1 rounded-xl ">Submit</div></div>
-  }
+   {
+   shippingStatus==='success' ?
+   <div className="w-full flex items-center justify-center "><div onClick={handleShippingFormChanges} className="w-36  flex items-center justify-center text-sm text-white hover:cursor-pointer bg-blue-600 hover:bg-blue-700 duration-500 p-1 rounded-xl ">Submit Changes</div></div>
+   :
+   shippingMethod!=='' && <div className="w-full flex items-center justify-center "><div onClick={handleShippingForm} className="w-24  flex items-center justify-center text-sm text-white hover:cursor-pointer bg-blue-600 hover:bg-blue-700 duration-500 p-1 rounded-xl ">Submit</div></div>
+   }
 
   
 

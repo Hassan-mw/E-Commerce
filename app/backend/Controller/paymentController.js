@@ -43,9 +43,10 @@ exports.getPaymentDataById=async(req,res,next)=>{
 
 exports.createPaymentData=async(req,res,next)=>{
     try{
-    const {method}=req.body
+    const {method,image}=req.body
     const {id}=req.params
-     const {rows}=await pool.query(`INSERT INTO payment (user_id,method) VALUES ($1,$2) RETURNING *`,[id,method])
+    console.log(method,image,111111111112222222222222222333333333)
+     const {rows}=await pool.query(`INSERT INTO payment (user_id,method,image) VALUES ($1,$2,$3) RETURNING *`,[id,method,image])
    
    
         res.status(201).json({
@@ -63,9 +64,10 @@ exports.createPaymentData=async(req,res,next)=>{
 
 exports.updatepaymentData=async(req,res,next)=>{
     try{
-   const {method}=req.body
+   const {method,image}=req.body
    const {id}=req.params
-        const {rows}=await pool.query('UPDATE payment SET method=$1 WHERE user_id=$2 RETURNING *',[method,id])
+   console.log(method,image)
+        const {rows}=await pool.query('UPDATE payment SET method=$1,image=$2 WHERE user_id=$3 RETURNING *',[method,image,id])
         console.log(req.body,'It reached here')
      res.status(401).json({
         staus:'success',

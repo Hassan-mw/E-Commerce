@@ -59,7 +59,7 @@ const CustomerInfo = () => {
      }
   }
 
-  //taking data
+  //fetching data
   useEffect(()=>{
     const fetchingAddress=async()=>{
     

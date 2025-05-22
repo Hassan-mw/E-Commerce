@@ -5,7 +5,7 @@ import { MdPerson } from "react-icons/md";
 import Link from 'next/link';
 import { useContext } from "react";
 import { DataContext } from "../ContextApi/ContextApi";
-
+import { TfiPackage } from "react-icons/tfi";
 const BottomRight = () => {
      const {cartLength}=useContext(DataContext)
   
@@ -14,6 +14,7 @@ const BottomRight = () => {
     <div className='flex items-center justify-center gap-x-2 hover:cursor-pointer'><MdPerson /><span>Sign in</span></div>
     <div className='flex items-center justify-center gap-x-2 hover:cursor-pointer'><GoHeart /> <span>Favourites</span></div>
     <Link href='/cart' className='flex items-center justify-center gap-x-2 hover:cursor-pointer'><FaCartArrowDown  /><span>Card</span>{cartLength>0 && <div className='size-5 text-xs rounded-full flex items-center justify-center bg-green-400 text-white'>{cartLength}</div>}</Link>
+    <Link href='/order' className='flex items-center justify-center gap-x-2 hover:cursor-pointer'><TfiPackage />Order </Link>
 </div>
   )
 }
