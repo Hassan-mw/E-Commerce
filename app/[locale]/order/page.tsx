@@ -2,6 +2,8 @@ import { Jost } from "next/font/google"
 import { MdKeyboardArrowRight } from "react-icons/md"
 import { getAllFromCart } from "../API/GET/FetchAllCartsData"
 import OrderData from "./OrderData"
+import { getAllFromPaymentById } from "../API/GET/Payment"
+import { getAllFromShippingById } from "../API/GET/Shipping"
 
 
 const jost=Jost({
@@ -14,7 +16,9 @@ const page = async() => {
 
   
   const cartData=await getAllFromCart();
-  console.log(cartData,'ALAJFajhaheuhsegsigphsrghhsgshdjdej')
+  const paymentData=await getAllFromPaymentById();
+  const shippingData=await getAllFromShippingById();
+
   return (
   <div className='w-full flex items-center justify-center '>
      <div className='max-w-screen-lg w-full flex flex-col items-center justify-center  space-y-1'>
@@ -27,7 +31,7 @@ const page = async() => {
       {/* Data */}
     
 
-      <OrderData/>
+      <OrderData cartData={cartData} paymentData={paymentData} shippingData={shippingData} />
     </div>
     </div>
   )
