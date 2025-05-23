@@ -5,6 +5,9 @@ import OrderData from "./OrderData"
 import { getAllFromPaymentById } from "../API/GET/Payment"
 import { getAllFromShippingById } from "../API/GET/Shipping"
 import { getAllCustomerInfo } from "../API/GET/CustomerInformation"
+import { getAllDeactiveCarts } from "../API/GET/Cart"
+import { getAllOrdes } from "../API/GET/Order"
+// import { getAllFromOrder } from "../API/GET/Order"
 
 
 const jost=Jost({
@@ -16,11 +19,14 @@ const page = async() => {
 
 
   
+  // const activeOrdersData=await getActiveOrdersData();
+  const activeOrdersData=await getAllDeactiveCarts();
+  const [orderData]=await getAllOrdes();
   const cartData=await getAllFromCart();
   const paymentData=await getAllFromPaymentById();
   const shippingData=await getAllFromShippingById();
   const customerData=await getAllCustomerInfo();
-
+ console.log(orderData.totalprice)
   return (
   <div className='w-full flex items-center justify-center '>
      <div className='max-w-screen-lg md:max-w-3xl lg:max-w-screen-xl w-full flex flex-col items-center justify-center  space-y-1 pb-14'>
@@ -33,7 +39,7 @@ const page = async() => {
       {/* Data */}
     
 
-      <OrderData cartData={cartData} customerData={customerData} paymentData={paymentData} shippingData={shippingData} />
+      <OrderData activeOrdersData={activeOrdersData} orderData={orderData} cartData={cartData} customerData={customerData} paymentData={paymentData} shippingData={shippingData} />
     </div>
     </div>
   )

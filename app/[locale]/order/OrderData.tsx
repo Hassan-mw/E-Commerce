@@ -9,8 +9,11 @@ const jost=Jost({
 })
 
 
-const OrderData = ({cartData,shippingData,paymentData,customerData}) => {
-  console.log(paymentData,shippingData)
+const OrderData = ({activeOrdersData,orderData,cartData,shippingData,paymentData,customerData}) => {
+  
+
+
+  
   return (
     <div className='w-full flex flex-col space-y-4 p-5'>
       
@@ -25,7 +28,7 @@ const OrderData = ({cartData,shippingData,paymentData,customerData}) => {
     <span><strong>ORDER ID:</strong> #JFJ434GGJ4</span>
     <span><strong>DELIVERY TIME:</strong> {shippingData.time}</span>
   </div>
-   {cartData.map((data,index)=>
+   {activeOrdersData.map((data,index)=>
   
   <div  key={index} className="flex items-center py-4 border-b gap-x-6">
         <Image height={35} width={35} src={`/${data.main_image}`} alt='product_iamge'/>
@@ -38,6 +41,7 @@ const OrderData = ({cartData,shippingData,paymentData,customerData}) => {
   </div>
      )}
   
+  <div className='w-full flex items-start justify-between'>
   {/* Delivery Info */}
   <div className="mt-4 text-sm text-gray-700">
     <p className="font-semibold">DELIVERY TO:</p>
@@ -45,7 +49,11 @@ const OrderData = ({cartData,shippingData,paymentData,customerData}) => {
     <p>{customerData.address}</p>
     <p>Mobile: {customerData.phone}</p>
   </div>
-
+    <div >
+    <p className="font-semibold text-gray-700">TOTAL PRICE:</p>
+    <div className="text-right font-bold">$ {orderData.totalprice}</div>
+    </div>
+    </div>
   {/* Payment Info */}
   <div className="mt-4 text-sm text-gray-700">
     <p className="font-semibold">PAYMENT METHOD: <span></span></p>

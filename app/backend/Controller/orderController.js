@@ -4,11 +4,21 @@ const pool = require("../Pool/pool")
 
 exports.getAllOrder=async(req,res,next)=>{
     try{
-  const {rows}=await pool.query(`SELECT * FROM orders ORDER BY id`)
-  
+
+  const {rows}=await pool.query(`SELECT * FROM orders`)
+//   const {rows}=await pool.query(`SELECT * FROM orders JOIN carts ON carts.id = ANY (orders.product_id)  `)
+
+
+//SELECT * FROM products  JOIN carts ON products.id=carts.product_id
+
+//   const {rows}=await pool.query(`SELECT * 
+// FROM carts 
+// WHERE carts.id = ANY (SELECT unnest(product_id) FROM orders)`)
+
+   console.log(rows[0])
   res.status(200).json({
     status:'success',
-    data:rows[0]
+    data:rows
  }) 
     }catch(err){
          res.status(500).json({

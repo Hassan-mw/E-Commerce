@@ -6,6 +6,7 @@ const productRoutes=require('./Router/productRoutes')
 const usersRoutes=require('./Router/usersRoutes')
 const reviewRoutes=require('./Router/reviewRoutes')
 const cartRoutes=require('./Router/cartRoutes')
+const booleanCartRoutes=require('./Router/booleanCartRoutes')
 const favouriteRoutes=require('./Router/favouriteRoutes')
 const orderRoutes=require('./Router/orderRoutes')
 const paymentRoutes=require('./Router/paymentRoutes')
@@ -33,6 +34,7 @@ app.use('/api/users',usersRoutes);
 app.use('/api/reviews',reviewRoutes);
 app.use('/api/favourites',favouriteRoutes);
 app.use('/api/carts',cartRoutes);
+app.use('/api/booleanCarts',booleanCartRoutes);
 app.use('/api/orders',orderRoutes);
 app.use('/api/payment',paymentRoutes);
 app.use('/api/shipping',shippingRouter);

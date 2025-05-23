@@ -3,7 +3,7 @@ const pool=require('../Pool/pool');
 
 exports.getAllCart=async(req,res,next)=>{
     try{
-   const {rows}=await pool.query('SELECT * FROM products  JOIN carts ON products.id=carts.product_id;')
+   const {rows}=await pool.query('SELECT * FROM products  JOIN carts ON products.id=carts.product_id WHERE carts.show=true')
 //    const {rows}=await pool.query('SELECT * FROM carts')
 
    res.status(200).json({
