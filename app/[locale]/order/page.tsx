@@ -7,6 +7,7 @@ import { getAllFromShippingById } from "../API/GET/Shipping"
 import { getAllCustomerInfo } from "../API/GET/CustomerInformation"
 import { getAllDeactiveCarts } from "../API/GET/Cart"
 import { getAllOrdes } from "../API/GET/Order"
+import OrderDates from "./OrderDates"
 // import { getAllFromOrder } from "../API/GET/Order"
 
 
@@ -29,7 +30,7 @@ const page = async() => {
  console.log(orderData.totalprice)
   return (
   <div className='w-full flex items-center justify-center '>
-     <div className='max-w-screen-lg md:max-w-3xl lg:max-w-screen-xl w-full flex flex-col items-center justify-center  space-y-1 pb-14'>
+     <div className='max-w-[900px]  w-full flex flex-col items-center justify-center  space-y-1 pb-14'>
        {/* Current Page showing */}
       <div className='w-full flex  px-5 pt-3 items-start justify-start space-x-3 '>
        <span style={{fontWeight:300}} className={` ${jost.className} flex items-center text-sm justify-center text-[#555555]`}>Homepage <MdKeyboardArrowRight size={20} /></span>
@@ -38,8 +39,10 @@ const page = async() => {
    
       {/* Data */}
     
-
+      <div className="w-full flex items-start justify-center  ">
+      <OrderDates/>  
       <OrderData activeOrdersData={activeOrdersData} orderData={orderData} cartData={cartData} customerData={customerData} paymentData={paymentData} shippingData={shippingData} />
+       </div>
     </div>
     </div>
   )
