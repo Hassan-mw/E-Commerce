@@ -21,53 +21,79 @@ const OrderData = ({activeOrdersData,orderData,cartData,shippingData,paymentData
     {/* main - data */}
     <div className='w-full grid gap-y-8'>
      {activeOrdersData.map((data,index)=>
-    <div  key={index} className=" hover:shadow-xl hover:shadow-black/20 duration-500 border border-blue-200 rounded-lg p-4 mb-6">
-   {/* Header */}
-   <div className="grid grid-cols-3 text-sm  w-full text-gray-600 border-b border-gray-200 pb-2">
+    <div  key={index} className=" hover:shadow-md hover:shadow-black/20 border border-slate-200 duration-500 rounded-lg p-4 mb-6">
+  
+    {/* Header */}
+    <div className="grid grid-cols-3 text-sm  w-full text-gray-600 border-b border-gray-200 pb-2">
     <span className='flex flex-col gap-1 lg:flex-row'><strong>ORDER PLACE:</strong> 19 May, 2025</span>
     <span  className='flex flex-col items-center justify-center  lg:flex-row  lg:gap-x-3'><strong>ORDER ID:</strong> #JFJ434GGJ4</span>
     <span  className='flex flex-col items-end justify-end  lg:flex-row  lg:gap-x-3'><strong>DELIVERY TIME:</strong> {shippingData.time}</span>
-   </div>
+    </div>
    
-  
-  <div  className="flex items-center py-4 border-b  border-gray-200 gap-x-6">
-    <Image height={35} width={35} src={`/${data.main_image}`} alt='product_iamge'/>
+     {/* Content */}
+    <div  className="flex items-center py-4 border-b  border-gray-200 gap-x-6">
 
-    <div className="flex-1">
+    {/* Image */}
+     <Image height={50} width={50} src={`/${data.main_image}`} alt='product_iamge'/>
+      
+
+    {/* Name + price per product */}
+     <div className="flex-1">
       <p className="font-semibold">{data.name}</p>
       <p className="text-sm text-gray-600">${data.price} × {data.quantity}</p>
-    </div>
-    <div className="text-right font-bold">${data.productprice}</div>
-  </div>
+     </div>
+
+
+    {/* Total price */}
+     <div className="text-right font-bold">${data.productprice}</div>
+
+     </div>
   
-  <div className='w-full flex items-start justify-between pt-4'>
-  {/* Delivery Info */}
-  <div className="mt-4 text-sm text-gray-700">
-    <p className="font-semibold">DELIVERY TO:</p>
+    <div className='w-full grid grid-cols-3 mt-4'>
+
+
+    {/* Delivery Info */}
+     <div className="flex flex-col items-center  ">
+  <div className="flex flex-col text-gray-500 items-start  justify-start text-sm">
+    <p className="font-semibold  text-gray-700 pb-1">DELIVERY TO:</p>
     <p>{customerData.firstname} {customerData.lastname}</p>
     <p>{customerData.address}</p>
     <p>Mobile: {customerData.phone}</p>
   </div>
-  {/* TOtal */}
-    <div >
-    <p className="font-semibold text-gray-700">TOTAL PRICE:</p>
-    <div className="text-right text-black/80 font-bold">$ {orderData.totalprice}</div>
-    </div>
-    </div>
-  {/* Payment Info */}
-  <div className="mt-4 text-sm text-gray-700">
-    <p className="font-semibold">PAYMENT METHOD: <span></span></p>
+     </div>
+
+
+
+    {/* Payment Info */}
+     <div className="text-gray-500 flex flex-col items-center  ">
+  <div className="flex flex-col items-start  justify-start text-sm">
+    <p className="font-semibold text-gray-700 pb-1">PAYMENT METHOD: <span></span></p>
     <p>Method: <span className="text-green-600 font-semibold">{paymentData.method}</span></p>
     <p>Status: <span className="text-green-600 font-semibold">Paid</span></p>
     <p>Visa ending in 1234</p>
   </div>
+     </div>
+  
 
-  {/* Buttons */}
-  <div className="mt-4 flex justify-end gap-2">
-    <button className="text-black border border-black px-4 py-1 rounded hover:bg-blue-50">View Detail</button>
-    <button className="bg-blue-600 text-white px-4 py-1 rounded hover:bg-blue-700">Track Order</button>
-  </div>
-</div>
+    {/* Total */}
+    <div className='flex flex-col items-center text-gray-500 justify-start' >
+    <p className="font-semibold text-gray-700 pb-1 pl-3">TOTAL PRICE:</p>
+    <div className="text-right  font-bold">$ {orderData.totalprice}</div>
+    </div>
+
+
+     </div>
+
+
+
+    {/* Buttons */}
+     <div className="mt-4 flex justify-center gap-x-6">
+     <button className="text-black border hover:bg-blue-600 hover:cursor-pointer duration-500 border-slate-300 px-4 py-1 rounded hover:text-white">View Detail</button>
+     <button className="bg-blue-600 hover:cursor-pointer duration-500 text-white px-4 py-1 rounded hover:bg-blue-700">Track Order</button>
+     </div>
+
+
+    </div>
      )}
 
 

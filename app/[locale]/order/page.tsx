@@ -38,11 +38,9 @@ const page = async() => {
       </div>
    
       {/* Data */}
-    
-      <div className="w-full flex items-start justify-center  ">
-      <OrderDates/>  
+
       <OrderData activeOrdersData={activeOrdersData} orderData={orderData} cartData={cartData} customerData={customerData} paymentData={paymentData} shippingData={shippingData} />
-       </div>
+ 
     </div>
     </div>
   )
