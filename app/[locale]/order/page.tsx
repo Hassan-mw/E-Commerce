@@ -22,12 +22,12 @@ const page = async() => {
   
   // const activeOrdersData=await getActiveOrdersData();
   const activeOrdersData=await getAllDeactiveCarts();
-  const [orderData]=await getAllOrdes();
+  const orderData=await getAllOrdes();
   const cartData=await getAllFromCart();
   const paymentData=await getAllFromPaymentById();
   const shippingData=await getAllFromShippingById();
   const customerData=await getAllCustomerInfo();
- console.log(orderData.totalprice)
+ console.log(orderData)
   return (
   <div className='w-full flex items-center justify-center '>
      <div className='max-w-[900px]  w-full flex flex-col items-center justify-center  space-y-1 pb-14'>

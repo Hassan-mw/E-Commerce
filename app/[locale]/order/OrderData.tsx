@@ -11,7 +11,7 @@ const jost=Jost({
 
 const OrderData = ({activeOrdersData,orderData,cartData,shippingData,paymentData,customerData}) => {
   
-
+console.log(orderData)
 
   
   return (

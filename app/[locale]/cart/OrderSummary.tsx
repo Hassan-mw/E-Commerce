@@ -104,7 +104,7 @@ const OrderSummary = () => {
      //Sending Order Data
     const handleOrder=async()=>{
       try{
-
+        // arrayId.map((data,index)=>) 
         const sendorderData=await axios.post('http://localhost:5000/api/orders/1'
         ,{product_id:arrayId,totalPrice,totalNumProduct:data.length})
       }catch(err){
