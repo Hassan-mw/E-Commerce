@@ -78,7 +78,7 @@ console.log(orderData)
     {/* Total */}
     <div className='flex flex-col items-center text-gray-500 justify-start' >
     <p className="font-semibold text-gray-700 pb-1 pl-3">TOTAL PRICE:</p>
-    <div className="text-right  font-bold">$ {orderData.totalprice}</div>
+    <div className="text-right  font-bold">$ {data.productprice+shippingData.cost}</div>
     </div>
 
 

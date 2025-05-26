@@ -18,9 +18,9 @@ const OrderSummary = () => {
     const [paymentData,setPaymentData]=useState([]) 
     const [information,setInformation]=useState([]) 
     const [addGift,setAddGift]=useState(false) 
-    const arrayId=data.map(el=>el.id)
-    console.log(arrayId)
-
+    const cartArrayId=data.map(el=>el.id)
+    const productArrayId=data.map(el=>el.product_id)
+   console.log(cartArrayId,productArrayId)
      //Fetching all cart
     useEffect(()=>{
     const fetData=async()=>{
@@ -96,7 +96,9 @@ const OrderSummary = () => {
     }
 
     const {cost}=shippingData
+    const [id,productid]=data
   
+   
      const totalPrice=totalProductPriceSum+cost+giftpack
   
 
@@ -104,9 +106,8 @@ const OrderSummary = () => {
      //Sending Order Data
     const handleOrder=async()=>{
       try{
-        // arrayId.map((data,index)=>) 
         const sendorderData=await axios.post('http://localhost:5000/api/orders/1'
-        ,{product_id:arrayId,totalPrice,totalNumProduct:data.length})
+        ,{shipping_id:shippingData.id,product_id:productArrayId,cart_id:cartArrayId,total:totalPrice})
       }catch(err){
         console.log(err)
       }

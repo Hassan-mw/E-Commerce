@@ -16,10 +16,12 @@ const paymentArray=[
   {id:"RaceCourieser ",name:"RaceCourieser",image:"mastercard_image_shipping.png"},
   {id:"BitCoin",name:"BitCoin",image:"bitcoin_method.png"},
 ]
+
+
 const shippingArray=[
   {id:"AUSFF",time:"14-21 days",cost:0,insurance:false,image:"shipping_company_1.png",name:"shippingmethod"},
   {id:"RaceCourieser ",time:"12-18 days",cost:0,insurance:true,image:"shipping_company_2.png",name:"shippingmethod"},
-  {id:"TranscoCargo",time:"8-14 days",cost:50,insurance:true,image:"shipping_company_3.png",name:"shippingmethod"},
+  {id:"TranscoCargo",time:"8-14 days",cost:15,insurance:true,image:"shipping_company_3.png",name:"shippingmethod"},
 ]
 
 const ShippingPaymentData = () => {
@@ -29,8 +31,7 @@ const ShippingPaymentData = () => {
  const [shippingMethod,setShippingMethod]=useState('')
  const [shippingStatus,setShippingStatus]=useState('')
  const [shippingData,setShippingData]=useState({name:''})
- console.log(shippingMethod,paymentMethod)
- console.log(shippingStatus,paymentStatus)
+
 
 
  ////////////////////////////////////////////////////////////////

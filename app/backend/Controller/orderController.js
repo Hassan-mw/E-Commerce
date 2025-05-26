@@ -32,16 +32,17 @@ exports.createOrder=async(req,res,next)=>{
     try{
         console.log(req.body,'wwe2k26')
         const {id}=req.params;
-        const {product_id,totalPrice,totalNumProduct}=req.body
-        console.log('fufu',product_id.length,totalPrice,totalNumProduct,'tyiti')
-  const {rows}=await pool.query(`INSERT INTO orders (user_id,product_id,totalPrice,totalNumProduct) VALUES ($1,$2,$3,$4) RETURNING *`,[id,product_id,totalPrice,totalNumProduct])
+        const {product_id,total, shipping_id,cart_id}=req.body
 
+  const rows=await pool.query(`INSERT INTO orders (user_id,product_id,total,cart_id, shipping_id) VALUES ($1,$2,$3,$4,$5) RETURNING *`,[id,product_id,total,cart_id, shipping_id])
+  console.log(rows)
 
      res.status(201).json({
         status:'success',
         data:rows[0]
      })
     }catch(err){
+        console.log(err)
          res.status(500).json({
         status:'fail',
         message:err.message
