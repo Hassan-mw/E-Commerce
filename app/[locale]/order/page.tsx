@@ -7,8 +7,7 @@ import { getAllFromShippingById } from "../API/GET/Shipping"
 import { getAllCustomerInfo } from "../API/GET/CustomerInformation"
 import { getAllDeactiveCarts } from "../API/GET/Cart"
 import { getAllOrdes } from "../API/GET/Order"
-import OrderDates from "./OrderDates"
-// import { getAllFromOrder } from "../API/GET/Order"
+
 
 
 const jost=Jost({
@@ -27,7 +26,7 @@ const page = async() => {
   const paymentData=await getAllFromPaymentById();
   const shippingData=await getAllFromShippingById();
   const customerData=await getAllCustomerInfo();
- console.log(orderData)
+
   return (
   <div className='w-full flex items-center justify-center '>
      <div className='max-w-[900px]  w-full flex flex-col items-center justify-center  space-y-1 pb-14'>

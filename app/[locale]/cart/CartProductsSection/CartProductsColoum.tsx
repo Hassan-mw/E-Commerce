@@ -9,6 +9,7 @@ import axios from 'axios'
 import { getAllCarts } from '../../API/Post/CreatePorduct'
 import { cartDataType, TopNumberProduct, TopNumberProductCart, TopNumberProductDataType } from '../../Types/dataType'
 import HandleCountCart from '../HandleCountCart'
+import EmptyCartData from '../EmptyCartData'
 
 
 const jost=Jost({
@@ -59,14 +60,15 @@ const CartProductsColoum = () => {
     setDeletingId(0)
     },[deletingId])
         
-      
+       
  
  
   return (
     <div className='w-full flex flex-col space-y-5 px-5'>
       <div className='text-md font-semibold'>Card - 3</div>
+      {cartData.length===0 && <EmptyCartData/>}
 
-    {loading ? <div>Loading...</div> :  cartData?.map((data,index)=>
+       {loading ? <div>Loading...</div> :  cartData?.map((data,index)=>
         <div key={index} className='w-full flex flex-col lg:flex-row lg:space-x-7 lg:space-y-0 space-y-3 lg:items-start lg:justify-start'>
         {/* Upper */}
          <div className='w-full flex items-start justify-between  '>

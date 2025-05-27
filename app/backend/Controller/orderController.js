@@ -5,7 +5,10 @@ const pool = require("../Pool/pool")
 exports.getAllOrder=async(req,res,next)=>{
     try{
 
-  const {rows}=await pool.query(`SELECT * FROM orders`)
+  const {rows}=await pool.query(`
+SELECT * FROM orders
+JOIN carts ON carts.id=orders.cart_id
+JOIN products On products.id=orders.product_id`)
 //   const {rows}=await pool.query(`SELECT * FROM orders JOIN carts ON carts.id = ANY (orders.product_id)  `)
 
 
@@ -30,11 +33,18 @@ exports.getAllOrder=async(req,res,next)=>{
 
 exports.createOrder=async(req,res,next)=>{
     try{
-        console.log(req.body,'wwe2k26')
-        const {id}=req.params;
-        const {product_id,total, shipping_id,cart_id}=req.body
+    console.log(req.body,'wwe2k26')
+    const {id}=req.params;
+    const {product_id,total, shipping_id,cart_id,created_at}=req.body
+    console.log(cart_id[0],'+++++++++++++++++++++++++++')
+    console.log(product_id[1],'11111111111222222222222222333333',product_id.length)
+    let rows
+    for(let z=0;z<=product_id.length-1;z++){
 
-  const rows=await pool.query(`INSERT INTO orders (user_id,product_id,total,cart_id, shipping_id) VALUES ($1,$2,$3,$4,$5) RETURNING *`,[id,product_id,total,cart_id, shipping_id])
+     rows=await pool.query(`INSERT INTO orders (user_id,product_id,total,cart_id, shipping_id,created_at) VALUES ($1,$2,$3,$4,$5,$6) RETURNING *`,[id,product_id[z],total,cart_id[z], shipping_id,created_at])
+     rows=await pool.query(`UPDATE  carts  SET show=false WHERE id=$1`,[cart_id[z]])
+    }
+
   console.log(rows)
 
      res.status(201).json({
@@ -87,3 +97,10 @@ exports.deleteOrder=async(req,res,next)=>{
     })
     }
 }
+
+
+// 
+
+// SELECT * FROM orders
+// JOIN carts ON carts.id=orders.cart_id
+// JOIN products On products.id=orders.product_id

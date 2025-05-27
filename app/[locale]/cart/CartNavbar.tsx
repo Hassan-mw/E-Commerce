@@ -34,7 +34,7 @@ const CartNavbar = () => {
 
 
           return (
-            <div className="w-full  flex flex-col space-y-10 items-center justify-center gap-x-6 py-6 ">
+            <div className="w-full  flex flex-col space-y-10 items-center justify-center gap-x-6 py-2 ">
             <div className="w-full flex  items-center justify-center gap-x-6 border-b pb-3 border-[#D9D9D9]">
                 {
                     data.map((data,index)=>

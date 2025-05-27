@@ -20,7 +20,8 @@ const OrderSummary = () => {
     const [addGift,setAddGift]=useState(false) 
     const cartArrayId=data.map(el=>el.id)
     const productArrayId=data.map(el=>el.product_id)
-   console.log(cartArrayId,productArrayId)
+    const date=new Date().toLocaleDateString();
+   console.log(date,122222222222224124444441)
      //Fetching all cart
     useEffect(()=>{
     const fetData=async()=>{
@@ -86,20 +87,19 @@ const OrderSummary = () => {
     checked ? setGiftpack(10) : setGiftpack(0)
    }
 
-
+    //Sum all produts prices 
     const arrayData=data.map((data:{productprice:number})=>data.productprice)
     let totalProductPriceSum=0;
     for(let i=0;i<arrayData.length;i++){
-
     totalProductPriceSum+=arrayData[i]
-
     }
-
+   
+    // Taking value out from array
     const {cost}=shippingData
     const [id,productid]=data
   
-   
-     const totalPrice=totalProductPriceSum+cost+giftpack
+   //Calcuating the totals
+    const totalPrice=totalProductPriceSum+cost+giftpack
   
 
       
@@ -107,11 +107,14 @@ const OrderSummary = () => {
     const handleOrder=async()=>{
       try{
         const sendorderData=await axios.post('http://localhost:5000/api/orders/1'
-        ,{shipping_id:shippingData.id,product_id:productArrayId,cart_id:cartArrayId,total:totalPrice})
+        ,{shipping_id:shippingData.id,product_id:productArrayId,cart_id:cartArrayId,total:totalPrice,created_at:date})
       }catch(err){
         console.log(err)
       }
      }
+
+
+
   return (
     <div className='w-full md:max-h-80 md:w-[80%] lg:w-[40%] flex  items-center justify-center md:rounded-md bg-[#E9E9E9] p-4 '>
     <div className='w-full max-w-[60%] md:max-w-full flex flex-col  space-y-3 '>

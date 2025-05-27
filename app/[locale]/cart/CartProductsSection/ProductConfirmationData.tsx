@@ -74,7 +74,7 @@ const ProductConfirmationData = () => {
         <div className='w-full flex items-center justify-center px-3'>
         <div className='w-full flex flex-col space-y-5 bg-[#F5F5F5] rounded-md py-3 px-6'>
           <div className='text-xs text-[#4B5157]'>Shopping items</div>
-           
+           no_product_confirm
             {/*Shipping Item  */}
              {cartData.map((data,index)=>
             <div key={index} className='w-full flex flex-col border-b pb-3 border-[#D9D9D9] '>

@@ -20,7 +20,7 @@ console.log(orderData)
     <div className='w-full flex items-center justify-start text-2xl'>Your Orders</div>
     {/* main - data */}
     <div className='w-full grid gap-y-8'>
-     {activeOrdersData.map((data,index)=>
+     {orderData.map((data,index)=>
     <div  key={index} className=" hover:shadow-md hover:shadow-black/20 border border-slate-200 duration-500 rounded-lg p-4 mb-6">
   
     {/* Header */}
