@@ -87,7 +87,7 @@ const CustomerInfo = () => {
      {/* Email */}
      <div className='w-full flex flex-col items-start justify-start gap-y-1'>
      <div className='text-xs text-[#555555]'>E-mail</div>
-     <input required name="email" value={status==='success'? data.email :information.email} onChange={(e)=>handleChange(e)}  type='text'  className='py-1 px-4 text-sm border-[#555555] border w-full rounded-sm  text-[#262626]' />
+     <input required name="email" value={status==='success'? data.email :information.email} onChange={(e)=>handleChange(e)}  type='text'  className=' px-4 py-2 text-xs text-slate-500 border-slate-300 border w-full rounded-sm focus:outline-none ' />
      </div>
 
      {/* First Name - Last Name */}
@@ -96,13 +96,13 @@ const CustomerInfo = () => {
        {/* First-Name */}
      <div className='w-full flex flex-col items-start justify-start gap-y-1'>
      <div className='text-xs text-[#555555]'>First-Name</div>
-     <input name="firstname" value={status==='success'?data.firstname :information.firstname} onChange={(e)=>handleChange(e)} type='text'   className='py-1 px-4 text-sm border-[#555555] border w-full rounded-sm  text-[#262626]'  />
+     <input name="firstname" value={status==='success'?data.firstname :information.firstname} onChange={(e)=>handleChange(e)} type='text'   className='px-4 py-2 text-xs border-slate-300 border w-full rounded-sm focus:outline-none  text-[#262626]'  />
      </div>
 
       {/* Last-Name */}
      <div className='w-full flex flex-col items-start justify-start gap-y-1'>
      <div className='text-xs text-[#555555]'>Last-Name</div>
-     <input name="lastname" value={status==='success'?data.lastname :information.lastname} onChange={(e)=>handleChange(e)} type='text'   className='py-1 px-4 text-sm border-[#555555] border w-full rounded-sm  text-[#262626]'  />
+     <input name="lastname" value={status==='success'?data.lastname :information.lastname} onChange={(e)=>handleChange(e)} type='text'   className='px-4 py-2 text-xs border-slate-300 border w-full rounded-sm focus:outline-none  text-[#262626]'  />
      </div>
 
      </div>
@@ -115,7 +115,7 @@ const CustomerInfo = () => {
      {/* Country */}
      <div className='w-full flex flex-col items-start justify-start gap-y-1'>
      <div className='text-xs text-[#555555]'>Country</div>
-     <select name="country" value={status==='success'?data.country :information.country} onChange={(e)=>handleChange(e)}  className='py-1 px-4 text-sm border-[#555555] border w-full rounded-sm  text-[#262626]' >
+     <select name="country" value={status==='success'?data.country :information.country} onChange={(e)=>handleChange(e)}  className='px-4 py-2 text-xs border-slate-300 border w-full focus:outline-nonerounded-sm  text-[#262626]' >
         <option className='flex items-center justify-center gap-x-1 placeholder:text-xs'>Australia</option>
         <option className='flex items-center justify-center gap-x-1 placeholder:text-xs'>Pakistan</option>
         <option className='flex items-center justify-center gap-x-1 placeholder:text-xs'>India</option>
@@ -125,7 +125,7 @@ const CustomerInfo = () => {
      {/* State/Region */}
      <div className='w-full flex flex-col items-start justify-start gap-y-1'>
      <div className='text-xs text-[#555555]'>State/Region</div>
-     <select name="state" value={status==='success'?data.state :information.state} onChange={(e)=>handleChange(e)}  className='py-1 px-4 text-sm border-[#555555] border w-full rounded-sm  text-[#262626]' >
+     <select name="state" value={status==='success'?data.state :information.state} onChange={(e)=>handleChange(e)}  className='px-4 py-2 text-xs border-slate-300 border w-full rounded-sm focus:outline-none text-[#262626]' >
         <option className='flex items-center justify-center gap-x-1 placeholder:text-xs'>Australia</option>
         <option className='flex items-center justify-center gap-x-1 placeholder:text-xs'>Pakistan</option>
         <option className='flex items-center justify-center gap-x-1 placeholder:text-xs'>India</option>
@@ -136,13 +136,13 @@ const CustomerInfo = () => {
      {/* Address */}
      <div className='w-full flex flex-col items-start justify-start gap-y-1'>
      <div className='text-xs text-[#555555]'>Address</div>
-     <input name="address" value={status==='success'?data.address :information.address} onChange={(e)=>handleChange(e)} type='text'   className='py-1 px-4 text-sm border-[#555555] border w-full rounded-sm  text-[#262626]'  />
+     <input name="address" value={status==='success'?data.address :information.address} onChange={(e)=>handleChange(e)} type='text'   className='px-4 py-2 text-xs border-slate-300 border w-full rounded-sm focus:outline-none text-[#262626]'  />
      </div>
 
      {/* Phone Number */}
      <div className='w-full flex flex-col items-start justify-start gap-y-1'>
      <div className='text-xs text-[#555555]'> Phone Number </div>
-     <input name="phone" value={status==='success'?data.phone :information.phone} onChange={(e)=>handleChange(e)} type='text'   className='py-1 px-4 text-sm border-[#555555] border w-full rounded-sm  text-[#262626]'  />
+     <input name="phone" value={status==='success'?data.phone :information.phone} onChange={(e)=>handleChange(e)} type='text'   className='px-4 py-2 text-xs border-slate-300 border w-full rounded-sm focus:outline-none text-[#262626]'  />
      </div>
 
 
@@ -150,11 +150,11 @@ const CustomerInfo = () => {
      
      {
      status==='success'?
-     <div className="w-full flex items-center justify-center "><div onClick={handleFormChanges} className="w-36  flex items-center justify-center text-sm text-white hover:cursor-pointer bg-blue-600 hover:bg-blue-700 duration-500 p-1 rounded-sm ">Submit Changes</div></div>
+     <div className="w-full flex items-center justify-center "><div onClick={handleFormChanges} className="w-34  flex items-center justify-center text-xs text-slate-800 font-semibold hover:cursor-pointer bg-slate-300 hover:bg-slate-400 shadow-md duration-500 p-2 rounded-sm ">Submit Changes</div></div>
      
      :
 
-     <div className="w-full flex items-center justify-center "><div onClick={handleForm} className="w-24  flex items-center justify-center text-sm text-white hover:cursor-pointer bg-blue-600 hover:bg-blue-700 duration-500 p-1 rounded-xl ">Submit</div></div>
+     <div className="w-full flex items-center justify-center "><div onClick={handleForm} className="w-24  flex items-center justify-center text-md text-white hover:cursor-pointer bg-blue-600 hover:bg-blue-700 duration-500 p-2 rounded-xl ">Submit</div></div>
      }
     </div>
   )

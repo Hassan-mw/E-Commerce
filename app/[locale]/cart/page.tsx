@@ -25,7 +25,7 @@ const page = async() => {
       </div>
    
       {/* Data */}
-    <CartNavbar   />
+      <CartNavbar   />
 
        {/* <CartData  cartData={cartData}  /> */}
     </div>

@@ -5,6 +5,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import { DataContext } from '../../ContextApi/ContextApi'
 import { TopNumberProductCart } from '../../Types/dataType'
 import axios from 'axios'
+import EmptyCartData from '../EmptyCartData'
 
 const jost=Jost({
   weight:['500'],
@@ -72,11 +73,11 @@ const ProductConfirmationData = () => {
 
   return (
         <div className='w-full flex items-center justify-center px-3'>
+     {cartData.length>0 ?
         <div className='w-full flex flex-col space-y-5 bg-[#F5F5F5] rounded-md py-3 px-6'>
           <div className='text-xs text-[#4B5157]'>Shopping items</div>
-           no_product_confirm
             {/*Shipping Item  */}
-             {cartData.map((data,index)=>
+           { cartData.map((data,index)=>
             <div key={index} className='w-full flex flex-col border-b pb-3 border-[#D9D9D9] '>
             {/* Upper */}
              <div className='w-full grid grid-cols-2 sm:grid-cols-3 md:grid-cols-2 lg:grid-cols-3 gap-2 place-content-center  '>
@@ -104,7 +105,8 @@ const ProductConfirmationData = () => {
            
             </div>
             </div>
-             )}
+           )}
+          
 
             {/*Payment - Method */}
             <div className='w-full flex flex-col space-y-2 border-b pb-3 border-[#D9D9D9] '>
@@ -133,7 +135,9 @@ const ProductConfirmationData = () => {
 
 
             </div>
-         
+           :  
+              <EmptyCartData/>
+             }
     
     
           
