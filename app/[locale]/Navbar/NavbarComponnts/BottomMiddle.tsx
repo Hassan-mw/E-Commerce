@@ -9,7 +9,7 @@ const jost=Jost({
 
 const BottomMiddle = () => {
   return (
-    <div className='w-full hidden xl:block'>
+    <div className='w-full hidden 2xl:block'>
     <div className='w-full border-l flex items-center justify-center'>
 
         <Image height={50} width={50} src="/shavingmachine-navbar.png" alt='brand'/>

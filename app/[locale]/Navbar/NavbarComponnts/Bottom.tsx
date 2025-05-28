@@ -1,7 +1,8 @@
-import React from 'react'
-import BottomLeft from './BottomLeft'
-import BottomRight from './BottomRight'
-import BottomMiddle from './BottomMiddle'
+
+import BottomLeft from "./BottomLeft"
+import BottomMiddle from "./BottomMiddle"
+import BottomRight from "./BottomRight"
+
 
 const Bottom = () => {
   return (

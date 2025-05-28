@@ -2,7 +2,7 @@ import { routing } from "@/i18n/routing";
 import { useLocale } from "next-intl";
 import { Jost } from 'next/font/google'
 import Image from 'next/image'
-import React, { useContext, useState } from 'react'
+import React, { useContext } from 'react'
 
 
 
@@ -24,7 +24,8 @@ import {
 import { FiSearch } from "react-icons/fi";
 import {   usePathname, useRouter } from "@/i18n/routing";
 import { useParams } from "next/navigation";
-import { DataContext } from "../ContextApi/ContextApi";
+import { DataContext } from "../../ContextApi/ContextApi";
+
 
 const BottomLeft = () => {
    const locale = useLocale();

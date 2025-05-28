@@ -18,7 +18,8 @@ import {
 import Link from 'next/link';
 import { useContext, useEffect, useState } from 'react';
 import { FiSearch } from 'react-icons/fi';
-import { DataContext } from "../ContextApi/ContextApi";
+import { DataContext } from "../../ContextApi/ContextApi";
+
 
 const HandleSelect = () => {
   const {brand,handleBrandName,name,handleProductName}=useContext(DataContext)

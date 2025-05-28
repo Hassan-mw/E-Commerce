@@ -22,7 +22,7 @@ import {
 import { FiSearch } from "react-icons/fi";
 import Link from 'next/link'
 import { usePathname, useRouter, useSearchParams } from 'next/navigation'
-import { DataContext } from '../ContextApi/ContextApi'
+import { DataContext } from '../../ContextApi/ContextApi'
 import HandleSelect from './HandleSelect'
 
 type DataType={

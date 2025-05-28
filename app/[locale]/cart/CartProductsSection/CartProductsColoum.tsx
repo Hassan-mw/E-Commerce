@@ -65,7 +65,7 @@ const CartProductsColoum = () => {
  
   return (
     <div className='w-full flex flex-col space-y-5 px-5'>
-      <div className='text-md font-semibold'>Card - 3</div>
+      <div className='text-md font-semibold'>Card - {cartData.length}</div>
       {cartData.length===0 && <EmptyCartData/>}
 
        {loading ? <div>Loading...</div> :  cartData?.map((data,index)=>

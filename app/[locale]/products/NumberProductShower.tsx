@@ -14,9 +14,9 @@ interface DataType{
 }
 
 
-const NumberProductShower = ({category}:DataType) => {
+const NumberProductShower = ({length,category}:DataType) => {
        
-    const {length}=useContext(DataContext)
+    // const {length}=useContext(DataContext)
   
   return (
     <div className='  flex items-center justify-start gap-x-3 '>
