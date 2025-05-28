@@ -52,10 +52,10 @@ const AboutUsData = () => {
   
      {/* 2 */}
     <div className='hidden lg:block w-[80%]'> 
-    <div className='flex items-center justify-center  w-full'> 
+    <div className='Data_Center  w-full'> 
 
-     <div className='bg-blue-50 rounded-md p-4 flex items-center justify-center w-[220px] relative ' >
-      {/* <div className=' absolute -top-4 size-8 rounded-full bg-[#EAF3FB] flex items-center justify-center shadow-2xl'>// </div> */}
+     <div className='bg-blue-50 rounded-md p-4 Data_Center w-[220px] relative ' >
+      {/* <div className=' absolute -top-4 size-8 rounded-full bg-[#EAF3FB] Data_Center shadow-2xl'>// </div> */}
       <Image height={40} width={40} className=' absolute -top-4 shadow-2xl border ' src="/aboutus_quotes_right.png" alt='aboutus_quotes_right'/>
      <div className={`${jost.className} text-xl text-[#555555] py-2`}>We have made many people satisfied with our Platform</div>
     </div>    
@@ -72,7 +72,7 @@ const AboutUsData = () => {
 
    {/* ms-screen-contant */}
     <div className='hidden sm:block w-full'>
-    <div className=' w-full flex items-center justify-center  '>
+    <div className=' w-full Data_Center  '>
     <div className=' w-full  grid grid-cols-2 items-start justify-start  gap-x-3 h-full  '>
 
     {/* text */}
@@ -97,8 +97,8 @@ const AboutUsData = () => {
     <div style={{fontWeight:300}} className={`${jost.className} xl:w-[70%]   text-[9px] text-[#555555]`}>Explore our comprehensive online store where you'll find a diverse range of products across multiple categories, all curated to cater to your various needs and ...</div>
      </div>
       </div>
-    <div className='w-full xl:w-[80%]  flex items-center justify-center p-2 bg-blue-500 rounded-xs '>
-      <span className={`${jost.className} text-[9px] gap-x-3  text-white flex items-center justify-center`}>READ MORE <FaArrowRight /></span>
+    <div className='w-full xl:w-[80%]  Data_Center p-2 bg-blue-500 rounded-xs '>
+      <span className={`${jost.className} text-[9px] gap-x-3  text-white Data_Center`}>READ MORE <FaArrowRight /></span>
     </div>
     </div>
 
@@ -112,8 +112,8 @@ const AboutUsData = () => {
     <div style={{fontWeight:300}} className={`${jost.className}  xl:w-[70%]  text-[9px] text-[#555555]`}> Experience unparalleled savings on a wide selection of premium products that enhance your lifestyle without compromising on quality...</div>
      </div>
       </div>
-    <div className='w-full xl:w-[80%]  flex items-center justify-center p-2 bg-blue-500 rounded-xs '>
-      <span className={`${jost.className} text-[9px] gap-x-3  text-white flex items-center justify-center`}>READ MORE <FaArrowRight /></span>
+    <div className='w-full xl:w-[80%]  Data_Center p-2 bg-blue-500 rounded-xs '>
+      <span className={`${jost.className} text-[9px] gap-x-3  text-white Data_Center`}>READ MORE <FaArrowRight /></span>
     </div>
     </div>
 
@@ -128,8 +128,8 @@ const AboutUsData = () => {
     <div style={{fontWeight:300}} className={`${jost.className}  xl:w-[70%]   text-[9px] text-[#555555]`}>Enjoy the convenience of free cargo services, ensuring your purchases are delivered right to your doorstep without any additional cost. Experience seamless...</div>
      </div>
       </div>
-    <div className='w-full xl:w-[80%]  flex items-center justify-center p-2 bg-blue-500 rounded-xs '>
-      <span className={`${jost.className} text-[9px] gap-x-3  text-white flex items-center justify-center`}>READ MORE <FaArrowRight /></span>
+    <div className='w-full xl:w-[80%]  Data_Center p-2 bg-blue-500 rounded-xs '>
+      <span className={`${jost.className} text-[9px] gap-x-3  text-white Data_Center`}>READ MORE <FaArrowRight /></span>
     </div>
     </div>
 
@@ -144,8 +144,8 @@ const AboutUsData = () => {
     <div style={{fontWeight:300}} className={`${jost.className}  xl:w-[70%]  text-[9px] text-[#555555]`}>Our commitment to exceptional customer care means our 24-hour customer service team is always available to assist you, ensuring your inquiries and concerns...</div>
      </div>
       </div>
-    <div className='w-full xl:w-[80%]  flex items-center justify-center p-2 bg-blue-500 rounded-xs '>
-      <span className={`${jost.className} text-[9px] gap-x-3  text-white flex items-center justify-center`}>READ MORE <FaArrowRight /></span>
+    <div className='w-full xl:w-[80%]  Data_Center p-2 bg-blue-500 rounded-xs '>
+      <span className={`${jost.className} text-[9px] gap-x-3  text-white Data_Center`}>READ MORE <FaArrowRight /></span>
     </div>
     </div>
 
@@ -191,8 +191,8 @@ Elevate your shopping journey with our unmatched service, redefining convenience
     <span className='size-9 rounded-full bg-[#EAF3FB] flex  items-center justify-center text-blue-500'><BsShop size={25} /></span>
     <div style={{fontWeight:300}} className={`${jost.className}  text-[11px]`}>Full category shop</div>
     <div style={{fontWeight:300}} className={`${jost.className}  text-[9px] text-[#555555]`}>Explore our comprehensive online store where you'll find a diverse range of products across multiple categories, all curated to cater to your various needs and ...</div>
-    <div className='w-full flex items-center justify-center p-2 bg-blue-500 rounded-xs '>
-      <span className={`${jost.className} text-xs gap-x-3  text-white flex items-center justify-center`}>READ MORE <FaArrowRight /></span>
+    <div className='w-full Data_Center p-2 bg-blue-500 rounded-xs '>
+      <span className={`${jost.className} text-xs gap-x-3  text-white Data_Center`}>READ MORE <FaArrowRight /></span>
     </div>
     </div>
 
@@ -202,8 +202,8 @@ Elevate your shopping journey with our unmatched service, redefining convenience
     <span className='size-9 rounded-full bg-[#EAF3FB] flex  items-center justify-center text-blue-500'><RiDiscountPercentFill size={25} /></span>
     <div style={{fontWeight:300}} className={`${jost.className}  text-[11px]`}>Extraordinary discount</div>
     <div style={{fontWeight:300}} className={`${jost.className} text-[9px] text-[#555555]`}> Experience unparalleled savings on a wide selection of premium products that enhance your lifestyle without compromising on quality...</div>
-    <div className='w-full flex items-center justify-center p-2 bg-blue-500 rounded-xs '>
-      <span className={`${jost.className} text-xs gap-x-3  text-white flex items-center justify-center`}>READ MORE <FaArrowRight /></span>
+    <div className='w-full Data_Center p-2 bg-blue-500 rounded-xs '>
+      <span className={`${jost.className} text-xs gap-x-3  text-white Data_Center`}>READ MORE <FaArrowRight /></span>
     </div>
     </div>
 
@@ -213,8 +213,8 @@ Elevate your shopping journey with our unmatched service, redefining convenience
     <span className='size-9 rounded-full bg-[#EAF3FB] flex  items-center justify-center text-blue-500'><RiCustomerService2Line size={25} /></span>
     <div style={{fontWeight:300}} className={`${jost.className} text-[11px]`}>24-hour customer service</div>
     <div style={{fontWeight:300}} className={`${jost.className}  text-[9px] text-[#555555]`}>Enjoy the convenience of free cargo services, ensuring your purchases are delivered right to your doorstep without any additional cost. Experience seamless...</div>
-    <div className='w-full flex items-center justify-center p-2 bg-blue-500 rounded-xs '>
-      <span className={`${jost.className} text-xs gap-x-3  text-white flex items-center justify-center`}>READ MORE <FaArrowRight /></span>
+    <div className='w-full Data_Center p-2 bg-blue-500 rounded-xs '>
+      <span className={`${jost.className} text-xs gap-x-3  text-white Data_Center`}>READ MORE <FaArrowRight /></span>
     </div>
     </div>
 
@@ -224,8 +224,8 @@ Elevate your shopping journey with our unmatched service, redefining convenience
     <span className='size-9 rounded-full bg-[#EAF3FB] flex  items-center justify-center text-blue-500'><GiCargoShip size={25} /></span>
     <div style={{fontWeight:300}} className={`${jost.className}  text-[11px]`}>Free Cargo</div>
     <div style={{fontWeight:300}} className={`${jost.className}  text-[9px] text-[#555555]`}>Our commitment to exceptional customer care means our 24-hour customer service team is always available to assist you, ensuring your inquiries and concerns...</div>
-    <div className='w-full flex items-center justify-center p-2 bg-blue-500 rounded-xs '>
-      <span className={`${jost.className} text-xs gap-x-3  text-white flex items-center justify-center`}>READ MORE <FaArrowRight /></span>
+    <div className='w-full Data_Center p-2 bg-blue-500 rounded-xs '>
+      <span className={`${jost.className} text-xs gap-x-3  text-white Data_Center`}>READ MORE <FaArrowRight /></span>
     </div>
     </div>
 

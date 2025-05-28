@@ -17,9 +17,6 @@ const jost=Jost({
 
 const page = async() => {
 
-
-  
-  // const activeOrdersData=await getActiveOrdersData();
   const activeOrdersData=await getAllDeactiveCarts();
   const orderData=await getAllOrdes();
   const cartData=await getAllFromCart();

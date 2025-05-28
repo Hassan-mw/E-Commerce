@@ -18,7 +18,7 @@ const TopLeft = () => {
      <div className={` text-[#555555] text-[9px]  sm:text-sm    lg:hidden `}>In this captivating scene, a stylish woman stands confidently against a pristine backdrop, capturing the essence of summer's allure. Bathed in the gentle sunlight, she emanates an air of effortless chic. Her outfit is a harmonious blend of contemporary trends and timeless elegance, perfectly attuned to the vibrant season.</div>
     </div>
    
-    <div className='w-full flex items-start justify-start hover:cursor-pointer md:pb-16' >  <span style={{fontWeight:200}} className={` md:w-5/6 lg:w-[60%]  gap-x-3 bg-[#4172DC] hover:bg-blue-600 duration-300 md:px-3 lg:px-5 p-2  text-[9px]  rounded-xs text-white flex items-center justify-center`}>READ MORE <FaArrowRight /></span></div>
+    <div className='w-full flex items-start justify-start hover:cursor-pointer md:pb-16' >  <span style={{fontWeight:200}} className={` md:w-5/6 lg:w-[60%]  gap-x-3 bg-[#4172DC] hover:bg-blue-600 duration-300 md:px-3 lg:px-5 p-2  text-[9px]  rounded-xs text-white Data_Center`}>READ MORE <FaArrowRight /></span></div>
      
     </div>
 

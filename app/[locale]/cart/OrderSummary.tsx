@@ -124,9 +124,9 @@ const OrderSummary = () => {
     <div className='flex items-center justify-between text-sm'><span className='text-[#555555]'>Shipping</span><span>${cost}</span>  </div>    
     <div className='flex items-center justify-between text-sm'><span className='text-[#555555]'>Tax</span><span>$0</span>  </div>    
     <div className='flex items-center justify-between text-sm'><span className='text-[#555555]'>Discount price</span><span>$0</span>  </div>    
-    <div className='border-b pb-2 border-[#D9D9D9] flex items-center justify-between text-sm'><span className='text-[#555555] flex items-center justify-center gap-x-2'><input onClick={(e)=>handleFift(e)}  type='checkbox' /><span>Pack in a Gift Box</span></span><span>$5</span>  </div>    
+    <div className='border-b pb-2 border-[#D9D9D9] flex items-center justify-between text-sm'><span className='text-[#555555] Data_Center gap-x-2'><input onClick={(e)=>handleFift(e)}  type='checkbox' /><span>Pack in a Gift Box</span></span><span>$5</span>  </div>    
      <div className='flex items-center justify-between text-sm font-semibold'><span >Total Price</span><span>${totalPrice}</span>  </div>    
-     <div onClick={handleOrder} className='bg-[#434343] flex items-center justify-center gap-x-3 p-3 rounded-md text-white'>
+     <div onClick={handleOrder} className='bg-[#434343] Data_Center gap-x-3 p-3 rounded-md text-white'>
      <CiLock  size={20} /><span>SHOP NOW</span>
      </div>
    

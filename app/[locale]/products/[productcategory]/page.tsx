@@ -10,6 +10,9 @@ import NumberProductShower from '../NumberProductShower'
 import { getAllProduct } from '../../API/FeatchAllProduct'
 import dynamic from 'next/dynamic'
 import { Suspense } from 'react';
+import { FilteredProductDataByNavbarParams } from '@/app/utils/Function'
+import ProductArrray from '../ProductArrray'
+
 
 const jost=Jost({
   weight:['500'],
@@ -23,15 +26,13 @@ const jost=Jost({
 const page = async({params,searchParams}:{params:{productcategory:string},searchParams:URLSearchParams}) => {
   const parameters=await searchParams
   let data=await getAllProduct({parameters})
-
   const length=data.length
   const {productcategory}=await params
   const [category,productName]=productcategory.split('_')
   if(category!=='All'){
-    data=data.filter((data :any,index:number)=>data.color===category)
+  data=data.filter((data :any,index:number)=>data.color===category)
   }
-  
-  
+
 
 
   return (
@@ -45,36 +46,26 @@ const page = async({params,searchParams}:{params:{productcategory:string},search
      </div>
 
 
-      {/*//! Current Page showing +  side bar trigger  bg-[#E9E9E9]*/}
-     <div className='w-full flex items-center justify-center bg-[#E9E9E9] '>
-     <div className='w-full max-w-screen-2xl grid grid-cols-3 lg:grid-cols-2 py-3 px-1 sm:px-6  xl:px-5'>
-      {/* Number of product shower */}
-       <NumberProductShower length={length} category={category} />
-      {/* Side bar trigger shower */}
-     <div className=' lg:hidden  w-full flex items-center justify-start '> <ProductSideBarTrigger/></div>
-           
-      {/* Showing sort by */}
-      <SortingBy/>
-      </div>
-      </div>
+    
 
 
      {/*//!  DataPage */}
      <div  className="w-full h-full flex flex-col lg:flex-row lg:space-x-5 px-5  max-w-screen-2xl">
-        <div className='w-[40%] hidden lg:block py-12'>
-          <ProductListSidebarData category={category}  />
-       
-        </div>
-        
-        
-       <Suspense  fallback={<div>Loading</div>}>
-        <div className='w-full     '>
-           <ProductData  data={data}/>
-          </div>
-      </Suspense>
-          </div>
+     <div className='w-[40%] hidden lg:block py-12'>
+     <ProductListSidebarData category={category}  />  
+     </div>
+
+    <Suspense  fallback={<div>Loading</div>}>
+    <div className='w-full     '>
+    {/* <ProductData  data={data}/> */}
+    <ProductArrray category={category} data={data} />
     </div>
+    </Suspense>
     </div>
+
+
+  </div>
+  </div>
   )
 }
 

@@ -98,3 +98,9 @@ style:String;
 productprice:number;
 quantity:number;
 }
+
+////////////////////////////////////
+export interface VariableProductArray{
+    productArray:TopNumberProduct[]
+    data:TopNumberProductDataType
+}

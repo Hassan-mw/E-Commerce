@@ -150,11 +150,11 @@ const CustomerInfo = () => {
      
      {
      status==='success'?
-     <div className="w-full flex items-center justify-center "><div onClick={handleFormChanges} className="w-34  flex items-center justify-center text-xs text-slate-800 font-semibold hover:cursor-pointer bg-slate-300 hover:bg-slate-400 shadow-md duration-500 p-2 rounded-sm ">Submit Changes</div></div>
+     <div className="w-fullData_Center "><div onClick={handleFormChanges} className="w-34 Data_Center text-xs text-slate-800 font-semibold hover:cursor-pointer bg-slate-300 hover:bg-slate-400 shadow-md duration-500 p-2 rounded-sm ">Submit Changes</div></div>
      
      :
 
-     <div className="w-full flex items-center justify-center "><div onClick={handleForm} className="w-24  flex items-center justify-center text-md text-white hover:cursor-pointer bg-blue-600 hover:bg-blue-700 duration-500 p-2 rounded-xl ">Submit</div></div>
+     <div className="w-fullData_Center "><div onClick={handleForm} className="w-24 Data_Center text-md text-white hover:cursor-pointer bg-blue-600 hover:bg-blue-700 duration-500 p-2 rounded-xl ">Submit</div></div>
      }
     </div>
   )
