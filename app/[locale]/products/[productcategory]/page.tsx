@@ -12,6 +12,7 @@ import dynamic from 'next/dynamic'
 import { Suspense } from 'react';
 import { FilteredProductDataByNavbarParams } from '@/app/utils/Function'
 import ProductArrray from '../ProductArrray'
+import Loading from './Loading'
 
 
 const jost=Jost({
@@ -55,12 +56,12 @@ const page = async({params,searchParams}:{params:{productcategory:string},search
      <ProductListSidebarData category={category}  />  
      </div>
 
-    <Suspense  fallback={<div>Loading</div>}>
+    {/* <Suspense  fallback={<Loading/>}> */}
     <div className='w-full     '>
     {/* <ProductData  data={data}/> */}
     <ProductArrray category={category} data={data} />
     </div>
-    </Suspense>
+    {/* </Suspense> */}
     </div>
 
 
@@ -70,10 +71,5 @@ const page = async({params,searchParams}:{params:{productcategory:string},search
 }
 
 
-function Loading(){
-  return(
-    <div>Loading</div>
-  )
-}
 
 export default page

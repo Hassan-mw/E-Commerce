@@ -11,6 +11,8 @@ import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import Image from 'next/image';
 import { DataContext } from '../ContextApi/ContextApi';
 import Link from 'next/link';
+import ProductSidebarLoading from './ProductSidebarLoading';
+
 // import { useRouter } from 'next/';
 
 
@@ -27,6 +29,7 @@ const ProductListSidebarData = ({category}:{category:string}) => {
   const [color,setColor]=useState('all')
   const [size,setSize]=useState('all')
   const [price,setPrice]=useState('0')
+  const [loading,setLoading]=useState(true)
   
   const searchParams=useSearchParams()
   const pathName=usePathname()
@@ -45,6 +48,7 @@ const ProductListSidebarData = ({category}:{category:string}) => {
     router.replace(`${pathName}?${params.toString()}`,{scroll:false})
 
   },[model,color,style,size,price])
+
 
   const modelArray=[
     {id:1,name:'All',url:'all'},
@@ -84,16 +88,29 @@ const ProductListSidebarData = ({category}:{category:string}) => {
   }
   
   const {brand,handleBrandName,name,handleProductName}=useContext(DataContext)
+
   function handleRemoveSelect(){
     console.log('It worked 123456789')
        handleProductName('')
        handleBrandName('')
-       }
-       console.log(brand.brandName,name.productName,'32633734734')
+  }
+
+
+  useEffect(()=>{
+    setLoading(false)
+  },[])
+  
+   if(loading){
+    return(
+        <ProductSidebarLoading/>
+
+    )
+   }
 
   return (
     <div className='w-full lg:w-[70%] h-full  flex flex-col items-start justify-start  space-y-12 sm:pb-8 lg:pb-3'> 
-    {category!=='All' &&  <Link className='text-red-500 hover:text-red-600' href='/products/All'>Show All Products </Link>}   
+  
+   {category!=='All' &&  <Link className='text-red-500 hover:text-red-600' href='/products/All'>Show All Products </Link>}   
    {
      name.productName!=='' && brand.brandName!==''
      &&(

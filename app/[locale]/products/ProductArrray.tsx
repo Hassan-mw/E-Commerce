@@ -10,6 +10,7 @@ import { TopNumberProduct, TopNumberProductDataType } from '../Types/dataType'
 import NumberProductShower from './NumberProductShower'
 import ProductSideBarTrigger from './ProductSideBarTrigger'
 import SortingBy from './SortingBy'
+import ProductArrayLoading from './[productcategory]/ProductArrayLoading'
 
 const jost=Jost({
   weight:['500'],
@@ -29,16 +30,22 @@ interface ProductDataType{
 }
 
 const ProductArrray = ({data,category}:ProductDataType) => {
-
-
+  const [loading,setLoading]=useState(true)
   const {brand,name}:ContextDataType=useContext(DataContext)
 
   if(brand.brandName!=='' && name.productName!==''){
-    data=data.filter(data=>data.brand===brand.brandName && data.name.toLowerCase()===name.productName.toLowerCase())
+  data=data.filter(data=>data.brand===brand.brandName && data.name.toLowerCase()===name.productName.toLowerCase())
   }
+   
+  useEffect(()=>{
+    setLoading(false)
+  },[])
  
-
-
+if(loading){
+  return(
+ <ProductArrayLoading/>
+)
+}
 
 
   return (
@@ -118,7 +125,7 @@ const ProductArrray = ({data,category}:ProductDataType) => {
       }
   </div>
   }
-     </div>
+    </div>
 
   )
 }

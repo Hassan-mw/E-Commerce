@@ -1,4 +1,4 @@
-
+'use client'
 
 import {
     Sheet,
@@ -12,10 +12,11 @@ import {
   } from "@/components/ui/sheet"
 
 import { Jost } from 'next/font/google'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { MdMenu } from 'react-icons/md'
 import { IoMdClose } from "react-icons/io";
 import ProductListSidebarData from "./ProductListSidebarData";
+import ProductSidebarLoading from "./ProductSidebarLoading"
 
 const jost=Jost({
   weight:['500'],
@@ -25,17 +26,25 @@ const jost=Jost({
 
 
 const ProductSideBarTrigger = () => {
+  const [loading,setLoading]=useState(true)
+  
+    useEffect(()=>{
+      setLoading(false)
+    },[])
+    
+     if(loading){
+      return(
+     <div className="w-28 bg-gray-200 animate-pulse"></div>
+      )
+     }
+  
   return (
     <div>
         <Sheet>
-    <SheetTrigger className="text-blue-600 flex items-center space-x-3 hover:cursor-pointer"><MdMenu size={20} /> <span className={`  ${jost.className} font-bold`}>Show Sidebar</span></SheetTrigger>
+    <SheetTrigger className="text-blue-600 flex items-center space-x-3 hover:cursor-pointer"><MdMenu size={20} /> <div className={` font-bold`}>Show Sidebar</div></SheetTrigger>
     <SheetContent className="w-[360px] h-full overflow-y-auto bg-white">
       <SheetHeader className="w-full flex flex-col">
         <SheetTitle className=" w-full p-3">
-           {/* <div className="flex items-center justify-center  border-b py-3 ">
-           <SheetClose className={` ${jost.className} hover:cursor-pointer  flex items-center justify-center text-sm text-red-600 `}><div><IoMdClose  size={20} /> </div>Close</SheetClose>
-           </div>
-    */}
         </SheetTitle>
         <SheetDescription>
 
