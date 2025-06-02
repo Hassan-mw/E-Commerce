@@ -39,6 +39,8 @@ app.use('/api/orders',orderRoutes);
 app.use('/api/payment',paymentRoutes);
 app.use('/api/shipping',shippingRouter);
 app.use('/api/address',addressRoutes);
+app.use('/api/signup',signRoutes);
+app.use('/api/login',loginRoutes);
 
   
 
