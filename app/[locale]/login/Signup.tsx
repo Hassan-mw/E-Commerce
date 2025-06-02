@@ -11,7 +11,8 @@ const Signup = () => {
   const [password,setPassword]=useState('')
   const [passwordType,setPasswordType]=useState(false)
   const [error,setError]=useState('')
-  console.log(passwordType)
+  const date=new Date().toLocaleDateString();
+
  
   //  Show_password_chages
    const handlePasswordClick=()=>{
@@ -24,7 +25,7 @@ const Signup = () => {
     try{
 
       const data=await axios.post('http://localhost:5000/api/signup',{
-        name,email,password
+        name,email,password,created_at:date
       })
     }catch(err:{response:{data:{message:string}}}){
       setError(err?.response?.data?.message)
