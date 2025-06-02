@@ -10,6 +10,7 @@ const Signup = () => {
   const [email,setEmail]=useState('')
   const [password,setPassword]=useState('')
   const [passwordType,setPasswordType]=useState(false)
+  const [error,setError]=useState('')
   console.log(passwordType)
  
   //  Show_password_chages
@@ -20,15 +21,21 @@ const Signup = () => {
 
    //Sending_signup_data
    const handleSignUp=async()=>{
-   const data=await axios.post('http://localhost:500/api/signup',{
+    try{
 
-   })
+      const data=await axios.post('http://localhost:5000/api/signup',{
+        name,email,password
+      })
+    }catch(err:{response:{data:{message:string}}}){
+      setError(err?.response?.data?.message)
+      console.log(err)
+    }
    } 
 
    return (
      <div className='w-full flex flex-col items-start justify-start space-y-6 py-5 '>
       <h1 className='text-3xl font-semibold pb-5'>Signup</h1>
- 
+      <p className='text-red-400'>{error}</p>
       {/* Name */}
       <div className='w-full flex flex-col space-y-1'>
        <h2 style={{fontWeight:400}} className='text-md font-medium text-[#262626]'>Name</h2>

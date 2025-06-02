@@ -14,6 +14,7 @@ const shippingRouter=require('./Router/shippingRouter')
 const randomRoutes=require('./Router/randomRoutes')
 const similarProductRoutes=require('./Router/similarProductRoutes')
 const addressRoutes=require('./Router/addressRoutes')
+const signRoutes=require('./Router/signRoutes')
 const  AppError=require('./ErrorHandler/appError') 
 const cors=require('cors');
 app.use(cors({
@@ -40,7 +41,7 @@ app.use('/api/payment',paymentRoutes);
 app.use('/api/shipping',shippingRouter);
 app.use('/api/address',addressRoutes);
 app.use('/api/signup',signRoutes);
-app.use('/api/login',loginRoutes);
+// app.use('/api/login',loginRoutes);
 
   
 
