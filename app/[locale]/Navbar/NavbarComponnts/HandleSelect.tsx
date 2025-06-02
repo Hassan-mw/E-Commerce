@@ -23,7 +23,7 @@ import { DataContext } from "../../ContextApi/ContextApi";
 
 const HandleSelect = () => {
   const {brand,handleBrandName,name,handleProductName}=useContext(DataContext)
-  console.log(brand,name,'1111111111112222222222222222222233333333333333333333333333')
+
     // const [productNameData,setProductNameData]=useState(brand.brandName)
     // const [productBrandData,setProductBrandData]=useState(name.productName)
 
