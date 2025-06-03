@@ -4,6 +4,8 @@ import React, { useState } from 'react'
 import { FaRegEye } from 'react-icons/fa6'
 import { FaRegEyeSlash } from "react-icons/fa";
 import axios from 'axios';
+import Cookies from "js-cookie";
+
 
 const Signup = () => {
   const [name,setName]=useState('')
@@ -24,10 +26,15 @@ const Signup = () => {
    const handleSignUp=async()=>{
     try{
 
-      const data=await axios.post('http://localhost:5000/api/signup',{
+      const response=await axios.post('http://localhost:5000/api/signup',{
         name,email,password,created_at:date
       })
-      console.log(data)
+      console.log(response)
+      if(response?.status===201){
+        Cookies.set("jwt", response.data.token);
+
+      }
+      console.log(response)
     }catch(err:{response:{data:{message:string}}}){
       setError(err?.response?.data?.message)
       console.log(err)
