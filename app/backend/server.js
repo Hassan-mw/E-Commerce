@@ -17,6 +17,8 @@ const addressRoutes=require('./Router/addressRoutes')
 const signRoutes=require('./Router/signRoutes')
 const loginRouters=require('./Router/loginRouter')
 const  AppError=require('./ErrorHandler/appError') 
+const cookieParser=require('cookie-parser');
+
 const cors=require('cors');
 app.use(cors({
   origin:'http://localhost:3000',
@@ -26,6 +28,7 @@ app.use(cors({
 }));
 
 app.use(express.json()); 
+app.use(cookieParser());
 
 
 

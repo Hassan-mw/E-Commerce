@@ -1,6 +1,14 @@
 const CatchError = require("../Classes/TryCatchErrorHandler")
 const pool = require("../Pool/pool")
 
+exports.protect=async(req,res,next)=>{
+  try{
+   console.log(req.headers,'😆😆😆😆😆😆😆😆😆😆😆😆😆😆',req.cookies?.jwt,req.cookies)
+  }catch(err){
+    console.log(err)
+  }
+}
+
 
 exports.getAllOrder=async(req,res,next)=>{
     try{
@@ -22,6 +30,8 @@ JOIN products On products.id=orders.product_id`)
     })
     }
 }
+
+
 
 exports.createOrder=async(req,res,next)=>{
     try{
@@ -52,6 +62,8 @@ exports.createOrder=async(req,res,next)=>{
     }
 }
 
+
+
 exports.getOrderById=async(req,res,next)=>{
     try{
    const {id}=req.params
@@ -69,6 +81,8 @@ exports.getOrderById=async(req,res,next)=>{
      })
     }
 }
+
+
 
 exports.deleteOrder=async(req,res,next)=>{
     try{
