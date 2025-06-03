@@ -4,16 +4,18 @@ import React, { useState } from 'react'
 import { FaRegEye } from 'react-icons/fa6'
 import { FaRegEyeSlash } from "react-icons/fa";
 import axios from 'axios';
-
+import toast, { Toaster } from 'react-hot-toast';
 
 const Login = () => {
   const [email,setEmail]=useState('c')
   const [password,setPassword]=useState('234')
   const [passwordType,setPasswordType]=useState(false)
   const [error,setError]=useState('')
+  const [message,setMessage]=useState('')
 
 
   const handlePasswordClick=()=>{
+    toast.success("Login Succesfully")
     setPasswordType(pre=>!pre)
     console.log('Its clicking')
   }
@@ -25,15 +27,26 @@ const Login = () => {
         const data=await axios.post('http://localhost:5000/api/login',{
           email,password
         })
+
+        // if(data.status===200){
+          toast.success("Login Succesfully")
+
+        // }
+
+        console.log(data.status,'sdgsdgsg')
       }catch(err:{response:{data:{message:string}}}){
-        setError(err?.response?.data?.message)
+        toast.error(err?.response?.data?.message)
         console.log(err)
+        
       }
      } 
   return (
     <div className='w-full flex flex-col items-start justify-start space-y-6 py-5 lg:pr-15 border-gray-300  lg:border-r'>
+     <Toaster position="top-center"  />
+     
      <h1 className='text-3xl font-semibold pb-5'>Login</h1>
-     <p className='text-red-500'>{error}</p>
+     {/* <p className='text-red-500'>{error}</p>
+     <p className='text-green-500'>{message}</p> */}
      {/* Email */}
      <div className='w-full flex flex-col space-y-1'>
       <h2 style={{fontWeight:400}} className='text-md text-[#262626]'>Email</h2>
