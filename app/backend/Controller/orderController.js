@@ -1,9 +1,12 @@
 const CatchError = require("../Classes/TryCatchErrorHandler")
 const pool = require("../Pool/pool")
+const Cookies =require( "js-cookie");
 
 exports.protect=async(req,res,next)=>{
   try{
-   console.log(req.headers,'😆😆😆😆😆😆😆😆😆😆😆😆😆😆',req.cookies?.jwt,req.cookies)
+    const token=req.cookies?.jwt
+    console.log(Cookies.get('jwt'))
+   console.log(req.headers,'😆😆😆😆😆😆',token,'😆😆😆😆😆😆😆😆',req.cookies?.jwt,req.cookies)
   }catch(err){
     console.log(err)
   }
@@ -35,6 +38,8 @@ JOIN products On products.id=orders.product_id`)
 
 exports.createOrder=async(req,res,next)=>{
     try{
+   console.log(req.headers,'😆😆😆😆😆😆😆😆😆😆😆😆😆😆',req.cookies?.jwt,req.cookies)
+  
     console.log(req.body,'wwe2k26')
     const {id}=req.params;
     const {product_id,total, shipping_id,cart_id,created_at}=req.body

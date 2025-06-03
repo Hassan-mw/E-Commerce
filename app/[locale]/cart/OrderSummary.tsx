@@ -1,3 +1,4 @@
+'use client'
 import { Jost } from 'next/font/google'
 import  { useContext, useEffect, useState } from 'react'
 import { CiLock } from "react-icons/ci";
@@ -108,7 +109,16 @@ const OrderSummary = () => {
       if(data.length===0) return;
       try{
         const sendorderData=await axios.post('http://localhost:5000/api/orders/1'
-        ,{shipping_id:shippingData.id,product_id:productArrayId,cart_id:cartArrayId,total:totalPrice,created_at:date})
+        ,{
+          shipping_id:shippingData.id,product_id:productArrayId,
+          cart_id:cartArrayId,total:totalPrice,created_at:date
+        },
+        {
+        headers: {
+        "Content-Type": "application/json",
+        },
+        withCredentials: true 
+        })
       }catch(err){
         console.log(err)
       }
