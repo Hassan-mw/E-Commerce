@@ -27,6 +27,7 @@ const Signup = () => {
       const data=await axios.post('http://localhost:5000/api/signup',{
         name,email,password,created_at:date
       })
+      console.log(data)
     }catch(err:{response:{data:{message:string}}}){
       setError(err?.response?.data?.message)
       console.log(err)

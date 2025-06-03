@@ -22,7 +22,8 @@ exports.createUser=async(req,res,next)=>{
   console.log(token,33534346346)
   res.status(201).json({
     status:'success',
-    message:'succesfully created account'
+    message:'succesfully created account',
+    token
   })
   }catch(err){ 
      console.log(err)
