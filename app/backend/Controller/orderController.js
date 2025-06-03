@@ -1,12 +1,21 @@
+const { promisify } = require("util");
 const CatchError = require("../Classes/TryCatchErrorHandler")
 const pool = require("../Pool/pool")
 const Cookies =require( "js-cookie");
+const jwt=require('jsonwebtoken');
 
 exports.protect=async(req,res,next)=>{
   try{
-    const token=req.cookies?.jwt
-    console.log(Cookies.get('jwt'))
-   console.log(req.headers,'😆😆😆😆😆😆',token,'😆😆😆😆😆😆😆😆',req.cookies?.jwt,req.cookies)
+    const token=req.cookies.jwt;
+     if(!token){
+      res.status(500).json({
+        status:'fail',
+        message:'Please login first'
+      })
+     }
+
+     const decode=await promisify(jwt.verify)(token,'')
+   
   }catch(err){
     console.log(err)
   }
