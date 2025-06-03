@@ -14,8 +14,8 @@ exports.protect=async(req,res,next)=>{
       })
      }
 
-     const decode=await promisify(jwt.verify)(token,'')
-   
+     const decode=await promisify(jwt.verify)(token,'asfasfjyiaf')
+     console.log(decode,'$$$$$$$$$$$$$$$$$$$')
   }catch(err){
     console.log(err)
   }
