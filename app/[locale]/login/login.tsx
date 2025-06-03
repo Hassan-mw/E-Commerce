@@ -7,8 +7,8 @@ import axios from 'axios';
 
 
 const Login = () => {
-  const [email,setEmail]=useState('asb@gmail.com')
-  const [password,setPassword]=useState('4564346')
+  const [email,setEmail]=useState('c')
+  const [password,setPassword]=useState('234')
   const [passwordType,setPasswordType]=useState(false)
   const [error,setError]=useState('')
 

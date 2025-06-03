@@ -1,6 +1,6 @@
 const jwt=require('jsonwebtoken')
 const pool = require("../Pool/pool")
-
+const bcrypt=require('bcryptjs')
 
 exports.createUser=async(req,res,next)=>{
   try{
@@ -14,8 +14,9 @@ exports.createUser=async(req,res,next)=>{
     })
     console.log(name,email.password)
   }
-  // console.log(req.body)
-  const {rows}=await pool.query(`INSERT INTO signup(name,email,password,created_at) VALUES  ($1,$2,$3,$4) RETURNING *`,[name,email,password,created_at])
+  const byscrptPassword=await bcrypt.hash(password,12)
+  console.log(byscrptPassword)
+  const {rows}=await pool.query(`INSERT INTO signup(name,email,password,created_at) VALUES  ($1,$2,$3,$4) RETURNING *`,[name,email,byscrptPassword,created_at])
   console.log(rows.id,11111111111111111,rows)
   const token=jwt.sign({id:password},'asfasfjyiaf',{expiresIn:120})
   console.log(token,33534346346)
@@ -23,7 +24,7 @@ exports.createUser=async(req,res,next)=>{
     status:'success',
     message:'succesfully created account'
   })
-  }catch(err){
-
+  }catch(err){ 
+     console.log(err)
   }
 }
