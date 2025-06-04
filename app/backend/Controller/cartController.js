@@ -20,12 +20,13 @@ exports.getAllCart=async(req,res,next)=>{
 
 exports.createCart=async(req,res,next)=>{
     try{
-        const {product_id,productprice}=req.body
+        const {product_id,productprice,quantity}=req.body
+        console.log(req.body,'|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||')
         if(!product_id){
                 return next(new AppError('Can not find "product_id"',500))
             
             }
-            const {rows}=await pool.query('INSERT INTO carts (product_id,productprice) VALUES ($1,$2) RETURNING *',[product_id,productprice])
+            const {rows}=await pool.query('INSERT INTO carts (product_id,productprice,quantity) VALUES ($1,$2,$3) RETURNING *',[product_id,productprice,quantity])
         console.log(req.body,'It reached here')
      res.status(401).json({
         staus:'success',

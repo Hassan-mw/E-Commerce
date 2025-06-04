@@ -17,8 +17,7 @@ const jost=Jost({
 
 const TopDataHandler = ({id,name,price,color,quantity,size}:ProductDetailsDataType) => {
    const [showCartButton,setShowCartButton]=useState(true) //shoe or hide button 
-  
-
+  console.log(id,name,price,color,quantity,size,'||||||||||||||||||||||||')
   // check weather product already in data base
    useEffect(()=>{   
    const getCartId=async()=>{
@@ -38,7 +37,7 @@ const TopDataHandler = ({id,name,price,color,quantity,size}:ProductDetailsDataTy
   const handleCart=async()=>{
     if(id){
       try{
-        await axios.post('http://localhost:5000/api/carts',{ product_id:id,productprice:price})
+        await axios.post('http://localhost:5000/api/carts',{ product_id:id,productprice:price,quantity:1})
     }
     catch(err){
       console.log(err)

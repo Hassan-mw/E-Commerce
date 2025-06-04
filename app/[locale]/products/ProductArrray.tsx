@@ -87,7 +87,7 @@ if(loading){
 
     {/* //! IMAGE */}
 
- <div className='w-full h-full border-t border-slate-100 rounded-t-md shadow-2xl'>
+ <div className='w-full h-full border-t  border-slate-100 rounded-t-md shadow-2xl'>
 
 <Image loading='lazy' height={400} width={400} src={`/${data.main_image}`} className='object-contain max-h-[400px]   w-full h-full  object-center p-3 rounded-t-md' alt='product_image' />
 {/* <Image height={800} width={800} src={`/${data.main_image}`} className='object-cover object-top aspect-auto  w-full h-full max-h-96 md:max-h-64 lg:max-g-96 xl:max-h-[400px] shadow-2xl border border-slate-200 object-top rounded-t-md' alt='product_image' /> */}
@@ -99,7 +99,7 @@ if(loading){
     {/* //!  Name */}
     <div  style={{fontWeight:300}} className={`${jost.className} text-md text-black font-semibold `}>{data.name}</div>
     {/* //!  Product_short_detail */}
-    <div  style={{fontWeight:100}} className={`${jost.className}  text-xs text-[#555555] font-semibold w-52 `}> {data.shortdetail},{data.id}</div>
+    <div  style={{fontWeight:100}} className={`${jost.className}  text-xs text-[#555555] font-semibold w-40 `}> {data.shortdetail}</div>
     </div>
     <div className='flex flex-col items-start justify-start space-y-2'>
     

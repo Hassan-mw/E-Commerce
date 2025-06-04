@@ -58,13 +58,9 @@ JOIN products On products.id=orders.product_id`)
 
 exports.createOrder=async(req,res,next)=>{
     try{
-   console.log('😆😆😆😆😆😆😆😆😆😆😆😆😆😆😆😆😆😆😆😆😆😆😆😆😆😆😆😆😆😆😆😆😆😆😆😆😆😆😆😆😆😆😆😆😆😆😆😆😆😆😆😆😆😆😆😆')
-  
     console.log(req.body,'wwe2k26')
     const {id}=req.params;
     const {product_id,total, shipping_id,cart_id,created_at}=req.body
-    console.log(cart_id[0],'+++++++++++++++++++++++++++')
-    console.log(product_id[1],'11111111111222222222222222333333',product_id.length)
     let rows
     for(let z=0;z<=product_id.length-1;z++){
 

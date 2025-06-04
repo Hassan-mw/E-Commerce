@@ -25,7 +25,7 @@ const page = async({params}:PageProps) => {
     const data=await getProductById({id})
     console.log(data)
     const {name,main_image,style,images,price,color,size,quantity,details,shortdetail,prodcutdetails}=data[0]
-
+ 
   return (
     <div className='w-full flex items-center justify-center'>
     <div className='w-full max-w-screen-xl  flex flex-col space-y-8 items-center justify-center'>
