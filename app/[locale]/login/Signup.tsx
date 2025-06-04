@@ -4,7 +4,7 @@ import React, { useState } from 'react'
 import { FaRegEye } from 'react-icons/fa6'
 import { FaRegEyeSlash } from "react-icons/fa";
 import axios from 'axios';
-import Cookies from "js-cookie";
+import toast, { Toaster } from 'react-hot-toast';
 
 
 const Signup = () => {
@@ -29,11 +29,13 @@ const Signup = () => {
       const response=await axios.post('http://localhost:5000/api/signup',{
         name,email,password,created_at:date
       })
-      console.log(response)
-      if(response?.status===201){
-        Cookies.set("jwt", response.data.token);
+      toast.success(" Succesfully created account.Make sure to Login")
 
-      }
+      // console.log(response)
+      // if(response?.status===201){
+      //   Cookies.set("jwt", response.data.token);
+
+      // }
       console.log(response)
     }catch(err:{response:{data:{message:string}}}){
       setError(err?.response?.data?.message)

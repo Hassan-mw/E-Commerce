@@ -6,6 +6,7 @@ import { CiLock } from "react-icons/ci";
 import { DataContext } from '../ContextApi/ContextApi';
 import { getAllCarts } from '../API/Post/CreatePorduct';
 import axios from 'axios';
+import toast, { Toaster } from 'react-hot-toast';
 const jost=Jost({
   weight:['500'],
   subsets:['latin']
@@ -119,8 +120,16 @@ const OrderSummary = () => {
         },
         withCredentials: true 
         })
+
       }catch(err){
         console.log(err)
+        // console.log(err.response.status,'{{{{{{{{{{{{{{{{{{{{')
+
+        // if(err.response.status===401){
+        //   console.log('LLLLLLLLLLLLSDDDDDDDDDDDDDDDGGGGGGGGGG')
+        //   toast.error('Login in for further continue')
+
+        // }
       }
      }
 
@@ -129,6 +138,7 @@ const OrderSummary = () => {
   return (
     <div className='w-full md:max-h-80 md:w-[80%] lg:w-[40%] flex  items-center justify-center md:rounded-md bg-[#E9E9E9] p-4 '>
     <div className='w-full max-w-[60%] md:max-w-full flex flex-col  space-y-3 '>
+     <Toaster position="top-center"  />
     <div className={`${jost.className} text-md`}>Order Summary</div>     
     <div className='flex items-center justify-between text-sm'><span className='text-[#555555]'>Price</span><span>${totalProductPriceSum}</span>  </div>    
     <div className='flex items-center justify-between text-sm'><span className='text-[#555555]'>Shipping</span><span>${cost}</span>  </div>    

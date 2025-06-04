@@ -13,12 +13,12 @@ exports.protect=async(req,res,next)=>{
         message:'Please login first'
       })
      }
-
+     console.log(token)
      const decode=await promisify(jwt.verify)(token,'asfasfjyiaf')
-    //  console.log(decode,'$$$$$$$$$$$$$$$$$$$')
+     console.log(decode,'$$$$$$$$$$$$$$$$$$$')
 
      const {rows}=await pool.query("SELECT * FROM signup WHERE id=$1",[decode.id])
-    //  console.log(rows.length,'?????????????????')
+     console.log(rows.length,'?????????????????')
      if(rows.length===0){
       res.status(400).json({
         status:'fail',
@@ -35,7 +35,7 @@ exports.protect=async(req,res,next)=>{
 
 exports.getAllOrder=async(req,res,next)=>{
     try{
-
+console.log('(((((((((((((((((((((((((((first)))))))))))))))))))))))))))')
   const {rows}=await pool.query(`
 SELECT * FROM orders
 JOIN carts ON carts.id=orders.cart_id

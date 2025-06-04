@@ -5,6 +5,7 @@ import { FaRegEye } from 'react-icons/fa6'
 import { FaRegEyeSlash } from "react-icons/fa";
 import axios from 'axios';
 import toast, { Toaster } from 'react-hot-toast';
+import Cookies from "js-cookie";
 
 const Login = () => {
   const [email,setEmail]=useState('c')
@@ -24,16 +25,17 @@ const Login = () => {
      //Sending_signup_data
      const handleLogin=async()=>{
       try{
-        const data=await axios.post('http://localhost:5000/api/login',{
-          email,password
-        })
+        const data=await axios.post('http://localhost:5000/api/login',{  email,password   })
 
         // if(data.status===200){
+          
+        // } 
+        console.log(data)
+        if(data?.status===200){
           toast.success("Login Succesfully")
-
-        // }
-
-        console.log(data.status,'sdgsdgsg')
+         Cookies.set("jwt", data.data.token);
+         }
+        // console.log(data.status,'sdgsdgsg')
       }catch(err:{response:{data:{message:string}}}){
         toast.error(err?.response?.data?.message)
         console.log(err)
