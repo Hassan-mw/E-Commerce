@@ -40,7 +40,7 @@ exports.getAllProducts = async (req,res,next) => {
     try {
 
       const queryData=req.query
-      let query='SELECT * FROM products LIMIT 8'
+      let query='SELECT * FROM products '
       const consditions=[];
       const values=[]
       const allowedFields=['model','style','color','size','price']

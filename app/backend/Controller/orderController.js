@@ -8,7 +8,7 @@ exports.protect=async(req,res,next)=>{
   try{
     const token=req.cookies.jwt;
      if(!token){
-      res.status(500).json({
+      res.status(401).json({
         status:'fail',
         message:'Please login first'
       })
