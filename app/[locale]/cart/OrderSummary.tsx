@@ -7,6 +7,7 @@ import { DataContext } from '../ContextApi/ContextApi';
 import { getAllCarts } from '../API/Post/CreatePorduct';
 import axios from 'axios';
 import toast, { Toaster } from 'react-hot-toast';
+import { redirect } from 'next/navigation';
 const jost=Jost({
   weight:['500'],
   subsets:['latin']
@@ -120,16 +121,19 @@ const OrderSummary = () => {
         },
         withCredentials: true 
         })
+        redirect('/carts')
+
 
       }catch(err){
         console.log(err)
         // console.log(err.response.status,'{{{{{{{{{{{{{{{{{{{{')
 
-        // if(err.response.status===401){
-        //   console.log('LLLLLLLLLLLLSDDDDDDDDDDDDDDDGGGGGGGGGG')
-        //   toast.error('Login in for further continue')
+        if(err.response.status===401){
+          console.log('LLLLLLLLLLLLSDDDDDDDDDDDDDDDGGGGGGGGGG')
+          toast.error('Login in for further continue')
 
-        // }
+        }
+      }finally{
       }
      }
 

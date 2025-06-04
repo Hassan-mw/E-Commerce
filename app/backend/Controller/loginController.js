@@ -1,5 +1,6 @@
 const pool = require("../Pool/pool");
 const bcrypt=require('bcryptjs')
+const jwt=require('jsonwebtoken')
 
 
 const correctPassword=async(orignalPassword,userPassword)=>{
@@ -21,11 +22,14 @@ exports.login=async(req,res,next)=>{
             message:'Incorrect email or password'
         })
     }
-
+   const exptime='90d'
+     
+    const token=jwt.sign({id:rows[0].id},'asfasfjyiaf',{expiresIn:exptime})
     
     res.status(200).json({
         status:'success',
-        message:'Successfully login'
+        message:'Successfully login',
+        token
     })
     console.log(rows.length,'aaaaaaaaaaaaaaaa')
     }catch(err){
