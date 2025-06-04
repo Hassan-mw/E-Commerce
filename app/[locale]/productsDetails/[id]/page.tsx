@@ -11,12 +11,16 @@ const ProductDetailsData=dynamic(()=>import('../ProductDetailsData')) ;
 import { getProductById } from '../../API/FeatchAllProduct'
 import dynamic from 'next/dynamic'
 
+import { PageProps } from '@/.next/types/app/[locale]/page'
+
+
+
 const jost=Jost({
   weight:['500'],
   subsets:['latin']
 })
 
-const page = async({params}:{params:{id:URLSearchParams}}) => {
+const page = async({params}:PageProps) => {
     const {id}=await params
     const data=await getProductById({id})
     console.log(data)

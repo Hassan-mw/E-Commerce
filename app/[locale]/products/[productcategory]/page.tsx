@@ -13,6 +13,7 @@ import { Suspense } from 'react';
 import { FilteredProductDataByNavbarParams } from '@/app/utils/Function'
 import ProductArrray from '../ProductArrray'
 import Loading from './Loading'
+import { PageProps } from '@/.next/types/app/[locale]/page'
 
 
 const jost=Jost({
@@ -24,7 +25,7 @@ const jost=Jost({
 
 
 
-const page = async({params,searchParams}:{params:{productcategory:string},searchParams:URLSearchParams}) => {
+const page = async({params,searchParams}:PageProps) => {
   const parameters=await searchParams
   let data=await getAllProduct({parameters})
   const length=data.length

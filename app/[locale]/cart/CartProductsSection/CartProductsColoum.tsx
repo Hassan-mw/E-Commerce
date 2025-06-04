@@ -20,7 +20,9 @@ interface DataType{
   count:number;
   cartData:TopNumberProductCart[];
   setCartLength:any
-  setCartData:any
+  setCartData:any;
+  deletingId:number;
+  setDeletingId:any
 }
 
 const CartProductsColoum = () => {
