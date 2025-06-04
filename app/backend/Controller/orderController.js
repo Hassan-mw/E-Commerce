@@ -15,7 +15,18 @@ exports.protect=async(req,res,next)=>{
      }
 
      const decode=await promisify(jwt.verify)(token,'asfasfjyiaf')
-     console.log(decode,'$$$$$$$$$$$$$$$$$$$')
+    //  console.log(decode,'$$$$$$$$$$$$$$$$$$$')
+
+     const {rows}=await pool.query("SELECT * FROM signup WHERE id=$1",[decode.id])
+    //  console.log(rows.length,'?????????????????')
+     if(rows.length===0){
+      res.status(400).json({
+        status:'fail',
+        message:"User does not exist"
+      })
+    }
+      console.log(111111111111111,'At Last',3333333333333333)
+      next();
   }catch(err){
     console.log(err)
   }
@@ -47,7 +58,7 @@ JOIN products On products.id=orders.product_id`)
 
 exports.createOrder=async(req,res,next)=>{
     try{
-   console.log(req.headers,'😆😆😆😆😆😆😆😆😆😆😆😆😆😆',req.cookies?.jwt,req.cookies)
+   console.log('😆😆😆😆😆😆😆😆😆😆😆😆😆😆😆😆😆😆😆😆😆😆😆😆😆😆😆😆😆😆😆😆😆😆😆😆😆😆😆😆😆😆😆😆😆😆😆😆😆😆😆😆😆😆😆😆')
   
     console.log(req.body,'wwe2k26')
     const {id}=req.params;

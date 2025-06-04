@@ -14,11 +14,16 @@ exports.createUser=async(req,res,next)=>{
     })
     console.log(name,email.password)
   }
+
   const byscrptPassword=await bcrypt.hash(password,12)
-  console.log(byscrptPassword)
+
+
+
   const {rows}=await pool.query(`INSERT INTO signup(name,email,password,created_at) VALUES  ($1,$2,$3,$4) RETURNING *`,[name,email,byscrptPassword,created_at])
   console.log(rows.id,11111111111111111,rows)
-  const token=jwt.sign({id:password},'asfasfjyiaf',{expiresIn:500})
+
+   const exptime='90d'
+  const token=jwt.sign({id:rows[0].id},'asfasfjyiaf',{expiresIn:exptime})
   console.log(token,33534346346)
   res.status(201).json({
     status:'success',
