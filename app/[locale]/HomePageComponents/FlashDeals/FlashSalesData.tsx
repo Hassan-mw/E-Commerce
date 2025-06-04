@@ -53,7 +53,7 @@ const FlashSalesData = () => {
 
     {/* //! IMAGE */}
     
-    <div className='h-40  flex items-end justify-end m-6 bg-green-500 ' ><Image height={180} width={180} src={`/${data.image}`} className='object-fill w-full h-full ' alt='product_image' /></div>
+    <div className='h-40  flex items-end justify-end m-6  ' ><Image height={180} width={180} src={`/${data.image}`} className='object-fill w-full h-full ' alt='product_image' /></div>
     <div className='flex  gap-x-9 sm:flex-col md:flex-row lg:space-y-0 xl:space-y-1 lg:items-center lg:justify-center lg:gap-x-9 xl:flex-col xl:items-start xl:justify-start  justify-start space-y-1 lg:pb-2'>
    <div className='flex flex-col items-start justify-start space-y-2 lg:space-y-3 xl:space-y-1'>
 
