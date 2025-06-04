@@ -16,6 +16,8 @@ const jost=Jost({
 const OrderSummary = () => {
     const {deletingId,count}=useContext(DataContext);
     const [data,setData]=useState([])
+    const [number,setNumber]=useState(0)
+    const [statusCode,setStatsuCode]=useState(0)
      const[giftpack,setGiftpack]=useState(0)
     const [shippingData,setShippingData]=useState([]) 
     const [paymentData,setPaymentData]=useState([]) 
@@ -25,6 +27,8 @@ const OrderSummary = () => {
     const productArrayId=data.map(el=>el.product_id)
     const date=new Date().toLocaleDateString();
   
+   console.log(number,data)
+
      //Fetching all cart
     useEffect(()=>{
     const fetData=async()=>{
@@ -32,7 +36,7 @@ const OrderSummary = () => {
     setData(cartData)
     }
     fetData()
-    },[deletingId,count])
+    },[deletingId,count,number])
  
 
 
@@ -68,7 +72,7 @@ const OrderSummary = () => {
   fetchShippingData()
      },[])
 
-    //fetching data
+    //fetching address data
      useEffect(()=>{
       const fetchingAddress=async()=>{
       
@@ -83,12 +87,12 @@ const OrderSummary = () => {
      },[])
  
 
-   //handleGift 
-   function handleFift(e:any){
+    //handleGift 
+    function handleFift(e:any){
     const checked=e.target.checked
     console.log(e.target.checked,'It reach')
     checked ? setGiftpack(10) : setGiftpack(0)
-   }
+    }
 
     //Sum all produts prices 
     const arrayData=data.map((data:{productprice:number})=>data.productprice)
@@ -105,9 +109,16 @@ const OrderSummary = () => {
     const totalPrice=totalProductPriceSum+cost+giftpack
   
 
-      
+     //This check if response of cart sending is ok it redirect to order apge
+    useEffect(()=>{
+    if(statusCode===201){
+    redirect('/order')
+    } }),[status]
+
+
      //Sending Order Data
     const handleOrder=async()=>{
+      setNumber(pre=>pre+1)
       if(data.length===0) return;
       try{
         const sendorderData=await axios.post('http://localhost:5000/api/orders/1'
@@ -121,8 +132,9 @@ const OrderSummary = () => {
         },
         withCredentials: true 
         })
-        redirect('/carts')
-
+        // redirect('/order')
+        setStatsuCode(sendorderData.status)
+       console.log(sendorderData)
 
       }catch(err){
         console.log(err)
@@ -150,7 +162,7 @@ const OrderSummary = () => {
     <div className='flex items-center justify-between text-sm'><span className='text-[#555555]'>Discount price</span><span>$0</span>  </div>    
     <div className='border-b pb-2 border-[#D9D9D9] flex items-center justify-between text-sm'><span className='text-[#555555] Data_Center gap-x-2'><input onClick={(e)=>handleFift(e)}  type='checkbox' /><span>Pack in a Gift Box</span></span><span>$5</span>  </div>    
      <div className='flex items-center justify-between text-sm font-semibold'><span >Total Price</span><span>${totalPrice}</span>  </div>    
-     <div onClick={handleOrder} className='bg-[#434343] Data_Center gap-x-3 p-3 rounded-md text-white'>
+     <div onClick={handleOrder} className='bg-[#434343] hover:cursor-pointer hover:scale-105 duration-700 Data_Center gap-x-3 p-3 rounded-md text-white'>
      <CiLock  size={20} /><span>SHOP NOW</span>
      </div>
    

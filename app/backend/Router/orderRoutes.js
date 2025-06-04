@@ -8,8 +8,8 @@ router.route('/')
 
 
 router.route('/:id')
-// .post(orderController.createOrder)
-.post(orderController.protect,orderController.createOrder)
+.post(orderController.createOrder)
+// .post(orderController.protect,orderController.createOrder)
 .get(orderController.getOrderById)
 .delete(orderController.deleteOrder)
 
