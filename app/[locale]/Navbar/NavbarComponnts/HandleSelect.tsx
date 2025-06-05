@@ -18,7 +18,7 @@ const HandleSelect = () => {
 
 
   return (
-  <div className='w-full max-w-[70%]  flex items-center justify-center border gap-x-0 border-slate-200 bg-red-500 rounded-sm py-1 px-2 '>
+  <div className='w-full max-w-[70%] md:max-w-md lg:max-w-xs flex items-center justify-center border gap-x-0 border-slate-200  rounded-sm py-1 px-2 '>
         
     <div className='w-[65%] '><input value={name.productName} onChange={(e)=>handleProductName(e.target.value)} className='w-full  focus:outline-none placeholder:text-black text-xs text-blackplaceholder:text-xs ' placeholder='Product Name' list="Names"/></div>
        
