@@ -87,10 +87,10 @@ const OrderData = ({activeOrdersData,orderData,cartData,shippingData,paymentData
 
 
     {/* Buttons */}
-    <div className="mt-4 flex justify-center gap-x-6">
+    {/* <div className="mt-4 flex justify-center gap-x-6">
     <button className="text-black border hover:bg-blue-600 hover:cursor-pointer duration-500 border-slate-300 px-4 py-1 rounded hover:text-white">View Detail</button>
     <button className="bg-blue-600 hover:cursor-pointer duration-500 text-white px-4 py-1 rounded hover:bg-blue-700">Track Order</button>
-    </div>
+    </div> */}
 
 
     </div>

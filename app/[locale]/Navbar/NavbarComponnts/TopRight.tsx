@@ -21,8 +21,8 @@ const TopRight = () => {
    <div style={{fontWeight:300}} className={`${jost.className}  xl:w-[80%]  flex items-center justify-between gap-x-8 text-md text-[#555555]`}>
    <Link href='/aboutus'   className={` hover:cursor-pointer ${pathName==='/aboutus' && 'text-blue-600'}  hover:text-blue-400 duration-500 `}>About us</Link>
    <Link href='/blog'   className={` hover:cursor-pointer ${pathName==='/blog' && 'text-blue-600'}  hover:text-blue-400 duration-500 `}>Blog</Link>
-   <div className='hover:cursor-pointer'>Contact us</div>
-   <div className='hover:cursor-pointer'>Help & support</div>
+   <Link href="/contactus" className='hover:cursor-pointer'>Contact us</Link>
+   <Link href="/helpsupport" className='hover:cursor-pointer'>Help & support</Link>
    </div>
 
    {/* Facebook_Instgram_Twitter */}
