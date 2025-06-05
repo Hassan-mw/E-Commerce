@@ -10,9 +10,9 @@ const jost=Jost({
 const BottomMiddle = () => {
   return (
     <div className='w-full hidden 2xl:block'>
-    <div className='w-full border-l flex items-center justify-center'>
+    <div className='w-full border-l flex items-center justify-center gap-x-3'>
 
-        <Image height={50} width={50} src="/shavingmachine-navbar.png" alt='brand'/>
+        <Image height={35} width={35} src="/middle_navbae_image.png" alt='brand'/>
          <div className={` text-white flex flex-col items-start justify-start`}>
         <div style={{fontWeight:200}} className={`${jost.className} text-sm`}>Weekly Men's Toiletries Coupons.</div>
         <div style={{fontWeight:200}} className={`${jost.className} text-xs`}>We extend exclusive discounts to our male clientele.</div>
