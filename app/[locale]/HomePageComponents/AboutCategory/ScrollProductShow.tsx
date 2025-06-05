@@ -20,10 +20,10 @@ const jost=Jost({
 const ScrollProductShow = () => {
   return (
     // <div className='w-full flex items-center justify-between px-20 bg-[#F7DDD0] rounded-md'>
-      <Carousel className=' '>
-  <CarouselContent className=' max-h-80  gap-x-4 rounded-md max-w-screen-xl '>
+      <Carousel className=' px-14'>
+  <CarouselContent className=' max-h-80  gap-x-4 rounded-md max-w-screen-xl px-16 xl:px-2'>
     {/* //!  1 */}
-    <CarouselItem  className=' w-full flex items-center justify-between px-20 bg-[#ffffff] py-3 rounded-md '>
+    <CarouselItem  className=' w-full flex items-center justify-between px-20 xl:px-0 bg-[#ffffff] py-3 rounded-md '>
      <div className=' flex flex-col items-start justify-start space-y-2 pl-10'>
     <div className={`${jost.className} text-2xl text-[#31373a]`}>MAGSAFE</div>
     <div style={{fontWeight:300}} className={`${jost.className} text-md text-[#465D6B]`}>Snap on a magnatic case,wallet, or both.And get fater wireless charging.</div>
