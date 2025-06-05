@@ -1,10 +1,5 @@
 
-
-import { FaCartArrowDown } from 'react-icons/fa6'
-
-
 import Sidebar from './NavbarComponnts/Sidebar'
-
 import Image from 'next/image'
 
 import {
@@ -24,6 +19,7 @@ import { DataContext } from '../ContextApi/ContextApi'
 import { Jost } from 'next/font/google'
 import TopRight from './NavbarComponnts/TopRight'
 import BottomRight from './NavbarComponnts/BottomRight'
+import HandleSelect from './NavbarComponnts/HandleSelect'
 
 
 const jost=Jost({
@@ -52,8 +48,8 @@ const SmallScreen = () => {
     </div> */}
 
     </div>
-
-    <div className='w-full sm:w-[70%] flex items-center justify-center border gap-x-0 border-slate-200 rounded-sm py-1 px-2 '>
+    <HandleSelect/>
+    {/* <div className='w-full sm:w-[70%] flex items-center justify-center border gap-x-0 border-slate-200 rounded-sm py-1 px-2 '>
       <div className='w-full '><input type='text' className='w-5/6   focus:outline-none placeholder:text-slate-500 placeholder:text-sm ' placeholder='Search Product'/></div>
      <div className='mr-5 '>
         <Select value={brand} onValueChange={(e)=>setBrand(e)}>
@@ -75,7 +71,7 @@ const SmallScreen = () => {
     <div className='border-l pl-2'>
     <FiSearch size={20} />
     </div>
-    </div>
+    </div> */}
     </div>
     </div>
   )

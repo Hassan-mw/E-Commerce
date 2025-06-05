@@ -31,17 +31,24 @@ const HandleSelect = () => {
 
 
   return (
-     <div className='flex items-center justify-center border gap-x-0 border-slate-200 rounded-sm py-1 px-2 '>
-          <div className='w-[65%] '><input value={name.productName} onChange={(e)=>handleProductName(e.target.value)} className='w-full  focus:outline-none placeholder:text-black text-xs text-blackplaceholder:text-xs ' placeholder='Product Name' list="Names"/></div>
-           <datalist id="Names">
-           <option value="Women's BlackSweather">Women's BlackSweather</option>
-           <option value="Women's Cable Cropped">Women's Cable Cropped</option>
-           <option value="Women's White Sweather">Women's White Sweather</option>
-           <option value="Maxi Dresses Casual">Maxi Dresses Casual</option>
-           <option value="QACOHU">QACOHU</option>
-           </datalist>
-         <div className='mr-5 '></div>
-    <Select value={brand.brandName} onValueChange={(e)=>handleBrandName(e)}>
+  <div className='flex items-center justify-center border gap-x-0 border-slate-200 rounded-sm py-1 px-2 '>
+        
+    <div className='w-[65%] '><input value={name.productName} onChange={(e)=>handleProductName(e.target.value)} className='w-full  focus:outline-none placeholder:text-black text-xs text-blackplaceholder:text-xs ' placeholder='Product Name' list="Names"/></div>
+       
+      {/* 1_cloths_name_selected */}
+      <datalist id="Names">
+      <option value="Women's BlackSweather">Women's BlackSweather</option>
+      <option value="Women's Cable Cropped">Women's Cable Cropped</option>
+      <option value="Women's White Sweather">Women's White Sweather</option>
+      <option value="Maxi Dresses Casual">Maxi Dresses Casual</option>
+      <option value="QACOHU">QACOHU</option>
+      </datalist>
+       
+      {/* 2_Space */}
+      <div className='mr-5 '> </div>
+      
+      {/* 3_Select_cloths_brand */}
+      <Select value={brand.brandName} onValueChange={(e)=>handleBrandName(e)}>
       <SelectTrigger className="w-[120px] outline-none border-none shadow-none z-20  text-xs">
         <SelectValue className='placeholder:text-slate-500 placeholder:text-xs' placeholder="All" />
       </SelectTrigger>
@@ -55,10 +62,9 @@ const HandleSelect = () => {
           <SelectItem value="qualfort">Qualfort</SelectItem>
         </SelectGroup>
       </SelectContent>
-    </Select>
-    {/* <div onClick={()=>handleSearch()} className='hover:cursor-pointer hover:text-blue-500 duration-500 border-l pl-2'>
-    <FiSearch size={20} />
-    </div> */}
+      </Select>
+   
+
      </div>
 
   )
