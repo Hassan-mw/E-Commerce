@@ -56,7 +56,8 @@ const ProductListSidebarData = ({category}:{category:string}) => {
     {id:3,name:'Mid-length',url:'mid-length'},
     {id:4,name:'Sweather',url:'sweather'},
     {id:5,name:'Party Dresses',url:'party-dresses'},
-    {id:6,name:'Requlae Fit',url:'reqular-fit'}
+    {id:6,name:'Requlae Fit',url:'reqular-fit'},
+    {id:7,name:'Family Pack',url:'family'}
   ]
 
 
