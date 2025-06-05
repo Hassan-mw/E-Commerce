@@ -14,7 +14,7 @@ const jost=Jost({
 })
 
 const OrderSummary = () => {
-    const {deletingId,count}=useContext(DataContext);
+    const {deletingId,count,setOrderLength}=useContext(DataContext);
     const [data,setData]=useState([])
     const [number,setNumber]=useState(0)
     const [statusCode,setStatsuCode]=useState(0)
@@ -109,7 +109,7 @@ const OrderSummary = () => {
     const totalPrice=totalProductPriceSum+cost+giftpack
   
 
-     //This check if response of cart sending is ok it redirect to order apge
+    //This check if response of cart sending is ok it redirect to order apge
     useEffect(()=>{
     if(statusCode===201){
     redirect('/order')
@@ -134,7 +134,8 @@ const OrderSummary = () => {
         })
         // redirect('/order')
         setStatsuCode(sendorderData.status)
-       console.log(sendorderData)
+        setOrderLength(data.length)
+       console.log(data.length)
 
       }catch(err){
         console.log(err)
