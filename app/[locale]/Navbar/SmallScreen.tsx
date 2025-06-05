@@ -22,6 +22,8 @@ import { TfiPackage } from 'react-icons/tfi'
 import { useContext } from 'react'
 import { DataContext } from '../ContextApi/ContextApi'
 import { Jost } from 'next/font/google'
+import TopRight from './NavbarComponnts/TopRight'
+import BottomRight from './NavbarComponnts/BottomRight'
 
 
 const jost=Jost({
@@ -43,10 +45,11 @@ const SmallScreen = () => {
 
     <Link href="/" className='flex items-center justify-center gap-x-3'><Image height={45} width={45} src="/Navbar_logo.png" alt="logo" /><span className={`${jost.className} text-2xl`}>Limunea</span></Link>
     
-    <div className='flex items-center justify-center gap-x-4'>
+    <BottomRight/>
+    {/* <div className='flex items-center justify-center gap-x-4'>
     <Link href="/cart" className='flex items-center justify-center gap-x-2 '><span className='hover:text-blue-400 duration-500'><FaCartArrowDown size={18}  /></span><span className='text-xl  hidden md:block'>Card</span></Link>
     <Link href='/order' className='flex items-center justify-center gap-x-2 hover:cursor-pointer'><span className='hover:text-blue-400 duration-500'><TfiPackage /></span><span  className="hidden md:block">Order</span>  </Link>
-    </div>
+    </div> */}
 
     </div>
 
