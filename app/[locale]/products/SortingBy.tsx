@@ -30,7 +30,7 @@ const SortingBy = () => {
     <div className='w-full flex items-end  justify-end xl:pr-16'>
 
     <Select value={sort} onValueChange={(e)=>setSort(e)} >
-    <SelectTrigger className="w-[140px] hover:cursor-pointer  placeholder:text-[#7B7B7B] border-[#7B7B7B] outline-[#7B7B7B]">
+    <SelectTrigger className="w-[140px] hover:cursor-pointer outline-slate-200 placeholder:text-[#7B7B7B] border-[#7B7B7B] ">
       <SelectValue  placeholder="Sort by order" />
     </SelectTrigger>
     <SelectContent className='bg-white'>
