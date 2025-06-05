@@ -1,11 +1,5 @@
 'use state'
 
-type DataType={
-  brand:string;
-  name:string;
-   productBrandData: string;
-}
-
 import {
   Select,
   SelectContent,
@@ -15,7 +9,7 @@ import {
   SelectValue,
 } from "@/components/ui/select"
 
-import Link from 'next/link';
+
 import { useContext, useEffect, useState } from 'react';
 import { FiSearch } from 'react-icons/fi';
 import { DataContext } from "../../ContextApi/ContextApi";
@@ -23,11 +17,6 @@ import { DataContext } from "../../ContextApi/ContextApi";
 
 const HandleSelect = () => {
   const {brand,handleBrandName,name,handleProductName}=useContext(DataContext)
-
-    // const [productNameData,setProductNameData]=useState(brand.brandName)
-    // const [productBrandData,setProductBrandData]=useState(name.productName)
-
-
 
 
   return (
@@ -65,7 +54,7 @@ const HandleSelect = () => {
       </Select>
    
 
-     </div>
+  </div>
 
   )
 }
