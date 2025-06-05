@@ -32,7 +32,7 @@ const page = async({params,searchParams}:PageProps) => {
   const {productcategory}=await params
   const [category,productName]=productcategory.split('_')
   if(category!=='All'){
-  data=data.filter((data :any,index:number)=>data.color===category)
+  data=data.filter((data :any,index:number)=>data.color===category || data.style===category )
   }
 
 
