@@ -29,8 +29,8 @@ const ScrollProductShow = () => {
     <CarouselItem  className=' w-full flex items-center justify-between px-20 xl:px-0 bg-[#ffffff] py-3 rounded-md '>
      {/* Content */}
     <div className=' flex flex-col items-start justify-start space-y-2 pl-10'>
-    <div className={`${jost.className} text-2xl text-[#31373a]`}>MAGSAFE</div>
-    <div style={{fontWeight:300}} className={`${jost.className} text-md text-[#465D6B]`}>Snap on a magnatic case,wallet, or both.And get fater wireless charging.</div>
+    <div className={`${jost.className} text-2xl text-[#31373a]`}>Zambitna</div>
+    <div style={{fontWeight:300}} className={`${jost.className} text-md text-[#465D6B]`}>Matchable Family Zambitna</div>
     <Link href="/productsDetails/24" className='border rounded-md px-2 bg-blue-500 border-blue-500  duration-700 hover:bg-white hover:text-blue-500 hover:border-blue-500 text-white'>Check Out</Link>
     </div>
      {/* Image */}
@@ -43,8 +43,8 @@ const ScrollProductShow = () => {
      {/* //!  2 */}
     <CarouselItem  className=' w-full flex items-center justify-between px-20 gap-x-3 bg-[#ffffff] py-3 rounded-md'>
      <div className=' flex flex-col items-start justify-start space-y-2 pl-10'>
-    <div className={`${jost.className} text-2xl text-[#31373a]`}>CAROTE</div>
-    <div style={{fontWeight:300}} className={`${jost.className} text-md text-[#465D6B]`}>CAROTE Nonstick Pots and Pans,Cookware Set 16pcs Kitchen Cooking Sets, Pot and Pan Non Stick w/Frying pan.</div>
+    <div className={`${jost.className} text-2xl text-[#31373a]`}>Hawaiian</div>
+    <div style={{fontWeight:300}} className={`${jost.className} text-md text-[#465D6B]`}>Matchable Family Hawaiian</div>
     <Link href="/productsDetails/23" className='border rounded-md px-2 bg-blue-500 border-blue-500  duration-700 hover:bg-white hover:text-blue-500 hover:border-blue-500 text-white'>Check Out</Link>
      
      </div>
@@ -58,8 +58,8 @@ const ScrollProductShow = () => {
     <CarouselItem  className=' w-full flex items-center justify-between px-20 bg-[#ffffff] py-3 rounded-md'>
     {/* Content */}
     <div className=' flex flex-col items-start justify-start space-y-2 pl-10'>
-    <div className={`${jost.className} text-2xl text-[#31373a]`}>Truly Free</div>
-    <div style={{fontWeight:300}} className={`${jost.className} text-md text-[#465D6B]`}>Transform your cleaning routine with 9 essential products: Everyday Cleaner.</div>
+    <div className={`${jost.className} text-2xl text-[#31373a]`}>Othandor</div>
+    <div style={{fontWeight:300}} className={`${jost.className} text-md text-[#465D6B]`}>Matchable Family Othandor</div>
     <Link href="/productsDetails/25" className='border rounded-md px-2 bg-blue-500 border-blue-500  duration-700 hover:bg-white hover:text-blue-500 hover:border-blue-500 text-white'>Check Out</Link>
     
     </div>
