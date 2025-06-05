@@ -1,5 +1,8 @@
 'use state'
 
+import { useContext, useEffect, useState } from 'react';
+import { DataContext } from "../../ContextApi/ContextApi";
+
 import {
   Select,
   SelectContent,
@@ -10,17 +13,12 @@ import {
 } from "@/components/ui/select"
 
 
-import { useContext, useEffect, useState } from 'react';
-import { FiSearch } from 'react-icons/fi';
-import { DataContext } from "../../ContextApi/ContextApi";
-
-
 const HandleSelect = () => {
   const {brand,handleBrandName,name,handleProductName}=useContext(DataContext)
 
 
   return (
-  <div className='flex items-center justify-center border gap-x-0 border-slate-200 rounded-sm py-1 px-2 '>
+  <div className='w-full max-w-[70%]  flex items-center justify-center border gap-x-0 border-slate-200 bg-red-500 rounded-sm py-1 px-2 '>
         
     <div className='w-[65%] '><input value={name.productName} onChange={(e)=>handleProductName(e.target.value)} className='w-full  focus:outline-none placeholder:text-black text-xs text-blackplaceholder:text-xs ' placeholder='Product Name' list="Names"/></div>
        

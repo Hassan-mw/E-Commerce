@@ -33,45 +33,18 @@ const SmallScreen = () => {
 
   return (
     <div className='w-full lg:hidden '>
-    <div className='w-full flex flex-col space-y-5 items-center justify-center px-5 sm:px-7  '>
-    <div className='w-full flex items-center justify-between '>
- 
+    <div className='w-full  flex flex-col space-y-5 items-center justify-center px-5 sm:px-7  '>
 
-     <Sidebar/>
-
+    {/* Top_Date */}
+    <div className='w-full flex items-center justify-between bg-green-500'>
+    <Sidebar/>
     <Link href="/" className='flex items-center justify-center gap-x-3'><Image height={45} width={45} src="/Navbar_logo.png" alt="logo" /><span className={`${jost.className} text-2xl`}>Limunea</span></Link>
-    
-    <div className=''><BottomRight/> </div>
-    {/* <div className='flex items-center justify-center gap-x-4'>
-    <Link href="/cart" className='flex items-center justify-center gap-x-2 '><span className='hover:text-blue-400 duration-500'><FaCartArrowDown size={18}  /></span><span className='text-xl  hidden md:block'>Card</span></Link>
-    <Link href='/order' className='flex items-center justify-center gap-x-2 hover:cursor-pointer'><span className='hover:text-blue-400 duration-500'><TfiPackage /></span><span  className="hidden md:block">Order</span>  </Link>
-    </div> */}
+    <div><BottomRight/></div>
+    </div>
 
-    </div>
+    {/* Bottom_Date */}
     <HandleSelect/>
-    {/* <div className='w-full sm:w-[70%] flex items-center justify-center border gap-x-0 border-slate-200 rounded-sm py-1 px-2 '>
-      <div className='w-full '><input type='text' className='w-5/6   focus:outline-none placeholder:text-slate-500 placeholder:text-sm ' placeholder='Search Product'/></div>
-     <div className='mr-5 '>
-        <Select value={brand} onValueChange={(e)=>setBrand(e)}>
-      <SelectTrigger className="w-[120px] outline-none border-none shadow-none z-20 ">
-        <SelectValue className='placeholder:text-slate-500' placeholder="Category" />
-      </SelectTrigger>
-      <SelectContent className='bg-white text-black'>
-        <SelectGroup>
-          <SelectItem value="all">All</SelectItem>
-          <SelectItem value="oukods">Oukods</SelectItem>
-          <SelectItem value="tiger">Tiger</SelectItem>
-          <SelectItem value="kirana">Kirana</SelectItem>
-          <SelectItem value="prettygarden">Prettygarden</SelectItem>
-          <SelectItem value="qualfort">Qualfort</SelectItem>
-        </SelectGroup>
-      </SelectContent>
-    </Select>
-    </div>
-    <div className='border-l pl-2'>
-    <FiSearch size={20} />
-    </div>
-    </div> */}
+    
     </div>
     </div>
   )
