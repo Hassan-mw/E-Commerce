@@ -27,8 +27,9 @@ const SortingBy = () => {
     },[sort])
   
   return (
-    <div className='w-full flex items-end  justify-end xl:pr-16'>
-     <Select value={sort} onValueChange={(e)=>setSort(e)}>
+    <div className='w-full flex items-end  justify-end xl:pr-16 '>
+      <div className='border rounded-md border-slate-300'>
+     <Select  value={sort} onValueChange={(e)=>setSort(e)}>
       <SelectTrigger className="w-[120px] outline-none border-none shadow-none z-20  text-xs">
         <SelectValue className='placeholder:text-slate-500 placeholder:text-xs' placeholder="All" />
       </SelectTrigger>
@@ -41,6 +42,7 @@ const SortingBy = () => {
     </SelectContent>
       </SelectContent>
     </Select>
+    </div>
     {/* <Select value={sort} onValueChange={(e)=>setSort(e)} >
     <SelectTrigger className="w-[140px] hover:cursor-pointer outline-slate-200 placeholder:text-[#7B7B7B] border-[#7B7B7B] ">
       <SelectValue  placeholder="Sort by order" />

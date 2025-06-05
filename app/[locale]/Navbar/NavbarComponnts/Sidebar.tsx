@@ -26,6 +26,7 @@ import {
 import Image from "next/image"
 import { Jost } from "next/font/google"
 import Link from "next/link";
+import { TfiPackage } from "react-icons/tfi";
 const Sidebar = () => {
 
   return (
@@ -58,10 +59,10 @@ const Sidebar = () => {
           <div className="flex flex-col space-y-3 items-start justify-start ">
           <h2 className={`${jost.className} w-full text-xl hover:cursor-pointer pb-3 border-slate-200 text-gray-700 flex items-center justify-center border-b-2 `}>Category</h2>   
           <div className="w-full grid grid-cols-4 gap-3">
-          <h1 className={`${jost.className} flex-center text-sm hover:cursor-pointer text-gray-700 hover:text-blue-400 duration-500 `}>Sign In</h1>   
-          <h1 className={`${jost.className} flex-center text-sm hover:cursor-pointer text-gray-700 hover:text-blue-400 duration-500 `}>Favourite</h1>
-          <h1 className={`${jost.className} flex-center text-sm hover:cursor-pointer text-gray-700 hover:text-blue-400 duration-500 `}>Cart </h1>
-          <h1 className={`${jost.className} flex-center text-sm hover:cursor-pointer text-gray-700 hover:text-blue-400 duration-500 `}>Order</h1>
+          <Link  href="/authentication"  className={`${jost.className} flex-center text-sm hover:cursor-pointer text-gray-700 hover:text-blue-400 duration-500 `}>Sign In</Link>   
+          <Link href="/favourite" className={`${jost.className} flex-center text-sm hover:cursor-pointer text-gray-700 hover:text-blue-400 duration-500 `}>Favourite</Link>
+          <Link  href='/cart' className={`${jost.className} flex-center text-sm hover:cursor-pointer text-gray-700 hover:text-blue-400 duration-500 `}>Cart </Link>
+          <Link href='/order'  className={`${jost.className} flex-center text-sm hover:cursor-pointer text-gray-700 hover:text-blue-400 duration-500 `}>Order</Link>
           </div>
           </div>
 
@@ -70,9 +71,9 @@ const Sidebar = () => {
           <div className="flex flex-col space-y-3 items-start justify-start">
           <h2 className={`${jost.className} w-full text-xl hover:cursor-pointer pb-3 border-slate-200 text-gray-700 flex items-center justify-center border-b-2 `}>Platform</h2>      
           <div className="w-full grid grid-cols-3 gap-3">
-          <h1 className={`${jost.className} flex-center text-sm hover:cursor-pointer text-gray-700 hover:text-blue-400 duration-500 `}>Facebook</h1>   
-          <h1 className={`${jost.className} flex-center text-sm hover:cursor-pointer text-gray-700 hover:text-blue-400 duration-500 `}>Instagram</h1>
-          <h1 className={`${jost.className} flex-center text-sm hover:cursor-pointer text-gray-700 hover:text-blue-400 duration-500 `}>Twitter </h1>
+          <Link href="https://www.facebook.com/" className={`${jost.className} flex-center text-sm hover:cursor-pointer text-gray-700 hover:text-blue-400 duration-500 `}>Facebook</Link>   
+          <Link href="https://www.instagram.com/" className={`${jost.className} flex-center text-sm hover:cursor-pointer text-gray-700 hover:text-blue-400 duration-500 `}>Instagram</Link>
+          <Link href="https://x.com/" className={`${jost.className} flex-center text-sm hover:cursor-pointer text-gray-700 hover:text-blue-400 duration-500 `}>Twitter </Link>
           </div>
           </div>
            

@@ -20,8 +20,8 @@ const NumberProductShower = ({length,category}:DataType) => {
   
   return (
     <div className='  flex items-center justify-start gap-x-3 '>
-      <span style={{fontWeight:300}} className={` ${jost.className} flex items-center text-sm justify-center text-[#262626]`}>{category}</span>
-      <span style={{fontWeight:300}} className={` ${jost.className} flex items-center justify-center  text-sm text-[#555555]`}>{length} items</span>
+      <span style={{fontWeight:300}} className={` ${jost.className} flex items-center text-sm justify-center text-slate-600`}>{category}</span>
+      <span style={{fontWeight:300}} className={` ${jost.className} flex items-center justify-center  text-sm text-slate-600`}>{length} items</span>
       
      </div>
   )
