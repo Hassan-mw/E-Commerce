@@ -2,7 +2,7 @@
 import LargeScreenAuthentication from "./LargeScreenAuthentication"
 import SmallScreenAuthentication from "./SmallScreenAuthentication"
 
-const login = () => {
+const authentication = () => {
   return (
     <div className='Data_Center w-full p-5 py-16'>
     <div className='Data_Center w-full max-w-screen-lg'>
@@ -15,4 +15,4 @@ const login = () => {
   )
 }
 
-export default login
+export default authentication
