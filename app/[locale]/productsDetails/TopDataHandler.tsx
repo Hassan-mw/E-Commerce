@@ -10,6 +10,7 @@ import axios  from "axios"
 import { redirect } from 'next/navigation'
 import { DataContext } from '../ContextApi/ContextApi'
 import { CiHeart } from 'react-icons/ci'
+import { getAllFavourites } from '../API/GET/Favourite'
 
 const jost=Jost({
   weight:['500'],
@@ -18,18 +19,36 @@ const jost=Jost({
 
 const TopDataHandler = ({id,name,price,color,quantity,size}:ProductDetailsDataType) => {
    const [showCartButton,setShowCartButton]=useState(true) //shoe or hide button 
-  console.log(id,name,price,color,quantity,size,'||||||||||||||||||||||||')
+   const [showFavouriteButton,setShowFavouriteButton]=useState(true) //shoe or hide button 
+
+
   // check weather product already in data base
-   useEffect(()=>{   
-   const getCartId=async()=>{
-    try{
-    const data=await getAllCarts()
-    const x=await data.map((el:{id:number})=>el.id===Number(id  )&& setShowCartButton(false) )
-   }catch(err){
-    console.log(err)
-   }
-   }
-   getCartId()
+  useEffect(()=>{   
+  const getCartId=async()=>{
+  try{
+  const data=await getAllCarts()
+  const x=await data.map((el:{id:number})=>el.id===Number(id  )&& setShowCartButton(false) )
+  }catch(err){
+  console.log(err)
+  }
+  }
+  getCartId()
+  },[])
+
+
+  // check weather favourite already in data base
+  useEffect(()=>{   
+  const getCartId=async()=>{
+  try{
+  const data=await getAllFavourites()
+  console.log(data)
+  const x=await data.map((el:{product_id:number})=>el.product_id===Number(id) && setShowFavouriteButton(false) )
+  console.log(data,x)
+  }catch(err){
+  console.log(err)
+  }
+  }
+  getCartId()
   },[])
 
 
@@ -59,6 +78,9 @@ const TopDataHandler = ({id,name,price,color,quantity,size}:ProductDetailsDataTy
     }
     catch(err){
       console.log(err)
+    }finally{
+        redirect('/favourite')
+
     }
   
    }
@@ -144,11 +166,7 @@ const TopDataHandler = ({id,name,price,color,quantity,size}:ProductDetailsDataTy
  {/* Buy It */}
  <div  className='bg-[#4172DC] hover:bg-blue-600 duration-500 text-white w-full p-3 rounded-md  flex items-center justify-center' >SHOP NOW</div>
  {/* Add Favourite */}
- <div onClick={handleAddCart} className='border border-[#555555] hover:shadow-2xl hover:cursor-pointer duration-500  text-[#555555] gap-x-2  p-3 rounded-md w-full flex items-center justify-center '>
- <CiHeart size={19} />
- <span  style={{fontWeight:400}} className={`${jost.className}  `}>Favourite</span>
- </div>
-
+  { showFavouriteButton && <div onClick={handleAddCart} className='border border-[#555555] hover:shadow-2xl hover:cursor-pointer duration-500  text-[#555555] gap-x-2  p-3 rounded-md w-full flex items-center justify-center '><CiHeart size={19} /><span  style={{fontWeight:400}} className={`${jost.className}  `}>Favourite</span></div>}
   { showCartButton &&  <div className='border border-[#555555] hover:shadow-2xl hover:cursor-pointer duration-500  text-[#555555] gap-x-1  p-3 rounded-md w-full flex items-center justify-center '> <PiBasketThin size={19} /> <span onClick={handleCart} style={{fontWeight:400}} className={`${jost.className}  `}> BASKET</span> </div> }
  </div>
 

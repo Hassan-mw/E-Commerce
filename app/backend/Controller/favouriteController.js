@@ -14,7 +14,7 @@ exports.getAllFavouriteProduct=async(req,res,next)=>{
      }
      res.status(200).json({
         staus:'success',
-        data:rows[0]
+        data:rows
      })
  
     }catch(err){
