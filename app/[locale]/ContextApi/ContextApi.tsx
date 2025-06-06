@@ -28,6 +28,8 @@ interface DataType {
   setName:Dispatch<SetStateAction<DataTypeProduct>>;
   cartLength:number
   setCartLength:Dispatch<SetStateAction<number>>;
+  orderLength:number
+  setOrderLength:Dispatch<SetStateAction<number>>;
 }
 
 
