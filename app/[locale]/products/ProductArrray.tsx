@@ -62,6 +62,7 @@ if(loading){
   {/* Showing sort by */}
   <SortingBy/>
   </div>
+  
   </div>
 
   {

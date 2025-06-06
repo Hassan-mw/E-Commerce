@@ -3,6 +3,8 @@ import { Jost } from 'next/font/google'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
+import NumberProductShower from '../products/NumberProductShower'
+import SortingBy from '../products/SortingBy'
 
 
 const jost=Jost({
@@ -15,6 +17,19 @@ const FavouriteData = ({data}) => {
   <div className='w-full flex flex-col sapce-y-3'>
   <div className='flex flex-col space-y-3'>
   <h1 className={`${jost.className} text-3xl font-bold`}>Your all favourite products:</h1> 
+  {/*//! Current Page showing +  side bar trigger  bg-[#E9E9E9]*/}
+  <div className='w-full Data_Center bg-[#E9E9E9] '>
+    <div className='w-full max-w-screen-2xl grid grid-cols-3 lg:grid-cols-2 py-3 px-1 sm:px-6  xl:px-5'>
+    {/* Number of product shower */}
+    <NumberProductShower length={data.length} category={category} />
+    {/* Side bar trigger shower */}
+    <div className=' lg:hidden  w-full flex items-center justify-start '> <ProductSideBarTrigger/></div>
+                 
+    {/* Showing sort by */}
+    <SortingBy/>
+    </div>
+    
+    </div>
   </div>
   <div className={`  w-full grid gap-5 grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4   sm:gap-7 lg:gap-x-14 py-9 sm:px-2`}>
   {

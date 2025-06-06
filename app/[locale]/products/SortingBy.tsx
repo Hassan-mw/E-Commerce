@@ -43,17 +43,7 @@ const SortingBy = () => {
       </SelectContent>
     </Select>
     </div>
-    {/* <Select value={sort} onValueChange={(e)=>setSort(e)} >
-    <SelectTrigger className="w-[140px] hover:cursor-pointer outline-slate-200 placeholder:text-[#7B7B7B] border-[#7B7B7B] ">
-      <SelectValue  placeholder="Sort by order" />
-    </SelectTrigger>
-    <SelectContent className='bg-white'>
-      <SelectItem defaultValue="none" value="none">None</SelectItem>
-      <SelectItem value="price">Price</SelectItem>
-      <SelectItem value="rating">Rating</SelectItem>
-      <SelectItem value="discount">Discount</SelectItem>
-    </SelectContent>
-  </Select> */}
+   
   </div>
   
   )
