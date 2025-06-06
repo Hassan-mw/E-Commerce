@@ -8,7 +8,28 @@ exports.getAllFavouriteProduct=async(req,res,next)=>{
     try{
 
 
-     const {rows}=await pool.query(`SELECT * FROM favourites`)
+     const {rows}=await pool.query(`SELECT * FROM products WHERE products.id IN (SELECT  product_id FROM favourites)`)
+     if(!rows){
+        new AppError('No favourite product',400)
+     }
+     res.status(200).json({
+        staus:'success',
+        data:rows
+     })
+ 
+    }catch(err){
+       res.status(500).json({
+        status:'fail',
+        message:err.message
+       }) 
+    }
+}
+
+
+exports.getAllFavouriteProductById=async(req,res,next)=>{
+    try{
+    const {id}=req.params
+     const {rows}=await pool.query(`SELECT * FROM favourites WHERE product_id=$1`,[id])
      if(!rows){
         new AppError('No favourite product',400)
      }

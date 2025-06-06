@@ -7,6 +7,7 @@ router.route('/')
 .post(favouriteController.createFavouriteProduct)
 
 router.route('/:id')
+.get(favouriteController.getAllFavouriteProductById)
 .post(favouriteController.deleteFavouriteProduct)
 
 

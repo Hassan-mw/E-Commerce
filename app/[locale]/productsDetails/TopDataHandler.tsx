@@ -10,7 +10,7 @@ import axios  from "axios"
 import { redirect } from 'next/navigation'
 import { DataContext } from '../ContextApi/ContextApi'
 import { CiHeart } from 'react-icons/ci'
-import { getAllFavourites } from '../API/GET/Favourite'
+import { getAllFavourites, getFavouritesById } from '../API/GET/Favourite'
 
 const jost=Jost({
   weight:['500'],
@@ -40,7 +40,7 @@ const TopDataHandler = ({id,name,price,color,quantity,size}:ProductDetailsDataTy
   useEffect(()=>{   
   const getCartId=async()=>{
   try{
-  const data=await getAllFavourites()
+  const data=await getFavouritesById({id})
   console.log(data)
   const x=await data.map((el:{product_id:number})=>el.product_id===Number(id) && setShowFavouriteButton(false) )
   console.log(data,x)
