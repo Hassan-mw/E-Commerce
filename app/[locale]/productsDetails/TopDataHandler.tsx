@@ -42,8 +42,11 @@ const TopDataHandler = ({id,name,price,color,quantity,size}:ProductDetailsDataTy
   try{
   const data=await getFavouritesById({id})
   console.log(data)
-  const x=await data.map((el:{product_id:number})=>el.product_id===Number(id) && setShowFavouriteButton(false) )
-  console.log(data,x)
+  if(data.length!==0){
+   setShowFavouriteButton(false) 
+  }
+  // const x=await data.map((el:{product_id:number})=>el.product_id===Number(id) && )
+  // console.log(data,x)
   }catch(err){
   console.log(err)
   }

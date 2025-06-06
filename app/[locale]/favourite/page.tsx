@@ -1,5 +1,4 @@
 import { Jost } from 'next/font/google'
-import Image from 'next/image'
 import React from 'react'
 import { MdKeyboardArrowRight } from 'react-icons/md'
 import FavouriteData from './FavouriteData'
