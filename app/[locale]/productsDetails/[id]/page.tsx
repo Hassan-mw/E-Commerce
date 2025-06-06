@@ -37,7 +37,7 @@ const page = async({params}:PageProps) => {
       </div>
         
      <ProductDetailsData id={id} price={price} name={name}  images={images} color={color} quantity={quantity} size={size} />  
-     {/* <DataDetails details={details} shortdetail={shortdetail} prodcutdetails={prodcutdetails}  />      */}
+     <DataDetails details={details} shortdetail={shortdetail} prodcutdetails={prodcutdetails}  />     
      <ProductRowBottom id={id}/> 
     </div>
     </div>
