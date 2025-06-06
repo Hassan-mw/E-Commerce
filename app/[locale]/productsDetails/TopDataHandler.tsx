@@ -2,13 +2,14 @@
 
 import { Jost } from 'next/font/google'
 import  {  useEffect, useState } from 'react'
-import { FaCirclePlus } from 'react-icons/fa6'
+import { FaCirclePlus, FaHeart } from 'react-icons/fa6'
 import { PiBasketThin } from 'react-icons/pi'
 import { ProductDetailsDataType } from '../Types/dataType'
 import { getAllCarts } from '../API/Post/CreatePorduct'
 import axios  from "axios"
 import { redirect } from 'next/navigation'
 import { DataContext } from '../ContextApi/ContextApi'
+import { CiHeart } from 'react-icons/ci'
 
 const jost=Jost({
   weight:['500'],
@@ -33,7 +34,7 @@ const TopDataHandler = ({id,name,price,color,quantity,size}:ProductDetailsDataTy
 
 
 
-  //putting product in to  database
+  //Adding Cart Data
   const handleCart=async()=>{
     if(id){
       try{
@@ -46,6 +47,20 @@ const TopDataHandler = ({id,name,price,color,quantity,size}:ProductDetailsDataTy
 
     }
   }
+   }
+
+
+  //Adding Favourite
+  const handleAddCart=async()=>{
+
+    try{
+
+     await axios.post('http://localhost:5000/api/favourites',{ product_id:id,user_id:1})
+    }
+    catch(err){
+      console.log(err)
+    }
+  
    }
 
   
@@ -125,16 +140,16 @@ const TopDataHandler = ({id,name,price,color,quantity,size}:ProductDetailsDataTy
  </div>
  
  {/* CTA */}
- <div className='lg:w-[70%] flex sm:flex-col md:flex-row items-center justify-center gap-x-7 sm:gap-x-0 sm:gap-y-4 md:gap-x-5'>
-  <div  className='bg-[#4172DC] hover:bg-blue-600 duration-500 text-white w-full p-3 rounded-md  flex items-center justify-center' >SHOP NOW</div>
+ <div className='sm:max-w-[75%] flex sm:flex-col lg:flex-row items-center justify-center gap-x-7 sm:gap-x-0 sm:gap-y-4 lg:gap-x-5'>
+ {/* Buy It */}
+ <div  className='bg-[#4172DC] hover:bg-blue-600 duration-500 text-white w-full p-3 rounded-md  flex items-center justify-center' >SHOP NOW</div>
+ {/* Add Favourite */}
+ <div onClick={handleAddCart} className='border border-[#555555] hover:shadow-2xl hover:cursor-pointer duration-500  text-[#555555] gap-x-2  p-3 rounded-md w-full flex items-center justify-center '>
+ <CiHeart size={19} />
+ <span  style={{fontWeight:400}} className={`${jost.className}  `}>Favourite</span>
+ </div>
 
- {showCartButton
-  && 
-  <div className='border border-[#555555] hover:shadow-2xl hover:cursor-pointer duration-500  text-[#555555] gap-x-1  p-3 rounded-md w-full flex items-center justify-center '>
-  <PiBasketThin size={19} />
-   <span onClick={handleCart} style={{fontWeight:400}} className={`${jost.className}  `}>ADD TO BASKET</span>
-    </div>
-  }
+  { showCartButton &&  <div className='border border-[#555555] hover:shadow-2xl hover:cursor-pointer duration-500  text-[#555555] gap-x-1  p-3 rounded-md w-full flex items-center justify-center '> <PiBasketThin size={19} /> <span onClick={handleCart} style={{fontWeight:400}} className={`${jost.className}  `}> BASKET</span> </div> }
  </div>
 
  

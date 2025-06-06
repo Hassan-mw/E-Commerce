@@ -28,6 +28,7 @@ exports.getAllFavouriteProduct=async(req,res,next)=>{
 
 exports.createFavouriteProduct=async(req,res,next)=>{
     try{
+      console.log(req.body)
    const {user_id,product_id}=req.body
    const {rows}=await pool.query(`INSERT INTO favourites(user_id,product_id) VALUES($1,$2) RETURNING *`,[user_id,product_id])
    console.log(rows)
@@ -37,12 +38,15 @@ exports.createFavouriteProduct=async(req,res,next)=>{
    })
  
     }catch(err){
+      console.log(err)
        res.status(500).json({
         status:'fail',
         message:err.message
        }) 
     }
 }
+
+
 exports.deleteFavouriteProduct=async(req,res,next)=>{
     try{
         const {id}=req.params
