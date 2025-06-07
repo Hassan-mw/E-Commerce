@@ -9,6 +9,7 @@ router.route('/')
 router.route('/:id')
 .get(favouriteController.getAllFavouriteProductById)
 .post(favouriteController.deleteFavouriteProduct)
+.delete(favouriteController.deleteFavouriteProduct)
 
 
 module.exports=router

@@ -22,3 +22,17 @@
 
      }
 }
+
+
+ export const deleteFavouriteitemById=async({id}:{id:number})=>{
+    try{
+      console.log(id)
+      const response=await fetch(`http://localhost:5000/api/favourites/${id}`,{method:'delete'})
+      const data=await response.json()
+      return data.data
+
+      }catch(err){
+      console.log(err,'🔥🔥🔥🔥🔥🔥')
+
+     }
+}
