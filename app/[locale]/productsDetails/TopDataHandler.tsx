@@ -78,6 +78,7 @@ const TopDataHandler = ({id,name,price,color,quantity,size}:ProductDetailsDataTy
     try{
 
      await axios.post('http://localhost:5000/api/favourites',{ product_id:id,user_id:1})
+     
     }
     catch(err){
       console.log(err)
