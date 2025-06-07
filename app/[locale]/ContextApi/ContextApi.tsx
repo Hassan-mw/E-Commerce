@@ -30,6 +30,8 @@ interface DataType {
   setCartLength:Dispatch<SetStateAction<number>>;
   orderLength:number
   setOrderLength:Dispatch<SetStateAction<number>>;
+  favouriteLength:number
+  setFavouriteLength:Dispatch<SetStateAction<number>>;
 }
 
 

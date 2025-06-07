@@ -14,7 +14,7 @@ const BottomRight = () => {
   const [cartLengths,setCartLength]=useState(0)
   const [orderLengths,setOrderLength]=useState(0)
   const [favouriteLengths,setFavouriteLength]=useState(0)
-  const {cartLength,orderLength}=useContext(DataContext)
+  const {cartLength,orderLength,favouriteLength}=useContext(DataContext)
 
 
    useEffect(()=>{
@@ -29,7 +29,7 @@ const BottomRight = () => {
     } 
    fetchData();
    
-   },[cartLength,orderLength])  
+   },[cartLength,orderLength,favouriteLength])  
   
   return (
     <div className='w-full flex items-center justify-end gap-x-3 sm:gap-x-6 xl:gap-x-12 text-white'>

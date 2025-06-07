@@ -10,6 +10,8 @@ import SortingBy from '../products/SortingBy'
 import { FaTrash } from 'react-icons/fa6'
 import { deleteFavouriteitemById } from '../API/GET/Favourite'
 import Link from 'next/link'
+import { useContext } from 'react'
+import { DataContext } from '../ContextApi/ContextApi'
 
 
 const jost=Jost({
@@ -18,13 +20,17 @@ const jost=Jost({
 })
 
 const FavouriteData = ({data}) => {
-    const category="All"
+
+  const {setFavouriteLength}=useContext(DataContext)
+  
+  const category="All"
+
   console.log(data)
   const handleDeleteItem=async({id}:{id:number})=>{
   console.log(data)
    try{
     const data=await deleteFavouriteitemById({id})
-
+   setFavouriteLength(data.length)
     }
     catch(err){
 
