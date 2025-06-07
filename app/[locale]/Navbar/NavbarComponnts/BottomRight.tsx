@@ -10,7 +10,7 @@ import { DataContext } from "../../ContextApi/ContextApi";
 import { getAllCarts } from "../../API/Post/CreatePorduct";
 import { getAllOrdes } from "../../API/GET/Order";
 const BottomRight = () => {
-   const [cartLengths,setCartLength]=useState(0)
+  const [cartLengths,setCartLength]=useState(0)
   const [orderLengths,setOrderLength]=useState(0)
      const {cartLength,orderLength}=useContext(DataContext)
    useEffect(()=>{

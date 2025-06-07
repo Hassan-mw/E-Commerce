@@ -54,6 +54,7 @@ function DataProvider({children}:{children:React.ReactNode}){
     const [count,setCount]=useState<number>(0)
     const [cartLength,setCartLength]=useState<number>(0)
     const [orderLength,setOrderLength]=useState<number>(0)
+    const [favouriteLength,setFavouriteLength]=useState<number>(0)
     const [currentCurrency,setCurrentCurrency]=useState('1_$')
     const [cartData,setCartData]=useState([])
       
@@ -66,7 +67,7 @@ function DataProvider({children}:{children:React.ReactNode}){
    }
     
   return(
-    <DataContext.Provider value={{orderLength,setOrderLength,deletingId,setDeletingId,count,setCount,cartData,setCartData,currentCurrency,setCurrentCurrency,brand,length,setLength,handleBrandName,handleProductName,setBrand,name,setName,cartLength,setCartLength}}>
+    <DataContext.Provider value={{orderLength,setOrderLength,favouriteLength,setFavouriteLength,deletingId,setDeletingId,count,setCount,cartData,setCartData,currentCurrency,setCurrentCurrency,brand,length,setLength,handleBrandName,handleProductName,setBrand,name,setName,cartLength,setCartLength}}>
     {children}
     </DataContext.Provider>
   )
