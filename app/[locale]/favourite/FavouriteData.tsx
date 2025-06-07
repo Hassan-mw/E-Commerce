@@ -74,7 +74,7 @@ const FavouriteData = ({data}) => {
     data.length>0 &&
    data.map((data,index:number)=>
       // <div>
-  <div  key={data.id} className=' bg-white hover:cursor-pointer rounded-md flex flex-col items-center justify-center  w-full'>
+  <Link href={`/productsDetails/${data.id}`}  key={data.id} className=' bg-white hover:cursor-pointer rounded-md flex flex-col items-center justify-center  w-full'>
   {/* //! IMAGE */}
   <div className='w-full h-full border-t  border-slate-100 rounded-t-md shadow-2xl '>
   <Image loading='lazy' height={250} width={250} src={`/${data.main_image}`} className='object-contain max-h-[250px]   w-full h-full  object-center p-3 rounded-t-md' alt='product_image' />
@@ -93,7 +93,7 @@ const FavouriteData = ({data}) => {
   </div> 
   </div>
   </div>
-  </div>
+  </Link>
   )
  
   }
