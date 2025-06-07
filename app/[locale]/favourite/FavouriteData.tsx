@@ -40,7 +40,7 @@ const FavouriteData = ({data}) => {
   <h1 className={`${jost.className} text-3xl font-bold`}>Your all favourite products:</h1> 
   {/*//! Current Page showing +  side bar trigger  bg-[#E9E9E9]*/}
   <div className='w-full Data_Center rounded-xl bg-[#E9E9E9] '>
-    <div className='w-full max-w-screen-2xl grid grid-cols-3 lg:grid-cols-2 py-3 px-1 sm:px-6  xl:px-5'>
+    <div className='w-full max-w-screen-2xl grid grid-cols-2  py-3 px-6'>
     {/* Number of product shower */}
     <NumberProductShower length={data.length} category={category} />
  
@@ -51,13 +51,18 @@ const FavouriteData = ({data}) => {
     
     </div>
   </div>
- {data.length===0 &&
-  <div className='w-full py-20  flex flex-col space-y-4 items-center'>
- <Image height={250} width={250} src="/No_favourite.png" alt='No_favourite' />
- <h1 className={`${jost.className} text-2xl `}>No item selected yet, <Link href="/products/All" className='text-blue-500 text-2xl font-semibold border-b-2 border-white hover:border-blue-500 duration-500'>Check Items</Link></h1>
- </div>
- }
 
+
+  {/* No Data Exist */}
+  {
+  data.length===0 &&
+  <div className='w-full py-20  flex flex-col space-y-4 items-center'>
+  <Image height={250} width={250} src="/No_favourite.png" alt='No_favourite' />
+  <h1 className={`${jost.className} text-2xl `}>No item selected yet, <Link href="/products/All" className='text-blue-500 text-2xl font-semibold border-b-2 border-white hover:border-blue-500 duration-500'>Check Items</Link></h1>
+  </div>
+  }
+
+  {/* Array_data */}
   <div className={`  w-full grid gap-5 grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4   sm:gap-7 lg:gap-x-14 py-9 sm:px-2`}>
   {
     data.length>0 &&
