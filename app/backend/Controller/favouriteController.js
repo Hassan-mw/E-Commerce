@@ -43,6 +43,8 @@ exports.getAllFavouriteProductById=async(req,res,next)=>{
         status:'fail',
         message:err.message
        }) 
+    }finally{
+      redirect('/favourite')
     }
 }
 
@@ -73,7 +75,7 @@ exports.deleteFavouriteProduct=async(req,res,next)=>{
       console.log(req.params,'its reaching here')
         const {id}=req.params
    console.log(id)
-     const {rows}=await pool.query(`DELETE FROM favourites WHERE id=$1 RETURNING *`,[id])
+     const {rows}=await pool.query(`DELETE FROM favourites WHERE product_id=$1 RETURNING *`,[id])
      console.log(rows)
      res.status(200).json({
         staus:'success',
